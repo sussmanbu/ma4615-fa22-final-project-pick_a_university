@@ -1,6 +1,6 @@
 ---
 title: Pick A University
-lastmod: 2021-10-11T09:20:50-05:00
+lastmod: 2022-10-7T10:20:00-05:00
 featuredVideo:
 featuredImage:
 draft: false
