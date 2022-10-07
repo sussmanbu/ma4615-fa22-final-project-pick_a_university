@@ -1,0 +1,83 @@
+---
+title: Data
+description:
+toc: true
+featuredVideo:
+featuredImage: images/data-import-cheatsheet-thumbs.png
+draft: false
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+<div id="TOC">
+
+</div>
+
+<p>This comes from the file <code>content/data.Rmd</code>.</p>
+<p>Your first steps in this project will be to find data to work on.</p>
+<p>I recommend trying to find data that interests you and that you are knowledgeable about. A bad example would be if you have no interest in video games but your data set is about video games. I also recommend finding data that is related to current events, social justice, and other areas that have an impact.</p>
+<p>You are <strong>not</strong> allowed to work on COVID data.</p>
+<p>Initially, you will find <em>one dataset</em> but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable.
+Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.</p>
+<div id="sharing-your-data" class="section level3">
+<h3>Sharing your data</h3>
+<p>My recommendation for sharing the data is to not track it on Github unless the data is relatively small &lt;2-3mb.</p>
+<p>For small datasets, you can use the <code>dataset</code> folder that is tracked by github. Add the files just like you would any other file.</p>
+<p><strong>Do not</strong> use a folder named <code>data</code>. This folder is reserved by <code>hugo</code>.</p>
+<p>For larger datasets, you’ll need to create a new folder in the project root directory called <code>dataset-ignore</code>. This will be ignored by git which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
+<p>Your <a href="/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load your data. Here is a an example of a very simple one.</p>
+<pre class="r"><code>source(
+  here::here(&quot;static&quot;, &quot;load_and_clean_data.R&quot;),
+  echo = TRUE # Use echo=FALSE or omit it to avoid code output  
+)</code></pre>
+<pre><code>## 
+## &gt; library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.4     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   2.0.1     ✓ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre><code>## 
+## &gt; loan_data &lt;- read_csv(here::here(&quot;dataset&quot;, &quot;loan_refusal.csv&quot;))</code></pre>
+<pre><code>## Rows: 20 Columns: 5</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (1): bank
+## dbl (4): min, white, himin, hiwhite</code></pre>
+<pre><code>## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>Note how I use the <code>here::here</code> function to avoid path problems.
+This function is used to specify directories within the project’s root directory.
+You should never use absolute paths (eg. <code>/Users/danielsussman/path/to/project/</code> or <code>C:\\MA415\\Final_Project\\</code>) and using <code>here</code> ensures that it doesn’t matter what the current working directory is as long as you have the this RStudio Project open.</p>
+<hr />
+</div>
+<div id="rubric-on-this-page" class="section level2">
+<h2>Rubric: On this page</h2>
+<p>you will</p>
+<ul>
+<li>Describe where/how to find data.
+<ul>
+<li>You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.</li>
+<li>Why was the data collected/curated? Who put it together? (This is important, if you don’t know why it was collected then that might not be a good dataset to look at.</li>
+</ul></li>
+<li>Describe the different data files used and what each variable means.
+<ul>
+<li>If you have many variables then only describe the most relevant ones and summarize the rest.</li>
+</ul></li>
+<li>Describe any cleaning you had to do for your data.
+<ul>
+<li>You <em>must</em> include a link to your <code>load_and_clean_data.R</code> file.</li>
+<li>Also, describe any additional R packages you used outside of those covered in class.</li>
+<li>Describe and show code for how you combined multiple data files and any cleaning that was necessary for that.</li>
+<li>Some repetition of what you do in your <code>load_and_clean_data.R</code> file is fine and encouraged if it helps explain what you did.</li>
+</ul></li>
+<li>Organization, clarity, cleanliness of the page
+<ul>
+<li>Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.</li>
+</ul></li>
+</ul>
+</div>

@@ -1,0 +1,115 @@
+baseURL: https://ma415final.netlify.app/
+title: MA 415 Project
+
+# Comment when installing using Hugo Modules
+theme: eureka
+# Uncomment when installing using Hugo Modules
+# theme: github.com/wangchucheng/hugo-eureka
+
+paginate: 3
+copyright: >  
+  &copy; 2021 <a href="https://www.wangchucheng.com/">C. Wang</a> and <a
+  href="https://www.ruiqima.com/">R. Ma</a>
+enableEmoji: true
+enableGitInfo: false
+summaryLength: 75
+
+defaultContentLanguage: en
+hasCJKLanguage: false # Set `true` for Chinese/Japanese/Korean.
+defaultContentLanguageInSubdir: false
+
+# Uncomment for google analytics
+# googleAnalytics: UA-123-45
+
+markup:
+  # Do not modify markup.highlight
+  highlight:
+    codeFences: false
+    noClasses: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+  author: authors
+
+build:
+  useResourceCacheWhen: always
+menu:
+  main:
+    - name: About
+      url: '/about/'
+      weight: 6
+    - name: Posts
+      url: /post/
+      weight: 5
+    - name: Big Picture
+      url: /big_picture/
+      weight: 3
+    - name: Analysis
+      url: /analysis/
+      weight: 4
+    - name: Data
+      url: /data/
+      weight: 2
+
+params:      
+  description: Template and directions for the MA[46]15 final project.
+  
+  repoURL:
+  # If it is a Github repo, leave blank
+  repoEditURL:
+  
+  dateFormat:
+  
+  titleSeparator:
+  
+  # Options: auto, light and dark. Default is auto.
+  colorScheme: auto
+  
+  # E.g. Person, Organization, LocalBusiness, Project, EducationalOrganization
+  siteType: Project
+  icon: images/icon.png
+  publisherName: Daniel Sussman
+  publisherLogo: https://upload.wikimedia.org/wikipedia/en/1/15/Boston_University_Terriers_logo.svg
+  
+  highlight:
+    handler: highlightjs
+    
+    highlightjs:
+      # highlight.js doesn't bundle every language. So please specify additional languages you want here.
+      # See https://github.com/highlightjs/cdn-release/tree/master/build/languages for available languages.
+      languages:
+        - dart
+      # See https://github.com/highlightjs/cdn-release/tree/master/build/styles for available styles.
+      style: solarized-light
+  
+  math:
+    handler: katex
+  
+    # katex:
+    #   # Browse https://katex.org/docs/options.html to see the options available.
+    #   # KaTeX's Auto-render ignores `displayMode` property of the options, so this property will not work.
+    #   # You can list the key and value you want as below.
+    #   leqno:
+  
+  comment:
+    # Options: disqus and commento.
+    platform:
+  
+    disqus:
+      shortname:
+  
+    commento:
+      # If self-hosting, please enter the url (e.g. https://commento.example.com) here. Otherwise leave empty.
+      url:
+
+ignoreFiles: 
+  ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]

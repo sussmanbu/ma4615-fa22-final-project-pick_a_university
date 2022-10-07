@@ -1,0 +1,36 @@
+---
+title: "Flex"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(DT)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+g <- ggplot(mpg, aes(x = displ, y = hwy, color = drv,
+  text = paste(manufacturer, "<br>", model))) +
+  geom_point(position = "jitter")
+ggplotly(g, tooltip = "text")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+mpg %>% select(hwy, manufacturer, model, cyl, displ) %>%
+  datatable(rownames = FALSE)
+```

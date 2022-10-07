@@ -1,0 +1,61 @@
+---
+title: Data
+description:
+toc: true
+featuredVideo:
+featuredImage: images/data-import-cheatsheet-thumbs.png
+draft: false
+---
+
+This comes from the file `content/data.Rmd`.
+
+Your first steps in this project will be to find data to work on.
+
+I recommend trying to find data that interests you and that you are knowledgeable about. A bad example would be if you have no interest in video games but your data set is about video games. I also recommend finding data that is related to current events, social justice, and other areas that have an impact.
+
+You are __not__ allowed to work on COVID data.
+
+Initially, you will find _one dataset_ but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable.
+Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.
+
+### Sharing your data
+
+My recommendation for sharing the data is to not track it on Github unless the data is relatively small <2-3mb. 
+
+For small datasets, you can use the `dataset` folder that is tracked by github. Add the files just like you would any other file.
+
+**Do not** use a folder named `data`. This folder is reserved by `hugo`.
+
+For larger datasets, you'll need to create a new folder in the project root directory called `dataset-ignore`. This will be ignored by git which will help you avoid issues with Github's size limits. Your team will have to manually make sure the data files in `dataset-ignore` are synced across team members.
+
+Your [load_and_clean_data.R](/load_and_clean_data.R) file is how you will load your data. Here is a an example of a very simple one.
+
+```{r}
+source(
+  here::here("static", "load_and_clean_data.R"),
+  echo = TRUE # Use echo=FALSE or omit it to avoid code output  
+)
+```
+
+Note how I use the `here::here` function to avoid path problems.
+This function is used to specify directories within the project's root directory.
+You should never use absolute paths (eg. `/Users/danielsussman/path/to/project/` or `C:\\MA415\\Final_Project\\`) and using `here` ensures that it doesn't matter what the current working directory is as long as you have the this RStudio Project open.
+
+----
+
+## Rubric: On this page
+
+you will
+
+* Describe where/how to find data.
+  * You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.
+  * Why was the data collected/curated? Who put it together? (This is important, if you don't know why it was collected then that might not be a good dataset to look at.
+* Describe the different data files used and what each variable means. 
+  * If you have many variables then only describe the most relevant ones and summarize the rest.
+* Describe any cleaning you had to do for your data.
+  * You *must* include a link to your `load_and_clean_data.R` file.
+  * Also, describe any additional R packages you used outside of those covered in class.
+  * Describe and show code for how you combined multiple data files and any cleaning that was necessary for that.
+  * Some repetition of what you do in your `load_and_clean_data.R` file is fine and encouraged if it helps explain what you did.
+* Organization, clarity, cleanliness of the page
+  * Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.
