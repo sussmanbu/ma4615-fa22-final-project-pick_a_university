@@ -1,0 +1,69 @@
+---
+title: Analysis
+description:
+toc: true
+featuredVideo:
+featuredImage: https://upload.wikimedia.org/wikipedia/commons/7/77/Pebbleswithquarzite.jpg
+draft: false
+---
+
+This comes from the file `content/analysis.Rmd`.
+
+We describe here our detailed data analysis.
+
+
+```{r}
+library(tidyverse)
+print(getwd())
+data <- read_csv(here::here("dataset/loan_refusal_clean.csv"))
+load(here::here("dataset/loan_refusal.RData"))
+print(ls())
+```
+
+## Note on Attribution
+
+If you are directly quoting from a source, please make that clear. You can show quotes using `>` like this
+
+```
+> To be or not to be.
+```
+
+> To be or not to be.
+
+Also, make sure to provide a link or citation to where you are quoting from.
+
+-------
+
+
+## Rubric: On this page
+
+you will
+
+
+* Introduce what motivates your Data Analysis (DA)
+  * Which variables and relationships are you most interested in?
+  * What questions are you interested in answering?
+* Breadth of the DA
+  * Make sure that you ask enough initial questions to explore the different variables in your data.
+  * i.e. Do you explore more than just one or two variables? Do you explore a few different relationships or many?
+* Depth of the DA
+  * When you answer one question, usually more questions arise as well. 
+  * The depth of the DA is about coming up with and exploring the answers to these questions, often iterating the process a few times.
+* Modeling and Inference 
+  * You should also include some kind of formal statistical model and/or inference. This could be a linear regression, logistic regression, hypothesis testing etc.
+  * Explain the techniques you used for validating your results.
+  * Describe the results of your modelling and make sure to give a sense of the uncertainty in your estimates and conclusions.
+* Explain the flaws and limitations of your analysis
+  * Are there some assumptions that you needed to make that might not hold? Is there other data that would help to answer your questions? ...
+* Clarity Figures
+  * Are your figures/tables/results easy to read, informative, without problems like overplotting, hard-to-read labels, etc?
+  * Each figure should provide a key insight. Too many figures or other data summaries can detract from this.
+* Clarity of Explanations
+  * Do you introduce why you are doing each analysis?
+  * How well do you explain each figure/result?
+  * Do you provide interpretations that suggest further analysis or explanations for observed phenomenon?
+* Organization and cleanliness.
+  * Make sure to remove excessive warnings, use clean easy-to-read code, organize with sections or multiple pages, use bullets, etc.
+  
+  
+**NOTE**: Your Data Analysis can be broken up into multiple pages if that helps with your organization.

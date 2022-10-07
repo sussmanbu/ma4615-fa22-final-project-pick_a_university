@@ -1,0 +1,100 @@
+---
+title: Setup
+author: Daniel Sussman
+date: '2022-10-03'
+slug: []
+categories: []
+tags: []
+description: "Steps to set up your final project"
+toc: yes
+authors: []
+series: []
+lastmod: '2022-10-03T07:38:30-04:00'
+featuredVideo: ~
+featuredImage: ~
+---
+
+
+<div id="TOC">
+
+</div>
+
+<p>Here are the steps you’ll need to take. <strong>Please only start this once you have a set team of 4 or 5</strong>.</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Your team will share a Github repository for the final project. Accept this assignment and make sure to pick your team. The first person who accepts will have to create a new team.</li>
+<li>Choose a team member to be in charge of the <em>Netlify</em> account which is used to host the web site.</li>
+</ol>
+<div id="steps-for-netlify-setup-only-one-team-member-should-do-this" class="section level2">
+<h2>Steps for Netlify Setup (only one team member should do this)</h2>
+<ol start="2" style="list-style-type: decimal">
+<li>Go to <a href="https://www.netlify.com/">https://www.netlify.com/</a>. Click <em>Sign Up</em> and use your Github account. Follow the steps to sign up.</li>
+<li>Once you are set up and logged in, click <em>New site from Git</em>. Click <em>Github</em> and authorize Netlify to access your account by clicking “Configure the Netlify app on GitHub” link.</li>
+<li>Find your teams repository using the <em>Search repos</em> field and select it from the list. Make sure to look in the <code>sussmanbu</code> organization. (If you have trouble with this step it might be because I need to add you to the <code>sussmanbu</code> organization so let me know the Github username of the person setting this up.)</li>
+<li>You shouldn’t have to adjust any options so click <em>Deploy Site</em>. Your site is now being deployed.</li>
+<li>In the meantime, click <em>Site Settings</em> and then <em>Change site name</em> and use your team name (or something close) as the site name.</li>
+<li>You should now be able to go back to <em>Overview</em>, see that “Your site is deployed”, and click on the link to see your site.</li>
+</ol>
+</div>
+<div id="steps-for-everyone" class="section level2">
+<h2>Steps for Everyone</h2>
+<ol start="2" style="list-style-type: decimal">
+<li>Using RStudio, clone your repository to your laptop and open the project file.</li>
+<li>Install the blogdown package using <code>install.packages("blogdown")</code>.</li>
+<li>Run <code>blogdown::install_hugo('0.90.1')</code>. <em>Hugo</em> / <em>blogdown</em> are the tools for transforming your site from Markdown/RMarkdown into the structure of the website.</li>
+<li>Run the command <code>blogdown::serve_site()</code>. If all goes well you will see a preview of the site in the RStudio Viewer.</li>
+</ol>
+<p><strong>WARNING</strong> Always use <code>blogdown::serve_site()</code> to preview your changes and updates.</p>
+</div>
+<div id="steps-for-the-group" class="section level2">
+<h2>Steps for the Group</h2>
+<p>Everyone should now have their computer set up with blogdown, hugo and your team should have their netlify account up.
+In turn, do the following:</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Press Pull in the Git tab to get the latest changes.</li>
+<li>Open the <code>about.md</code> file from the <code>content</code> folder and add your name to the file, write a quick introduction, and include a link to your Github account page. (The first person can remove Wan-chi and Dan from the list).</li>
+<li>Commit the changes to <code>about.md</code> and Push your changes.</li>
+<li>Check that your changes are showing up on netlify.</li>
+<li>Make sure to wait until one team member is done before the next person starts again at 0.</li>
+</ol>
+<p>Finally, the last person to update the about page will update the <code>config.yaml</code> file.
+The only changes you need to make are to update the <code>baseURL</code> to match your netlify.app URL and update the <code>title</code> to be your group name.
+Again, commit and push your changes.</p>
+<p>You should be all set and see the changes again on Netlify.</p>
+<p>Read through the pages posts on your website to learn about how things work.
+Look at the structure of the <code>content</code> folder and compare it to the website structure.</p>
+</div>
+<div id="how-does-blogdown-work" class="section level2">
+<h2>How does blogdown work?</h2>
+<p>Blogdown works with Hugo to build a website out of markdown and R markdown files.
+The details are not too important but there are a few key things.</p>
+<p>First, most of the time you will be working in the <code>content</code> folder. This is where the RMarkdown files will live.</p>
+<p>Blogdown takes the files in <code>content</code> and knits them into <code>html</code> files. Hugo uses the files in the <code>themes</code> folder to figure what the pages should look like and to construct the site with all the links and layouts.
+I picked out a <code>theme</code> that I like and made a few changes. You are welcome to keep it, change it, or use a different theme but be aware that this can become tricky.
+Hugo also includes anything in the <code>static</code> folder as-is on your site.</p>
+<p>Finally, once you run <code>serve_site</code>, you should see a new folder called <code>public</code>. This folder is where the built website lives. Generally, you can just ignore this folder since any edits you make should be in the <code>content</code> folder or <code>static</code>.
+Note that our <code>.gitignore</code> file tells <code>git</code> to ignore any changes in the <code>public</code> folder.
+This is because Netlify will run Hugo for you and deploy the resulting public folder onto their servers.</p>
+<p><strong>NOTE</strong> Netlify only runs Hugo so it will not compile your R markdown files. This is why you have to commit the <code>html</code> files, as otherwise those pages/posts will not appear.</p>
+<p>With <code>blogdown</code> it can get a little tricky to know what should be committed and what should not.
+For example, if you click Preview in RStudio when you are editing the About page, R will compile that to an <code>html</code> file.
+If you commit this the website might not look the way we want it to.</p>
+<p>To preview files, always use the <code>blogdown::serve_site()</code> command and navigate to the page you are working on.
+Every time you save, blogdown will rebuild the website and tell you if you had any errors.
+(Don’t use the <code>knit</code> button in RStudio. If you do you’ll have to make sure that <code>blogdown</code> re-knits that page.)
+If you don’t see your updates try the following.</p>
+<ol style="list-style-type: decimal">
+<li>Check you saved the file.</li>
+<li>Check for error messages in the console indicating there was an error when knitting the document.</li>
+<li>Click “Addins -&gt; Touch File” to update the Last Modified time so that <code>serve_site</code> will try to knit it again.</li>
+</ol>
+<p>To stop previewing the website you can run <code>blogdown::stop_server()</code>.</p>
+<p>Make sure to frequently check that you don’t have any problems with <code>blogdown::check_site()</code>. This may give you a hint about something to correct.</p>
+<p>Some general guidelines are:</p>
+<ol style="list-style-type: decimal">
+<li>Always commit <code>.Rmd</code> and <code>.Rmarkdown</code> files. Otherwise, your teammates won’t be able to see the original R code.</li>
+<li>Always commit <code>.md</code> files.</li>
+<li>Usually commit <code>.html</code> files unless they share a name with a <code>.md</code> file.</li>
+<li>Always commit changes in the <code>static</code> folder.</li>
+</ol>
+<p><strong>Never</strong> commit large (&gt; 50mb) data files. This can cause some challenges.</p>
+</div>
