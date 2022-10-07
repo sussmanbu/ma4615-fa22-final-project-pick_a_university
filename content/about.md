@@ -1,5 +1,5 @@
 ---
-title: About
+title: Pick A University
 lastmod: 2021-10-11T09:20:50-05:00
 featuredVideo:
 featuredImage:
@@ -8,16 +8,32 @@ draft: false
 
 This comes from the file `content/about.md`.
 
-This is a website for the final project for MA[46]15 Data Science with R by Team TEAMNAME.
-The members of this team are below.
+This is a website for the final project for MA[46]15 Data Science with R by Team Pick_A_University.
 
-## Luis Iberico
+Our Github account page is: https://github.com/sussmanbu/ma4615-fa22-final-project-pick_a_university.git
 
-Luis is a Ph.D. student in Stats and is the Teaching Fellow for the course.
+The members of this team are below (following an alphabetical order of last name).
 
-## Dan Sussman
+## Linshen Cai
 
-Dan is a professor in the Math/Stat department and is the instructor for the course.
+(replace this)
+
+## William Fang
+
+(replace this)
+
+## Yawei Huang
+
+Yawei is a doctoral student in Applied Human Development in Wheelock College of Education & Human Development at Boston University.
+
+## Joey Eunyeong Park
+
+(replace this)
+
+## Zeshi Wu
+
+(replace this)
+
 
 <!-- Please leave in the information below -->
 
