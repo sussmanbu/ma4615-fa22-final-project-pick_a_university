@@ -10,7 +10,7 @@ This comes from the file `content/about.md`.
 
 This is a website for the final project for MA[46]15 Data Science with R by Team Pick_A_University.
 
-Our Github account page is: https://github.com/sussmanbu/ma4615-fa22-final-project-pick_a_university.git
+Our Github page is: https://github.com/sussmanbu/ma4615-fa22-final-project-pick_a_university.git
 
 The members of this team are below (following an alphabetical order of last name).
 
@@ -26,6 +26,7 @@ Github: https://github.com/EB30
 ## Yawei Huang
 
 Yawei is a doctoral student in Applied Human Development in Wheelock College of Education & Human Development at Boston University.
+Github: https://github.com/YaweiHuang19
 
 ## Joey Eunyeong Park
 
