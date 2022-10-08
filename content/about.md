@@ -6,6 +6,10 @@ featuredImage:
 draft: false
 ---
 
+<hr>
+
+<h1> <b> About </b></h1>
+
 This comes from the file `content/about.md`.
 
 This is a website for the final project for MA[46]15 Data Science with R by Team Pick_A_University.
@@ -15,23 +19,23 @@ Our Github page is: https://github.com/sussmanbu/ma4615-fa22-final-project-pick_
 The members of this team are below (following an alphabetical order of last name).
 
 ## Linshen Cai
-
+<hr>
 (replace this)
 
 ## William Fang
-
+<hr>
 William is a senior, double majoring in mathematics and computer science, at BU CAS. 
 <br>
 Github: https://github.com/EB30
 
 ## Yawei Huang
-
+<hr>
 Yawei is a doctoral student in Applied Human Development in Wheelock College of Education & Human Development at Boston University.
 <br>
 Github: https://github.com/YaweiHuang19
 
 ## Joey Eunyeong Park
-
+<hr>
 (replace this)
 
 ## Zeshi Wu
@@ -40,14 +44,12 @@ Github: https://github.com/YaweiHuang19
 (replace this)
 
 ## Contribution
+<hr>
 - Data Page: TBD
 - Big Picture Page: 
 - Analysis Page: 
 - Posts: 
 - Misc: 
-
-
-
 
 
 <!-- Please leave in the information below -->
