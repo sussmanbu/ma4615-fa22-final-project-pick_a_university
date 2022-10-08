@@ -20,7 +20,8 @@ The members of this team are below (following an alphabetical order of last name
 
 ## William Fang
 
-(replace this)
+William is a senior, double majoring in mathematics and computer science at BU CAS. 
+Portfolio
 
 ## Yawei Huang
 
