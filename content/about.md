@@ -22,7 +22,6 @@ The members of this team are below (following an alphabetical order of last name
 
 William is a senior, double majoring in mathematics and computer science, at BU CAS. 
 Github: https://github.com/EB30
-Portfolio: http://www.williamfangtech.com/
 
 ## Yawei Huang
 
