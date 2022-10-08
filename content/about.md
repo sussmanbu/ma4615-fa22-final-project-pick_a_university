@@ -21,11 +21,13 @@ The members of this team are below (following an alphabetical order of last name
 ## William Fang
 
 William is a senior, double majoring in mathematics and computer science, at BU CAS. 
+<br>
 Github: https://github.com/EB30
 
 ## Yawei Huang
 
 Yawei is a doctoral student in Applied Human Development in Wheelock College of Education & Human Development at Boston University.
+<br>
 Github: https://github.com/YaweiHuang19
 
 ## Joey Eunyeong Park
@@ -33,8 +35,19 @@ Github: https://github.com/YaweiHuang19
 (replace this)
 
 ## Zeshi Wu
+<hr>
 
 (replace this)
+
+## Contribution
+- Data Page: TBD
+- Big Picture Page: 
+- Analysis Page: 
+- Posts: 
+- Misc: 
+
+
+
 
 
 <!-- Please leave in the information below -->
