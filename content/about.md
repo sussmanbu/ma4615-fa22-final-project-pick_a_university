@@ -36,7 +36,9 @@ Github: https://github.com/YaweiHuang19
 
 ## Joey Eunyeong Park
 <hr>
-(replace this)
+Joey is a senior, majoring Computer Science and Statistics in BU CAS
+<br>
+Github: https://github.com/jjoeypark
 
 ## Zeshi Wu
 <hr>
