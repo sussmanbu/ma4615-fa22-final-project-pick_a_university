@@ -40,8 +40,9 @@ Github: https://github.com/YaweiHuang19
 
 ## Zeshi Wu
 <hr>
-
-(replace this)
+Zeshi is a senior, majoring in stats and computer science, at BU CAS.
+<br>
+Github: https://github.com/ZeshiWu
 
 ## Contribution
 <hr>
