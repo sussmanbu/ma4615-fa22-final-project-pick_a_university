@@ -1,5 +1,5 @@
-baseURL: https://ma415final.netlify.app/
-title: MA 415 Project
+baseURL: https://clever-unicorn-d34bd5.netlify.app
+title: Pick_A_University
 
 # Comment when installing using Hugo Modules
 theme: eureka

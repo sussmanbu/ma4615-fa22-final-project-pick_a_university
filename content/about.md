@@ -20,7 +20,9 @@ The members of this team are below (following an alphabetical order of last name
 
 ## Linshen Cai
 <hr>
-(replace this)
+Linshen is a senior majoring in economic mathematics
+<br>
+Github: https://github.com/linshencai
 
 ## William Fang
 <hr>
