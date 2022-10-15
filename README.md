@@ -2,6 +2,8 @@
 
 **Make sure to read the full README file below, all pages and posts on your initial site, and look through the files in the `content` folder and the `config.toml` file.**
 
+Our website: https://clever-unicorn-d34bd5.netlify.app/about/
+
 For your final project, your team will be 
 
 
