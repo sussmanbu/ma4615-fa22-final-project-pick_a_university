@@ -14,4 +14,4 @@ featuredVideo: ~
 featuredImage: ~
 ---
 
-  <p>This is a dummy template for Blog 2</p>
+<p>This is a dummy template for Blog 2</p>
