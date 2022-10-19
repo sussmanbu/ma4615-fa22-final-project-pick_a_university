@@ -1,0 +1,17 @@
+---
+title: Exploring Data
+author: Yawei
+date: '2022-10-21'
+slug: []
+categories: []
+tags: []
+description: ~
+toc: yes
+authors: []
+series: []
+lastmod: '2022-10-19T09:25:34-04:00'
+featuredVideo: ~
+featuredImage: ~
+---
+
+  <p>This is a dummy template for Blog 2</p>
