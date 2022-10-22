@@ -1,33 +1,48 @@
----
-title: Setup
-author: Daniel Sussman
-date: '2022-10-03'
-slug: []
-categories: []
-tags: []
-description: "Steps to set up your final project"
-toc: yes
-authors: []
-series: []
-lastmod: '2022-10-03T07:38:30-04:00'
-featuredVideo: ~
-featuredImage: ~
----
-
-Here are the steps you'll need to take. __Please only start this once you have a set team of 4 or 5__.
-
-## Steps for Netlify Setup (only one team member should do this)
 
 
-To stop previewing the website you can run `blogdown::stop_server()`.
+```{r init}
+library(tidyverse)
 
-Make sure to frequently check that you don't have any problems with `blogdown::check_site()`. This may give you a hint about something to correct.
+```
 
-Some general guidelines are:
 
-1. Always commit `.Rmd` and `.Rmarkdown` files. Otherwise, your teammates won't be able to see the original R code.
-2. Always commit `.md` files.
-3. Usually commit `.html` files unless they share a name with a `.md` file.
-4. Always commit changes in the `static` folder.
+```{r Import Data}
+#Import Data
+data <- read.csv(file = 'dataset/full_data_leftjoinCarnegie.csv')
+```
 
-__Never__ commit large (> 50mb) data files. This can cause some challenges. 
+
+```{r Plot: National College Rankings and International Student Population}
+ggplot(data, aes(x = national_rank_kaggle, y= (international_students_opendoors)), na.rm=T) + xlab("Ranking (ARWU)") + ylab("International Student Population (Opendoors)")+ geom_point() + geom_smooth() + xlim(0, 115)
+#This demonstrates Positive correlation between National ranking and international student population: higher ranking (lower number) and higher international student population.
+```
+```{r Plot: World College Rankings and International Student Population}
+ggplot(data, aes(x = world_rank_arwu, y= log(international_students_opendoors)), na.rm=T)+ xlab("Ranking (Kaggle)") + ylab("Log International Student Population (Opendoors)")+ geom_point() + geom_smooth() + xlim(0, 210)
+#This demonstrates Positive correlation between World ranking and international student population: higher ranking (lower number) and higher international student population.
+```
+
+
+```{r Plot: National College Rankings and Tuition}
+ggplot(data, aes(x = national_rank_kaggle, y= (tuition_kaggle)), na.rm=T) + xlab("Ranking (Kaggle)") + ylab("Tuition (Kaggle)")+ geom_point() + geom_smooth() + xlim(0, 115)
+#Positive correlation between ranking and Tuition: higher ranking (lower number) and higher Tuition
+
+```
+
+
+```{r Plot: College Rankings and Overall Student Population}
+ggplot(data, aes(x = national_rank_kaggle, y= (enrollment_kaggle)), na.rm=T) + xlab("Ranking (Kaggle)") + ylab("Student Enrollment (Kaggle)")+ geom_point() + geom_smooth() + xlim(0, 115)
+ggplot(data, aes(x = national_rank_kaggle, y= (enrollment_top120enrollment)), na.rm=T) + xlab("Ranking (Kaggle)") + ylab("Student Enrollment (Top 120 Enrollment)")+ geom_point() + geom_smooth() + xlim(0, 120)
+#Positive correlation between ranking and student population:: higher ranking (lower number) and higher student population
+```
+
+
+
+```{r Summary}
+#Summary 
+data_sum <- data %>% filter(!is.na(national_rank_arwu))%>% summarize(university, national_rank_arwu, world_rank_arwu, ) %>% arrange(world_rank_arwu)
+
+data_sum_groupstate <- data %>% filter(!is.na(national_rank_arwu))%>% group_by(state)%>% summarize(university, national_rank_arwu, world_rank_arwu, ) %>% arrange(world_rank_arwu)
+#Positive correlation between ranking and student population:: higher ranking (lower number) and higher student population
+```
+
+
