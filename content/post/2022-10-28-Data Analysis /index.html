@@ -1,0 +1,105 @@
+---
+title: Example Post
+author: Daniel Sussman
+date: '2022-02-23'
+slug: []
+categories: []
+tags: []
+description: This is a description of the post.
+toc: yes
+authors: []
+series: []
+lastmod: '2022-02-23'
+featuredVideo: ~
+featuredImage: /images/a-static-image.png
+---
+
+
+<div id="TOC">
+
+</div>
+
+<p>This file is from <code>content/post/2021-02-09-example/index.Rmd</code>. I made it by running <code>blogdown::new_post("example", ext = ".Rmd")</code> in the console.</p>
+<p>Note that images like the one above are stored in <code>static/images</code> in your project folder.</p>
+<div id="just-like-an-rmarkdown" class="section level2">
+<h2>Just like an RMarkdown</h2>
+<p>Show code …</p>
+<pre class="r"><code>library(tidyverse)
+msleep %&gt;%
+  group_by(vore) %&gt;%
+  summarize(`average body weight` = mean(bodywt))</code></pre>
+<pre><code>## # A tibble: 5 × 2
+##   vore    `average body weight`
+##   &lt;chr&gt;                   &lt;dbl&gt;
+## 1 carni                  90.8  
+## 2 herbi                 367.   
+## 3 insecti                12.9  
+## 4 omni                   12.7  
+## 5 &lt;NA&gt;                    0.858</code></pre>
+<pre class="r"><code>ggplot(msleep, aes(x = bodywt, y = vore)) + geom_col()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><br></p>
+<p>… or a nicer table …</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">vore</th>
+<th align="right">average body weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">carni</td>
+<td align="right">90.75111</td>
+</tr>
+<tr class="even">
+<td align="left">herbi</td>
+<td align="right">366.87725</td>
+</tr>
+<tr class="odd">
+<td align="left">insecti</td>
+<td align="right">12.92160</td>
+</tr>
+<tr class="even">
+<td align="left">omni</td>
+<td align="right">12.71800</td>
+</tr>
+<tr class="odd">
+<td align="left">NA</td>
+<td align="right">0.85800</td>
+</tr>
+</tbody>
+</table>
+<p>… or make a plot.</p>
+<pre class="r"><code>ggplot(msleep, aes(x = sleep_total, y = bodywt)) +
+  geom_point() + scale_x_log10() + scale_y_log10()</code></pre>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" alt="Wow captions too!" width="672" />
+<p class="caption">
+Figure 1: Wow captions too!
+</p>
+</div>
+<p>I can even put in some math <span class="math inline">\(e^x\)</span> or a displayed equation
+<span class="math display">\[e^{\pi i} + 1 = 0.\]</span></p>
+<hr />
+</div>
+<div id="creating-a-new-post" class="section level1">
+<h1>Creating a new post</h1>
+<p>To create a new post you can run</p>
+<pre class="r"><code>blogdown::new_post(&quot;Post title&quot;, ext = &quot;.Rmd&quot;)</code></pre>
+<p>Alternatively, you can use the “Addins” menu.</p>
+<p><img src="images/New%20Post.png" /></p>
+<p>Just make sure to select <code>.Rmd</code> for the format so you can include and run <code>R</code> code.</p>
+<hr />
+<div id="i-cant-see-my-updates" class="section level2">
+<h2>I can’t see my updates</h2>
+<p>When you want to see how the changes or additions you made will look on the website, you need to run <code>blogdown::serve_site()</code> which will knit Rmd files as they change and create a local web server that you can use to preview the site.</p>
+<p>If you are not seeing the changes you were hoping for:</p>
+<ol style="list-style-type: decimal">
+<li><p>Check to make sure you are not getting any knitting errors. In the Console, you might something like
+<code>Error : Failed to render content/post/2021-02-09-example/index.Rmd</code>
+You should look above that for any errors. Usually it will say something like <code>Quitting from lines 83-84 (index.Rmd)</code> which can help you to isolate where the error is. (Note, it might not be in the file you have been editing if an error was introduced by a team mate).</p></li>
+<li><p>If you don’t see any errors, it might be that <code>serve_site()</code> hasn’t yet recognized the changes you’ve made. To force it to compile you can add a small change to the .Rmd files, like a line break. This will update the modification time on the file which should cause the file to be knitted. Another option is to use Addins -&gt; Touch File (see screenshot above).</p></li>
+</ol>
+</div>
+</div>
