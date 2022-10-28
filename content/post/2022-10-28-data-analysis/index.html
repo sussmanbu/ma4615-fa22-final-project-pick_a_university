@@ -1,0 +1,79 @@
+---
+title: Data Analysis
+author: Daniel Sussman
+date: '2022-10-28'
+slug: []
+categories: []
+tags: []
+description: ~
+toc: yes
+authors: []
+series: []
+lastmod: '2022-10-28T10:24:05-04:00'
+featuredVideo: ~
+featuredImage: ~
+---
+
+
+<div id="TOC">
+
+</div>
+
+<div id="loading-and-cleaning-part-2" class="section level2">
+<h2>Loading and Cleaning part 2</h2>
+<p>Show code …</p>
+<hr />
+</div>
+<div id="data-analysis" class="section level2">
+<h2>Data Analysis</h2>
+<div id="estimate-states-university-qs-score-by-average-and-maximum" class="section level3">
+<h3>Estimate States’ University QS score by average and maximum</h3>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<p> These 2 maps are simple visualizations that represent estimated rankings of universities categorized by state using the mean and maximum QS World Ranking Score, respectively. The score is a weighted proxy for Academic reputation, Employer reputation, Faculty/Student ratio, Citations per faculty, International student ratio, and International faculty ratio. The greater the qs score estimate is the more blue/less white the state is colored. Notice the gray states are the states without any university qs score data. Also, the states MA, CA, IL, RI, MI, PA have the highest QS scores. It makes sense that MA has the greatest qs score 100 because of MIT; however, it is surprising that it has a lot lower average QS score even with Harvard with a score of 97.6. And PA has the greatest qs score 75.6 compared to MA’s 51.5. We also observe that the states close to US’s border have greater QS score than those in the midwest, southwest, and southeast.</p>
+<p><br></p>
+</div>
+<div id="estimate-states-university-international-student-population-by-average" class="section level3">
+<h3>Estimate States’ University International Student Population by average</h3>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+ This graph captures the average Universities’ International Student Population categorized by state. The greater the mean population is, the more red/less white the states are colored. Similar to the prior 2 maps, the gray states are states with missing university international student data from the qs dataset. An observation is that California, Arizona, Minnesota, New York have the greatest populations. We also observe that the states close to US’s border have greater average international student body than those in the midwest, southwest, and southeast;</p>
+<p> A broad observation is from these maps the missing values are universities primarily in the middle west region of the US.</p>
+<p><br></p>
+</div>
+<div id="mean-of-undergraduate-enrollment-per-university-in-states" class="section level3">
+<h3>Mean of Undergraduate Enrollment per University in states</h3>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p> In this chart, the main discussion is the average number of undergraduates per university in each state. Colleges in Arizona have the most average undergraduates. The reason may be that Arizona has the largest university in the country, the Arizona State University. Oklahoma, Rhode Island and New Hampshire have fewer college undergraduates by average. This is in line with my experience, I haven’t heard of any large universities in these three states. Also, our dataset is based on kaggle miss data for 7 states which are HI,ID,ME,MN,NE,NM,and SD.</p>
+<p><br></p>
+</div>
+<div id="tuition-fee-of-public-university" class="section level3">
+<h3>Tuition Fee of Public University</h3>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-2.png" width="672" />
+  These two graphs discuss the relationship between tuition fees and university rankings. First, I divided the university rankings into two groups, one is private universities and the other is public universities, and made scatter plots respectively. As can be seen from the graph, the average tuition fee in private schools is higher than that in public schools. The maximum tuition fee for private schools can reach about 60,000 US dollars a year, while the maximum tuition for public schools is about 40,000 US dollars a year. At the same time, I used a linear regression model to analyze the two scatter plots, and the analysis results showed that with the increase of the ranking(National ranking number becomes smaller), the tuition fees of public and private universities will increase. There is a positive correlation between university ranking ( #1 being the highest) and tuition fees.</p>
+<p><br></p>
+</div>
+<div id="selectivity-and-mean-number-of-international-student" class="section level3">
+<h3>Selectivity and Mean Number of International Student</h3>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="selectivity-and-mean-number-of-international-student-1" class="section level3">
+<h3>Selectivity and Mean Number of International Student</h3>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+</div>
+<div id="data-for-equity" class="section level2">
+<h2>Data for Equity</h2>
+<p>  Three principles discussed in Principles for Advancing Equitable Data Practice are Beneficence, Respect for persons, Justice and are applicable to 4 stages of the data life cycle – <strong><em>Acquisition, Processing and Analysis, Dissemination, Dispositions</em></strong>.
+<br />
+  Our team is using secondary data. More specifically, we found and downloaded data from multiple sources and then joined them together by university name, city, and state. Since most of our data wasn’t collected by ourselves, <strong>it is important for us to understand why and how the original data was collected</strong>. In addition, get to understand the purpose of data is important as well. This will allow us to think about any potential bias embedded in the data production process. The way to do this is to read the original website, from which we downloaded the data, carefully and took notes. Also, it would be helpful to collect the information about certain websites and figure out whether the data from them is reliable or not. Relatively, our understanding of the data should be strictly based on the description on the website, that is, the data labels. For this end, we have created a codebook which contains the description and source link of each variable.</p>
+<div id="part-of-codebook" class="section level4">
+<h4>part of codebook</h4>
+<p><img src="images/codebook.png" />
+<br />
+  For our team, the most relevant principle is <strong>transparency</strong>. We need to be transparent about not only the availability and limitation of the data (particularly, there were a lot of missing values), but also how we cleaned/used, analyze, and interpret it.</p>
+<p>  For example, after an initial attempt of joining the data from multiple sources, there were three data points on whether the university is private or public. We chose one column to anchor, and filled missing values based on data from other two columns, if not missing. We did similar things for city and state, which also have multiple columns due to multiple data sources. This is rather straightforward, because datapoints like this should have no conflicts in information.</p>
+<p> What is more complicated, however, is our <strong>outcome variable</strong> – international student population at each university. More specifically, we have two columns on the reported number from two different years and sources. In an effort to aggregate them into one column, we decided that we would use the maximum of the two datapoints, which we should always keep in mind when we analyzed and interpret the data.</p>
+<p>  During analysis and interpretation phase, <em>carefulness</em> is equally important as transparency, because we don’t want to say things that the data could not answer our questions.</p>
+<p>  We are also interested in understanding <strong>the limits for data tabulation</strong>. By filtering out universities with no outcome measures (international student population), we have limited outcomes/observations with some missing data values. This leads to the gray states with missing data values and the mean estimate of QS score may be skewed to the higher end since we selected data of universities with top rankings and high international student population. Thus, the graph without explanation of the data may be misinterpreted.</p>
+<p>  In summary, at our current stage and future, we will consider in <strong><em>equity, transparency, carefulness,and limits for data tabulation and interpretation</em></strong>. Since there is no personally identifiable information (PII), there will not be any fundamental privacy issues. However, we will include informed consent whenever possible, even if not formally required for our data sources.</p>
+</div>
+</div>
