@@ -5,7 +5,7 @@ date: '2022-11-04'
 slug: []
 categories: []
 tags: []
-description: ~
+description: We discuss both going deeper and broader into our EDA and our initial thoughts and results for modeling
 toc: yes
 authors: []
 series: []
@@ -161,3 +161,4 @@ For modeling, we are interested in what predicts number of international student
 
 Note that one challenge with the current model is that the number of observations decreased greatly due to missing values.
 
+blogdown::serve_site()
