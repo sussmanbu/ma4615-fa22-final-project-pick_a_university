@@ -38,12 +38,14 @@ ggplot(test,aes(x, y)) +
   theme_minimal() +
   labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Linear Regression Plot") +
   theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
-g_model1 <- glm(y~x, data=train, family = binomial()) #Logistic 1
-g_model2 <- glm(y~x, data=train, family = quasibinomial()) #Logistic 2
-g_model3 <- glm(y~x, data=train, family = gaussian()) # Identity
-g_model4 <- glm(y~x, data=train, family = poisson()) #log
-g_model5 <- glm(y~x, data=train, family = inverse.gaussian()) #1/mu^2
-g_model6 <- glm(y~x, data=train, family = Gamma()) #Inverse
+suppressWarnings({
+  g_model1 <- glm(y~x, data=train, family = binomial())#Logistic 1
+  g_model2 <- glm(y~x, data=train, family = quasibinomial()) #Logistic 2
+  g_model3 <- glm(y~x, data=train, family = gaussian()) # Identity
+  g_model4 <- glm(y~x, data=train, family = poisson()) #log
+  g_model5 <- glm(y~x, data=train, family = inverse.gaussian()) #1/mu^2
+  g_model6 <- glm(y~x, data=train, family = Gamma()) #Inverse
+})
 summary(g_model1)
 summary(g_model2)
 summary(g_model3)
@@ -160,5 +162,3 @@ mod <- lm(international_students_max ~ tuition_kaggle + world_rank_arwu + size_q
 For modeling, we are interested in what predicts number of international students in US universities. We picked six predictor variables initially: out-of-state tuition, arwu world ranking, campus size, public vs private, selectvity, and city population. We fittted bivariate linear models for each of the six potential predictors and found that four of them (out-of-state tuition, arwu world ranking, campus size, and public vs private) significantly predict our outcome. We then put the four predictors in a multivariate linear model and got the below results. After controlling for one another, arwu world ranking and campus size remain to be significant predictor for international population. More specifically, after controlling for out-of-state tuition, campus size, public vs private, selectvity, and city population, there is still a significant relationship between world ranking and number of international students in that the higher ranking the university is, the more international studnets it has. In addition, after controlling for out-of-state tuition, arwu world ranking, public vs private, selectvity, and city population, there is still a significant relationship between campus size (Small, Median, Large, and Extra Large) and number of international students. The larger the campus is, the more international students it has.
 
 Note that one challenge with the current model is that the number of observations decreased greatly due to missing values.
-
-blogdown::serve_site()
