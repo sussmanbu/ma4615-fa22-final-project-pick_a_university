@@ -1,0 +1,163 @@
+---
+title: Data analysis 2 - Modeling Fitting
+author: Linshen Cai, William Fang, Yawei Huang, Zeshi Wu, Eunyeong Park
+date: '2022-11-04'
+slug: []
+categories: []
+tags: []
+description: ~
+toc: yes
+authors: []
+series: []
+lastmod: '2022-11-04T11:28:32-04:00'
+featuredVideo: ~
+featuredImage: ~
+---
+
+ EDA 1:
+
+```{r 1}
+library(tidyverse)
+library(modelr)
+library(caTools)
+
+#Import Data
+cleaned_data <- read.csv(file = "full_data_leftjoinCarnegie_clean2.csv")
+processed_data1 <- na.omit(data.frame(y = cleaned_data$international_students_natlib, x= cleaned_data$alumni_arwu + cleaned_data$pub_arwu) )
+split <- sample.split(processed_data1, SplitRatio = 0.7)
+dt = sort(sample(nrow(processed_data1), nrow(processed_data1)*.7))
+train<-processed_data1[dt,]
+test<-processed_data1[-dt,]
+
+#Comparing different model 
+linear_model <- lm(y~x, data=train)
+summary(linear_model)
+ggplot(test,aes(x, y)) +
+  geom_point() +
+  geom_smooth(method="lm", se=TRUE, color="turquoise4") +
+  theme_minimal() +
+  labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Linear Regression Plot") +
+  theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
+g_model1 <- glm(y~x, data=train, family = binomial()) #Logistic 1
+g_model2 <- glm(y~x, data=train, family = quasibinomial()) #Logistic 2
+g_model3 <- glm(y~x, data=train, family = gaussian()) # Identity
+g_model4 <- glm(y~x, data=train, family = poisson()) #log
+g_model5 <- glm(y~x, data=train, family = inverse.gaussian()) #1/mu^2
+g_model6 <- glm(y~x, data=train, family = Gamma()) #Inverse
+summary(g_model1)
+summary(g_model2)
+summary(g_model3)
+summary(g_model4)
+summary(g_model5)
+summary(g_model6)
+y_predict1 <- data.frame(x = test$x, y =predict(g_model1, test, type = "response"))
+y_predict2 <- data.frame(x = test$x, y =predict(g_model2, test, type = "response"))
+y_predict3 <- data.frame(x = test$x, y =predict(g_model3, test, type = "response"))
+y_predict4 <- data.frame(x = test$x, y =predict(g_model4, test, type = "response"))
+y_predict5 <- data.frame(x = test$x, y =predict(g_model5, test, type = "response"))
+y_predict6 <- data.frame(x = test$x, y =predict(g_model6, test, type = "response"))
+#Plotting graphs
+g1<- ggplot(test, aes(x, y)) + geom_point() + geom_smooth(data = y_predict1,  se=FALSE, color="red4", alpha = 0.1)+
+  theme_minimal() +
+  labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Logistic Regression") +
+  theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
+g2<- ggplot(test, aes(x, y)) + geom_point() + geom_smooth(data = y_predict2,  se=FALSE, color="orange4", alpha = 0.1)+
+  theme_minimal() +
+  labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Quasipolynomial Regression") +
+  theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
+g3<- ggplot(test, aes(x, y)) + geom_point() + geom_smooth(data = y_predict3,  se=FALSE, color="yellow4", alpha = 0.1)+
+  theme_minimal() +
+  labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Gaussian Regression (link: Identity Function) ") +
+  theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
+g4<- ggplot(test, aes(x, y)) + geom_point() + geom_smooth(data = y_predict4,  se=FALSE, color="green4", alpha = 0.1)+
+  theme_minimal() +
+  labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Poisson Regression (link: Log Function)") +
+  theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
+g5<- ggplot(test, aes(x, y)) + geom_point() + geom_smooth(data = y_predict5,  se=FALSE, color="blue4", alpha = 0.1)+
+  theme_minimal() +
+  labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Inverse Gaussian Regression (link: 1/mu -squared Function)") +
+  theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
+g6<- ggplot(test, aes(x, y)) + geom_point() +  geom_smooth(data = y_predict6,  se=FALSE, color="purple4", alpha = 0.1)+
+  theme_minimal() +
+  labs(x="Alumni and Publications factor (additive)", y="International Student Proportions", title="Gamma Regression (link: Inverse Function)") +
+  theme(plot.title = element_text(hjust=0.5, size=20, face="bold"))
+g1
+g5
+
+```
+
+
+This EDA concerns the relationship between dependent variable “International Student Proportions” and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We shuffled and split the corresponding data into respective 70% and 30% portions for training and test data. Then, we applied vanilla linear regression (lm) and 6 types of glm regression (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma); they yield different results about International student proportion and the indicator, negative correlation and positive correlation respectively. All models are very similar because they use the generalized linear model formulation (log(E[Y|x]) where Y is the distribution output and the vector x captures the data points. Since the 6 GLMs have 6 different distributions and we use the same data points, it leads to varying penalties and similar best line of fit. 
+
+While it is difficult to compare the visualization to find the best model, we consider AIC and fisher score. AIC (Akaike information criterion) estimates the prediction error and model’s relative quality with formula AIC = 2K – 2ln(L), where K is the number of model parameters and ln(L) log likelihood of the model. Since the model with the lowest AIC provides the best fit, we select the Inverse Gaussian regression model with the link function 1/mu^2 and AIC of -140.97, which is around 2 units better than Gamma Regression model. Next consider that, Fisher Score is the gradient of the log likelihood of the model, which is used to solve Maximum Likelihood Estimation (MLE), with formula, u(θ)=∇_θ logp(x|θ). R’s glm method by default uses the iterative “Newton-Raphson algorithm” to estimate the model fit and  “number of fisher scoring iterations” corresponds to which iteration leads to the convergence. The greatest number iterations is 6. At the end,we pick 3 models which are linear, logistic, and the inverse gaussian models. 
+
+Note:_θ just denotes θ as the parameter
+ 
+ 
+EDA 2:
+
+```{r 2}
+# Read in data and some basic cleaning
+data_cleaned <- read.csv("full_data_leftjoinCarnegie_clean2.csv")
+y = data_cleaned$international_students_natlib
+x1 = data_cleaned$n_s_arwu
+x2 = data_cleaned$stu_facl_ratio_qs
+#linear regression
+linearRegression = lm(x1~x2)
+summary(linearRegression)
+#Plotting
+data_cleaned %>% ggplot(aes(x = n_s_arwu, y= stu_facl_ratio_qs)) +
+  geom_point()+
+  geom_smooth(method = "lm",se = FALSE) +
+  labs(x = "Papers published in Nature and Science",
+       y = "Student-Faculty Ratio")
+```
+
+
+The EDA concerns the linear regression relationship between response variable “Papers published in Nature and Science” and predictor variable “Student Faculty Ratio”.There appears to be a general downward trend in relative student-faculty ratio as the number of paper published rises. The graph mainly shows the negative linear relation with slope coefficient -1.78 and intercept 43.21. The parameter estimate was 43.71with  91degrees of freedom and a p-value of 7.506e-08. Since this p-value is more than 0.05, we can’t reject the null hypothesis and conclude that there is not a significant linear association between the number of papers and Student Faculty Ratio. 
+
+Modeling:
+
+```{r}
+
+# Read in data and some basic cleaning
+fulldata <- read_csv("full_data_leftjoinCarnegie_clean2.csv")
+fulldata <- fulldata %>% 
+  mutate(type1_all = ifelse(type1_all==3, 2, type1_all)) %>% 
+  mutate(type1_all=factor(type1_all))
+## multivariate linear regression
+mod <- lm(international_students_max ~ 
+            tuition_kaggle+
+            world_rank_arwu+
+            size_qs+
+            type1_all, 
+          data = fulldata)
+summary(mod)
+## Plotting
+fulldata %>%
+  mutate(tuition_kaggle = mean(tuition_kaggle, na.rm = TRUE)) %>% 
+  add_predictions(mod) %>% 
+  ggplot(aes(x=world_rank_arwu)) +
+  geom_point(aes(y = international_students_max,
+                 color=size_qs))+
+  geom_line(aes(y = pred, 
+                color=size_qs, 
+                linetype = type1_all), 
+            size = 1)+
+  labs(
+       x="ARWU World Ranking",
+       y="Number of international students",
+       color="campus size",
+       linetype = "public vs private")+
+  theme_minimal()
+  
+```
+
+
+Codes: 
+mod <- lm(international_students_max ~ tuition_kaggle + world_rank_arwu + size_qs + factor(type1_all), data = fulldata)
+
+For modeling, we are interested in what predicts number of international students in US universities. We picked six predictor variables initially: out-of-state tuition, arwu world ranking, campus size, public vs private, selectvity, and city population. We fittted bivariate linear models for each of the six potential predictors and found that four of them (out-of-state tuition, arwu world ranking, campus size, and public vs private) significantly predict our outcome. We then put the four predictors in a multivariate linear model and got the below results. After controlling for one another, arwu world ranking and campus size remain to be significant predictor for international population. More specifically, after controlling for out-of-state tuition, campus size, public vs private, selectvity, and city population, there is still a significant relationship between world ranking and number of international students in that the higher ranking the university is, the more international studnets it has. In addition, after controlling for out-of-state tuition, arwu world ranking, public vs private, selectvity, and city population, there is still a significant relationship between campus size (Small, Median, Large, and Extra Large) and number of international students. The larger the campus is, the more international students it has.
+
+Note that one challenge with the current model is that the number of observations decreased greatly due to missing values.
+
