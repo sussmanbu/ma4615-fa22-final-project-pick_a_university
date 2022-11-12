@@ -1,0 +1,79 @@
+---
+title: Dataset Description
+author: Zeshi Wu, William Fang, Yawei Huang, Eunyeong Park, Linshen Cai
+date: '2022-11-11'
+slug: []
+categories: []
+tags: ['blog post 5']
+description: ~
+toc: yes
+authors: []
+series: []
+lastmod: '2022-11-11T09:47:38-05:00'
+featuredVideo: ~
+featuredImage: ~
+---
+
+## Important Datasets
+
+### ARWU Dataset (Academic Ranking of World Universities) 
+It captures the world ranking of universities that have any Nobel Laureates, Fields Medalists, Highly Cited Researchers, or papers published in Nature or Science with a numerical score; it ranges from 0.0 to 100.0 and is computed with the formula, ARWU_score = 0.1*(Alumni + PCP) + 0.2*(Award + HiCi + N&S + PUB) with the following encodings:
+
+Alumni - Alumni of an institution winning Nobel Prizes and Fields Medals
+
+Award - Staff of an institution winning Nobel Prizes and Fields Medals
+
+HiCi - Highly Cited Researchers
+
+N&S - Papers published in Nature and Science*
+
+PUB - Papers indexed in Science Citation Index-Expanded and Social Science Citation Index
+
+PCP - Per capita academic performance of an institution
+
+### QS World University Ranking Dataset from Kaggle(QS world university ranking is an annual publication of global university rankings)
+It includes following 15 features:
+
+1. university - the name of the university
+2. year - year of ranking
+3. rank_display - rank is given to the university
+4. score - score of the university based on the six key metrics mentioned above
+5. link - link to the university profile page on the QS website
+6. country - a country in which the university is located
+7. city - the city in which the university is located
+8. region - the continent in which the university is located
+9. logo - link to the logo of the university
+10. type - the type of university (public or private)
+11. research_output - the quality of research at the university
+12. student-faculty ratio - number of students assigned per faculty
+13. international_students - number of international students enrolled at the university
+14. size - the size of the university in terms of area
+15. faculty_count - number of faculty or academic staff at the university
+
+### Tuition Dataset from Kaggle
+It includes following three features:
+
+1. University name
+2. Out-of-state tuition
+3. Number of students attending undergraduate programs
+
+## How do we clean and combine these datasets?
+
+&emsp;For the ARWU Dataset, as we can see from our last blog’s modeling, we compared the factors of Alumni and PUB for linear, logistic, and inverse gaussian regressions to represent research output with the university rankings. We selected these two variables because they have similar mean and range values. This dataset was already merged into our cleaned dataset. There are several hundred missing values when performing left join because of the 8 other datasets; the workaround is either manually imputing or removing these features for our future analysis. 
+
+<br>
+
+&emsp;For the QS World University Ranking Dataset, we selected International_students, world_rank, faculty_count, Student-faculty ratio, research_output, Size and Score as our final features for this dataset. We also anticipated that the features above would possibly correlate strongly with the ranking and the number of international students.
+
+<br>
+
+&emsp;For the Tuition Dataset, we think it can be one of the most important datasets in the final dataset to study our initial problem which is the relationship between the international student population and variables.When doing exploratory data analysis in blog post 3, we merge and clean the database including tuition from Kaggle, and national ranking from ARWU.
+We also divide universities into two parts. One part is based on public universities and the other is based on a private university. Why we do this because, as common sense, tuition at public universities are usually lower than at private school. The result of the relationship was shown in blog post 3.
+
+## Challenge
+
+&emsp;As discussed in our blog post 2, our dataset comes from nine different sources, because we were not able to find a single large dataset that contains rich information about the international student population in US universities as well as relevant information about those US universities. Our initial choice of variables to look for was guided by the report “Factors Influencing International Student Enrollment Growth and Decline,” which listed 18 factors. We were not able to find all variables mentioned in the report which had downloadable data points, but we tried to find as many as possible.
+
+<br>
+
+&emsp;As a result, there was a lot of merging and cleaning work to do. We merged the datasets based on the university name, city, and state. A detailed description of the merging and basic cleaning can be found in our blog post 2 and blog post 3. A major challenge of using this combined dataset for modeling is that our sample size has been greatly shrunk as a result of listwise deletion due to a lot of missing values, which we are going to think about how to deal with at this point. In addition, we may just not use certain “not essential” variables in our modeling. Another challenge for data tidying is that some variables (especially those that are from the Carnegie classification dataset)  have too many categories and we need to collapse some. 
