@@ -1,0 +1,162 @@
+---
+title: Interactive Ideas
+author: ''
+date: '2022-11-18'
+slug: []
+categories: []
+tags: []
+description: ~
+toc: yes
+authors: []
+series: []
+lastmod: '2022-11-18T09:03:07-05:00'
+featuredVideo: ~
+featuredImage: ~
+---
+
+
+<div id="TOC">
+
+</div>
+
+<p>In this post, we brainstormed 10 potential ideas for interactive. We will keeping thinking and discussing these ideas. In the end, some of these ideas might be combined together to serve as the basis of our interactive.</p>
+<div id="idea-1" class="section level2">
+<h2>Idea 1</h2>
+<div id="global" class="section level3">
+<h3>Global:</h3>
+<p>A US map that shows the average population of the international students of each state (large circle: large population; small circle: small population)</p>
+</div>
+<div id="interactive" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be “select box” of the selectivity category of each university; output will be a table (function: tableOutput) displaying key data points about the universities which meet the selected selectivity condition, in ascending order of the world university rank.</p>
+</div>
+</div>
+<div id="idea-2" class="section level2">
+<h2>Idea 2</h2>
+<div id="global-1" class="section level3">
+<h3>Global:</h3>
+<p>A US map that shows a pin (or point) of all US universities.</p>
+</div>
+<div id="interactive-1" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be “Check box group” of key features (data points) of universities such as tuition and research output; output will be a table (function: tableOutput) displaying all data points about the universities which meet the selected selectivity condition, in ascending order of the world university rank.</p>
+</div>
+</div>
+<div id="idea-3" class="section level2">
+<h2>Idea 3</h2>
+<div id="global-2" class="section level3">
+<h3>Global:</h3>
+<p>A US map that displays average world rank scores of universities in each state in our dataset (lighter shade indicates lower ranking scores) to demonstrate the quality of universities in US states.</p>
+</div>
+<div id="interactive-2" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be mouse click, which means people can click on the state they want to see (or they can also just check the state in “check box”); The first output will be a table displaying universities’ information in that state including university world rank and related scores, selectivity, etc. Then, there is another input after selecting “state” which will be the “university name” (text input). The output will be (1) a state’s map showing the location of the university (city) and (2) an update of the table from the first output (from showing multiple universities to showing only the one university selected).</p>
+<p>Example Source: <a href="https://rstudio.github.io/crosstalk/" class="uri">https://rstudio.github.io/crosstalk/</a></p>
+</div>
+</div>
+<div id="idea-4" class="section level2">
+<h2>Idea 4</h2>
+<div id="global-3" class="section level3">
+<h3>Global:</h3>
+<p>A US map that displays average out-of-state tuition fee in each state categorized by public and private included by our dataset.</p>
+</div>
+<div id="interactive-3" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be the range of tuition fee like per year (slider range); output will have two parts. The first output will be a table displaying the tuition fee of the university which meets the range. Other information including international student population and student-faculty ratio will also be displayed. For the second output, there will be two plot-line graphs (plotsoutput, fit a model), the first one is the relationship between tuition fees and the number of international students in the tuition range chosen. The second is the relationship between tuition and faculty-student ratio in the tuition range chosen. In this way, people can see the relationship between tuition and these two variables. According to our previous research, tuition fees and teacher-student ratio are directly proportional to the number of international students.</p>
+</div>
+</div>
+<div id="idea-5" class="section level2">
+<h2>Idea 5</h2>
+<div id="global-4" class="section level3">
+<h3>Global:</h3>
+<p>A geographic heat map with relevant universities’ information (i.e. name, ranking publication, student faculty ratio, city, international student population, tuition).</p>
+</div>
+<div id="interactive-4" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be mouse based. Zooms into colleges for state(s), or US regions (the Northeast, Southwest, West). Output will be a display of relevant infomation if mouse hovers on top/clicks the university.</p>
+<p>Resources:</p>
+<p><a href="https://shiny.rstudio.com/gallery/plot-interaction-zoom.html" class="uri">https://shiny.rstudio.com/gallery/plot-interaction-zoom.html</a></p>
+<p><a href="https://search.r-project.org/CRAN/refmans/shinyjs/html/onevent.html" class="uri">https://search.r-project.org/CRAN/refmans/shinyjs/html/onevent.html</a></p>
+</div>
+</div>
+<div id="idea-6" class="section level2">
+<h2>Idea 6</h2>
+<div id="global-5" class="section level3">
+<h3>Global:</h3>
+<p>Geographic heat map or general data.</p>
+</div>
+<div id="interactive-5" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be select a subset of data from tick boxes for categorical variables (size, location type, public/private) and query a lower or upper bound for numerical variables (international student population, tuition, ranking publication). For example, based on international student percentage or top 100 rankings of the selected region. Output will be…?</p>
+<p>Resources:</p>
+<p>Tickbox: <a href="https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html" class="uri">https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html</a></p>
+<p>Numeric Input: <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/numericInput.html" class="uri">https://shiny.rstudio.com/reference/shiny/1.6.0/numericInput.html</a></p>
+</div>
+</div>
+<div id="idea-7" class="section level2">
+<h2>Idea 7</h2>
+<div id="global-6" class="section level3">
+<h3>Global:</h3>
+<p>A US map that displays the number of universities included by our dataset (the lighter the shade, the fewer universities our dataset contains for that state).</p>
+</div>
+<div id="interactive-6" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be “slider range” of the number of international students; output will be a table (function: tableOutput) displaying several important data points (such as private/public, city, state, city/suburb/town, out-of-state tuition, student-faculty ratio, etc.) of the universities which meet the condition set in the slider.</p>
+</div>
+</div>
+<div id="idea-8" class="section level2">
+<h2>Idea 8</h2>
+<div id="global-7" class="section level3">
+<h3>Global:</h3>
+<p>A US map that displays the number of universities included by our dataset (the lighter the shade, the fewer universities our dataset contains for that state).</p>
+</div>
+<div id="interactive-7" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be “select box” of the world ranking of the universities; output will have two parts. The first part is a bar plot (function: plotOutput) of the number of international students at the universities which meet the ranking condition. The second part is an interactive table (function: dataTableOutput) displaying several important data points (such as private/public, city, state, city/suburb/town, out-of-state tuition, student-faculty ratio, etc.) of the universities which meet the condition set in the slider.</p>
+</div>
+</div>
+<div id="idea-9" class="section level2">
+<h2>Idea 9</h2>
+<div id="global-8" class="section level3">
+<h3>Global:</h3>
+<p>A US geographical map with 50 states that shows every universities we have for each state, the larger the international student population, the deeper the color of the states.</p>
+</div>
+<div id="interactive-8" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be mouse based; Output will be a list of the universities when we click the specific state from the map. Then, we can also click the universities from the list. In this case, the output will be an interactive table. The table will display the rank, international student percentage and some data variables we consider significant (based on analysis).</p>
+</div>
+</div>
+<div id="idea-10" class="section level2">
+<h2>Idea 10</h2>
+<div id="global-9" class="section level3">
+<h3>Global:</h3>
+<p>A polar graph that displays the rank of current universities we have in our dataset. Each university will be a data point of the polar graph.</p>
+</div>
+<div id="interactive-9" class="section level3">
+<h3>Interactive:</h3>
+<p>Input will be mouse based. Output will be a table displaying the international student percentage, state, and the important datapoints of each university when we click the data point of the polar graph. We also use the Zoom in function that zoom in the data point of specific US universities rank area.</p>
+<p>Zoom in Feature: <a href="https://github.com/rstudio/shiny-examples/blob/main/105-plot-interaction-zoom/app.R" class="uri">https://github.com/rstudio/shiny-examples/blob/main/105-plot-interaction-zoom/app.R</a></p>
+</div>
+</div>
+<div id="way-1-of-combining-ideas-idea-1-4-5-8-9" class="section level2">
+<h2>Way 1 of combining ideas (idea 1, 4, 5, 8, &amp; 9)</h2>
+<div id="global-10" class="section level3">
+<h3>Global:</h3>
+<p>A US map that displays the number of universities included by our dataset (the lighter the shade, the fewer universities our dataset contains for that state) and the average population of the international students of each state (large circle: large population; small circle: small population).</p>
+</div>
+<div id="interactive-10" class="section level3">
+<h3>Interactive:</h3>
+<div id="first-level" class="section level4">
+<h4>First level:</h4>
+<p>Input will be mouse based. Zooms into colleges for state(s). Output will be an interactive table (function: dataTableOutput) displaying several important data points (such as private/public, city, state, city/suburb/town, out-of-state tuition, student-faculty ratio, etc.) of the universities which located in the state that the mouse hovers on top. If the mouse is not on the map, then the table displays all universities in our dataset, ordered by descending order of world rank.</p>
+</div>
+<div id="second-level" class="section level4">
+<h4>Second level:</h4>
+<p>Input will be “select box” of the world ranking of the universities (i.e., 1-20, 20-50, 50-100, 101-50, etc.); output will have two parts. The first part is a bar plot (function: plotOutput) of the number of international students at the universities which meet the ranking condition, colored by selectivity. The second part is an updated (filtered) table of first level.</p>
+</div>
+<div id="third-level" class="section level4">
+<h4>Third level:</h4>
+<p>The third level of interactive will be related to modeling. Input will be one of the predictor variables. Output will be the R output and a dot plot (if selecting categorical variable such as selectivity, campus size, world rank) or a line plot (if showing continuous variables such as tuition fee or student-teacher ratio) showing the relationship between the selected predictor and the international student population within our dataset. We can also let the user select one continuous plus one categorical variable so that we can incorporate group_by function or interactive effect.</p>
+</div>
+</div>
+</div>
