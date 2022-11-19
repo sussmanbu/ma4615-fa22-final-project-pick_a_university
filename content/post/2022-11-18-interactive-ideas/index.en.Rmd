@@ -14,7 +14,7 @@ featuredVideo: ~
 featuredImage: ~
 ---
 
-In this post, we brainstormed 10 potential ideas for interactive. We will keeping thinking and discussing these ideas. In the end, some of these ideas might be combined together to serve as the basis of our interactive. 
+In this post, we first reported the 10 potential ideas for interactive that our team brainstormed. Then, we discussed one "full" picture on interactive which combined a few individual ideas together. 
 
 ## Idea 1
 
@@ -60,7 +60,7 @@ Input will be the range of tuition fee like per year (slider range); output will
 A geographic heat map with relevant universities’ information (i.e. name, ranking publication, student faculty ratio, city, international student population, tuition).
 
 ### Interactive:
-Input will be mouse based. Zooms into colleges for state(s), or US regions (the Northeast, Southwest, West). Output will be a display of relevant infomation if mouse hovers on top/clicks the university.
+Input will be mouse based. Zooms into colleges for state(s), or US regions (the Northeast, Southwest, West) through mouse hovering. Output will be a display of relevant infomation in the heatmaps if mouse hovers on top/clicks the university.
 
 Resources:
 
@@ -75,7 +75,7 @@ https://search.r-project.org/CRAN/refmans/shinyjs/html/onevent.html
 Geographic heat map or general data.
 
 ### Interactive:
-Input will be select a subset of data from tick boxes for categorical variables  (size, location type, public/private) and query a lower or upper bound for numerical variables (international student population, tuition, ranking publication). For example, based on international student percentage or top 100 rankings of the selected region. Output will be...?
+Input will be select a subset of data from tick boxes for categorical variables  (size, location type, public/private) and query a lower or upper bound for numerical variables (international student population, tuition, ranking publication). For example, based on international student percentage or top 100 rankings of the selected region. Output will be heatmaps with points of  universities.
 
 
 Resources:
@@ -137,7 +137,7 @@ Input will be mouse based. Zooms into colleges for state(s). Output will be an i
 Input will be “select box” of the world ranking of the universities (i.e., 1-20, 20-50, 50-100, 101-50, etc.); output will have two parts. The first part is a bar plot (function: plotOutput) of the number of international students at the universities which meet the ranking condition, colored by selectivity. The second part is an updated (filtered) table of first level.
 
 #### Third level:
-The third level of interactive will be related to modeling. Input will be one of the predictor variables. Output will be the R output and a dot plot (if selecting categorical variable such as selectivity, campus size, world rank) or a line plot (if showing continuous variables such as tuition fee or student-teacher ratio) showing the relationship between the selected predictor and the international student population within our dataset. We can also let the user select one continuous plus one categorical variable so that we can incorporate group_by function or interactive effect.
+The third level of interactive will be related to modeling. Input will be one of the predictor variables. Output will be the R output and a dot plot (if selecting categorical variable such as selectivity, campus size, world rank) or a line plot (if showing continuous variables such as tuition fee or student-teacher ratio) showing the relationship between the selected predictor and the international student population within our dataset. We can also let the user select one continuous plus one categorical variable so that we can incorporate the "group_by" function or interaction in plotting/modeling.
 
  
 
