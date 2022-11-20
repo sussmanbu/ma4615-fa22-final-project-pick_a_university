@@ -1,0 +1,755 @@
+﻿City,State,Population Density (Persons/Square Mile),2016 Population,Land Area (Square Miles)
+New York,NY,"28,211","8,537,673",303
+Los Angeles,CA,"8,484","3,976,322",469
+Chicago,IL,"11,883","2,704,958",228
+Houston,TX,"3,842","2,303,482",600
+Phoenix,AZ,"3,126","1,615,017",517
+Philadelphia,PA,"11,692","1,567,872",134
+San Antonio,TX,"3,238","1,492,510",461
+San Diego,CA,"4,326","1,406,630",325
+Dallas,TX,"3,870","1,317,929",341
+San Jose,CA,"5,808","1,025,350",177
+Austin,TX,"3,182","947,890",298
+Jacksonville,FL,"1,179","880,619",747
+San Francisco,CA,"18,581","870,887",47
+Columbus,OH,"3,960","860,090",217
+Indianapolis,IN,"2,366","855,164",361
+Fort Worth,TX,"2,513","854,113",340
+Charlotte,NC,"2,829","842,051",298
+Seattle,WA,"8,391","704,352",84
+Denver,CO,"4,530","693,060",153
+El Paso,TX,"2,676","683,080",255
+Washington,DC,"11,158","681,170",61
+Boston,MA,"13,943","673,184",48
+Detroit,MI,"4,849","672,795",139
+Nashville,TN,"1,390","660,388",475
+Memphis,TN,"2,072","652,717",315
+Portland,OR,"4,795","639,863",133
+Oklahoma City,OK,"1,053","638,367",606
+Las Vegas,NV,"4,660","632,912",136
+Louisville,KY,"1,895","616,261",325
+Baltimore,MD,"7,594","614,664",81
+Milwaukee,WI,"6,191","595,047",96
+Albuquerque,NM,"2,979","559,277",188
+Tucson,AZ,"2,341","530,706",227
+Fresno,CA,"4,663","522,053",112
+Sacramento,CA,"5,058","495,234",98
+Mesa,AZ,"3,551","484,587",136
+Kansas City,MO,"1,529","481,420",315
+Atlanta,GA,"3,549","472,522",133
+Long Beach,CA,"9,348","470,130",50
+Colorado Springs,CO,"2,391","465,101",195
+Raleigh,NC,"3,211","458,880",143
+Miami,FL,"12,645","453,579",36
+Virginia Beach,VA,"1,818","452,602",249
+Omaha,NE,"3,517","446,970",127
+Oakland,CA,"7,528","420,005",56
+Minneapolis,MN,"7,664","413,651",54
+Tulsa,OK,"2,049","403,090",197
+Arlington,TX,"4,096","392,772",96
+New Orleans,LA,"2,311","391,495",169
+Wichita,KS,"2,448","389,902",159
+Cleveland,OH,"4,965","385,809",78
+Tampa,FL,"3,326","377,165",113
+Bakersfield,CA,"2,648","376,380",142
+Aurora,CO,"2,338","361,710",155
+Urban Honolulu,HI,"5,813","351,792",61
+Anaheim,CA,"7,043","351,043",50
+Santa Ana,CA,"12,256","334,217",27
+Corpus Christi,TX,"2,028","325,733",161
+Riverside,CA,"4,002","324,722",81
+Lexington,KY,"1,123","318,449",284
+St. Louis,MO,"5,030","311,404",62
+Stockton,CA,"4,979","307,072",62
+Pittsburgh,PA,"5,484","303,625",55
+St. Paul,MN,"5,818","302,398",52
+Cincinnati,OH,"3,834","298,800",78
+Anchorage,AK,175,"298,192","1,705"
+Henderson,NV,"2,719","292,969",108
+Greensboro,NC,"2,269","287,027",127
+Plano,TX,"3,996","286,057",72
+Newark,NJ,"11,648","281,764",24
+Lincoln,NE,"3,146","280,364",89
+Toledo,OH,"3,452","278,508",81
+Orlando,FL,"2,707","277,173",102
+Chula Vista,CA,"5,383","267,172",50
+Irvine,CA,"4,025","266,122",66
+Fort Wayne,IN,"2,391","264,488",111
+Jersey City,NJ,"17,860","264,152",15
+Durham,NC,"2,450","263,016",107
+St. Petersburg,FL,"4,227","260,999",62
+Laredo,TX,"2,892","257,156",89
+Buffalo,NY,"6,362","256,902",40
+Madison,WI,"3,289","252,551",77
+Lubbock,TX,"2,063","252,506",122
+Chandler,AZ,"3,842","247,477",64
+Scottsdale,AZ,"1,341","246,645",184
+Glendale,AZ,"4,100","245,895",60
+Reno,NV,"2,381","245,255",103
+Norfolk,VA,"4,529","245,115",54
+Winston-Salem,NC,"1,829","242,203",132
+North Las Vegas,NV,"2,355","238,702",101
+Irving,TX,"3,555","238,289",67
+Chesapeake,VA,698,"237,940",341
+Gilbert,AZ,"3,489","237,133",68
+Hialeah,FL,"11,020","236,387",21
+Garland,TX,"4,116","234,943",57
+Fremont,CA,"3,010","233,136",77
+Baton Rouge,LA,"2,959","227,715",77
+Richmond,VA,"3,731","223,170",60
+Boise City,ID,"2,812","223,154",79
+San Bernardino,CA,"3,653","216,239",59
+Spokane,WA,"3,645","215,973",59
+Des Moines,IA,"2,664","215,472",81
+Modesto,CA,"5,755","212,175",37
+Birmingham,AL,"1,452","212,157",146
+Tacoma,WA,"4,249","211,277",50
+Fontana,CA,"4,941","209,665",42
+Rochester,NY,"5,838","208,880",36
+Oxnard,CA,"7,732","207,906",27
+Moreno Valley,CA,"4,008","205,499",51
+Fayetteville,NC,"1,404","204,759",146
+Aurora,IL,"4,475","201,110",45
+Glendale,CA,"6,595","200,831",30
+Yonkers,NY,"11,150","200,807",18
+Huntington Beach,CA,"7,501","200,652",27
+Montgomery,AL,"1,254","200,022",160
+Amarillo,TX,"2,006","199,582",99
+Little Rock,AR,"1,666","198,541",119
+Akron,OH,"3,186","197,633",62
+Columbus,GA,913,"197,485",216
+Augusta-Richmond County,GA,652,"197,081",302
+Grand Rapids,MI,"4,424","196,445",44
+Shreveport,LA,"1,850","194,920",105
+Salt Lake City,UT,"1,744","193,744",111
+Huntsville,AL,924,"193,079",209
+Mobile,AL,"1,387","192,904",139
+Tallahassee,FL,"1,904","190,894",100
+Grand Prairie,TX,"2,645","190,682",72
+Overland Park,KS,"2,525","188,966",75
+Knoxville,TN,"1,890","186,239",99
+Port St. Lucie,FL,"1,625","185,132",114
+Worcester,MA,"4,937","184,508",37
+Brownsville,TX,"1,389","183,823",132
+Tempe,AZ,"4,570","182,498",40
+Santa Clarita,CA,"3,452","181,972",53
+Newport News,VA,"2,646","181,825",69
+Cape Coral,FL,"1,702","179,804",106
+Providence,RI,"9,740","179,219",18
+Fort Lauderdale,FL,"5,141","178,752",35
+Chattanooga,TN,"1,295","177,571",137
+Rancho Cucamonga,CA,"4,430","176,534",40
+Oceanside,CA,"4,256","175,464",41
+Santa Rosa,CA,"4,242","175,155",41
+Garden Grove,CA,"9,747","174,858",18
+Vancouver,WA,"3,763","174,826",46
+Sioux Falls,SD,"2,390","174,360",73
+Ontario,CA,"3,468","173,212",50
+McKinney,TX,"2,770","172,298",62
+Elk Grove,CA,"4,023","169,743",42
+Jackson,MS,"1,523","169,148",111
+Pembroke Pines,FL,"5,090","168,587",33
+Salem,OR,"3,495","167,419",48
+Springfield,MO,"2,047","167,319",82
+Corona,CA,"4,295","166,785",39
+Eugene,OR,"3,810","166,575",44
+Fort Collins,CO,"3,025","164,207",54
+Peoria,AZ,941,"164,173",174
+Frisco,TX,"2,648","163,656",62
+Cary,NC,"2,987","162,320",54
+Lancaster,CA,"1,698","160,106",94
+Hayward,CA,"3,507","158,937",45
+Palmdale,CA,"1,485","157,356",106
+Salinas,CA,"6,782","157,218",23
+Alexandria,VA,"10,367","155,810",15
+Lakewood,CO,"3,601","154,393",43
+Springfield,MA,"4,834","154,074",32
+Pasadena,TX,"3,586","153,351",43
+Sunnyvale,CA,"6,947","152,771",22
+Pomona,CA,"6,645","152,494",23
+Hollywood,FL,"5,553","151,998",27
+Kansas City,KS,"1,216","151,709",125
+Escondido,CA,"4,119","151,613",37
+Clarksville,TN,"1,540","150,287",98
+Joliet,IL,"2,387","148,262",62
+Rockford,IL,"2,417","147,651",61
+Torrance,CA,"7,187","147,195",20
+Naperville,IL,"3,795","147,122",39
+Paterson,NJ,"17,438","147,000",8
+Savannah,GA,"1,423","146,763",103
+Bridgeport,CT,"9,138","145,936",16
+Mesquite,TX,"3,123","143,736",46
+Killeen,TX,"2,676","143,400",54
+Syracuse,NY,"5,726","143,378",25
+McAllen,TX,"2,942","142,212",48
+Pasadena,CA,"6,185","142,059",23
+Bellevue,WA,"4,423","141,400",32
+Fullerton,CA,"6,296","140,721",22
+Orange,CA,"5,665","140,504",25
+Dayton,OH,"2,525","140,489",56
+Miramar,FL,"4,690","138,449",30
+Thornton,CO,"3,924","136,703",35
+West Valley City,UT,"3,841","136,574",36
+Olathe,KS,"2,271","135,473",60
+Hampton,VA,"2,634","135,410",51
+Warren,MI,"3,930","135,125",34
+Midland,TX,"1,868","134,610",72
+Waco,TX,"1,511","134,432",89
+Charleston,SC,"1,233","134,385",109
+Columbia,SC,"1,016","134,309",132
+Denton,TX,"1,521","133,808",88
+Carrollton,TX,"3,674","133,351",36
+Surprise,AZ,"1,255","132,677",106
+Roseville,CA,"3,663","132,671",36
+Sterling Heights,MI,"3,628","132,427",37
+Murfreesboro,TN,"2,384","131,947",55
+Gainesville,FL,"2,147","131,591",61
+Cedar Rapids,IA,"1,852","131,127",71
+Visalia,CA,"3,616","131,074",36
+Coral Springs,FL,"5,467","130,059",24
+New Haven,CT,"6,956","129,934",19
+Stamford,CT,"3,430","129,113",38
+Thousand Oaks,CA,"2,342","128,888",55
+Concord,CA,"4,214","128,726",31
+Elizabeth,NJ,"10,442","128,640",12
+Lafayette,LA,"2,592","127,626",49
+Kent,WA,"4,454","127,514",29
+Topeka,KS,"2,107","126,808",60
+Simi Valley,CA,"3,045","126,327",41
+Santa Clara,CA,"6,841","125,948",18
+Athens-Clarke County,GA,"1,060","123,371",116
+Hartford,CT,"7,091","123,243",17
+Victorville,CA,"1,671","122,265",73
+Abilene,TX,"1,145","122,225",107
+Norman,OK,683,"122,180",179
+Vallejo,CA,"3,955","121,299",31
+Berkeley,CA,"11,580","121,240",10
+Round Rock,TX,"3,544","120,892",34
+Ann Arbor,MI,"4,340","120,782",28
+Fargo,ND,"2,474","120,762",49
+Columbia,MO,"1,912","120,612",63
+Allentown,PA,"6,863","120,443",18
+Evansville,IN,"2,706","119,477",44
+Beaumont,TX,"1,429","118,299",83
+Odessa,TX,"2,810","117,871",42
+Wilmington,NC,"2,282","117,525",51
+Arvada,CO,"3,342","117,453",35
+Independence,MO,"1,509","117,030",78
+Provo,UT,"2,805","116,868",42
+Lansing,MI,"3,218","116,020",36
+El Monte,CA,"12,114","115,807",10
+Springfield,IL,"1,945","115,715",59
+Fairfield,CA,"3,069","114,756",37
+Clearwater,FL,"4,474","114,361",26
+Peoria,IL,"2,380","114,265",48
+Rochester,MN,"2,088","114,011",55
+Carlsbad,CA,"3,021","113,952",38
+Westminster,CO,"3,609","113,875",32
+West Jordan,UT,"3,503","113,699",32
+Pearland,TX,"2,415","113,570",47
+Richardson,TX,"3,969","113,347",29
+Downey,CA,"9,127","113,267",12
+Miami Gardens,FL,"6,202","113,058",18
+Temecula,CA,"3,750","113,054",30
+Costa Mesa,CA,"7,209","112,822",16
+College Station,TX,"2,268","112,141",49
+Elgin,IL,"3,017","112,123",37
+Murrieta,CA,"3,326","111,674",34
+Gresham,OR,"4,807","111,523",23
+High Point,NC,"2,067","111,223",54
+Antioch,CA,"3,912","110,898",28
+Inglewood,CA,"12,200","110,654",9
+Cambridge,MA,"17,316","110,651",6
+Lowell,MA,"8,141","110,558",14
+Manchester,NH,"3,339","110,506",33
+Billings,MT,"2,541","110,323",43
+Pueblo,CO,"2,056","110,291",54
+Palm Bay,FL,"1,676","110,104",66
+Centennial,CO,"3,828","109,932",29
+Richmond,CA,"3,652","109,813",30
+San Buenaventura,CA,"5,062","109,592",22
+Pompano Beach,FL,"4,558","109,393",24
+North Charleston,SC,"1,493","109,298",73
+Everett,WA,"3,260","109,043",33
+Waterbury,CT,"3,796","108,272",29
+West Palm Beach,FL,"1,956","108,161",55
+Boulder,CO,"4,383","108,090",25
+West Covina,CA,"6,724","107,847",16
+Broken Arrow,OK,"1,744","107,403",62
+Clovis,CA,"4,578","106,583",23
+Daly City,CA,"13,900","106,472",8
+Lakeland,FL,"1,630","106,420",65
+Santa Maria,CA,"4,670","106,290",23
+Norwalk,CA,"10,935","106,178",10
+Sandy Springs,GA,"2,808","105,703",38
+Hillsboro,OR,"4,400","105,164",24
+Green Bay,WI,"2,312","105,139",45
+Tyler,TX,"1,946","104,798",54
+Wichita Falls,TX,"1,452","104,724",72
+Lewisville,TX,"2,875","104,659",36
+Burbank,CA,"6,023","104,447",17
+Greeley,CO,"2,234","103,990",47
+San Mateo,CA,"8,570","103,959",12
+El Cajon,CA,"7,191","103,768",14
+Rialto,CA,"4,623","103,314",22
+Davenport,IA,"1,630","102,612",63
+League City,TX,"1,989","102,010",51
+Davie,FL,"2,920","101,871",35
+Las Cruces,NM,"1,330","101,759",76
+South Bend,IN,"2,454","101,735",41
+Vista,CA,"5,442","101,659",19
+Renton,WA,"4,366","100,953",23
+San Angelo,TX,"1,771","100,702",57
+Roanoke,VA,"2,342","99,660",43
+Kenosha,WI,"3,700","99,631",27
+Tuscaloosa,AL,"1,653","99,543",60
+Allen,TX,"3,772","99,179",26
+Erie,PA,"5,167","98,593",19
+Sparks,NV,"2,750","98,345",36
+Vacaville,CA,"3,465","98,303",28
+Albany,NY,"4,587","98,111",21
+Beaverton,OR,"5,210","97,590",19
+Compton,CA,"9,745","97,550",10
+Orem,UT,"5,331","97,499",18
+Flint,MI,"2,914","97,386",33
+Federal Way,WA,"4,347","96,757",22
+Mission Viejo,CA,"5,434","96,396",18
+Spokane Valley,WA,"2,551","96,340",38
+Boca Raton,FL,"3,277","96,114",29
+Lee's Summit,MO,"1,517","96,076",63
+Rio Rancho,NM,929,"96,028",103
+Sandy,UT,"4,190","95,836",23
+Brockton,MA,"4,483","95,630",21
+Meridian,ID,"3,569","95,623",27
+South Gate,CA,"13,196","95,538",7
+Lawrence,KS,"2,841","95,358",34
+San Marcos,CA,"3,909","95,261",24
+Portsmouth,VA,"2,831","95,252",34
+New Bedford,MA,"4,752","95,032",20
+Yuma,AZ,789,"94,906",120
+Lawton,OK,"1,168","94,653",81
+Roswell,GA,"2,323","94,598",41
+Dearborn,MI,"3,899","94,444",24
+Livonia,MI,"2,634","94,041",36
+Yakima,WA,"3,458","93,986",27
+Sunrise,FL,"5,179","93,734",18
+Hesperia,CA,"1,282","93,724",73
+Quincy,MA,"5,654","93,688",17
+Longmont,CO,"3,546","92,858",26
+Carson,CA,"4,957","92,797",19
+Plantation,FL,"4,264","92,706",22
+Lynn,MA,"8,631","92,697",11
+Santa Monica,CA,"10,996","92,478",8
+Santa Barbara,CA,"4,722","91,930",19
+Miami Beach,FL,"12,047","91,917",8
+Redding,CA,"1,539","91,808",60
+Chico,CA,"2,782","91,567",33
+Westminster,CA,"9,111","91,565",10
+Greenville,NC,"2,644","91,495",35
+Nampa,ID,"2,930","91,382",31
+Edmond,OK,"1,077","91,191",85
+Bend,OR,"2,760","91,122",33
+Carmel,IN,"1,919","91,065",47
+San Leandro,CA,"6,781","90,465",13
+Fishers,IN,"2,683","90,127",34
+Deltona,FL,"2,401","90,124",38
+Concord,NC,"1,491","89,891",60
+Tracy,CA,"4,058","89,274",22
+Suffolk,VA,223,"89,273",400
+Asheville,NC,"1,984","89,121",45
+Livermore,CA,"3,541","89,115",25
+Newton,MA,"4,991","89,045",18
+Fall River,MA,"2,684","88,930",33
+Menifee,CA,"1,905","88,531",46
+Indio,CA,"3,032","88,488",29
+Norwalk,CT,"3,869","88,438",23
+Waukegan,IL,"3,725","88,182",24
+Sugar Land,TX,"2,723","88,177",32
+Fort Smith,AR,"1,422","88,133",62
+Hawthorne,CA,"14,479","88,031",6
+Nashua,NH,"2,849","87,882",31
+Chino,CA,"2,961","87,776",30
+Kirkland,WA,"8,128","87,701",11
+Edinburg,TX,"2,329","87,650",38
+Reading,PA,"8,864","87,575",10
+Bellingham,WA,"3,234","87,574",27
+Citrus Heights,CA,"6,144","87,432",14
+Whittier,CA,"5,931","86,883",15
+Ogden,UT,"3,200","86,701",27
+Newport Beach,CA,"3,642","86,688",24
+Champaign,IL,"3,863","86,637",22
+Duluth,MN,"1,273","86,293",68
+O'Fallon,MO,"2,956","86,274",29
+Clifton,NJ,"7,624","85,845",11
+Alhambra,CA,"11,202","85,474",8
+Bloomington,MN,"2,460","85,319",35
+Palm Coast,FL,947,"85,109",90
+Danbury,CT,"2,029","84,992",42
+Hoover,AL,"1,802","84,978",47
+Redwood City,CA,"4,374","84,950",19
+Bloomington,IN,"3,647","84,465",23
+Hemet,CA,"3,026","84,281",28
+Mount Pleasant,SC,"1,867","84,170",45
+Trenton,NJ,"10,988","84,056",8
+Santa Fe,NM,"1,824","83,875",46
+Johns Creek,GA,"2,729","83,873",31
+Fayetteville,AR,"1,557","83,826",54
+Troy,MI,"2,499","83,641",33
+Mission,TX,"2,458","83,563",34
+Bryan,TX,"1,875","83,260",44
+Lake Forest,CA,"4,671","83,240",18
+Buena Park,CA,"7,905","83,156",11
+Largo,FL,"4,714","83,065",18
+Cicero,IL,"14,162","82,992",6
+Avondale,AZ,"1,818","82,881",46
+Sioux City,IA,"1,445","82,872",57
+Merced,CA,"3,542","82,594",23
+St. George,UT,"1,169","82,318",70
+Conroe,TX,"1,561","82,286",53
+Pleasanton,CA,"3,412","82,270",24
+Longview,TX,"1,473","82,055",56
+Medford,OR,"3,173","81,636",26
+Warwick,RI,"2,328","81,579",35
+Westland,MI,"3,993","81,545",20
+Somerville,MA,"19,738","81,322",4
+Melbourne,FL,"2,398","81,185",34
+Lakewood,CA,"8,623","81,138",9
+Farmington Hills,MI,"2,438","81,129",33
+Cranston,RI,"2,859","81,034",28
+Kennewick,WA,"2,988","80,454",27
+Mountain View,CA,"6,704","80,447",12
+Napa,CA,"4,508","80,416",18
+Tustin,CA,"7,256","80,395",11
+Lynchburg,VA,"1,633","80,212",49
+Lawrence,MA,"11,574","80,209",7
+Deerfield Beach,FL,"5,286","79,764",15
+Brooklyn Park,MN,"3,057","79,707",26
+New Rochelle,NY,"7,687","79,557",10
+Parma,OH,"3,967","79,425",20
+Alameda,CA,"7,437","78,906",11
+Chino Hills,CA,"1,764","78,822",45
+Springdale,AR,"1,879","78,557",42
+Bloomington,IL,"2,866","78,005",27
+Bellflower,CA,"12,711","77,790",6
+Racine,WI,"5,011","77,571",15
+Milpitas,CA,"5,705","77,528",14
+Auburn,WA,"2,616","77,472",30
+Pharr,TX,"3,301","77,320",23
+Scranton,PA,"3,054","77,291",25
+Folsom,CA,"3,520","77,271",22
+Goodyear,AZ,403,"77,258",191
+Plymouth,MN,"2,363","77,216",33
+Fort Myers,FL,"1,931","77,146",40
+Hammond,IN,"3,386","77,134",23
+Manteca,CA,"4,338","76,908",18
+Loveland,CO,"2,289","76,897",34
+Lake Charles,LA,"1,827","76,848",42
+Upland,CA,"4,909","76,684",16
+St. Joseph,MO,"1,738","76,472",44
+Baldwin Park,CA,"11,533","76,464",7
+Gary,IN,"1,532","76,424",50
+Perris,CA,"2,432","76,331",31
+Baytown,TX,"2,144","75,992",35
+Kalamazoo,MI,"3,079","75,984",25
+Layton,UT,"3,439","75,655",22
+San Ramon,CA,"4,188","75,639",18
+Boynton Beach,FL,"4,673","75,569",16
+Wyoming,MI,"3,067","75,567",25
+Gastonia,NC,"1,496","75,536",51
+Arlington Heights,IL,"4,547","75,525",17
+Union City,CA,"3,869","75,322",19
+Bethlehem,PA,"3,942","75,293",19
+Evanston,IL,"9,627","74,895",8
+Jonesboro,AR,938,"74,889",80
+Franklin,TN,"1,814","74,794",41
+Missouri City,TX,"2,624","74,561",28
+Bolingbrook,IL,"3,098","74,518",24
+Schaumburg,IL,"3,873","74,446",19
+Camden,NJ,"8,343","74,420",9
+Iowa City,IA,"2,975","74,398",25
+Warner Robins,GA,"2,121","74,388",35
+Appleton,WI,"3,057","74,370",24
+Rapid City,SD,"1,336","74,048",55
+New Braunfels,TX,"1,686","73,959",44
+Albany,GA,"1,339","73,801",55
+Temple,TX,"1,067","73,600",69
+Flower Mound,TX,"1,777","73,547",41
+Rochester Hills,MI,"2,237","73,422",33
+Southfield,MI,"2,783","73,100",26
+Rock Hill,SC,"2,042","72,937",36
+Turlock,CA,"4,300","72,796",17
+Decatur,IL,"1,722","72,706",42
+New Britain,CT,"5,419","72,558",13
+Apple Valley,CA,991,"72,553",73
+Bismarck,ND,"2,348","72,417",31
+Missoula,MT,"2,630","72,364",28
+Waukesha,WI,"2,917","72,363",25
+Rancho Cordova,CA,"2,158","72,326",34
+Gulfport,MS,"1,297","72,076",56
+Lafayette,IN,"2,588","71,782",28
+Lauderhill,FL,"8,397","71,626",9
+Flagstaff,AZ,"1,119","71,459",64
+Wilmington,DE,"6,554","71,442",11
+Pawtucket,RI,"8,229","71,427",9
+Canton,OH,"2,801","71,323",25
+Redlands,CA,"1,973","71,288",36
+Lynwood,CA,"14,708","71,187",5
+Pittsburg,CA,"4,104","70,679",17
+Passaic,NJ,"22,424","70,635",3
+Pasco,WA,"2,314","70,579",31
+Frederick,MD,"3,186","70,060",22
+Weston,FL,"2,783","70,015",25
+North Richland Hills,TX,"3,841","69,798",18
+Maple Grove,MN,"2,132","69,576",33
+Kissimmee,FL,"3,274","69,369",21
+Union City,NJ,"54,138","69,296",1
+St. Charles,MO,"2,930","69,293",24
+Walnut Creek,CA,"3,498","69,122",20
+South Jordan,UT,"3,131","69,034",22
+Muncie,IN,"2,537","69,010",27
+Cedar Park,TX,"3,016","68,918",23
+Woodbury,MN,"1,982","68,820",35
+Palatine,IL,"5,049","68,766",14
+Bossier City,LA,"1,618","68,485",42
+Dothan,AL,766,"68,468",89
+Mount Vernon,NY,"15,568","68,344",4
+Eau Claire,WI,"2,133","68,339",32
+Yorba Linda,CA,"3,503","68,235",19
+Davis,CA,"6,887","68,111",10
+Homestead,FL,"4,491","67,996",15
+Waterloo,IA,"1,107","67,934",61
+Redondo Beach,CA,"10,946","67,867",6
+Jacksonville,NC,"1,457","67,784",47
+Gaithersburg,MD,"6,645","67,776",10
+Victoria,TX,"1,907","67,670",35
+St. Cloud,MN,"1,689","67,641",40
+Marysville,WA,"3,270","67,626",21
+Greenville,SC,"2,353","67,453",29
+Delray Beach,FL,"4,261","67,371",16
+Camarillo,CA,"3,449","67,363",20
+Georgetown,TX,"1,403","67,140",48
+Kenner,LA,"4,512","67,089",15
+Palo Alto,CA,"2,807","67,024",24
+Jackson,TN,"1,247","67,005",54
+South San Francisco,CA,"7,328","66,980",9
+Rockville,MD,"4,955","66,940",14
+Portland,ME,"3,141","66,937",21
+Yuba City,CA,"4,585","66,845",15
+Johnson City,TN,"1,553","66,677",43
+Daytona Beach,FL,"1,141","66,645",58
+Oshkosh,WI,"2,602","66,579",26
+Broomfield,CO,"2,014","66,529",33
+Eagan,MN,"2,135","66,428",31
+North Little Rock,AR,"1,287","66,278",52
+Bayonne,NJ,"11,420","66,238",6
+Ames,IA,"2,734","66,191",24
+Mansfield,TX,"1,804","65,631",36
+Harlingen,TX,"1,646","65,539",40
+Alpharetta,GA,"2,428","65,338",27
+Laguna Niguel,CA,"4,405","65,328",15
+San Clemente,CA,"3,491","65,309",19
+Conway,AR,"1,440","65,300",45
+Bowling Green,KY,"1,727","65,234",38
+Tamarac,FL,"5,611","65,199",12
+Shawnee,KS,"1,558","65,194",42
+Rogers,AR,"1,714","65,021",38
+Schenectady,NY,"6,022","64,913",11
+East Orange,NJ,"16,528","64,789",4
+Lodi,CA,"4,750","64,641",14
+Buckeye,AZ,172,"64,629",375
+West Des Moines,IA,"1,673","64,560",39
+Santa Cruz,CA,"5,060","64,465",13
+Madera,CA,"4,081","64,444",16
+Youngstown,OH,"1,894","64,312",34
+North Port,FL,645,"64,274",100
+Skokie,IL,"6,389","64,270",10
+Lake Elsinore,CA,"1,773","64,205",36
+Janesville,WI,"1,895","64,159",34
+Cheyenne,WY,"2,611","64,019",25
+Eden Prairie,MN,"1,970","63,914",32
+Wellington,FL,"1,423","63,900",45
+Jupiter,FL,"2,972","63,813",21
+Sammamish,WA,"3,500","63,773",18
+Lorain,OH,"2,692","63,730",24
+Pico Rivera,CA,"7,667","63,635",8
+Montebello,CA,"7,603","63,335",8
+Encinitas,CA,"3,356","63,131",19
+Auburn,AL,"1,087","63,118",58
+Waltham,MA,"4,949","63,002",13
+Blaine,MN,"1,858","62,892",34
+Haverhill,MA,"1,907","62,873",33
+Rocklin,CA,"3,213","62,787",20
+Tulare,CA,"2,999","62,779",21
+Council Bluffs,IA,"1,526","62,524",41
+Redmond,WA,"3,836","62,458",16
+Coon Rapids,MN,"2,758","62,359",23
+North Miami,FL,"7,389","62,139",8
+Hamilton,OH,"2,876","62,127",22
+Rowlett,TX,"3,117","61,999",20
+San Marcos,TX,"2,051","61,980",30
+Lakeville,MN,"1,718","61,938",36
+Springfield,OR,"3,932","61,893",16
+Grand Junction,CO,"1,619","61,881",38
+La Habra,CA,"8,367","61,664",7
+Moore,OK,"2,815","61,415",22
+Burnsville,MN,"2,460","61,290",25
+Taylor,MI,"2,592","61,177",24
+Eastvale,CA,"5,359","61,151",11
+National City,CA,"8,399","61,147",7
+Lehi,UT,"2,321","61,130",26
+Port Orange,FL,"2,292","61,105",27
+Monterey Park,CA,"7,963","61,075",8
+Marietta,GA,"2,640","60,941",23
+Terre Haute,IN,"1,762","60,852",35
+Malden,MA,"12,071","60,840",5
+Lakewood,WA,"3,533","60,665",17
+Utica,NY,"3,619","60,652",17
+Cupertino,CA,"5,386","60,643",11
+Brentwood,CA,"4,093","60,532",15
+Petaluma,CA,"4,209","60,530",14
+Vineland,NJ,885,"60,525",68
+Taylorsville,UT,"5,570","60,436",11
+Idaho Falls,ID,"2,694","60,211",22
+Noblesville,IN,"1,918","60,183",31
+Bristol,CT,"2,277","60,147",26
+West Allis,WI,"5,280","60,087",11
+Gardena,CA,"10,300","60,048",6
+La Mesa,CA,"6,602","59,948",9
+St. Clair Shores,MI,"5,144","59,775",12
+Pontiac,MI,"2,989","59,698",20
+Meriden,CT,"2,506","59,622",24
+Dublin,CA,"3,996","59,583",15
+Coconut Creek,FL,"5,013","59,405",12
+Casper,WY,"2,205","59,324",27
+Owensboro,KY,"3,105","59,273",19
+Ocala,FL,"1,322","59,253",45
+Chapel Hill,NC,"2,805","59,246",21
+Pflugerville,TX,"2,654","59,245",22
+Lancaster,PA,"8,191","59,218",7
+Novi,MI,"1,957","59,211",30
+Great Falls,MT,"2,716","59,178",22
+Springfield,OH,"2,336","59,087",25
+Woodland,CA,"3,861","59,068",15
+Royal Oak,MI,"5,009","59,006",12
+Porterville,CA,"3,349","58,978",18
+San Rafael,CA,"3,579","58,954",16
+Huntington Park,CA,"19,561","58,879",3
+Orland Park,IL,"2,690","58,862",22
+Ankeny,IA,"1,999","58,627",29
+Bartlett,TN,"2,200","58,622",27
+Sanford,FL,"2,552","58,605",23
+Dubuque,IA,"1,953","58,531",30
+Arcadia,CA,"5,354","58,523",11
+Bowie,MD,"3,168","58,393",18
+White Plains,NY,"5,961","58,241",10
+Des Plaines,IL,"4,071","58,141",14
+Doral,FL,"4,175","57,947",14
+Margate,FL,"6,539","57,870",9
+Santee,CA,"3,561","57,834",16
+Kokomo,IN,"3,124","57,799",19
+Castle Rock,CO,"1,707","57,666",34
+Grand Forks,ND,"2,881","57,339",20
+Midwest City,OK,"2,349","57,305",24
+St. Peters,MO,"2,561","57,289",22
+Medford,MA,"7,063","57,213",8
+Corvallis,OR,"4,042","57,110",14
+Hendersonville,TN,"1,819","57,050",31
+New Brunswick,NJ,"10,881","56,910",5
+Taunton,MA,"1,217","56,843",47
+Tinley Park,IL,"3,548","56,831",16
+Diamond Bar,CA,"3,817","56,793",15
+Smyrna,GA,"3,691","56,664",15
+Sarasota,FL,"3,862","56,610",15
+Greenwood,IN,"2,663","56,545",21
+Fountain Valley,CA,"6,267","56,529",9
+Valdosta,GA,"1,576","56,474",36
+Oak Lawn,IL,"6,549","56,257",9
+Novato,CA,"2,041","56,004",27
+Chicopee,MA,"2,453","55,991",23
+Weymouth Town,MA,"3,334","55,972",17
+Dearborn Heights,MI,"4,750","55,761",12
+Berwyn,IL,"14,258","55,748",4
+Bradenton,FL,"3,927","55,687",14
+Hempstead,NY,"15,096","55,555",4
+Hanford,CA,"3,348","55,547",17
+Rocky Mount,NC,"1,267","55,466",44
+Port Arthur,TX,721,"55,427",77
+Shoreline,WA,"4,741","55,333",12
+Kettering,OH,"2,961","55,306",19
+Anderson,IN,"1,333","55,130",41
+Decatur,AL,"1,026","55,072",54
+Gilroy,CA,"3,410","55,069",16
+Richland,WA,"1,539","54,989",36
+Manhattan,KS,"2,931","54,983",19
+Highland,CA,"2,929","54,939",19
+Paramount,CA,"11,609","54,909",5
+Commerce City,CO,"1,600","54,869",34
+Huntersville,NC,"1,384","54,839",40
+Euless,TX,"3,379","54,769",16
+Pocatello,ID,"1,699","54,746",32
+Carson City,NV,378,"54,742",145
+Colton,CA,"3,571","54,712",15
+Casa Grande,AZ,497,"54,534",110
+West Haven,CT,"5,071","54,516",11
+Rosemead,CA,"10,562","54,500",5
+Blue Springs,MO,"2,444","54,431",22
+Hoboken,NJ,"42,484","54,379",1
+Normal,IL,"2,957","54,264",18
+Bonita Springs,FL,"1,404","54,198",39
+Mount Prospect,IL,"5,239","54,171",10
+Cathedral City,CA,"2,514","54,056",22
+Watsonville,CA,"8,041","53,796",7
+Pensacola,FL,"2,386","53,779",23
+Palm Beach Gardens,FL,976,"53,778",55
+Lake Havasu City,AZ,"1,210","53,743",44
+Elyria,OH,"2,611","53,715",21
+Bellevue,NE,"3,376","53,505",16
+Wheaton,IL,"4,746","53,389",11
+West New York,NJ,"52,815","53,343",1
+Yucaipa,CA,"1,911","53,309",28
+Southaven,MS,"1,290","53,214",41
+Albany,OR,"3,034","53,211",18
+Revere,MA,"9,342","53,157",6
+Caldwell,ID,"2,409","53,149",22
+Harrisonburg,VA,"3,047","53,078",17
+West Sacramento,CA,"2,472","52,981",21
+Lenexa,KS,"1,551","52,903",34
+Kingsport,TN,"1,060","52,806",50
+Burlington,NC,"2,094","52,709",25
+Delano,CA,"3,686","52,707",14
+Leesburg,VA,"4,246","52,607",12
+DeSoto,TX,"2,433","52,599",22
+Milford,CT,"2,399","52,536",22
+Perth Amboy,NJ,"11,170","52,499",5
+Peabody,MA,"3,238","52,491",16
+Minnetonka,MN,"1,945","52,369",27
+Palm Desert,CA,"1,948","52,231",27
+Placentia,CA,"7,949","52,228",7
+Elkhart,IN,"2,227","52,221",23
+Joplin,MO,"1,468","52,195",36
+Pinellas Park,FL,"3,362","52,137",16
+La Crosse,WI,"2,539","52,109",21
+Grapevine,TX,"1,628","51,971",32
+Apple Valley,MN,"3,082","51,957",17
+Tigard,OR,"4,395","51,902",12
+Glendora,CA,"2,674","51,851",19
+Florissant,MO,"4,122","51,776",13
+Oak Park,IL,"11,016","51,774",5
+Hoffman Estates,IL,"2,487","51,738",21
+Kentwood,MI,"2,473","51,689",21
+Battle Creek,MI,"1,209","51,534",43
+Grand Island,NE,"1,813","51,517",28
+Aliso Viejo,CA,"6,884","51,424",7
+Edina,MN,"3,324","51,350",15
+Olympia,WA,"2,873","51,202",18
+Parker,CO,"2,498","51,163",20
+Enid,OK,692,"51,004",74
+Burien,WA,"6,873","50,997",7
+Coral Gables,FL,"3,933","50,815",13
+Logan,UT,"2,825","50,676",18
+Plainfield,NJ,"8,411","50,636",6
+Cerritos,CA,"5,791","50,555",9
+Galveston,TX,"1,226","50,550",41
+Coeur d'Alene,ID,"3,230","50,285",16
+Lakewood,OH,"9,092","50,279",6
+Poway,CA,"1,281","50,077",39

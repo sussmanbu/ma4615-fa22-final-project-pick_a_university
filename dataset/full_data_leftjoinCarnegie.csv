@@ -6,8 +6,8 @@ University of Hawaii at Manoa,NA,201-300,201,70-95,20.8,19.2,0,0,35.9,21.6,NA,NA
 "University of Maryland, Baltimore",NA,201-300,201,70-95,12.4,16.6,0,0,38.8,17.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Baltimore,MD,27,13,1,6,11
 City University of New York City College,NA,401-500,401,118-139,10.4,0,30.9,0,16.5,19.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Mayo Medical School,27.3,81,81,39,13.8,50.7,0,0,51.3,35.9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-The University of Georgia,NA,201-300,201,70-95,17.6,13.5,0,0,44.8,18.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Athens,NA,541-550,Very High,2.4059999999999997,15,1.879,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Oregon,NA,301-400,301,96-117,11.6,9.6,8.8,0,28.4,18.2,101,39308,18045,Eugene,OR,0.09,National,NA,NA,NA,L,Public,Eugene,NA,651-700,Very High,1.583,13,1.74,NA,NA,NA,NA,NA,NA,Eugene,OR,15,16,1,4,12
+The University of Georgia,NA,201-300,201,70-95,17.6,13.5,0,0,44.8,18.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Athens,NA,541-550,Very High,2406,15,1879,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Oregon,NA,301-400,301,96-117,11.6,9.6,8.8,0,28.4,18.2,101,39308,18045,Eugene,OR,0.09,National,NA,NA,NA,L,Public,Eugene,NA,651-700,Very High,1583,13,1740,NA,NA,NA,NA,NA,NA,Eugene,OR,15,16,1,4,12
 University of New Hampshire - Durham,NA,401-500,401,118-139,11.5,13.5,0,0,23.1,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Rice University,27.9,70,70,34,19.7,35.8,16.1,21.4,32.4,38.6,18,52895,4076,Houston,TX,0.12,National,NA,NA,NA,M,Private,Houston,62.3,94,Very High,996,7,2278,TX,1,NA,NA,NA,NA,Houston,TX,15,14,2,5,11
 "Rutgers, The State University of New Jersey - New Brunswick",NA,101-150,101,47-58,25.3,21.4,10.2,18.6,43.8,16.9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -15,38 +15,38 @@ University of Tennessee - Knoxville,NA,201-300,201,70-95,13.9,13.5,10.2,0,42.9,2
 Northwestern University,39.9,25,25,18,33.3,48.8,15.2,27.6,62.2,31.7,12,60984,8194,Evanston,IL,0.1,National,NA,NA,NA,L,Private,Evanston,82.8,30,Very High,3652,5,3846,IL,1,NA,NA,NA,NA,Evanston,IL,15,16,2,6,13
 Michigan State University,NA,101-150,101,47-58,22,21.4,8.8,0,54.8,19.3,88,39766,38491,East Lansing,MI,0.06,National,East Lansing,MI,5280,XL,Public,East Lansing,49.7,157,Very High,3008,15,5795,NA,NA,MI,Public,4-year,49695,East Lansing,MI,15,16,1,4,13
 University of Massachusetts Amherst,NA,151-200,151,59-69,15.7,25.3,13.4,0,38.5,23.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Amherst,38.8,246,Very High,1852,14,3696,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Virginia Polytechnic Institute and State University,NA,201-300,201,70-95,12.2,9.6,11.4,0,43.9,18.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Blacksburg,31.6,346,Very High,2.8019999999999996,12,4.477,VA,3,VA,Public,4-year,37024,Blacksburg,VA,15,16,1,4,13
+Virginia Polytechnic Institute and State University,NA,201-300,201,70-95,12.2,9.6,11.4,0,43.9,18.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Blacksburg,31.6,346,Very High,2802,12,4477,VA,3,VA,Public,4-year,37024,Blacksburg,VA,15,16,1,4,13
 The University of Texas at Dallas,NA,301-400,301,96-117,10.4,9.6,13.4,0,29.3,22.6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,TX,3,TX,Public,4-year,28669,Richardson,TX,15,16,1,4,12
 Brigham Young University,NA,401-500,401,118-139,8.3,9.6,8.8,0,27.5,13.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Private,Provo,NA,1001-1200,Very High,1512,21,1163,NA,NA,UT,PrivNp,4-year,36461,Provo,UT,16,15,2,3,12
 "University of Pittsburgh, Pittsburgh Campus",26.9,90,90,42,18.1,33.2,18.3,0,62,18.9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PA,Public,4-year,32277,NA,NA,NA,NA,NA,NA,NA
-Iowa State University,NA,201-300,201,70-95,9.1,23.5,0,0,42,20.6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Ames,24.1,494,Very High,1.6560000000000001,17,2.441,NA,NA,IA,Public,4-year,31822,Ames,IA,15,16,1,4,13
-University of Connecticut,NA,301-400,301,96-117,12.5,0,11.4,0,37.8,14.5,66,41192,18917,Storrs,CT,0.08,National,NA,NA,NA,L,Public,Storrs,29.6,373,Very High,1.328,19,3.765,CT,3,NA,NA,NA,NA,Storrs,CT,15,17,1,5,21
+Iowa State University,NA,201-300,201,70-95,9.1,23.5,0,0,42,20.6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Ames,24.1,494,Very High,1656,17,2441,NA,NA,IA,Public,4-year,31822,Ames,IA,15,16,1,4,13
+University of Connecticut,NA,301-400,301,96-117,12.5,0,11.4,0,37.8,14.5,66,41192,18917,Storrs,CT,0.08,National,NA,NA,NA,L,Public,Storrs,29.6,373,Very High,1328,19,3765,CT,3,NA,NA,NA,NA,Storrs,CT,15,17,1,5,21
 Yeshiva University,NA,301-400,301,96-117,23.6,0,0,0,32.2,22.6,74,47500,2017,New York,NY,0.09,National,NA,NA,NA,S,Private,New York City,38.4,252,Very High,471,10,467,NA,NA,NA,NA,NA,NA,New York,NY,17,14,2,5,11
-"University of California, Riverside",NA,151-200,151,59-69,16.7,27.1,12.4,0,35.5,25.7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Riverside,27.9,403,Very High,1.4969999999999999,17,2.034,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"University of California, Riverside",NA,151-200,151,59-69,16.7,27.1,12.4,0,35.5,25.7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Riverside,27.9,403,Very High,1497,17,2034,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Missouri - Columbia,NA,201-300,201,70-95,11,13.5,8.8,0,39.6,16.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Temple University,NA,301-400,301,96-117,11,9.6,0,0,37.3,13.3,110,34801,27306,NA,NA,NA,NA,NA,NA,NA,XL,Public,Philadelphia,NA,751-800,Very High,2.7670000000000003,12,2.097,NA,NA,PA,Public,4-year,37236,Philadelphia,PA,15,15,1,4,11
+Temple University,NA,301-400,301,96-117,11,9.6,0,0,37.3,13.3,110,34801,27306,NA,NA,NA,NA,NA,NA,NA,XL,Public,Philadelphia,NA,751-800,Very High,2767,12,2097,NA,NA,PA,Public,4-year,37236,Philadelphia,PA,15,15,1,4,11
 University of South Carolina - Columbia,NA,301-400,301,96-117,9.4,9.6,0,0,37.4,16.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Brown University,NA,101-150,101,47-58,20.5,9.6,14.4,19.7,46.1,33,14,62404,6792,Providence,RI,0.11,National,NA,NA,NA,M,Private,Providence,71.3,60,Very High,1389,7,2002,RI,1,NA,NA,NA,NA,Providence,RI,15,14,2,5,12
 Oregon Health and Science University,NA,151-200,151,59-69,24.3,16.6,0,0,37.2,21.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Virginia,NA,151-200,151,59-69,24.6,19.2,0,0,46.1,19.1,26,53666,17311,NA,NA,NA,NA,NA,NA,NA,L,Public,Charlottesville,40.3,226,Very High,2731,8,2201,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Illinois at Chicago,NA,201-300,201,70-95,13,13.5,0,0,45.5,18.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Kentucky,NA,301-400,301,96-117,12.1,0,10.2,0,41.8,17.7,134,31608,22227,NA,NA,NA,NA,NA,NA,NA,L,Public,Lexington,NA,651-700,Very High,2.239,12,1.294,NA,NA,KY,Public,4-year,29986,Lexington,KY,15,16,1,4,11
+University of Kentucky,NA,301-400,301,96-117,12.1,0,10.2,0,41.8,17.7,134,31608,22227,NA,NA,NA,NA,NA,NA,NA,L,Public,Lexington,NA,651-700,Very High,2239,12,1294,NA,NA,KY,Public,4-year,29986,Lexington,KY,15,16,1,4,11
 Washington University in St. Louis,42.1,20,20,16,42.3,55,22.7,24.6,53.8,38.6,16,58866,7653,St. Louis,MO,0.07,National,NA,NA,NA,L,Private,St. Louis,58,107,Very High,3193,5,3535,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "University of Minnesota, Twin Cities",35.9,37,37,25,31.2,34.5,29.2,16.1,67.5,23.7,NA,NA,NA,Minneapolis,MN,0.06,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,MN,Public,4-year,52017,NA,NA,NA,NA,NA,NA,NA
 University of Miami,NA,201-300,201,70-95,13.6,16.6,0,0,42,20.7,58,54760,11334,Coral Gables,FL,0.11,National,NA,NA,NA,L,Private,Miami,33.7,311,Very High,2565,6,2646,FL,1,NA,NA,NA,NA,Coral Gables,FL,15,16,2,5,13
-Oklahoma State University,NA,401-500,401,118-139,4.9,9.6,0,0,30.2,16.6,187,24539,20307,NA,NA,NA,NA,NA,NA,NA,L,Public,Stillwater,NA,801-1000,High,1.484,14,1.617,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Oklahoma State University,NA,401-500,401,118-139,4.9,9.6,0,0,30.2,16.6,187,24539,20307,NA,NA,NA,NA,NA,NA,NA,L,Public,Stillwater,NA,801-1000,High,1484,14,1617,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "University of California, San Diego",47.8,15,15,13,53,53.3,19,35.1,65.4,35.9,NA,NA,NA,La Jolla,CA,0.16,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,CA,Public,4-year,39576,NA,NA,NA,NA,NA,NA,NA
 Rush University,NA,401-500,401,118-139,3.6,16.6,0,0,26.9,16.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Chicago,IL,25,9,2,6,11
-University of South Florida,NA,201-300,201,70-95,9.5,16.6,0,0,39.2,18.2,115,17324,38579,Tampa,FL,0.07,National,Tampa,FL,5974,XL,Public,Tampa,NA,581-590,Very High,2.171,18,5.211,FL,4,FL,Public,4-year,50626,Tampa,FL,15,15,1,4,11
-Washington State University,NA,301-400,301,96-117,8.5,9.6,0,0,33.1,18.2,186,27733,25470,NA,NA,NA,NA,NA,NA,NA,L,Public,Pullman,27,427,Very High,1.9349999999999998,14,1.7309999999999999,NA,NA,WA,Public,4-year,31159,Pullman,WA,15,16,1,4,32
+University of South Florida,NA,201-300,201,70-95,9.5,16.6,0,0,39.2,18.2,115,17324,38579,Tampa,FL,0.07,National,Tampa,FL,5974,XL,Public,Tampa,NA,581-590,Very High,2171,18,5211,FL,4,FL,Public,4-year,50626,Tampa,FL,15,15,1,4,11
+Washington State University,NA,301-400,301,96-117,8.5,9.6,0,0,33.1,18.2,186,27733,25470,NA,NA,NA,NA,NA,NA,NA,L,Public,Pullman,27,427,Very High,1935,14,1731,NA,NA,WA,Public,4-year,31159,Pullman,WA,15,16,1,4,32
 University of Montana - Missoula,NA,401-500,401,118-139,9.3,13.5,5.1,0,17.9,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Texas A&M University,NA,151-200,151,59-69,16.6,21.4,0,0,55.1,18.7,71,40087,55568,NA,NA,NA,NA,NA,NA,NA,XL,Public,College Station,47.6,168,Very High,3049,21,6621,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Stony Brook University,NA,301-400,301,96-117,21,0,0,0,38.7,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NY,3,NA,NA,NA,NA,Stony Brook,NY,15,17,1,5,21
 The University of Texas Health Science Center at San Antonio,NA,301-400,301,96-117,7.7,21.4,0,0,24.4,18.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,San Antonio,TX,27,12,1,6,11
-University of Vermont,NA,301-400,301,96-117,10.3,9.6,13.4,0,27.7,15.7,121,43890,11136,NA,NA,NA,NA,NA,NA,NA,L,Public,Burlington,NA,651-700,High,1.4849999999999999,8,546,NA,NA,NA,NA,NA,NA,Burlington,VT,16,17,1,4,13
+University of Vermont,NA,301-400,301,96-117,10.3,9.6,13.4,0,27.7,15.7,121,43890,11136,NA,NA,NA,NA,NA,NA,NA,L,Public,Burlington,NA,651-700,High,1485,8,546,NA,NA,NA,NA,NA,NA,Burlington,VT,16,17,1,4,13
 University of Wisconsin - Madison,38.9,28,28,21,32.3,30.3,32.5,34.3,65,24.3,NA,NA,NA,NA,NA,NA,NA,Madison,WI,7139,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Carnegie Mellon University,26.8,91,91,43,12.3,21.4,31.3,31.2,35.6,30.1,25,58924,7073,Pittsburgh,PA,0.22,National,Pittsburgh,PA,7396,L,Private,Pittsburgh,74.6,53,Very High,1534,9,5739,PA,1,NA,NA,NA,NA,Pittsburgh,PA,15,17,2,5,11
-Boston College,NA,301-400,301,96-117,16.8,13.5,0,0,23.5,17.8,36,61706,9445,NA,NA,NA,NA,NA,NA,NA,L,Private,Newton,24.1,494,Very High,1.048,13,1.4709999999999999,MA,1,NA,NA,NA,NA,Chestnut Hill,MA,15,17,2,5,13
+Boston College,NA,301-400,301,96-117,16.8,13.5,0,0,23.5,17.8,36,61706,9445,NA,NA,NA,NA,NA,NA,NA,L,Private,Newton,24.1,494,Very High,1048,13,1471,MA,1,NA,NA,NA,NA,Chestnut Hill,MA,15,17,2,5,13
 Princeton University,61,6,6,5,47.1,44.9,55.8,97.9,44.2,73.3,1,56010,4773,Princeton,NJ,0.12,National,NA,NA,NA,M,Private,Princeton,88.6,20,Very High,1050,8,1912,NJ,1,NA,NA,NA,NA,Princeton,NJ,15,14,2,5,13
 University of Pennsylvania,46.4,16,16,14,41.7,46.9,31.3,33.4,69.7,39.7,8,61710,9872,Philadelphia,PA,0.13,National,Philadelphia,PA,6562,L,Private,Philadelphia,90.7,13,Very High,5154,4,4636,PA,1,NA,NA,NA,NA,Philadelphia,PA,15,17,2,6,11
 University of Southern California,30.8,60,60,33,20.4,31.8,0,31.3,55.1,24.6,27,60275,19606,Los Angeles,CA,0.12,National,Los Angeles,CA,14992,XL,Private,Los Angeles,57,112,Very High,3116,10,9107,CA,1,CA,PrivNp,4-year,46287,Los Angeles,CA,15,16,2,6,11
@@ -55,24 +55,24 @@ Johns Hopkins University,45.4,18,18,15,43.4,37.1,37.3,33.2,75.7,28.7,11,58720,63
 The Ohio State University - Columbus,26.4,94,94,44,21.3,27.1,12.4,0,65.3,18.6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Baylor College of Medicine,NA,101-150,101,47-58,30.1,23.5,0,0,44.5,19.1,NA,NA,NA,NA,NA,NA,NA,Houston,TX,247,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Houston,TX,27,18,2,7,11
 Indiana University Bloomington,NA,101-150,101,47-58,18.6,13.5,10.2,21.3,40.3,19.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Bloomington,33.7,311,Very High,3837,11,3722,IN,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Iowa,NA,151-200,151,59-69,14.8,19.2,0,0,46.9,17.8,92,31569,22304,NA,NA,NA,NA,NA,NA,NA,L,Public,Iowa City,25.7,455,Very High,2.924,10,2.049,NA,NA,IA,Public,4-year,30318,Iowa City,IA,15,16,1,4,13
+University of Iowa,NA,151-200,151,59-69,14.8,19.2,0,0,46.9,17.8,92,31569,22304,NA,NA,NA,NA,NA,NA,NA,L,Public,Iowa City,25.7,455,Very High,2924,10,2049,NA,NA,IA,Public,4-year,30318,Iowa City,IA,15,16,1,4,13
 The University of Texas Medical Branch at Galveston,NA,401-500,401,118-139,10.1,9.6,0,0,23.7,19.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Galveston,TX,27,10,1,6,31
 University at Albany (State University of New York),NA,401-500,401,118-139,8.5,9.6,0,0,27.3,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 New York University,37.2,32,32,24,39.5,25.3,29.6,31.5,60.6,20.8,28,56500,27444,New York,NY,0.24,National,New York,NY,17050,NA,NA,NA,NA,NA,NA,NA,NA,NA,NY,1,NY,PrivNp,4-year,52775,New York,NY,15,16,2,5,11
 Dartmouth College,NA,201-300,201,70-95,13.4,16.6,17.6,0,26.7,22.2,13,60870,4170,Hanover,NH,0.12,National,NA,NA,NA,M,Private,Hanover,45.1,191,Very High,836,8,997,NH,1,NA,NA,NA,NA,Hanover,NH,15,14,2,5,33
 University of Alabama at Birmingham,NA,201-300,201,70-95,9.2,16.6,0,0,43.4,15.9,158,25380,13878,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Birmingham,AL,15,15,1,5,12
 Thomas Jefferson University,NA,401-500,401,118-139,4.5,9.6,0,0,28.4,28.4,156,41715,3783,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Philadelphia,PA,16,14,2,5,11
-Wayne State University,NA,401-500,401,118-139,5.4,9.6,0,0,36.6,15.3,261,32727,17513,NA,NA,NA,NA,NA,NA,NA,L,Public,Detroit,NA,511-520,Very High,2.699,8,1.278,NA,NA,NA,NA,NA,NA,Detroit,MI,15,15,1,5,11
+Wayne State University,NA,401-500,401,118-139,5.4,9.6,0,0,36.6,15.3,261,32727,17513,NA,NA,NA,NA,NA,NA,NA,L,Public,Detroit,NA,511-520,Very High,2699,8,1278,NA,NA,NA,NA,NA,NA,Detroit,MI,15,15,1,5,11
 Arizona State University,NA,101-150,101,47-58,21.9,16.6,0,19.7,47.1,22.9,117,29438,63124,Tempe,AZ,0.06,National,NA,NA,NA,XL,Public,Phoenix,41.8,216,Very High,2869,17,8430,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Georgetown University,NA,201-300,201,70-95,6,27.1,0,0,33,23.8,23,59957,7357,Washington,DC,0.14,National,NA,NA,NA,L,Private,Washington D.C.,38.7,248,Very High,2009,8,3286,DC,1,NA,NA,NA,NA,Washington,DC,15,17,2,6,11
 The University of Texas Health Science Center at Houston,NA,301-400,301,96-117,13.6,0,0,15.2,34.4,15.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Houston,TX,27,12,1,6,11
 "University at Buffalo, the State University of New York",NA,301-400,301,96-117,11.2,9.6,0,0,39.3,16.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Kansas State University,NA,401-500,401,118-139,12.3,0,0,0,31.4,17.7,165,26342,16257,NA,NA,NA,NA,NA,NA,NA,L,Public,Manhattan,NA,801-1000,Very High,1.371,14,1.4809999999999999,NA,NA,NA,NA,NA,NA,Manhattan,KS,15,16,1,4,13
+Kansas State University,NA,401-500,401,118-139,12.3,0,0,0,31.4,17.7,165,26342,16257,NA,NA,NA,NA,NA,NA,NA,L,Public,Manhattan,NA,801-1000,Very High,1371,14,1481,NA,NA,NA,NA,NA,NA,Manhattan,KS,15,16,1,4,13
 University of Wisconsin-Milwaukee,NA,401-500,401,118-139,9.7,9.6,10.2,0,25.6,16.2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Milwaukee,WI,15,15,1,4,11
 University of Wyoming,NA,401-500,401,118-139,11.3,9.6,0,0,24.1,17.9,201,20647,9342,NA,NA,NA,NA,NA,NA,NA,M,Public,Laramie,NA,801-1000,Very High,904,12,564,NA,NA,NA,NA,NA,NA,Laramie,WY,16,16,1,4,33
 Utah State University,NA,401-500,401,118-139,8.4,9.6,13.4,0,26.4,16.8,260,23434,24647,NA,NA,NA,NA,NA,NA,NA,L,Public,Logan,NA,1001-1200,Very High,1053,19,331,NA,NA,UT,Public,4-year,27691,Logan,UT,15,15,1,3,13
 Pennsylvania State University - University Park,27.7,74,74,37,28.7,34.5,10.2,0,55.1,24.6,NA,NA,NA,NA,NA,NA,NA,University Park,PA,8267,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Oregon State University,NA,151-200,151,59-69,21.9,19.2,10.2,0,38.8,23.8,167,32288,26644,NA,NA,NA,NA,NA,NA,NA,L,Public,Corvallis,NA,531-540,Very High,2.1470000000000002,12,2.769,NA,NA,OR,Public,4-year,32312,Corvallis,OR,15,15,1,4,13
+Oregon State University,NA,151-200,151,59-69,21.9,19.2,10.2,0,38.8,23.8,167,32288,26644,NA,NA,NA,NA,NA,NA,NA,L,Public,Corvallis,NA,531-540,Very High,2147,12,2769,NA,NA,OR,Public,4-year,32312,Corvallis,OR,15,15,1,4,13
 University of Colorado at Denver,NA,201-300,201,70-95,14.4,23.5,0,0,32.3,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 The University of New Mexico - Albuquerque,NA,301-400,301,96-117,16.4,9.6,0,0,34.8,15.8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Kent State University,NA,401-500,401,118-139,9.3,13.5,0,0,24,15.6,216,20800,21621,NA,NA,NA,NA,NA,NA,NA,L,Public,Kent,NA,1001-1200,Very High,1252,19,1465,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -83,14 +83,14 @@ Purdue University - West Lafayette,27.9,70,70,34,23.1,19.2,13.4,22.8,53.2,23.7,N
 University of Arizona,NA,101-150,101,47-58,27.2,23.5,14.4,0,50.3,23.5,111,34667,36503,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AZ,Public,4-year,45601,Tucson,AZ,15,15,1,4,11
 Tufts University,NA,151-200,151,59-69,12.5,16.6,18.3,16.1,35.6,25.1,29,63000,6114,Medford,MA,0.11,National,NA,NA,NA,M,Private,Medford,36.5,275,Very High,1459,8,1798,MA,1,NA,NA,NA,NA,Medford,MA,15,17,2,5,21
 The George Washington University,NA,201-300,201,70-95,10.9,9.6,11.4,0,37.9,19.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Kansas,NA,201-300,201,70-95,11.2,13.5,17.6,0,41.9,16.3,125,28034,19135,NA,NA,NA,NA,NA,NA,NA,L,Public,Lawrence,28.8,387,Very High,3.3569999999999998,7,2.014,NA,NA,NA,NA,NA,NA,Lawrence,KS,15,16,1,5,13
+University of Kansas,NA,201-300,201,70-95,11.2,13.5,17.6,0,41.9,16.3,125,28034,19135,NA,NA,NA,NA,NA,NA,NA,L,Public,Lawrence,28.8,387,Very High,3357,7,2014,NA,NA,NA,NA,NA,NA,Lawrence,KS,15,16,1,5,13
 University of Michigan-Ann Arbor,39.4,27,27,20,41,41.8,34.1,0,80.8,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Ann Arbor,86.2,23,Very High,7132,6,7341,MI,2,NA,NA,NA,NA,Ann Arbor,MI,15,16,1,5,12
 "University of California, Davis",25.9,96,96,45,30.5,25.3,0,0,59.3,23.6,NA,NA,NA,Davis,CA,0.16,National,NA,NA,NA,XL,Public,Davis,57.9,108,Very High,3420,10,8414,NA,NA,CA,Public,4-year,39074,NA,NA,NA,NA,NA,NA,NA
-Colorado State University,NA,201-300,201,70-95,16.9,9.6,0,0,38.9,19.5,148,31540,25186,NA,NA,NA,NA,NA,NA,NA,L,Public,Fort Collins,26.8,431,Very High,3.1149999999999998,8,1.547,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Colorado State University,NA,201-300,201,70-95,16.9,9.6,0,0,38.9,19.5,148,31540,25186,NA,NA,NA,NA,NA,NA,NA,L,Public,Fort Collins,26.8,431,Very High,3115,8,1547,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Indiana University-Purdue University at Indianapolis,NA,301-400,301,96-117,12.9,9.6,0,0,40,14.9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of North Texas,NA,301-400,301,96-117,4.6,19.2,0,0,27.8,19,287,24234,32694,Denton,TX,0.05,National,NA,NA,NA,XL,Public,Denton,NA,1001-1200,High,1395,23,2420,NA,NA,TX,Public,4-year,40953,Denton,TX,15,15,1,4,12
 Emory University,NA,101-150,101,47-58,25.3,19.2,0,0,54.8,21.8,21,55468,7010,Atlanta,GA,0.17,National,NA,NA,NA,L,Private,Atlanta,48.6,160,Very High,2725,5,2264,GA,1,NA,NA,NA,NA,Atlanta,GA,15,17,2,5,11
-Virginia Commonwealth University,NA,201-300,201,70-95,5.7,16.6,10.2,13.9,36.9,15.5,178,35676,21943,NA,NA,NA,NA,NA,NA,NA,L,Public,Richmond,NA,701-750,Very High,2.771,9,995,NA,NA,VA,Public,4-year,29070,Richmond,VA,15,16,1,4,12
+Virginia Commonwealth University,NA,201-300,201,70-95,5.7,16.6,10.2,13.9,36.9,15.5,178,35676,21943,NA,NA,NA,NA,NA,NA,NA,L,Public,Richmond,NA,701-750,Very High,2771,9,995,NA,NA,VA,Public,4-year,29070,Richmond,VA,15,16,1,4,12
 California Institute of Technology,57.4,9,9,7,57.6,34.5,53.5,67.5,45,100,9,58680,901,Pasadena,CA,0.08,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,CA,1,NA,NA,NA,NA,Pasadena,CA,15,11,2,6,12
 Cornell University,50.7,12,12,10,47.3,46.9,43.1,49.1,61.6,43.4,17,61015,14743,Ithaca,NY,0.1,National,Ithaca,NY,6692,L,Private,Ithaca,88.3,21,Very High,2843,8,5675,NY,1,NA,NA,NA,NA,Ithaca,NY,15,16,2,5,13
 University of Colorado at Boulder,35.7,38,38,26,37.4,31.8,12.4,33.6,48.5,35,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -98,21 +98,21 @@ Mississippi State University,NA,401-500,401,118-139,5.1,13.5,0,0,25,15.9,198,249
 Saint Louis University,NA,401-500,401,118-139,5.5,9.6,0,11.4,26.5,13.4,109,48824,7357,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,MO,4,NA,NA,NA,NA,Saint Louis,MO,16,17,2,5,11
 University of Washington,50,14,14,12,49.1,54.2,24.9,37.4,75.9,31.4,62,39906,35582,Seattle,WA,0.14,National,Seattle,WA,8777,XL,Public,Seattle,65,85,Very High,2796,15,7362,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Duke University,39.7,26,26,19,35.6,55.9,15.2,19,63.9,25.5,10,60489,6717,Durham,NC,0.09,National,NA,NA,NA,L,Private,Durham,75.2,52,Very High,5673,3,3445,NC,1,NA,NA,NA,NA,Durham,NC,15,17,2,6,11
-Florida State University,NA,201-300,201,70-95,15.3,13.5,0,0,39.3,20.2,55,21683,32543,NA,NA,NA,NA,NA,NA,NA,XL,Public,Tallahassee,25,475,Very High,2.2359999999999998,17,1.618,NA,NA,FL,Public,4-year,43569,Tallahassee,FL,15,15,1,4,12
-George Mason University,NA,201-300,201,70-95,6.1,0,0,31.5,29.5,19.4,151,36579,27105,Fairfax,VA,0.05,National,NA,NA,NA,L,Public,Fairfax,NA,801-1000,Very High,2.0109999999999997,15,2.737,NA,NA,VA,Public,4-year,38541,Fairfax,VA,15,15,1,4,21
+Florida State University,NA,201-300,201,70-95,15.3,13.5,0,0,39.3,20.2,55,21683,32543,NA,NA,NA,NA,NA,NA,NA,XL,Public,Tallahassee,25,475,Very High,2236,17,1618,NA,NA,FL,Public,4-year,43569,Tallahassee,FL,15,15,1,4,12
+George Mason University,NA,201-300,201,70-95,6.1,0,0,31.5,29.5,19.4,151,36579,27105,Fairfax,VA,0.05,National,NA,NA,NA,L,Public,Fairfax,NA,801-1000,Very High,2011,15,2737,NA,NA,VA,Public,4-year,38541,Fairfax,VA,15,15,1,4,21
 University of Notre Dame,NA,201-300,201,70-95,14.5,16.6,12.4,0,32.8,20.8,19,58843,8874,Notre Dame,IN,0.06,National,NA,NA,NA,L,Private,Notre Dame,40.9,222,Very High,1545,8,1484,IN,1,NA,NA,NA,NA,Notre Dame,IN,15,17,2,5,21
-Drexel University,NA,301-400,301,96-117,9.7,19.2,0,0,31.4,21.8,105,57136,14552,Philadelphia,PA,0.09,National,NA,NA,NA,L,Private,Philadelphia,NA,651-700,Very High,1.837,11,2.526,NA,NA,NA,NA,NA,NA,Philadelphia,PA,15,16,2,5,11
+Drexel University,NA,301-400,301,96-117,9.7,19.2,0,0,31.4,21.8,105,57136,14552,Philadelphia,PA,0.09,National,NA,NA,NA,L,Private,Philadelphia,NA,651-700,Very High,1837,11,2526,NA,NA,NA,NA,NA,NA,Philadelphia,PA,15,16,2,5,11
 University of Illinois at Urbana-Champaign,35.4,41,41,28,31.8,19.2,29.6,35.8,57.8,28,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Champaign,65.2,82,Very High,2748,17,9987,IL,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Florida,27,86,86,41,18.9,28.7,16.8,0,63.6,24.8,31,28658,34931,NA,NA,NA,NA,Gainesville,FL,5919,XL,Public,Gainesville,46.9,173,Very High,6222,7,4143,FL,3,FL,Public,4-year,53372,Gainesville,FL,15,16,1,5,12
 University of Rochester,NA,151-200,151,59-69,17.5,13.5,27.8,7.6,39.9,17.9,35,59344,6521,Rochester,NY,0.25,National,NA,NA,NA,M,Private,Rochester,50.3,154,Very High,1853,5,3644,NY,1,NA,NA,NA,NA,Rochester,NY,15,15,2,5,12
-Brandeis University,NA,201-300,201,70-95,16.4,9.6,19,12,18.7,27.8,43,60391,3493,Waltham,MA,0.2,National,NA,NA,NA,M,Private,Waltham,25.7,455,Very High,611,9,1.554,MA,1,NA,NA,NA,NA,Waltham,MA,15,14,2,5,13
+Brandeis University,NA,201-300,201,70-95,16.4,9.6,19,12,18.7,27.8,43,60391,3493,Waltham,MA,0.2,National,NA,NA,NA,M,Private,Waltham,25.7,455,Very High,611,9,1554,MA,1,NA,NA,NA,NA,Waltham,MA,15,14,2,5,13
 Medical University of South Carolina,NA,301-400,301,96-117,7.3,9.6,0,0,31.7,38.4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Charleston,SC,27,9,1,6,12
-University of Utah,NA,101-150,101,47-58,24.6,19.2,0,11.4,51.6,28.3,102,31389,24643,Salt Lake City,UT,0.06,National,NA,NA,NA,L,Public,Salt Lake City,30.9,358,Very High,3.3449999999999998,8,2.134,NA,NA,UT,Public,4-year,33081,Salt Lake City,UT,15,16,1,5,12
+University of Utah,NA,101-150,101,47-58,24.6,19.2,0,11.4,51.6,28.3,102,31389,24643,Salt Lake City,UT,0.06,National,NA,NA,NA,L,Public,Salt Lake City,30.9,358,Very High,3345,8,2134,NA,NA,UT,Public,4-year,33081,Salt Lake City,UT,15,16,1,5,12
 Northeastern University (Boston),NA,201-300,201,70-95,18.7,13.5,0,0,33.9,22.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Delaware,NA,201-300,201,70-95,10.4,9.6,10.2,16.1,33.3,19,96,36880,18420,Newark,DE,0.05,National,NA,NA,NA,L,Public,Newark,NA,531-540,Very High,1.272,17,2.3369999999999997,DE,4,NA,NA,NA,NA,Newark,DE,15,16,1,4,21
-University of Houston,NA,201-300,201,70-95,12,13.5,0,0,40.1,21.5,183,27110,39165,NA,NA,NA,NA,NA,NA,NA,XL,Public,Houston,NA,701-750,Very High,1.702,22,3.049,NA,NA,TX,Public,4-year,47090,Houston,TX,15,15,1,4,11
-University of Central Florida,NA,301-400,301,96-117,10.5,9.6,0,0,33,18,159,22467,61456,NA,NA,NA,NA,NA,NA,NA,XL,Public,Orlando,NA,751-800,Very High,2.146,25,2.562,FL,4,FL,Public,4-year,71881,Orlando,FL,15,15,1,4,21
-University of Cincinnati,NA,301-400,301,96-117,10.7,9.6,0,0,41,15.1,160,27472,28657,Cincinnati,OH,0.05,National,NA,NA,NA,XL,Public,Cincinnati,NA,601-650,Very High,2.756,11,2.8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Delaware,NA,201-300,201,70-95,10.4,9.6,10.2,16.1,33.3,19,96,36880,18420,Newark,DE,0.05,National,NA,NA,NA,L,Public,Newark,NA,531-540,Very High,1272,17,2337,DE,4,NA,NA,NA,NA,Newark,DE,15,16,1,4,21
+University of Houston,NA,201-300,201,70-95,12,13.5,0,0,40.1,21.5,183,27110,39165,NA,NA,NA,NA,NA,NA,NA,XL,Public,Houston,NA,701-750,Very High,1702,22,3049,NA,NA,TX,Public,4-year,47090,Houston,TX,15,15,1,4,11
+University of Central Florida,NA,301-400,301,96-117,10.5,9.6,0,0,33,18,159,22467,61456,NA,NA,NA,NA,NA,NA,NA,XL,Public,Orlando,NA,751-800,Very High,2146,25,2562,FL,4,FL,Public,4-year,71881,Orlando,FL,15,15,1,4,21
+University of Cincinnati,NA,301-400,301,96-117,10.7,9.6,0,0,41,15.1,160,27472,28657,Cincinnati,OH,0.05,National,NA,NA,NA,XL,Public,Cincinnati,NA,601-650,Very High,2756,11,2800,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 West Virginia University,NA,401-500,401,118-139,8,9.6,0,0,31.5,11.9,262,25320,21086,NA,NA,NA,NA,NA,NA,NA,L,Public,Morgantown,NA,801-1000,Very High,1605,15,1807,NA,NA,NA,NA,NA,NA,Morgantown,WV,15,16,1,4,13
 Harvard University,100,1,1,1,100,100,100,100,100,79.6,3,55587,5222,Cambridge,MA,0.12,National,Cambridge,MA,5562,L,Private,Cambridge,98,5,Very High,4646,5,5877,MA,1,MA,PrivNp,4-year,30391,Cambridge,MA,15,17,2,6,12
 University of Maine,NA,401-500,401,118-139,6.7,0,0,17,18.3,19.3,223,33586,9465,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Orono,ME,15,13,1,4,23
@@ -128,15 +128,15 @@ The University of Texas M. D. Anderson Cancer Center,25.1,100,100,46,23,31.8,0,0
 Icahn School of Medicine at Mount Sinai,NA,101-150,101,47-58,25.8,40.6,0,0,41.2,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New York,NY,27,18,2,7,11
 North Carolina State University - Raleigh,NA,151-200,151,59-69,13.5,21.4,0,0,44.7,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Massachusetts Medical School - Worcester,NA,151-200,151,59-69,23.1,9.6,0,19.7,26.6,20.5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Nebraska - Lincoln,NA,201-300,201,70-95,12.3,19.2,16.8,0,37.4,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Lincoln,NA,571-580,Very High,1.9529999999999998,12,2.8049999999999997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Florida International University,NA,401-500,401,118-139,6.6,9.6,0,0,32.1,17.3,163,18964,48664,Miami,FL,0.07,National,NA,NA,NA,XL,Public,Miami,NA,801-1000,High,2.221,16,3.5749999999999997,NA,NA,FL,Public,4-year,58836,Miami,FL,15,15,1,4,21
+University of Nebraska - Lincoln,NA,201-300,201,70-95,12.3,19.2,16.8,0,37.4,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Lincoln,NA,571-580,Very High,1953,12,2805,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Florida International University,NA,401-500,401,118-139,6.6,9.6,0,0,32.1,17.3,163,18964,48664,Miami,FL,0.07,National,NA,NA,NA,XL,Public,Miami,NA,801-1000,High,2221,16,3575,NA,NA,FL,Public,4-year,58836,Miami,FL,15,15,1,4,21
 "University of California, Los Angeles",51.2,11,11,9,44.9,55.9,29.2,46.4,73.1,32.1,NA,NA,NA,Los Angeles,CA,0.1,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,CA,Public,4-year,44589,NA,NA,NA,NA,NA,NA,NA
 Yale University,50.7,12,12,10,53.4,44.9,47.1,49.7,58.7,35.7,5,59950,4703,New Haven,CT,0.1,National,NA,NA,NA,M,Private,New Haven,90.2,14,Very High,5391,2,2537,CT,1,NA,NA,NA,NA,New Haven,CT,15,17,2,6,12
 University of North Carolina at Chapel Hill,37.9,30,30,22,30.2,45.9,8.8,23.4,64.7,34.4,NA,NA,NA,Chapel Hill,NC,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NC,1,NC,Public,4-year,30092,Chapel Hill,NC,15,17,1,5,13
 "University of Maryland, College Park",32.3,51,51,32,33.5,25.3,19,19.7,55.3,29.3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,College Park,49.5,158,Very High,3798,10,4659,NA,NA,MD,Public,4-year,40709,NA,NA,NA,NA,NA,NA,NA
 Georgia Institute of Technology,27.5,79,79,38,24.6,38.3,12.4,0,46.6,38,38,33794,16561,Atlanta,GA,0.11,National,Atlanta,GA,5657,L,Public,Atlanta,63.5,88,Very High,1267,19,5675,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of California, Santa Cruz",NA,101-150,101,47-58,29.5,40.6,0,0,29.9,38.7,NA,NA,NA,Santa Cruz,CA,0.06,National,NA,NA,NA,L,Public,Santa Cruz,31.4,347,Very High,1.045,18,2.13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Texas Tech University,NA,401-500,401,118-139,7,9.6,0,0,34.4,16.4,220,24092,33269,NA,NA,NA,NA,NA,NA,NA,XL,Public,Lubbock,NA,801-1000,High,1.772,19,2.1959999999999997,NA,NA,TX,Public,4-year,40322,Lubbock,TX,15,15,1,4,11
+"University of California, Santa Cruz",NA,101-150,101,47-58,29.5,40.6,0,0,29.9,38.7,NA,NA,NA,Santa Cruz,CA,0.06,National,NA,NA,NA,L,Public,Santa Cruz,31.4,347,Very High,1045,18,2130,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Texas Tech University,NA,401-500,401,118-139,7,9.6,0,0,34.4,16.4,220,24092,33269,NA,NA,NA,NA,NA,NA,NA,XL,Public,Lubbock,NA,801-1000,High,1772,19,2196,NA,NA,TX,Public,4-year,40322,Lubbock,TX,15,15,1,4,11
 University of Oklahoma - Norman,NA,401-500,401,118-139,7.6,9.6,0,0,31.3,16.1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Massachusetts Institute of Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,55878,4361,Cambridge,MA,0.1,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,MA,1,NA,NA,NA,NA,Cambridge,MA,15,17,2,6,12
 University of California--Los Angeles,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,20,43022,31636,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -144,62 +144,62 @@ University of California--Berkeley,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,22,44115,30980,
 University of Michigan--Ann Arbor,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,24,53232,31329,Ann Arbor,MI,0.08,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of California--Santa Barbara,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,30,44196,23196,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of North Carolina--Chapel Hill,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,32,36776,19399,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Wake Forest University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,33,59770,5441,Winston-Salem,NC,0.09,National,NA,NA,NA,M,Private,Winston-Salem,26.9,429,Very High,2.276,4,805,NC,1,NA,NA,NA,NA,Winston-Salem,NC,16,14,2,5,12
+Wake Forest University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,33,59770,5441,Winston-Salem,NC,0.09,National,NA,NA,NA,M,Private,Winston-Salem,26.9,429,Very High,2276,4,805,NC,1,NA,NA,NA,NA,Winston-Salem,NC,16,14,2,5,12
 University of California--San Diego,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,34,44487,31842,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of California--Irvine,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,37,43709,29638,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of California--Davis,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,39,44408,31162,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Texas at Austin,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,40,40032,40048,NA,NA,NA,NA,NA,NA,NA,XL,Public,Austin,68.4,67,Very High,2887,17,4953,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 William & Mary,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,41,46467,6236,Williamsburg,VA,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Williamsburg,VA,16,14,1,4,23
-Tulane University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,45,60814,7700,New Orleans,LA,0.05,National,NA,NA,NA,M,Private,New Orleans,26.6,436,Very High,1.7329999999999999,6,1.1720000000000002,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tulane University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,45,60814,7700,New Orleans,LA,0.05,National,NA,NA,NA,M,Private,New Orleans,26.6,436,Very High,1733,6,1172,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Wisconsin--Madison,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,46,38608,33585,Madison,WI,0.1,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Illinois--Urbana-Champaign,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,47,34316,33683,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Georgia,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,48,31120,29765,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,GA,3,GA,Public,4-year,39147,Athens,GA,15,16,1,4,12
-Lehigh University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,49,57470,5203,Bethlehem,PA,0.08,National,NA,NA,NA,M,Private,Bethlehem,NA,531-540,Very High,540,11,1.1520000000000001,PA,1,NA,NA,NA,NA,Bethlehem,PA,16,13,2,4,13
-Northeastern University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,50,57592,15156,Boston,MA,0.15,National,NA,NA,NA,L,Private,Boston,31.9,342,Very High,1.7229999999999999,12,7.595,MA,3,NA,NA,NA,NA,Boston,MA,15,17,2,5,11
+Lehigh University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,49,57470,5203,Bethlehem,PA,0.08,National,NA,NA,NA,M,Private,Bethlehem,NA,531-540,Very High,540,11,1152,PA,1,NA,NA,NA,NA,Bethlehem,PA,16,13,2,4,13
+Northeastern University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,50,57592,15156,Boston,MA,0.15,National,NA,NA,NA,L,Private,Boston,31.9,342,Very High,1723,12,7595,MA,3,NA,NA,NA,NA,Boston,MA,15,17,2,5,11
 Ohio State University--Columbus,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,51,35019,46984,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Pepperdine University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,52,59702,3459,Malibu,CA,0.09,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,CA,3,NA,NA,NA,NA,Malibu,CA,17,14,2,6,21
 Purdue University--West Lafayette,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,53,28794,34920,West Lafayette,IN,0.11,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Villanova University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,54,59900,7037,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PA,1,NA,NA,NA,NA,Villanova,PA,16,14,2,4,21
-Rensselaer Polytechnic Institute,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,56,58526,6283,Troy,NY,0.15,National,NA,NA,NA,M,Private,Troy,26.8,431,Very High,639,12,1.594,NY,1,NA,NA,NA,NA,Troy,NY,15,14,2,4,13
+Rensselaer Polytechnic Institute,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,56,58526,6283,Troy,NY,0.15,National,NA,NA,NA,M,Private,Troy,26.8,431,Very High,639,12,1594,NY,1,NA,NA,NA,NA,Troy,NY,15,14,2,4,13
 Santa Clara University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,57,55860,5608,Santa Clara,CA,0.06,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,CA,3,NA,NA,NA,NA,Santa Clara,CA,17,14,2,5,12
-Syracuse University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,59,57591,14479,Syracuse,NY,0.13,National,Syracuse,NY,5443,L,Private,Syracuse,NA,651-700,Very High,1.374,14,3.5709999999999997,NY,3,NA,NA,NA,NA,Syracuse,NY,15,17,2,5,12
+Syracuse University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,59,57591,14479,Syracuse,NY,0.13,National,Syracuse,NY,5443,L,Private,Syracuse,NA,651-700,Very High,1374,14,3571,NY,3,NA,NA,NA,NA,Syracuse,NY,15,17,2,5,12
 University of Maryland--College Park,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,60,38636,30875,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Pittsburgh--Pittsburgh Campus,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,61,34124,19197,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-George Washington University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,63,59870,11762,Washington,DC,0.09,National,NA,NA,NA,L,Private,Ashburn,31.1,355,Very High,2.0159999999999996,11,4.023999999999999,DC,1,NA,NA,NA,NA,Washington,DC,15,17,2,5,11
+George Washington University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,63,59870,11762,Washington,DC,0.09,National,NA,NA,NA,L,Private,Ashburn,31.1,355,Very High,2016,11,4024,DC,1,NA,NA,NA,NA,Washington,DC,15,17,2,5,11
 Pennsylvania State University--University Park,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,64,36476,39809,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Rutgers University--New Brunswick,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,65,33005,35844,Piscataway,NJ,0.09,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Worcester Polytechnic Institute,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,67,55531,4892,Worcester,MA,0.06,National,NA,NA,NA,M,Private,Worcester,NA,751-800,Very High,432,14,837,MA,2,NA,NA,NA,NA,Worcester,MA,16,13,2,4,12
-Fordham University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68,55776,9399,New York,NY,0.07,National,NA,NA,NA,L,Private,New York City,NA,801-1000,High,1.123,13,1.982,NY,3,NA,NA,NA,NA,Bronx,NY,16,17,2,5,11
+Fordham University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68,55776,9399,New York,NY,0.07,National,NA,NA,NA,L,Private,New York City,NA,801-1000,High,1123,13,1982,NY,3,NA,NA,NA,NA,Bronx,NY,16,17,2,5,11
 Indiana University--Bloomington,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,38354,32986,Bloomington,IN,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 SMU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,70,60236,6827,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Massachusetts--Amherst,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,72,36964,24233,Amherst,MA,0.07,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Minnesota--Twin Cities,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,73,33843,36061,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Baylor University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,75,50232,14399,NA,NA,NA,NA,NA,NA,NA,L,Private,Waco,NA,1001-1200,Very High,1294,13,777,TX,3,NA,NA,NA,NA,Waco,TX,15,16,2,4,12
-Clemson University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,37712,20868,NA,NA,NA,NA,NA,NA,NA,L,Public,Clemson,NA,801-1000,Very High,1.558,15,1.418,SC,3,NA,NA,NA,NA,Clemson,SC,15,16,1,4,21
+Clemson University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,37712,20868,NA,NA,NA,NA,NA,NA,NA,L,Public,Clemson,NA,801-1000,Very High,1558,15,1418,SC,3,NA,NA,NA,NA,Clemson,SC,15,16,1,4,21
 Loyola Marymount University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,53051,6673,Los Angeles,CA,0.1,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Los Angeles,CA,16,14,2,5,11
 Virginia Tech,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,78,33253,30020,Blacksburg,VA,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-American University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,79,51334,7953,Washington,DC,0.1,National,NA,NA,NA,M,Private,Washington D.C.,NA,651-700,High,1.091,11,1.305,DC,2,NA,NA,NA,NA,Washington,DC,16,17,2,5,11
+American University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,79,51334,7953,Washington,DC,0.1,National,NA,NA,NA,M,Private,Washington D.C.,NA,651-700,High,1091,11,1305,DC,2,NA,NA,NA,NA,Washington,DC,16,17,2,5,11
 Brigham Young University--Provo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,80,6120,33365,Provo,UT,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Gonzaga University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,81,48470,4852,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,WA,3,NA,NA,NA,NA,Spokane,WA,17,14,2,4,12
 North Carolina State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,82,29916,26150,NA,NA,NA,NA,Raleigh,NC,5008,L,Public,Raleigh,34.7,300,Very High,1944,15,3156,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Binghamton University--SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,83,27909,14333,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Colorado School of Mines,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,84,39800,5216,NA,NA,NA,NA,NA,NA,NA,M,Public,Golden,25.4,461,Very High,544,11,627,CO,3,NA,NA,NA,NA,Golden,CO,15,13,1,4,21
 Elon University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,85,38725,6291,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NC,3,NA,NA,NA,NA,Elon,NC,17,14,2,4,22
-Howard University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,86,28916,7857,NA,NA,NA,NA,NA,NA,NA,M,Private,Washington D.C.,NA,651-700,High,1.111,8,531,NA,NA,NA,NA,NA,NA,Washington,DC,16,17,2,5,11
+Howard University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,86,28916,7857,NA,NA,NA,NA,NA,NA,NA,M,Private,Washington D.C.,NA,651-700,High,1111,8,531,NA,NA,NA,NA,NA,NA,Washington,DC,16,17,2,5,11
 Marquette University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,87,45766,8024,NA,NA,NA,NA,NA,NA,NA,M,Private,Milwaukee,NA,1001-1200,Very High,913,12,367,WI,3,NA,NA,NA,NA,Milwaukee,WI,16,17,2,5,11
-Stevens Institute of Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,89,56920,3670,NA,NA,NA,NA,NA,NA,NA,M,Private,Hoboken,NA,701-750,Very High,315,20,1.9189999999999998,NJ,3,NA,NA,NA,NA,Hoboken,NJ,16,13,2,5,21
+Stevens Institute of Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,89,56920,3670,NA,NA,NA,NA,NA,NA,NA,M,Private,Hoboken,NA,701-750,Very High,315,20,1919,NJ,3,NA,NA,NA,NA,Hoboken,NJ,16,13,2,5,21
 Texas Christian University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,90,51660,9704,Fort Worth,TX,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,TX,3,NA,NA,NA,NA,Fort Worth,TX,16,17,2,4,11
 University of California--Riverside,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,91,43496,22687,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Stony Brook University--SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,93,28080,18010,Stony Brook,NY,0.1,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University at Buffalo--SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,94,28194,22306,Buffalo,NY,0.13,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of California--Merced,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,95,43319,8276,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Denver,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,97,54819,5699,NA,NA,NA,NA,NA,NA,NA,M,Private,Denver,NA,751-800,Very High,1,10,599,CO,4,NA,NA,NA,NA,Denver,CO,15,16,2,5,11
+University of Denver,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,97,54819,5699,NA,NA,NA,NA,NA,NA,NA,M,Private,Denver,NA,751-800,Very High,1000,10,599,CO,4,NA,NA,NA,NA,Denver,CO,15,16,2,5,11
 University of San Diego,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,98,52864,5529,San Diego,CA,0.06,National,NA,NA,NA,M,Private,San Diego,NA,1001-1200,High,647,12,638,CA,3,NA,NA,NA,NA,San Diego,CA,16,13,2,5,11
-Auburn University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,99,31956,24505,NA,NA,NA,NA,NA,NA,NA,L,Public,Auburn,NA,801-1000,Very High,1.507,18,2.2830000000000004,NA,NA,AL,Public,4-year,30737,Auburn,AL,15,15,1,4,13
+Auburn University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,99,31956,24505,NA,NA,NA,NA,NA,NA,NA,L,Public,Auburn,NA,801-1000,Very High,1507,18,2283,NA,NA,AL,Public,4-year,30737,Auburn,AL,15,15,1,4,13
 University of Colorado Boulder,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,100,38312,30300,NA,NA,NA,NA,NA,NA,NA,XL,Public,Boulder,38.5,251,Very High,2946,11,2441,NA,NA,CO,Public,4-year,37437,Boulder,CO,15,16,1,4,12
 Clark University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,103,50302,2241,Worcester,MA,0.08,National,NA,NA,NA,S,Private,Worcester,NA,601-650,Very High,276,12,853,MA,3,NA,NA,NA,NA,Worcester,MA,16,14,2,5,12
 Creighton University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,104,44524,4458,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NE,4,NA,NA,NA,NA,Omaha,NE,16,14,2,5,11
-Loyola University Chicago,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,106,47498,11612,NA,NA,NA,NA,NA,NA,NA,L,Private,Chicago,NA,801-1000,High,1.297,12,726,IL,3,NA,NA,NA,NA,Chicago,IL,16,16,2,5,11
+Loyola University Chicago,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,106,47498,11612,NA,NA,NA,NA,NA,NA,NA,L,Private,Chicago,NA,801-1000,High,1297,12,726,IL,3,NA,NA,NA,NA,Chicago,IL,16,16,2,5,11
 Miami University--Oxford,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,107,37379,16522,Oxford,OH,0.06,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 New Jersey Institute of Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,108,33386,9084,Newark,NJ,0.06,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Newark,NJ,15,12,1,4,11
 University of California--Santa Cruz,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,112,43820,17207,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -208,9 +208,9 @@ University of San Francisco,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,114,53472,5852,San Fra
 University of Tennessee,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,116,31434,24254,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Rochester Institute of Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,118,52756,13412,Rochester,NY,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NY,4,NA,NA,NA,NA,Rochester,NY,16,17,2,4,21
 SUNY College of Environmental Science and Forestry,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,119,19976,1731,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Syracuse,NY,16,10,1,4,12
-University of South Carolina,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,120,33928,27270,NA,NA,NA,NA,NA,NA,NA,XL,Public,Columbia,NA,601-650,Very High,2.169,15,1.532,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of South Carolina,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,120,33928,27270,NA,NA,NA,NA,NA,NA,NA,XL,Public,Columbia,NA,601-650,Very High,2169,15,1532,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Chapman University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,122,57214,7404,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,CA,3,NA,NA,NA,NA,Orange,CA,16,14,2,4,12
-Illinois Institute of Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,123,50640,3123,Chicago,IL,0.15,National,NA,NA,NA,M,Private,Chicago,26.2,444,Very High,402,15,2.3299999999999996,IL,2,NA,NA,NA,NA,Chicago,IL,16,14,2,5,11
+Illinois Institute of Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,123,50640,3123,Chicago,IL,0.15,National,NA,NA,NA,M,Private,Chicago,26.2,444,Very High,402,15,2330,IL,2,NA,NA,NA,NA,Chicago,IL,16,14,2,5,11
 Iowa State University of Science and Technology,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,124,24504,26846,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Missouri,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,126,30450,23396,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Clarkson University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,127,54370,2905,NA,NA,NA,NA,NA,NA,NA,S,Private,Potsdam,NA,751-800,Very High,291,14,384,NA,NA,NA,NA,NA,NA,Potsdam,NY,16,14,2,4,33
@@ -220,10 +220,10 @@ Rutgers University--Newark,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,130,32409,9118,Newark,N
 Seattle University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,131,49335,4299,Seattle,WA,0.09,National,NA,NA,NA,M,Private,Seattle,NA,801-1000,High,601,11,702,NA,NA,NA,NA,NA,NA,Seattle,WA,17,14,2,5,11
 Seton Hall University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,132,46880,5913,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,South Orange,NJ,16,13,2,5,21
 University of Dayton,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,133,44890,8644,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Dayton,OH,16,17,2,4,12
-University of Oklahoma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,135,25116,21383,NA,NA,NA,NA,NA,NA,NA,L,Public,Norman,NA,651-700,Very High,1.7089999999999999,14,1.418,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Oklahoma,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,135,25116,21383,NA,NA,NA,NA,NA,NA,NA,L,Public,Norman,NA,651-700,Very High,1709,14,1418,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 The Catholic University of America,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,136,52156,3055,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Washington,DC,16,14,2,5,11
 Drake University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,137,45962,2848,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,IA,4,NA,NA,NA,NA,Des Moines,IA,17,14,2,5,12
-The New School,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,138,52979,6430,New York,NY,0.3,National,NA,NA,NA,M,Private,New York,NA,561-570,Very High,1.087,9,3.5989999999999998,NY,2,NA,NA,NA,NA,New York,NY,16,13,2,5,11
+The New School,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,138,52979,6430,New York,NY,0.3,National,NA,NA,NA,M,Private,New York,NA,561-570,Very High,1087,9,3599,NY,2,NA,NA,NA,NA,New York,NY,16,13,2,5,11
 Samford University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,139,35360,3576,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Birmingham,AL,17,14,2,5,21
 Simmons University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,140,43112,1744,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Boston,MA,17,14,2,6,11
 University of La Verne,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,141,45850,2484,La Verne,CA,0.05,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,La Verne,CA,17,12,2,5,21
@@ -240,7 +240,7 @@ Quinnipiac University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,153,51270,6841,NA,NA,NA,NA,N
 Rutgers University--Camden,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,154,32299,5502,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 San Diego State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,155,20016,31086,San Diego,CA,0.05,National,NA,NA,NA,XL,Public,San Diego,NA,1001-1200,Very High,1262,25,2092,NA,NA,CA,Public,4-year,36334,San Diego,CA,16,15,1,4,11
 University of Alabama,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,157,31090,31670,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Mississippi,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,161,25876,16179,NA,NA,NA,NA,NA,NA,NA,L,Public,Oxford,NA,801-1000,Very High,2.017,10,628,NA,NA,NA,NA,NA,NA,University,MS,15,16,1,4,33
+University of Mississippi,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,161,25876,16179,NA,NA,NA,NA,NA,NA,NA,L,Public,Oxford,NA,801-1000,Very High,2017,10,628,NA,NA,NA,NA,NA,NA,University,MS,15,16,1,4,33
 Belmont University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,162,38430,6626,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Nashville,TN,17,14,2,4,11
 Hofstra University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,164,51360,6120,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Hempstead,NY,17,14,2,5,21
 Mercer University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,166,38746,4911,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Macon,GA,16,14,2,5,12
@@ -271,7 +271,7 @@ University of Saint Joseph,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,195,42934,898,NA,NA,NA,
 Biola University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,196,44382,3682,La Mirada,CA,0.06,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,La Mirada,CA,17,14,2,5,21
 Indiana University-Purdue University--Indianapolis,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,197,32101,20966,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Towson University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,199,22532,18730,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Towson,MD,18,16,1,3,13
-University of New Mexico,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,200,24924,16124,NA,NA,NA,NA,NA,NA,NA,L,Public,Albuquerque,NA,651-700,Very High,2.1189999999999998,9,870,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of New Mexico,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,200,24924,16124,NA,NA,NA,NA,NA,NA,NA,L,Public,Albuquerque,NA,651-700,Very High,2119,9,870,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Ball State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,202,27406,15780,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Muncie,IN,16,16,1,4,13
 Bellarmine University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,203,44520,2484,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Louisville,KY,17,10,2,4,11
 Bethel University (MN),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,204,40080,2710,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -310,7 +310,7 @@ Central Michigan University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,239,13538,13048,NA,NA,
 Clarke University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,240,36870,659,Dubuque,IA,0.06,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Dubuque,IA,17,8,2,4,13
 The College of St. Scholastica,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,241,39410,2244,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Edgewood College,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,242,31700,1407,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Madison,WI,17,10,2,4,11
-Georgia State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,243,30114,28772,NA,NA,NA,NA,NA,NA,NA,XL,Public,Atlanta,NA,751-800,Very High,1.281,24,1.756,NA,NA,GA,Public,4-year,36360,Atlanta,GA,15,15,1,4,11
+Georgia State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,243,30114,28772,NA,NA,NA,NA,NA,NA,NA,XL,Public,Atlanta,NA,751-800,Very High,1281,24,1756,NA,NA,GA,Public,4-year,36360,Atlanta,GA,15,15,1,4,11
 Oklahoma City University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,244,32744,1526,Oklahoma City,OK,0.06,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Oklahoma City,OK,17,11,2,5,11
 UNC Greensboro,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,245,22564,15995,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of Indianapolis,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,246,33520,4168,Indianapolis,IN,0.07,National,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Indianapolis,IN,17,14,2,4,11
@@ -761,51 +761,51 @@ University of Massachusetts Medical School,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,N
 University of North Texas Health Science Center,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Fort Worth,TX,127,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Fort Worth,TX,25,18,1,7,11
 Massachusetts College of Art and Design,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Boston,MA,119,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Boston,MA,30,11,1,3,11
 New York School of Interior Design,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New York,NY,117,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,New York,NY,30,6,2,5,11
-California Institute of Technology (Caltech),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,S,Private,Pasadena,97.4,6,Very High,968,2,692,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of California, Berkeley (UCB)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Berkeley,82.5,32,Very High,3701,11,9428,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of California, Los Angeles (UCLA)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Los Angeles,79.7,40,Very High,4487,10,6140,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-New York University (NYU),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Private,New York City,78.9,42,Very High,7874,6,16218,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of California, San Diego (UCSD)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,San Diego,76.1,48,Very High,4545,8,8567,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Wisconsin-Madison,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Madison,66.2,75,Very High,5166,8,5737,WI,2,NA,NA,NA,NA,Madison,WI,15,16,1,5,11
-Pennsylvania State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,University Park,61.5,96,Very High,4207,11,6943,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of North Carolina, Chapel Hill",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Chapel Hill,59.6,100,Very High,4646,7,2749,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Purdue University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,West Lafayette,56.9,116,Very High,2622,15,8034,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of California, Santa Barbara (UCSB)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Santa Barbara,51.2,146,Very High,1597,16,4309,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Pittsburgh,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Pittsburgh,48.1,163,Very High,4746,6,2590,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Minnesota Twin Cities,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Minneapolis,45.7,186,Very High,5087,11,5630,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Rutgers University–New Brunswick,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,New Brunswick,37.2,264,Very High,5009,9,7965,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-The University of Arizona,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Tucson,36.9,268,Very High,5724,6,3526,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Illinois at Chicago (UIC),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Chicago,35.6,285,Very High,2808,10,3425,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Hawaiʻi at Mānoa,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Honolulu,32.1,340,Very High,1.6400000000000001,9,1.586,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Stony Brook University, State University of New York",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Stony Brook,29.4,378,Very High,2.3159999999999994,11,6.1979999999999995,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University at Buffalo SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Buffalo,28.7,388,Very High,1.53,19,4.409000000000001,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of Colorado, Denver",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Denver,27.4,414,Very High,5.319,3,1.274,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of Missouri, Columbia",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Columbia,24.9,476,Very High,2.6,10,1.273,NA,NA,MO,Public,4-year,31089,NA,NA,NA,NA,NA,NA,NA
-University of Texas Dallas,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Richardson,24.8,477,Very High,1.1400000000000001,22,4.827999999999999,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"The University of Tennessee, Knoxville",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Knoxville,NA,541-550,High,1700,17,1156,NA,NA,TN,Public,4-year,30559,NA,NA,NA,NA,NA,NA,NA
+University of Texas Dallas,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Richardson,24.8,477,Very High,1140,22,4828,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Louisiana State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Baton Rouge,NA,801-1000,Very High,1490,21,1315,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University at Buffalo SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Buffalo,28.7,388,Very High,1530,19,4409,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Indiana University–Purdue University Indianapolis,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Indianapolis,NA,801-1000,High,1540,15,1104,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Hawaiʻi at Mānoa,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Honolulu,32.1,340,Very High,1640,9,1586,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+The University of Alabama,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Tuscaloosa,NA,801-1000,Very High,1694,20,1283,NA,NA,AL,Public,4-year,37840,Tuscaloosa,AL,15,16,1,4,12
+"Stony Brook University, State University of New York",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Stony Brook,29.4,378,Very High,2316,11,6198,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"University of Missouri, Columbia",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Columbia,24.9,476,Very High,2600,10,1273,NA,NA,MO,Public,4-year,31089,NA,NA,NA,NA,NA,NA,NA
+"University of Colorado, Denver",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Denver,27.4,414,Very High,5319,3,1274,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+City University of New York,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,New York City,NA,701-750,Very High,7782,16,6462,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+New Jersey Institute of Technology (NJIT),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Newark,NA,701-750,Very High,629,14,2874,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Montana Missoula,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Missoula,NA,1001-1200,Very High,648,14,190,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rutgers University–Newark,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Newark,NA,801-1000,High,764,14,1246,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 College of William and Mary,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Williamsburg,NA,651-700,Very High,814,10,729,VA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Massachusetts Boston,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Boston,NA,651-700,Very High,838,15,1.527,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-City University of New York,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,New York City,NA,701-750,Very High,7.782,16,6.462,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-New Jersey Institute of Technology (NJIT),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Newark,NA,701-750,Very High,629,14,2.8739999999999997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University at Albany SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Albany,NA,751-800,Very High,821,19,1.216,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"University of Maryland, Baltimore County",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Baltimore,NA,751-800,High,834,14,1.074,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Binghamton University SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Binghamton,NA,801-1000,Very High,849,20,1.833,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Indiana University–Purdue University Indianapolis,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Indianapolis,NA,801-1000,High,1.54,15,1.104,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Louisiana State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Baton Rouge,NA,801-1000,Very High,1.49,21,1.315,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Rutgers University–Newark,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Newark,NA,801-1000,High,764,14,1.246,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Southern Methodist University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Private,Dallas,NA,801-1000,Very High,969,10,1.2129999999999999,TX,3,NA,NA,NA,NA,Dallas,TX,16,17,2,5,21
-The University of Alabama,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Tuscaloosa,NA,801-1000,Very High,1.6940000000000002,20,1.283,NA,NA,AL,Public,4-year,37840,Tuscaloosa,AL,15,16,1,4,12
+University at Albany SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Albany,NA,751-800,Very High,821,19,1216,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"University of Maryland, Baltimore County",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Baltimore,NA,751-800,High,834,14,1074,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Massachusetts Boston,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Boston,NA,651-700,Very High,838,15,1527,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "University of Missouri, Kansas City",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Kansas City,NA,801-1000,Very High,841,12,817,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Wisconsin Milwaukee,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Milwaukee,NA,801-1000,Very High,1336,16,1067,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-Florida Atlantic University - Boca Raton,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Boca Raton,NA,1001-1200,High,1139,19,998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Binghamton University SUNY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Binghamton,NA,801-1000,Very High,849,20,1833,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Texas El Paso,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,El Paso,NA,1001-1200,Very High,922,20,1351,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of South Alabama (USA),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Mobile,NA,1001-1200,High,939,13,287,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+California Institute of Technology (Caltech),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,S,Private,Pasadena,97.4,6,Very High,968,2,692,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Southern Methodist University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Private,Dallas,NA,801-1000,Very High,969,10,1213,TX,3,NA,NA,NA,NA,Dallas,TX,16,17,2,5,21
 Miami University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Oxford,NA,1001-1200,High,1062,17,2260,OH,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Rochester Institute of Technology (RIT),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Private,Rochester,NA,1001-1200,High,1136,12,1586,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-The University of Texas at Arlington,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Arlington,NA,1001-1200,Very High,1481,22,4106,NA,NA,TX,Public,4-year,48072,Arlington,TX,15,16,1,4,11
-University of Arkansas Fayetteville,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Fayetteville,NA,1001-1200,Very High,1364,18,1134,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Montana Missoula,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,M,Public,Missoula,NA,1001-1200,Very High,648,14,190,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Florida Atlantic University - Boca Raton,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Boca Raton,NA,1001-1200,High,1139,19,998,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 University of North Carolina at Charlotte,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Charlotte,NA,1001-1200,Very High,1303,19,1661,NA,NA,NC,Public,4-year,30146,Charlotte,NC,16,16,1,4,11
-University of South Alabama (USA),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Mobile,NA,1001-1200,High,939,13,287,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-University of Texas El Paso,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,El Paso,NA,1001-1200,Very High,922,20,1351,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Wisconsin Milwaukee,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Milwaukee,NA,801-1000,Very High,1336,16,1067,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Arkansas Fayetteville,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Fayetteville,NA,1001-1200,Very High,1364,18,1134,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+The University of Texas at Arlington,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Arlington,NA,1001-1200,Very High,1481,22,4106,NA,NA,TX,Public,4-year,48072,Arlington,TX,15,16,1,4,11
+"University of California, Santa Barbara (UCSB)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Santa Barbara,51.2,146,Very High,1597,16,4309,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"The University of Tennessee, Knoxville",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Knoxville,NA,541-550,High,1700,17,1156,NA,NA,TN,Public,4-year,30559,NA,NA,NA,NA,NA,NA,NA
+Purdue University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,West Lafayette,56.9,116,Very High,2622,15,8034,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Illinois at Chicago (UIC),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Chicago,35.6,285,Very High,2808,10,3425,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"University of California, Berkeley (UCB)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Berkeley,82.5,32,Very High,3701,11,9428,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pennsylvania State University,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,University Park,61.5,96,Very High,4207,11,6943,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"University of California, Los Angeles (UCLA)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Los Angeles,79.7,40,Very High,4487,10,6140,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"University of California, San Diego (UCSD)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,San Diego,76.1,48,Very High,4545,8,8567,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"University of North Carolina, Chapel Hill",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Chapel Hill,59.6,100,Very High,4646,7,2749,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Pittsburgh,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,L,Public,Pittsburgh,48.1,163,Very High,4746,6,2590,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rutgers University–New Brunswick,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,New Brunswick,37.2,264,Very High,5009,9,7965,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Minnesota Twin Cities,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Minneapolis,45.7,186,Very High,5087,11,5630,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+University of Wisconsin-Madison,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Madison,66.2,75,Very High,5166,8,5737,WI,2,NA,NA,NA,NA,Madison,WI,15,16,1,5,11
+The University of Arizona,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Public,Tucson,36.9,268,Very High,5724,6,3526,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+New York University (NYU),NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,XL,Private,New York City,78.9,42,Very High,7874,6,16218,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 Agnes Scott College,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,GA,3,NA,NA,NA,NA,Decatur,GA,21,11,2,3,21
 Allegheny College,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PA,4,NA,NA,NA,NA,Meadville,PA,21,11,2,2,32
 Austin College,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,TX,3,NA,NA,NA,NA,Sherman,TX,21,11,2,3,13

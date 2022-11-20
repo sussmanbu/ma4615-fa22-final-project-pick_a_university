@@ -1,0 +1,178 @@
+university,year,rank_display,score,country,city,type,research_output,student_faculty_ratio,international_students,size,faculty_count
+University of Denver,2022,751-800,,United States,Denver,Private,Very High,10,599,M,1000
+"University of California, Santa Cruz",2022,347,31.4,United States,Santa Cruz,Public,Very High,18,2130,L,1045
+Boston College,2022,494,24.1,United States,Newton,Private,Very High,13,1471,L,1048
+The New School,2022,561-570,,United States,New York,Private,Very High,9,3599,M,1087
+American University,2022,651-700,,United States,Washington D.C.,Private,High,11,1305,M,1091
+Howard University,2022,651-700,,United States,Washington D.C.,Private,High,8,531,M,1111
+Fordham University,2022,801-1000,,United States,New York City,Private,High,13,1982,L,1123
+University of Texas Dallas,2022,477,24.8,United States,Richardson,Public,Very High,22,4828,L,1140
+University of Delaware,2022,531-540,,United States,Newark,Public,Very High,17,2337,L,1272
+Georgia State University,2022,751-800,,United States,Atlanta,Public,Very High,24,1756,XL,1281
+Loyola University Chicago,2022,801-1000,,United States,Chicago,Private,High,12,726,L,1297
+University of Connecticut,2022,373,29.6,United States,Storrs,Public,Very High,19,3765,L,1328
+Kansas State University,2022,801-1000,,United States,Manhattan,Public,Very High,14,1481,L,1371
+Syracuse University,2022,651-700,,United States,Syracuse,Private,Very High,14,3571,L,1374
+Oklahoma State University,2022,801-1000,,United States,Stillwater,Public,High,14,1617,L,1484
+University of Vermont,2022,651-700,,United States,Burlington,Public,High,8,546,L,1485
+Louisiana State University,2022,801-1000,,United States,Baton Rouge,Public,Very High,21,1315,XL,1490
+"University of California, Riverside",2022,403,27.9,United States,Riverside,Public,Very High,17,2034,L,1497
+Auburn University,2022,801-1000,,United States,Auburn,Public,Very High,18,2283,L,1507
+University at Buffalo SUNY,2022,388,28.7,United States,Buffalo,Public,Very High,19,4409,L,1530
+Indiana University–Purdue University Indianapolis,2022,801-1000,,United States,Indianapolis,Public,High,15,1104,L,1540
+Clemson University,2022,801-1000,,United States,Clemson,Public,Very High,15,1418,L,1558
+University of Oregon,2022,651-700,,United States,Eugene,Public,Very High,13,1740,L,1583
+University of Hawaiʻi at Mānoa,2022,340,32.1,United States,Honolulu,Public,Very High,9,1586,L,1640
+Iowa State University,2022,494,24.1,United States,Ames,Public,Very High,17,2441,L,1656
+The University of Alabama,2022,801-1000,,United States,Tuscaloosa,Public,Very High,20,1283,XL,1694
+University of Houston,2022,701-750,,United States,Houston,Public,Very High,22,3049,XL,1702
+University of Oklahoma,2022,651-700,,United States,Norman,Public,Very High,14,1418,L,1709
+Northeastern University,2022,342,31.9,United States,Boston,Private,Very High,12,7595,L,1723
+Tulane University,2022,436,26.6,United States,New Orleans,Private,Very High,6,1172,M,1733
+Texas Tech University,2022,801-1000,,United States,Lubbock,Public,High,19,2196,XL,1772
+Drexel University,2022,651-700,,United States,Philadelphia,Private,Very High,11,2526,L,1837
+Washington State University,2022,427,27,United States,Pullman,Public,Very High,14,1731,L,1935
+University of Nebraska - Lincoln,2022,571-580,,United States,Lincoln,Public,Very High,12,2805,L,1953
+George Mason University,2022,801-1000,,United States,Fairfax,Public,Very High,15,2737,L,2011
+George Washington University,2022,355,31.1,United States,Ashburn,Private,Very High,11,4024,L,2016
+University of Mississippi,2022,801-1000,,United States,Oxford,Public,Very High,10,628,L,2017
+University of New Mexico,2022,651-700,,United States,Albuquerque,Public,Very High,9,870,L,2119
+University of Central Florida,2022,751-800,,United States,Orlando,Public,Very High,25,2562,XL,2146
+Oregon State University,2022,531-540,,United States,Corvallis,Public,Very High,12,2769,L,2147
+University of South Carolina,2022,601-650,,United States,Columbia,Public,Very High,15,1532,XL,2169
+University of South Florida,2022,581-590,,United States,Tampa,Public,Very High,18,5211,XL,2171
+Florida International University,2022,801-1000,,United States,Miami,Public,High,16,3575,XL,2221
+Florida State University,2022,475,25,United States,Tallahassee,Public,Very High,17,1618,XL,2236
+University of Kentucky,2022,651-700,,United States,Lexington,Public,Very High,12,1294,L,2239
+Wake Forest University,2022,429,26.9,United States,Winston-Salem,Private,Very High,4,805,M,2276
+"Stony Brook University, State University of New York",2022,378,29.4,United States,Stony Brook,Public,Very High,11,6198,L,2316
+The University of Georgia,2022,541-550,,United States,Athens,Public,Very High,15,1879,XL,2406
+"University of Missouri, Columbia",2022,476,24.9,United States,Columbia,Public,Very High,10,1273,L,2600
+Wayne State University,2022,511-520,,United States,Detroit,Public,Very High,8,1278,L,2699
+University of Cincinnati,2022,601-650,,United States,Cincinnati,Public,Very High,11,2800,XL,2756
+Temple University,2022,751-800,,United States,Philadelphia,Public,Very High,12,2097,XL,2767
+Virginia Commonwealth University,2022,701-750,,United States,Richmond,Public,Very High,9,995,L,2771
+Virginia Polytechnic Institute and State University,2022,346,31.6,United States,Blacksburg,Public,Very High,12,4477,XL,2802
+University of Iowa,2022,455,25.7,United States,Iowa City,Public,Very High,10,2049,L,2924
+Colorado State University,2022,431,26.8,United States,Fort Collins,Public,Very High,8,1547,L,3115
+University of Utah,2022,358,30.9,United States,Salt Lake City,Public,Very High,8,2134,L,3345
+University of Kansas,2022,387,28.8,United States,Lawrence,Public,Very High,7,2014,L,3357
+"University of Colorado, Denver ",2022,414,27.4,United States,Denver,Public,Very High,3,1274,L,5319
+City University of New York,2022,701-750,,United States,New York City,Public,Very High,16,6462,XL,7782
+Clark University,2022,601-650,,United States,Worcester,Private,Very High,12,853,S,276
+Clarkson University,2022,751-800,,United States,Potsdam,Private,Very High,14,384,S,291
+Stevens Institute of Technology,2022,701-750,,United States,Hoboken,Private,Very High,20,1919,M,315
+Missouri University of Science and Technology,2022,511-520,,United States,Rolla,Public,Very High,18,557,M,369
+University of Tulsa,2022,801-1000,,United States,Tulsa,Private,Very High,11,550,S,376
+Smith College,2022,601-650,,United States,Northampton,Private,Very High,8,368,S,378
+Illinois Institute of Technology,2022,444,26.2,United States,Chicago,Private,Very High,15,2330,M,402
+Worcester Polytechnic Institute,2022,751-800,,United States,Worcester,Private,Very High,14,837,M,432
+Yeshiva University,2022,252,38.4,United States,New York City,Private,Very High,10,467,S,471
+University of Hartford,2022,801-1000,,United States,West Hartford,Private,Medium,11,412,M,517
+Indiana State University,2022,1201,,United States,Terre Haute,Public,High,18,340,M,537
+Lehigh University,2022,531-540,,United States,Bethlehem,Private,Very High,11,1152,M,540
+Colorado School of Mines,2022,461,25.4,United States,Golden,Public,Very High,11,627,M,544
+University of the Pacific,2022,1001-1200,,United States,Stockton,Private,High,10,389,M,560
+Michigan Technological University,2022,651-700,,United States,Houghton,Public,Very High,12,694,M,562
+Seattle University,2022,801-1000,,United States,Seattle,Private,High,11,702,M,601
+Brandeis University,2022,455,25.7,United States,Waltham,Private,Very High,9,1554,M,611
+New Jersey Institute of Technology (NJIT),2022,701-750,,United States,Newark,Public,Very High,14,2874,M,629
+Rensselaer Polytechnic Institute,2022,431,26.8,United States,Troy,Private,Very High,12,1594,M,639
+University of San Diego,2022,1001-1200,,United States,San Diego,Private,High,12,638,M,647
+University of Montana Missoula,2022,1001-1200,,United States,Missoula,Public,Very High,14,190,M,648
+University of San Francisco,2022,1001-1200,,United States,San Francisco,Private,High,14,1419,M,696
+Rutgers University–Newark,2022,801-1000,,United States,Newark,Public,High,14,1246,M,764
+College of William and Mary,2022,651-700,,United States,Williamsburg,Public,Very High,10,729,M,814
+University at Albany SUNY,2022,751-800,,United States,Albany,Public,Very High,19,1216,L,821
+"University of Maryland, Baltimore County",2022,751-800,,United States,Baltimore,Public,High,14,1074,M,834
+Dartmouth College,2022,191,45.1,United States,Hanover,Private,Very High,8,997,M,836
+University of Massachusetts Boston,2022,651-700,,United States,Boston,Public,Very High,15,1527,L,838
+"University of Missouri, Kansas City",2022,801-1000,,United States,Kansas City,Public,Very High,12,817,M,841
+Binghamton University SUNY,2022,801-1000,,United States,Binghamton,Public,Very High,20,1833,L,849
+University of New Hampshire,2022,801-1000,,United States,Durham,Public,Very High,17,768,L,862
+University of Wyoming,2022,801-1000,,United States,Laramie,Public,Very High,12,564,M,904
+University of Rhode Island,2022,1001-1200,,United States,Kingston,Public,High,17,417,L,910
+Marquette University,2022,1001-1200,,United States,Milwaukee,Private,Very High,12,367,M,913
+University of Texas El Paso,2022,1001-1200,,United States,El Paso,Public,Very High,20,1351,L,922
+University of South Alabama (USA),2022,1001-1200,,United States,Mobile,Public,High,13,287,L,939
+California Institute of Technology (Caltech),2022,6,97.4,United States,Pasadena,Private,Very High,2,692,S,968
+Southern Methodist University,2022,801-1000,,United States,Dallas,Private,Very High,10,1213,M,969
+Rice University,2022,94,62.3,United States,Houston,Private,Very High,7,2278,M,996
+Princeton University,2022,20,88.6,United States,Princeton,Private,Very High,8,1912,M,1050
+Utah State University,2022,1001-1200,,United States,Logan,Public,Very High,19,331,L,1053
+Miami University,2022,1001-1200,,United States,Oxford,Public,High,17,2260,L,1062
+Portland State University,2022,1001-1200,,United States,Portland,Public,Very High,17,1230,L,1091
+Mississippi State University,2022,1001-1200,,United States,Starkville,Public,Very High,18,730,L,1103
+Rochester Institute of Technology (RIT),2022,1001-1200,,United States,Rochester,Private,High,12,1586,L,1136
+Florida Atlantic University - Boca Raton,2022,1001-1200,,United States,Boca Raton,Public,High,19,998,L,1139
+Western Michigan University,2022,1001-1200,,United States,Kalamazoo,Public,High,16,1664,L,1144
+Northern Arizona University,2022,1001-1200,,United States,Flagstaff,Public,High,22,1162,L,1158
+Ohio University,2022,1001-1200,,United States,Athens,Public,High,20,977,L,1169
+University of Texas at San Antonio,2022,801-1000,,United States,San Antonio,Public,Very High,22,775,L,1182
+Kent State University,2022,1001-1200,,United States,Kent,Public,Very High,19,1465,L,1252
+San Diego State University,2022,1001-1200,,United States,San Diego,Public,Very High,25,2092,XL,1262
+Georgia Institute of Technology,2022,88,63.5,United States,Atlanta,Public,Very High,19,5675,L,1267
+Baylor University,2022,1001-1200,,United States,Waco,Private,Very High,13,777,L,1294
+University of North Carolina at Charlotte,2022,1001-1200,,United States,Charlotte,Public,Very High,19,1661,L,1303
+University of Wisconsin Milwaukee,2022,801-1000,,United States,Milwaukee,Public,Very High,16,1067,L,1336
+University of Arkansas Fayetteville,2022,1001-1200,,United States,Fayetteville,Public,Very High,18,1134,L,1364
+Brown University,2022,60,71.3,United States,Providence,Private,Very High,7,2002,M,1389
+University of North Texas,2022,1001-1200,,United States,Denton,Public,High,23,2420,XL,1395
+Tufts University,2022,275,36.5,United States,Medford,Private,Very High,8,1798,M,1459
+The University of Texas at Arlington,2022,1001-1200,,United States,Arlington,Public,Very High,22,4106,XL,1481
+Brigham Young University,2022,1001-1200,,United States,Provo,Private,Very High,21,1163,XL,1512
+Carnegie Mellon University,2022,53,74.6,United States,Pittsburgh,Private,Very High,9,5739,L,1534
+University of Notre Dame,2022,222,40.9,United States,Notre Dame,Private,Very High,8,1484,L,1545
+"University of California, Santa Barbara (UCSB)",2022,146,51.2,United States,Santa Barbara,Public,Very High,16,4309,L,1597
+West Virginia University,2022,801-1000,,United States,Morgantown,Public,Very High,15,1807,L,1605
+Case Western Reserve University,2022,161,48.2,United States,Cleveland,Private,Very High,7,2864,M,1639
+"The University of Tennessee, Knoxville",2022,541-550,,United States,Knoxville,Public,High,17,1156,XL,1700
+University of Massachusetts Amherst,2022,246,38.8,United States,Amherst,Public,Very High,14,3696,L,1852
+University of Rochester,2022,154,50.3,United States,Rochester,Private,Very High,5,3644,M,1853
+North Carolina State University,2022,300,34.7,United States,Raleigh,Public,Very High,15,3156,L,1944
+Georgetown University,2022,248,38.7,United States,Washington D.C.,Private,Very High,8,3286,L,2009
+University of Miami,2022,311,33.7,United States,Miami,Private,Very High,6,2646,L,2565
+Purdue University,2022,116,56.9,United States,West Lafayette,Public,Very High,15,8034,XL,2622
+Boston University,2022,112,57,United States,Boston,Private,Very High,10,8159,L,2642
+University of Chicago,2022,10,94.5,United States,Chicago,Private,Very High,6,4696,L,2703
+Emory University,2022,160,48.6,United States,Atlanta,Private,Very High,5,2264,L,2725
+University of Virginia,2022,226,40.3,United States,Charlottesville,Public,Very High,8,2201,L,2731
+University of Illinois at Urbana-Champaign,2022,82,65.2,United States,Champaign,Public,Very High,17,9987,XL,2748
+"University of California, Irvine",2022,232,40,United States,Irvine,Public,Very High,13,9323,XL,2775
+University of Washington,2022,85,65,United States,Seattle,Public,Very High,15,7362,XL,2796
+University of Illinois at Chicago (UIC),2022,285,35.6,United States,Chicago,Public,Very High,10,3425,L,2808
+Cornell University,2022,21,88.3,United States,Ithaca,Private,Very High,8,5675,L,2843
+Arizona State University,2022,216,41.8,United States,Phoenix,Public,Very High,17,8430,XL,2869
+University of Texas at Austin,2022,67,68.4,United States,Austin,Public,Very High,17,4953,XL,2887
+University of Colorado Boulder,2022,251,38.5,United States,Boulder,Public,Very High,11,2441,XL,2946
+Michigan State University,2022,157,49.7,United States,East Lansing,Public,Very High,15,5795,XL,3008
+Texas A&M University,2022,168,47.6,United States,College Station,Public,Very High,21,6621,XL,3049
+Massachusetts Institute of Technology (MIT),2022,1,100,United States,Cambridge,Private,Very High,4,3730,M,3065
+University of Southern California,2022,112,57,United States,Los Angeles,Private,Very High,10,9107,XL,3116
+Washington University in St. Louis,2022,107,58,United States,St. Louis,Private,Very High,5,3535,L,3193
+"University of California, Davis",2022,108,57.9,United States,Davis,Public,Very High,10,8414,XL,3420
+Northwestern University,2022,30,82.8,United States,Evanston,Private,Very High,5,3846,L,3652
+"University of California, Berkeley (UCB)",2022,32,82.5,United States,Berkeley,Public,Very High,11,9428,XL,3701
+"University of Maryland, College Park",2022,158,49.5,United States,College Park,Public,Very High,10,4659,XL,3798
+Indiana University Bloomington,2022,311,33.7,United States,Bloomington,Public,Very High,11,3722,XL,3837
+Pennsylvania State University,2022,96,61.5,United States,University Park,Public,Very High,11,6943,XL,4207
+Vanderbilt University,2022,218,41.7,United States,Nashville,Private,Very High,3,2022,L,4473
+"University of California, Los Angeles (UCLA)",2022,40,79.7,United States,Los Angeles,Public,Very High,10,6140,XL,4487
+"University of California, San Diego (UCSD)",2022,48,76.1,United States,San Diego,Public,Very High,8,8567,XL,4545
+"University of North Carolina, Chapel Hill",2022,100,59.6,United States,Chapel Hill,Public,Very High,7,2749,XL,4646
+Harvard University,2022,5,98,United States,Cambridge,Private,Very High,5,5877,L,4646
+Stanford University,2022,3,98.7,United States,Stanford,Private,Very High,3,3879,L,4725
+University of Pittsburgh,2022,163,48.1,United States,Pittsburgh,Public,Very High,6,2590,L,4746
+Johns Hopkins University,2022,25,85.9,United States,Baltimore,Private,Very High,3,5070,L,4855
+Rutgers University–New Brunswick,2022,264,37.2,United States,New Brunswick,Public,Very High,9,7965,XL,5009
+University of Minnesota Twin Cities,2022,186,45.7,United States,Minneapolis,Public,Very High,11,5630,XL,5087
+University of Pennsylvania,2022,13,90.7,United States,Philadelphia,Private,Very High,4,4636,L,5154
+University of Wisconsin-Madison,2022,75,66.2,United States,Madison,Public,Very High,8,5737,XL,5166
+Yale University,2022,14,90.2,United States,New Haven,Private,Very High,2,2537,M,5391
+Duke University,2022,52,75.2,United States,Durham,Private,Very High,3,3445,L,5673
+The University of Arizona,2022,268,36.9,United States,Tucson,Public,Very High,6,3526,XL,5724
+University of Florida,2022,173,46.9,United States,Gainesville,Public,Very High,7,4143,XL,6222
+The Ohio State University,2022,120,56,United States,Columbus,Public,Very High,9,7029,XL,6388
+Columbia University,2022,19,88.7,United States,New York City,Private,Very High,4,11252,L,7087
+University of Michigan-Ann Arbor,2022,23,86.2,United States,Ann Arbor,Public,Very High,6,7341,XL,7132
+New York University (NYU),2022,42,78.9,United States,New York City,Private,Very High,6,16218,XL,7874
