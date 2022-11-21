@@ -238,7 +238,7 @@ problems(full_data_leftjoinCarnegie1_dedup)
 
 This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering. We also presented a bar plot of these categorical variables after the re-leveling and re-ordering.
 
-Lastly, we created a codebook for our dataset. (hyperlink to the google spreadsheet)
+Lastly, we created a [codebook](https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit#gid=260549592) for our dataset. 
 
 
 ```{r}

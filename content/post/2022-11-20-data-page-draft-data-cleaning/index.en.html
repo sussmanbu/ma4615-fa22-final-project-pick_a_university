@@ -291,7 +291,7 @@ write_csv(full_data_leftjoinCarnegie1, file = here::here(&quot;dataset/full_data
 <div id="deeper-cleaning-with-the-de-duplicated-dataset" class="section level2">
 <h2>Deeper cleaning with the de-duplicated dataset</h2>
 <p>This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering. We also presented a bar plot of these categorical variables after the re-leveling and re-ordering.</p>
-<p>Lastly, we created a codebook for our dataset. (hyperlink to the google spreadsheet)</p>
+<p>Lastly, we created a <a href="https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit#gid=260549592">codebook</a> for our dataset.</p>
 <pre class="r"><code>semi_clean_data &lt;- 
   full_data_leftjoinCarnegie1_dedup %&gt;% 
 ## Clean type1 variables (private or public) based on control_carnegie, type1_qs, and type1_top120enrollment
