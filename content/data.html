@@ -12,78 +12,109 @@ draft: false
 
 </div>
 
-<p>This comes from the file <code>content/data.Rmd</code>.</p>
-<p>Your first steps in this project will be to find data to work on.</p>
-<p>I recommend trying to find data that interests you and that you are knowledgeable about. A bad example would be if you have no interest in video games but your data set is about video games. I also recommend finding data that is related to current events, social justice, and other areas that have an impact.</p>
-<p>You are <strong>not</strong> allowed to work on COVID data.</p>
-<p>Initially, you will study <em>one dataset</em> but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable.
-Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.</p>
 <div id="where-to-keep-data" class="section level2">
-<h2>Where to keep data?</h2>
-<p>Below 50mb: In <code>dataset</code> folder</p>
-<p>Above 50mb: In <code>dataset_ignore</code> folder. This folder will be ignored by <code>git</code> so you’ll have to manually sync these files across your team.</p>
+<h2> Data Source </h2>
+Datasets <br>
+1. Academic Ranking of World Universities (ARWU) <br>
+2. Kaggle College Rankings (Kaggle) <br>
+3. US and Liberal College from (US News) <br>
+4. International Student Leading Institutes (Opendoors) <br>
+5. Carnegie Classification Data <br>
+6. QS World and National Rankings <br>
+7. Selectivity <br>
+8. Enrollment of the 120 largest degree-granting college <br>
+9. Population Density per city <br>
+
+
 <div id="sharing-your-data" class="section level3">
-<h3>Sharing your data</h3>
-<p>For small datasets (&lt;50mb), you can use the <code>dataset</code> folder that is tracked by github. Add the files just like you would any other file.</p>
-<p><strong>Do not</strong> use a folder named <code>data</code>.
-This folder is reserved by <code>hugo</code>.
-If you create a folder named <code>data</code> this will cause problems.</p>
-<p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
-<p>Your <a href="/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
-<pre class="r"><code>source(
-  here::here(&quot;static&quot;, &quot;load_and_clean_data.R&quot;),
-  echo = TRUE # Use echo=FALSE or omit it to avoid code output  
-)</code></pre>
-<pre><code>## 
-## &gt; library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-## ✔ tibble  3.1.8     ✔ dplyr   1.0.9
-## ✔ tidyr   1.2.0     ✔ stringr 1.4.1
-## ✔ readr   2.1.2     ✔ forcats 0.5.1
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<pre><code>## 
-## &gt; loan_data &lt;- read_csv(here::here(&quot;dataset&quot;, &quot;loan_refusal.csv&quot;))</code></pre>
-<pre><code>## Rows: 20 Columns: 5
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (1): bank
-## dbl (4): min, white, himin, hiwhite
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## 
-## &gt; loan_data_clean &lt;- loan_data
-## 
-## &gt; write_csv(loan_data_clean, file = here::here(&quot;dataset&quot;, 
-## +     &quot;loan_refusal_clean.csv&quot;))
-## 
-## &gt; save(loan_data_clean, file = here::here(&quot;dataset/loan_refusal.RData&quot;))</code></pre>
-<p>Note how I use the <code>here::here</code> function from the <a href="https://here.r-lib.org/articles/here.html"><code>here</code> package</a> to avoid path problems.
-This function is used to specify directories within the project’s root directory.
-You should never use absolute paths (eg. <code>/Users/danielsussman/path/to/project/</code> or <code>C:\\MA415\\Final_Project\\</code>) and using <code>here</code> ensures that it doesn’t matter what the current working directory is as long as you have this RStudio Project open.</p>
-<hr />
+<h3> Academic Ranking of World Universities (ARWU)</h3>
+<p><b>Link:</b> <a href = "https://public.opendatasoft.com/explore/dataset/shanghai-world-university-ranking/table/?sort=world_rank&refine.country=United+States">Opendatasoft</a>. 
+</p>
+<p>
+Opendatasoft is a French company which develops tools for sharing and reusing the data of companies and public administrations. The ARWU data we were looking for is one of such datasets provided from Opendatasoft. For the sake of our project, we downloaded the ARWU ranking in 2018 (the most recent year available on Opendatasoft) in a .csv file, which contains 139 observations. 
+</p>
+<p>
+<b>Note:</b> Given that data is not directly downloadable from the official ARWU website, we found an alternative source: 
+</p>
+
+<h3> Kaggle College Rankings (Kaggle)</h3>
+<p><b>Link:</b> <a href = "https://www.kaggle.com/datasets/neelgajare/2022-usa-college-rankings-more">Kaggle</a>. 
+</p>
+<p>
+This dataset is the US News rankings of the best American universities of undergraduate programs. US News is a recognized leader in college rankings. There are 392 American universities based on their undergraduate programs. We also downloaded it from kaggle. The columns also contain the tuition and enrollment numbers of each university. In this dataset, there are two universities with no tuition data when merging all datasets. Scholars created this dataset to study which colleges are best, and to compare tuitions and enrollment numbers in the US
+</p>
+
+<h3> US and Liberal College from (US News)</h3>
+<p><b>Link:</b> <a href = "https://www.usnews.com/best-colleges/rankings/national-universities/most-international">US News</a>. 
+</p>
+<p>
+
+This dataset is from USNews that describes 145 American universities in 2022 with top proportions of international students, which was collected for publishing consumer advice, rankings, and relevant analysis. USNews is a very sourceful website commonly used by students for collecting and comparing universities’ information. We were able to do web scraping and generate the csv file for the dataset. Essentially, this data has 145 rows with 3 columns that represent the school name, location, and percentage of international students, sorted by descending percentage. 
+</p>
+
+<h3>  International Student Leading Institutes (Opendoors)</h3>
+<p><b>Link:</b> <a href = "https://opendoorsdata.org/data/international-students/leading-institutions/">Opendoors</a>. 
+</p>
+<p>
+Opendoors has been regarded as the comprehensive information resource on international students and scholars in the United States and on US students studying abroad. The dataset shows the view of the leading institutions hosting international students in the United States with the institution name and the number of international students. 
+</p>
+
+<h3>  Carnegie Classification Data</h3>
+<p><b>Link:</b> <a href = "https://carnegieclassifications.acenet.edu/classification_descriptions/basic.php">Carnegie Classification</a>. 
+</p>
+<p>
+The Carnegie Classification® is been the prominent framework that captures the institutional diversity in U.S. post secondary insitutions for over the past 45 years.
+</p>
+<br>
+<p>
+The Carnegie dataset contained over 50 different features, but we selectively chose the 8 features: University Name, City, State, Carnegie Basic Classification, Size and Setting Classification,  Control of institution, Enrollment Profile Classification, Degree of urbanization.<br>
+</p>
+
+<h3> QS World and National Rankings</h3>
+<p><b>Link:</b> <a href = "https://www.kaggle.com/datasets/padhmam/qs-world-university-rankings-2017-2022">QS World and National Rankings</a>. 
+</p>
+<p>
+The source of this data set comes from the QS World University Rankings, which is the annual university rankings published by Quacquarelli Symonds, and is viewed as one of the three most-widely read university rankings in the world. We found it on kaggle and it can be downloaded through the website. Kaggle is a data modeling and data analysis platform. Companies and researchers can publish and analyze data on it. This dataset contains basic information of 1368 universities around the world and their rankings from 2017 to 2022. This dataset was created to study factors that affect university rankings, what makes a good university.
+</p>
+
+
+<h3> QS World and National Rankings Data</h3>
+<p><b>Link:</b> <a href = "https://www.kaggle.com/datasets/padhmam/qs-world-university-rankings-2017-2022">QS</a> 
+</p>
+<p>
+The source of this data set comes from the QS World University Rankings, which is the annual university rankings published by Quacquarelli Symonds, and is viewed as one of the three most-widely read university rankings in the world. We found it on kaggle and it can be downloaded through the website. Kaggle is a data modeling and data analysis platform. Companies and researchers can publish and analyze data on it. This dataset contains basic information of 1368 universities around the world and their rankings from 2017 to 2022. This dataset was created to study factors that affect university rankings, what makes a good university.
+</p>
+
+
+<h3> Selectivity Data</h3>
+<p><b>Link:</b> <a href = " https://www.collegetransitions.com/college-selectivity/">College Transitions</a>
+</p>
+<p>
+The data is not downloadable but instead we copied and pasted the table to excel sheets. There are four categories for selectivity: most selective, extreme selective, very selective, moderately selective. College Transitions is a team of college planning experts committed to guiding students and families through the application process.From the source in College Transitions website, we found the college selectivity matters for members of non-dominant class(no white, wealthy, and well-educated) earned significantly more than similarly qualified students with same background who attended less exclusive schools.
+</p>
+
+
+<h3>  Enrollment of the 120 largest degree-granting college</h3>
+<p><b>Link:</b> <a href = " https://nces.ed.gov/programs/digest/d19/tables/dt19_312.10.asp/">NCES Dataset</a>
+</p>
+<p>
+This Enrollment Dataset has 120 college observations and 6 columns describing institution name, state, rank, control (public, private-nonprofit, private-profit), level(4 year, 2 year), and total enrollment size. 
+</p><br>
+<p>
+The data is sourced from the National Center for Education Statistics (NCES), which is an essential component of the United States Department of Education's Institute of Education Sciences that publishes statistics on education and public school district finance information in the United States. 
+</p>
+
+
+<h3>Population Density per city Dataset</h3>
+<p><b>Link:</b> <a href = " https://www.governing.com/archive/population-density-land-area-cities-map.html">Governing Dataset</a>
+</p>
+<p>
+The dataset is not downloadable but they have all the data from on the website. Instead, we just copy and paste the data from the website to form a dataset. The data of the Governing website is originally from U.S. Census Bureau( https://www.census.gov/ ), which is an official website from US government that measure america’ s people, place and economy. It includes City, Population Density (Persons/Square Mile), 2016 Population and Land Area (Square Miles) important variables. 
+</p>
 </div>
 </div>
-<div id="files-in-static" class="section level2">
-<h2>Files in static</h2>
-<div id="load_and_clean_data.r" class="section level3">
-<h3><code>load_and_clean_data.R</code></h3>
-<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them.
-This file might create a derivative data set that you then use for your subsequent analysis.
-Note that you don’t need to run this script from every post/page.
-Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes.
-To link to this file, you can use <code>[cleaning script](/load_and_clean_data.R)</code>.</p>
-<p>When you are loading in data, I recommend using the <code>here::here</code> function to specify the file path. This function is used to specify a path relative to your project’s root directory. Hence, you can read a file using eg, <code>read_csv(here::here("dataset/data_file.csv"))</code>.</p>
-</div>
-<div id="shiny-interactive" class="section level3">
-<h3>Shiny Interactive</h3>
-<p>If you are using a shiny interactive, you’ll need to keep that in a separate folder (i.e. not in <code>static</code> or <code>content</code>). For the shiny interactive you’ll need to publish the app on <code>shinyapps.io</code> where the app can be run. When you publish, make sure to include any data sets you are loading in among the files you publish since those datasets will need to be loaded by your app.</p>
-<hr />
-</div>
-</div>
+
+
 <div id="rubric-on-this-page" class="section level2">
 <h2>Rubric: On this page</h2>
 <p>you will</p>
