@@ -12,104 +12,613 @@ draft: false
 
 </div>
 
-<div id="where-to-keep-data" class="section level2">
-<h2> Data Source </h2>
-Datasets <br>
-1. Academic Ranking of World Universities (ARWU) <br>
-2. Kaggle College Rankings (Kaggle) <br>
-3. US and Liberal College from (US News) <br>
-4. International Student Leading Institutes (Opendoors) <br>
-5. Carnegie Classification Data <br>
-6. QS World and National Rankings <br>
-7. Selectivity <br>
-8. Enrollment of the 120 largest degree-granting college <br>
-9. Population Density per city <br>
-
-
-<div id="sharing-your-data" class="section level3">
-<h3> Academic Ranking of World Universities (ARWU)</h3>
-<p><b>Link:</b> <a href = "https://public.opendatasoft.com/explore/dataset/shanghai-world-university-ranking/table/?sort=world_rank&refine.country=United+States">Opendatasoft</a>. 
-</p>
-<p>
-Opendatasoft is a French company which develops tools for sharing and reusing the data of companies and public administrations. The ARWU data we were looking for is one of such datasets provided from Opendatasoft. For the sake of our project, we downloaded the ARWU ranking in 2018 (the most recent year available on Opendatasoft) in a .csv file, which contains 139 observations. The variables are University Name, World rank, Work rank integer, National rank,and Total score with the Criteria indicators: Alumni, Award, HiCi, N&S, PUB, PCP.
-</p>
-<p>
-<b>Note:</b> Given that data is not directly downloadable from the official ARWU website, we found an alternative source: 
-</p>
-
-
-<h3> Kaggle College Rankings (Kaggle)</h3>
-<p><b>Link:</b> <a href = "https://www.kaggle.com/datasets/neelgajare/2022-usa-college-rankings-more">Kaggle</a>. 
-</p>
-<p>
-This dataset is the US News rankings of the best American universities of undergraduate programs. US News is a recognized leader in college rankings. There are 392 American universities based on their undergraduate programs. We also downloaded it from kaggle. The variables contain College Name, Tuition, Enrollment Number. In this dataset, there are two universities with no tuition data when merging all datasets. Scholars created this dataset to study which colleges are best, and to compare tuitions and enrollment numbers in the US
-</p>
-
-<h3> US and Liberal College from (US News)</h3>
-<p><b>Link:</b> <a href = "https://www.usnews.com/best-colleges/rankings/national-universities/most-international">US News</a>. 
-</p>
-<p>
-
-This dataset is from USNews that describes 145 American universities in 2022 with top proportions of international students, which was collected for publishing consumer advice, rankings, and relevant analysis. USNews is a very sourceful website commonly used by students for collecting and comparing universities’ information. We were able to do web scraping and generate the csv file for the dataset. Essentially, this data has 145 rows with 3 columns with School name, location, and percentage of international students, sorted by descending percentage.
-</p>
-<b> Variables:</b> 
-</p>
-
-<h3>  International Student Leading Institutes (Opendoors)</h3>
-<p><b>Link:</b> <a href = "https://opendoorsdata.org/data/international-students/leading-institutions/">Opendoors</a>. 
-</p>
-<p>
-Opendoors has been regarded as the comprehensive information resource on international students and scholars in the United States and on US students studying abroad. The dataset shows the view of the leading institutions hosting international students in the United States with the institution name and the number of international students. 
-</p>
-
-
-
-<h3>  Carnegie Classification Data</h3>
-<p><b>Link:</b> <a href = "https://carnegieclassifications.acenet.edu/classification_descriptions/basic.php">Carnegie Classification</a>. 
-</p>
-<p>
-The Carnegie Classification® is been the prominent framework that captures the institutional diversity in U.S. post secondary insitutions for over the past 45 years.
-</p>
-<br>
-<p>
-The Carnegie dataset contained over 50 different features, but we selectively chose the 8 features: University Name, City, State, Carnegie Basic Classification, Size and Setting Classification,  Control of institution, Enrollment Profile Classification, Degree of urbanization.<br>
-</p>
-
-<h3> QS World and National Rankings Data</h3>
-<p><b>Link:</b> <a href = "https://www.kaggle.com/datasets/padhmam/qs-world-university-rankings-2017-2022">QS</a> 
-</p>
-<p>
-The source of this data set comes from the QS World University Rankings, which is the annual university rankings published by Quacquarelli Symonds, and is viewed as one of the three most-widely read university rankings in the world. We found it on kaggle and it can be downloaded through the website. Kaggle is a data modeling and data analysis platform. Companies and researchers can publish and analyze data on it. This dataset contains basic information of 1368 universities around the world and their rankings from 2017 to 2022. This dataset was created to study factors that affect university rankings, what makes a good university.
-</p>
-
-
-<h3> Selectivity Data</h3>
-<p><b>Link:</b> <a href = " https://www.collegetransitions.com/college-selectivity/">College Transitions</a>
-</p>
-<p>
-The data is not downloadable but instead we copied and pasted the table to excel sheets. There are four categories for selectivity: most selective, extreme selective, very selective, moderately selective. College Transitions is a team of college planning experts committed to guiding students and families through the application process.From the source in College Transitions website, we found the college selectivity matters for members of non-dominant class(no white, wealthy, and well-educated) earned significantly more than similarly qualified students with same background who attended less exclusive schools.
-</p>
-
-
-<h3>  Enrollment of the 120 largest degree-granting college</h3>
-<p><b>Link:</b> <a href = " https://nces.ed.gov/programs/digest/d19/tables/dt19_312.10.asp/">NCES Dataset</a>
-</p>
-<p>
-This Enrollment Dataset has 120 college observations and 6 columns describing institution name, state, rank, control (public, private-nonprofit, private-profit), level(4 year, 2 year), and total enrollment size. 
-</p><br>
-<p>
-The data is sourced from the National Center for Education Statistics (NCES), which is an essential component of the United States Department of Education's Institute of Education Sciences that publishes statistics on education and public school district finance information in the United States. 
-</p>
-
-
-<h3>Population Density per city Dataset</h3>
-<p><b>Link:</b> <a href = " https://www.governing.com/archive/population-density-land-area-cities-map.html">Governing Dataset</a>
-</p>
-<p>
-The dataset is not downloadable but they have all the data from on the website. Instead, we just copy and paste the data from the website to form a dataset. The data of the Governing website is originally from <a href = "https://www.census.gov/ "> U.S. Census Bureau </a>, which is an official website from US government that measure america’ s people, place and economy. It includes City, Population Density (Persons/Square Mile), 2016 Population and Land Area (Square Miles) important variables. 
-</p>
+<p>This comes from the file <code>content/data.Rmd</code>.</p>
+<div id="datasets" class="section level2">
+<h2>Datasets</h2>
+<ol style="list-style-type: decimal">
+<li>Academic Ranking of World Universities (ARWU, from Opendatasoft)</li>
+<li>US News College Rankings (from Kaggle)</li>
+<li>US and Liberal College from (from US News)</li>
+<li>International Student Leading Institutes (from Opendoors)</li>
+<li>Carnegie Classification Data</li>
+<li>QS World and National Rankings (from Kaggle)</li>
+<li>Selectivity (from College Transitions)</li>
+<li>Enrollment of the 120 Largest Degree-granting College (from NCES)</li>
+<li>City Population and Density</li>
+</ol>
+<div id="academic-ranking-of-world-universities-arwu-from-opendatasoft" class="section level3">
+<h3>Academic Ranking of World Universities (ARWU, from Opendatasoft)</h3>
+<p><strong>Link:</strong> <a href="https://public.opendatasoft.com/explore/dataset/shanghai-world-university-ranking/table/?sort=world_rank&amp;refine.country=United+States">Opendatasoft</a></p>
+<p>Opendatasoft is a French company which develops tools for sharing and reusing the data of companies and public administrations. The ARWU data we were looking for is one of such datasets provided from Opendatasoft. For the sake of our project, we downloaded the ARWU ranking in 2018 (the most recent year available on Opendatasoft) in a .csv file, which contains 139 observations. The variables are University name, World rank, Work rank integer, National rank,and Total score with the Criteria indicators: Alumni, Award, HiCi, N&amp;S, PUB, PCP. Note that we found this alternative data source because data is not directly downloadable from the official ARWU website.</p>
+</div>
+<div id="us-news-college-rankings-from-kaggle" class="section level3">
+<h3>US News College Rankings (from Kaggle)</h3>
+<p><strong>Link:</strong> <a href="https://www.kaggle.com/datasets/neelgajare/2022-usa-college-rankings-more">Kaggle</a></p>
+<p>This dataset is the US News rankings of the best American universities of undergraduate programs. US News is a recognized leader in college rankings. There are 392 American universities based on their undergraduate programs. We also downloaded it from kaggle. The variables contain College Name, Tuition, Enrollment Number. In this dataset, there are two universities with no tuition data when merging all datasets. Scholars created this dataset to study which colleges are best, and to compare tuitions and enrollment numbers in the US.</p>
+</div>
+<div id="us-and-liberal-college-from-from-us-news" class="section level3">
+<h3>US and Liberal College from (from US News)</h3>
+<p><strong>Link:</strong> <a href="https://www.usnews.com/best-colleges/rankings/national-universities/most-international">US News</a></p>
+<p>This dataset is from USNews that describes 145 American universities in 2022 with top proportions of international students, which was collected for publishing consumer advice, rankings, and relevant analysis. USNews is a very sourceful website commonly used by students for collecting and comparing universities’ information. We were able to do web scraping and generate the csv file for the dataset. Essentially, this data has 145 rows with 3 columns with School name, location, and percentage of international students, sorted by descending percentage.</p>
+</div>
+<div id="international-student-leading-institutes-from-opendoors" class="section level3">
+<h3>International Student Leading Institutes (from Opendoors)</h3>
+<p><strong>Link:</strong> <a href="https://opendoorsdata.org/data/international-students/leading-institutions/">Opendoors</a></p>
+<p>Opendoors has been regarded as the comprehensive information resource on international students and scholars in the United States and on US students studying abroad. The dataset shows the view of the leading institutions hosting international students in the United States with the institution name and the number of international students.</p>
+</div>
+<div id="carnegie-classification-data" class="section level3">
+<h3>Carnegie Classification Data</h3>
+<p><strong>Link:</strong> <a href="https://carnegieclassifications.acenet.edu/classification_descriptions/basic.php">Carnegie Classification</a></p>
+<p>The Carnegie Classification® is been the prominent framework that captures the institutional diversity in U.S. post secondary insitutions for over the past 45 years. The Carnegie dataset contained over 50 different features, but we selectively chose the 8 features: University Name, City, State, Carnegie Basic Classification, Size and Setting Classification, Control of institution, Enrollment Profile Classification, Degree of urbanization.</p>
+</div>
+<div id="qs-world-and-national-rankings-from-kaggle" class="section level3">
+<h3>QS World and National Rankings (from Kaggle)</h3>
+<p><strong>Link:</strong> <a href="https://www.kaggle.com/datasets/padhmam/qs-world-university-rankings-2017-2022">Kaggle</a></p>
+<p>The source of this data set comes from the QS World University Rankings, which is the annual university rankings published by Quacquarelli Symonds, and is viewed as one of the three most-widely read university rankings in the world. We found it on kaggle and it can be downloaded through the website. Kaggle is a data modeling and data analysis platform. Companies and researchers can publish and analyze data on it. This dataset contains basic information of 1368 universities around the world and their rankings from 2017 to 2022. This dataset was created to study factors that affect university rankings, what makes a good university. For our project, we used data from the most recent year (i.e., 2022).</p>
+</div>
+<div id="selectivity-from-college-transitions" class="section level3">
+<h3>Selectivity (from College Transitions)</h3>
+<p><strong>Link:</strong> <a href="https://www.collegetransitions.com/college-selectivity/">College Transitions</a></p>
+<p>The data is not downloadable but instead we copied and pasted the table to excel sheets from the website. There are four categories for selectivity: most selective, extreme selective, very selective, moderately selective. College Transitions is a team of college planning experts committed to guiding students and families through the application process.From the source in College Transitions website, we found the college selectivity matters for members of non-dominant class(no white, wealthy, and well-educated) earned significantly more than similarly qualified students with same background who attended less exclusive schools.</p>
+</div>
+<div id="enrollment-of-the-120-largest-degree-granting-college-from-nces" class="section level3">
+<h3>Enrollment of the 120 Largest Degree-granting College (from NCES)</h3>
+<p><strong>Link:</strong> <a href="https://nces.ed.gov/programs/digest/d21/tables/dt21_312.10.asp">NCES Dataset</a></p>
+<p>The data is sourced from the National Center for Education Statistics (NCES), which is an essential component of the United States Department of Education’s Institute of Education Sciences that publishes statistics on education and public school district finance information in the United States. This Enrollment Dataset has 120 college observations and 6 columns describing institution name, state, rank, control (public, private-nonprofit, private-profit), level (4 year, 2 year), and total enrollment size.</p>
+</div>
+<div id="city-population-and-density" class="section level3">
+<h3>City Population and Density</h3>
+<p><strong>Link:</strong> <a href="https://www.governing.com/archive/population-density-land-area-cities-map.html">Governing Dataset</a></p>
+<p>The dataset is not downloadable but they have all the data from on the website. Instead, we just copy and paste the data from the website to form a dataset. The data of the Governing website is originally from <a href="https://www.census.gov/">U.S. Census Bureau</a>, which is an official website from US government that measure america’ s people, place and economy. It includes City, Population Density (Persons/Square Mile), 2016 Population and Land Area (Square Miles) important variables.</p>
 </div>
 </div>
+<div id="data-cleaning" class="section level2">
+<h2>Data Cleaning</h2>
+<p>As described above, we gathered data from nine different sources. In this section, we discussed and presented how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set.</p>
+<div id="initial-cleaning" class="section level3">
+<h3>Initial Cleaning</h3>
+<p>Our initial data cleaning for each data subset included loading each data set, checking for problems, as well as selecting, arranging, and renaming relevant variables.</p>
+<pre class="r"><code>suppressMessages({
+library(tidyverse)
+library(readxl)
+library(here)
+})</code></pre>
+<pre><code>## Warning: package &#39;here&#39; was built under R version 4.2.2</code></pre>
+<pre class="r"><code># The arwu dataset
+arwu2018 &lt;- read_delim(here::here(&quot;dataset/arwu-usa-2018.csv&quot;), 
+                       delim = &quot;;&quot;, 
+                       escape_double = FALSE, 
+                       trim_ws = TRUE)</code></pre>
+<pre><code>## Rows: 139 Columns: 17
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;;&quot;
+## chr (8): University, World rank, National rank, Country, Geo Point 2D, Geo S...
+## dbl (9): PCP, Total score, Alumni, Award, PUB, Year, N&amp;S, Hi Ci, World rank ...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>problems(arwu2018)</code></pre>
+<pre><code>## # A tibble: 0 × 5
+## # … with 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;,
+## #   file &lt;chr&gt;</code></pre>
+<pre class="r"><code>arwu2018 &lt;- arwu2018 %&gt;% 
+  select(University, `Total score`, `World rank`, `World rank integer`, `National rank`, `N&amp;S`, `Hi Ci`, Alumni, Award, PUB, PCP) %&gt;% 
+  rename(university = University,
+         total_score_arwu = `Total score`, 
+         world_rank_cat_arwu = `World rank`, 
+         world_rank_arwu = `World rank integer`, 
+         national_rank_arwu = `National rank`, 
+         n_s_arwu = `N&amp;S`, 
+         hi_ci_arwu = `Hi Ci`, 
+         alumni_arwu = Alumni, 
+         award_arwu = Award, 
+         pub_arwu = PUB, 
+         pcp_arwu = PCP)
 
 
+# The qs dataset
+qs2022 &lt;- read_csv(here::here(&quot;dataset/qs_world_university_ranking_2022.csv&quot;))</code></pre>
+<pre><code>## Rows: 177 Columns: 12
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (7): university, rank_display, country, city, type, research_output, size
+## dbl (5): year, score, student_faculty_ratio, international_students, faculty...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>problems(qs2022)</code></pre>
+<pre><code>## # A tibble: 0 × 5
+## # … with 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;,
+## #   file &lt;chr&gt;</code></pre>
+<pre class="r"><code>qs2022 &lt;- qs2022 %&gt;% 
+  select(university, size, type, city, score, rank_display, research_output, faculty_count, student_faculty_ratio, international_students) %&gt;% 
+  rename(size_qs = size, 
+         type1_qs = type, 
+         score_qs = score, 
+         world_rank_qs = rank_display, 
+         research_output_qs = research_output, 
+         faculty_count_qs = faculty_count, 
+         stu_facl_ratio_qs = student_faculty_ratio, 
+         international_students_qs = international_students)
 
+
+# The selectivity dataset
+selectivity &lt;- read_excel(here::here(&quot;dataset/Selectivity rank.xlsx&quot;))
+  
+problems(selectivity)
+
+selectivity &lt;- selectivity %&gt;% 
+  rename(university = `Institution Name`, 
+         state = State, 
+         selectivity = Selectivity)
+
+
+# The city_population_density dataset
+city_population_density2016 &lt;- read_csv(here::here(&quot;dataset/US Population Density.csv&quot;))</code></pre>
+<pre><code>## Rows: 754 Columns: 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (2): City, State
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>problems(city_population_density2016)</code></pre>
+<pre><code>## # A tibble: 0 × 5
+## # … with 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;,
+## #   file &lt;chr&gt;</code></pre>
+<pre class="r"><code>city_population_density2016 &lt;- city_population_density2016 %&gt;% 
+  rename(city = City, 
+         state = State, 
+         city_population_density = `Population Density (Persons/Square Mile)`, 
+         city_population = `2016 Population`, 
+         city_land_area = `Land Area (Square Miles)`)
+
+
+# The opendoors dataset
+opendoors_2021SY &lt;- read_csv(here::here(&quot;dataset/OpendoorsPopulation.csv&quot;),
+                             skip = 1)</code></pre>
+<pre><code>## Rows: 203 Columns: 4
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): Institutions, City, State
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>problems(opendoors_2021SY)</code></pre>
+<pre><code>## # A tibble: 0 × 5
+## # … with 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;,
+## #   file &lt;chr&gt;</code></pre>
+<pre class="r"><code>opendoors_2021SY &lt;- opendoors_2021SY %&gt;% 
+  rename(university = Institutions, 
+         city = City, 
+         state_opendoors = State,
+         international_students_opendoors = `Int&#39;l Students`)
+
+
+# The kaggle dataset
+kagglecolleges &lt;- read_csv(here::here(&quot;dataset/Kagglecolleges.csv&quot;))</code></pre>
+<pre><code>## New names:
+## Rows: 392 Columns: 4
+## ── Column specification
+## ──────────────────────────────────────────────────────── Delimiter: &quot;,&quot; chr
+## (1): College Name dbl (3): ...1, Tuition, Enrollment Numbers
+## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+## Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## • `` -&gt; `...1`</code></pre>
+<pre class="r"><code>problems(kagglecolleges)</code></pre>
+<pre><code>## # A tibble: 0 × 5
+## # … with 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;,
+## #   file &lt;chr&gt;</code></pre>
+<pre class="r"><code>kagglecolleges &lt;- kagglecolleges %&gt;% 
+  rename(national_rank_kaggle = ...1, 
+         university = `College Name`, 
+         tuition_kaggle = Tuition,
+         enrollment_kaggle = `Enrollment Numbers`) %&gt;% 
+  mutate(national_rank_kaggle = national_rank_kaggle + 1) 
+
+
+# The P1_Carnegie dataset
+p1_carnegie &lt;- read_csv(here::here(&quot;dataset/P1_Carnegie.csv&quot;))</code></pre>
+<pre><code>## Rows: 3939 Columns: 8
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): name, city, state
+## dbl (5): basic2021_carnegie, sizeset2021_carnegie, control_carnegie, enrprof...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>problems(p1_carnegie)</code></pre>
+<pre><code>## # A tibble: 0 × 5
+## # … with 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;,
+## #   file &lt;chr&gt;</code></pre>
+<pre class="r"><code>p1_carnegie &lt;- p1_carnegie %&gt;% 
+  rename(university = name, 
+         state_carnegie = state)
+
+
+# The top120enrollment2020fall dataset
+top120enrollment2020fall &lt;- read_excel(here::here(&quot;dataset/total erollment size top120.xls&quot;),
+                          skip = 1)
+
+problems(top120enrollment2020fall)
+
+top120enrollment2020fall &lt;- top120enrollment2020fall %&gt;% 
+  select(-Rank) %&gt;% 
+  rename(university = Institution, 
+         state_top120enrollment = State, 
+         type1_top120enrollment = Control,
+         type2_top120enrollment = Level,
+         enrollment_top120enrollment = TotalEnrollment)
+
+
+# The nat_lib_uscolleges dataset
+nat_lib_uscolleges &lt;- read_excel(here::here(&quot;dataset/Nat_Lib_USColleges.xlsx&quot;))
+
+problems(nat_lib_uscolleges)
+
+nat_lib_uscolleges &lt;- nat_lib_uscolleges %&gt;% 
+  rename(university = SCHOOL, 
+         city = City,
+         state_natlib = State, 
+         international_students_natlib = INTERNATIONAL,
+         type3_natlib = Type)</code></pre>
+</div>
+<div id="joining-eight-out-of-nine-data-subsets-followed-by-some-cleaning" class="section level3">
+<h3>Joining eight out of nine data subsets, followed by some cleaning</h3>
+<p>After some basic cleaning presented above, we first did a full join of the seven out of nine data sets (excluding the Carnegie Classification data and population density data), which was then left joined with the Carnegie Classification data.</p>
+<pre class="r"><code>full_data_leftjoinCarnegie &lt;- arwu2018 %&gt;% 
+  full_join(kagglecolleges, by = &quot;university&quot;) %&gt;% 
+  full_join(nat_lib_uscolleges, by = &quot;university&quot;) %&gt;% 
+  full_join(opendoors_2021SY, by = &quot;university&quot;) %&gt;% 
+  full_join(qs2022, by = &quot;university&quot;) %&gt;% 
+  full_join(selectivity, by = &quot;university&quot;) %&gt;% 
+  full_join(top120enrollment2020fall, by = &quot;university&quot;) %&gt;% 
+  left_join(p1_carnegie, by = &quot;university&quot;) 
+
+write_csv(full_data_leftjoinCarnegie, file = here::here(&quot;dataset/full_data_leftjoinCarnegie.csv&quot;))</code></pre>
+<p>For variables that had multiple columns due to coming from different data sources, such as city and state, we aggregated the information to one column. Initially, The left joined data set had 961 observations, with each row representing a university. Our outcome of interest, international student population, had three datapoints: the percentage in 2021 from US news, the actual number in 2021 from opendoors, and actual number from 2022 from QS but downloaded from Kaggle. We further filtered the dataset to universities which had at least one datapoint out of these three, which resulted in 499 observations. We saved the updated dataset.</p>
+<pre class="r"><code>## Turn type1_top120enrollment and type1_qs into numeric variable
+full_data_leftjoinCarnegie &lt;- full_data_leftjoinCarnegie %&gt;% 
+  mutate(type1_top120enrollment = ifelse(type1_top120enrollment==&quot;Public&quot;, 1, type1_top120enrollment)) %&gt;%
+  mutate(type1_top120enrollment = ifelse(type1_top120enrollment==&quot;PrivNp&quot;, 2, type1_top120enrollment)) %&gt;%
+  mutate(type1_top120enrollment = ifelse(type1_top120enrollment==&quot;PrivFp&quot;, 3, type1_top120enrollment)) %&gt;%
+  mutate(type1_qs = ifelse(type1_qs==&quot;Public&quot;, 1, type1_qs)) %&gt;%
+  mutate(type1_qs = ifelse(type1_qs==&quot;Private&quot;, 4, type1_qs))
+
+full_data_leftjoinCarnegie$type1_top120enrollment &lt;- as.numeric(full_data_leftjoinCarnegie$type1_top120enrollment)
+full_data_leftjoinCarnegie$type1_qs &lt;- as.numeric(full_data_leftjoinCarnegie$type1_qs)
+
+
+## Only keep one city column (there are four after joining) 
+full_data_leftjoinCarnegie1 &lt;- full_data_leftjoinCarnegie %&gt;% 
+  filter(!is.na(university)) %&gt;% 
+  head(-4) %&gt;% 
+  relocate(university, city.x, city.y, city.x.x, city.y.y) %&gt;%
+  arrange(is.na(city.x)) %&gt;% 
+  mutate(city.x = ifelse(is.na(city.x), city.y, city.x)) %&gt;% 
+  mutate(city.x = ifelse(is.na(city.x), city.x.x, city.x)) %&gt;% 
+  mutate(city.x = ifelse(is.na(city.x), city.y.y, city.x)) %&gt;% 
+  arrange(is.na(city.x)) %&gt;% 
+  select(-city.y, -city.x.x, -city.y.y) %&gt;% 
+  rename(city = city.x) %&gt;% 
+## Only keep one state column (there are five after joining)
+  relocate(university, city, state, state_natlib, state_opendoors, state_top120enrollment, state_carnegie) %&gt;%
+  arrange(is.na(state)) %&gt;% 
+  mutate(state = ifelse(is.na(state), state_natlib, state)) %&gt;% 
+  mutate(state = ifelse(is.na(state), state_opendoors, state)) %&gt;% 
+  mutate(state = ifelse(is.na(state), state_top120enrollment, state)) %&gt;%
+  mutate(state = ifelse(is.na(state), state_carnegie, state)) %&gt;%
+  arrange(is.na(state)) %&gt;% 
+  select(-state_natlib, -state_opendoors, -state_top120enrollment, -state_carnegie) %&gt;% 
+## Relocate international students population datapoints (there are three)
+  relocate(university, city, state, international_students_natlib, international_students_opendoors, international_students_qs) %&gt;%
+## Filter out if data is misisng on international_students_natlib, international_students_qs, or international_students_opendoors
+  filter(!is.na(international_students_natlib) | !is.na(international_students_opendoors) | !is.na(international_students_qs)) 
+
+write_csv(full_data_leftjoinCarnegie1, file = here::here(&quot;dataset/full_data_leftjoinCarnegie1.csv&quot;))</code></pre>
+</div>
+<div id="some-manually-cleaning-directly-in-the-.csv-file" class="section level3">
+<h3>Some manually cleaning directly in the .csv file</h3>
+<p>Then, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations: “Purdue University”, “Purdue University–West Lafayette”, and “Purdue University - West Lafayette.” To solve this issue, we exported the dataset to a .csv file, sorted by university name, and manually de-duplicated the dataset. More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations (reducing from 499 observations), each of which represent a unique university. We then imported this file (“full_data_leftjoinCarnegie1_dedup.csv”) back to R and proceeded to further data cleaning.</p>
+<pre class="r"><code>full_data_leftjoinCarnegie1_dedup &lt;- read_csv(here::here(&quot;dataset/full_data_leftjoinCarnegie1_dedup.csv&quot;))</code></pre>
+<pre><code>## Rows: 441 Columns: 36
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (10): university, city, state, world_rank_cat_arwu, national_rank_arwu, ...
+## dbl (26): international_students_natlib, international_students_opendoors, i...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>problems(full_data_leftjoinCarnegie1_dedup)</code></pre>
+<pre><code>## # A tibble: 0 × 5
+## # … with 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;,
+## #   file &lt;chr&gt;</code></pre>
+</div>
+<div id="deeper-cleaning-with-the-de-duplicated-dataset" class="section level3">
+<h3>Deeper cleaning with the de-duplicated dataset</h3>
+<p>This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering. We also presented a bar plot of these categorical variables after the re-leveling and re-ordering.</p>
+<p>Lastly, we created a <a href="https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit#gid=260549592">codebook</a> for our dataset.</p>
+<pre class="r"><code>semi_clean_data &lt;- 
+  full_data_leftjoinCarnegie1_dedup %&gt;% 
+## Clean type1 variables (private or public) based on control_carnegie, type1_qs, and type1_top120enrollment
+  mutate(type1_all = ifelse(is.na(control_carnegie), type1_top120enrollment, control_carnegie)) %&gt;% 
+  mutate(type1_all = ifelse(is.na(type1_all), type1_qs, type1_all)) %&gt;% 
+  arrange(type1_all) %&gt;% 
+## Update the three university with value 4 (private) to 2 (not for profit private)
+  mutate(type1_all = ifelse(type1_all==4, 2, type1_all)) %&gt;% 
+## drop the 3 original type1 variables
+  select(-control_carnegie, -type1_qs, -type1_top120enrollment) %&gt;% 
+## clean other control type variables
+  select(-type2_top120enrollment) %&gt;% 
+  rename(type2_carnegie = sizeset2021_carnegie,
+         type4_carnegie = basic2021_carnegie) %&gt;% 
+## Create a new variable for international student population so that it takes the maximum value 
+## from the international_students_qs and international_students_opendoors
+  mutate(international_students_max = pmax(international_students_qs, international_students_opendoors, na.rm = TRUE)) %&gt;% 
+## left join with city_population_density2016
+  left_join(city_population_density2016, by = c(&quot;city&quot;,&quot;state&quot;)) %&gt;% 
+## Relocate the variables
+  relocate(university, city, state,
+           city_population_density, city_population, city_land_area,
+           international_students_natlib, international_students_max, international_students_qs, international_students_opendoors, 
+           tuition_kaggle,
+           selectivity,
+           world_rank_cat_arwu, world_rank_arwu, world_rank_qs,
+           national_rank_arwu, national_rank_kaggle,
+           type1_all,
+           type2_carnegie,
+           type3_natlib,
+           type4_carnegie, enrprofile2021_carnegie,
+           locale_carnegie,
+           size_qs,
+           faculty_count_qs, stu_facl_ratio_qs,
+           research_output_qs, award_arwu, hi_ci_arwu, n_s_arwu, pub_arwu,
+           pcp_arwu, alumni_arwu,
+           enrollment_kaggle, enrollment_top120enrollment,
+           total_score_arwu, score_qs) 
+
+
+## Collapse, label, and reorder levels for categorical variables
+clean_data &lt;- semi_clean_data
+
+# selectivity
+clean_data$selectivity[clean_data$selectivity == 1] &lt;- &quot;most competitive&quot;
+clean_data$selectivity[clean_data$selectivity == 2] &lt;- &quot;highly competitive plus&quot;
+clean_data$selectivity[clean_data$selectivity == 3] &lt;- &quot;highly competitive&quot;
+clean_data$selectivity[clean_data$selectivity == 4] &lt;- &quot;very competitive plus&quot;
+
+selectivity_levels &lt;- c(
+  &quot;most competitive&quot;,
+  &quot;highly competitive plus&quot;,
+  &quot;highly competitive&quot;,
+  &quot;very competitive plus&quot;)
+
+clean_data$selectivity &lt;- factor(clean_data$selectivity, levels = selectivity_levels)
+
+clean_data %&gt;% ggplot(aes(x=factor(selectivity)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code># enrprofile2021_carnegie 
+clean_data$enrprofile2021_carnegie[clean_data$enrprofile2021_carnegie == 1 | 
+                                     clean_data$enrprofile2021_carnegie == 2 | 
+                                     clean_data$enrprofile2021_carnegie == 3] &lt;- &quot;Exclusive/Very high undergraduate&quot;
+
+clean_data$enrprofile2021_carnegie[clean_data$enrprofile2021_carnegie == 4 | 
+                                     clean_data$enrprofile2021_carnegie == 5] &lt;- &quot;Majority undergraduate&quot;
+
+
+clean_data$enrprofile2021_carnegie[clean_data$enrprofile2021_carnegie == 6 | 
+                                     clean_data$enrprofile2021_carnegie == 7] &lt;- &quot;Exclusive/Majority graduate&quot;
+
+enrprofile2021_carnegie_levels &lt;- c(
+  &quot;Exclusive/Very high undergraduate&quot;,
+  &quot;Majority undergraduate&quot;,
+  &quot;Exclusive/Majority graduate&quot;)
+  
+clean_data$enrprofile2021_carnegie &lt;- factor(clean_data$enrprofile2021_carnegie, levels = enrprofile2021_carnegie_levels)
+
+clean_data %&gt;% ggplot(aes(x=factor(enrprofile2021_carnegie)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<pre class="r"><code># type4_carnegie
+clean_data$type4_carnegie[clean_data$type4_carnegie == 1 | 
+                            clean_data$type4_carnegie == 2 |
+                            clean_data$type4_carnegie == 3 |
+                            clean_data$type4_carnegie == 4 |
+                            clean_data$type4_carnegie == 5 | 
+                            clean_data$type4_carnegie == 6 |
+                            clean_data$type4_carnegie == 14 ] &lt;- &quot;Associate&#39;s Colleges&quot;
+
+clean_data$type4_carnegie[clean_data$type4_carnegie == 15 | 
+                          clean_data$type4_carnegie == 16 |
+                          clean_data$type4_carnegie == 17 ] &lt;- &quot;Doctoral Universities&quot;
+    
+clean_data$type4_carnegie[clean_data$type4_carnegie == 18 | 
+                          clean_data$type4_carnegie == 19 |
+                          clean_data$type4_carnegie == 20 ] &lt;- &quot;Master&#39;s Colleges &amp; Universities&quot;
+
+clean_data$type4_carnegie[clean_data$type4_carnegie == 21 | 
+                          clean_data$type4_carnegie == 22 |
+                          clean_data$type4_carnegie == 23 ] &lt;- &quot;Baccalaureate Colleges&quot;
+
+clean_data$type4_carnegie[clean_data$type4_carnegie == 24 | 
+                          clean_data$type4_carnegie == 25 |
+                          clean_data$type4_carnegie == 26 |
+                          clean_data$type4_carnegie == 27 |
+                          clean_data$type4_carnegie == 28 | 
+                          clean_data$type4_carnegie == 29 |
+                          clean_data$type4_carnegie == 30 ] &lt;- &quot;Special Focus Four-Year&quot;
+
+type4_carnegie_levels &lt;- c(
+  &quot;Doctoral Universities&quot;,
+  &quot;Master&#39;s Colleges &amp; Universities&quot;,
+  &quot;Baccalaureate Colleges&quot;,
+  &quot;Special Focus Four-Year&quot;,
+  &quot;Associate&#39;s Colleges&quot;)
+
+clean_data$type4_carnegie &lt;- factor(clean_data$type4_carnegie, levels = type4_carnegie_levels)
+
+clean_data %&gt;% ggplot(aes(x=factor(type4_carnegie)))+geom_bar()+scale_x_discrete(guide = guide_axis(n.dodge=2))</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
+<pre class="r"><code># type2_carnegie
+clean_data$type2_carnegie[clean_data$type2_carnegie == 3 | 
+                          clean_data$type2_carnegie == 4 |
+                          clean_data$type2_carnegie == 5 ] &lt;- &quot;Two-year&quot;
+
+clean_data$type2_carnegie[clean_data$type2_carnegie == 6 | 
+                          clean_data$type2_carnegie == 7 |
+                          clean_data$type2_carnegie == 8 |
+                          clean_data$type2_carnegie == 9 |
+                          clean_data$type2_carnegie == 10 |
+                          clean_data$type2_carnegie == 11 ] &lt;- &quot;Four-year (small)&quot;
+
+clean_data$type2_carnegie[clean_data$type2_carnegie == 12 | 
+                          clean_data$type2_carnegie == 13 |
+                          clean_data$type2_carnegie == 14 ] &lt;- &quot;Four-year (median)&quot;
+
+clean_data$type2_carnegie[clean_data$type2_carnegie == 15 | 
+                          clean_data$type2_carnegie == 16 |
+                          clean_data$type2_carnegie == 17 ] &lt;- &quot;Four-year (large)&quot;
+
+type2_carnegie_levels &lt;- c(
+  &quot;Four-year (large)&quot;,
+  &quot;Four-year (median)&quot;,
+  &quot;Four-year (small)&quot;,
+  &quot;Two-year&quot;)
+
+clean_data$type2_carnegie &lt;- factor(clean_data$type2_carnegie, levels = type2_carnegie_levels)
+
+clean_data %&gt;% ggplot(aes(x=factor(type2_carnegie)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
+<pre class="r"><code># locale_carnegie
+clean_data$locale_carnegie[clean_data$locale_carnegie == 11 | 
+                             clean_data$locale_carnegie == 12 |
+                             clean_data$locale_carnegie == 13 ] &lt;- &quot;city&quot;
+
+clean_data$locale_carnegie[clean_data$locale_carnegie == 21 | 
+                             clean_data$locale_carnegie == 22 |
+                                                    clean_data$locale_carnegie == 23 ] &lt;- &quot;suburb&quot;
+
+clean_data$locale_carnegie[clean_data$locale_carnegie == 31 | 
+                             clean_data$locale_carnegie == 32 |
+                             clean_data$locale_carnegie == 33 |
+                             clean_data$locale_carnegie == 41 |
+                             clean_data$locale_carnegie == 42 ] &lt;- &quot;town or rural&quot;
+
+locale_carnegie_levels &lt;- c(
+  &quot;city&quot;,
+  &quot;suburb&quot;,
+  &quot;town or rural&quot;)
+
+clean_data$locale_carnegie &lt;- factor(clean_data$locale_carnegie, levels = locale_carnegie_levels)
+
+clean_data %&gt;% ggplot(aes(x=factor(locale_carnegie)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-5.png" width="672" /></p>
+<pre class="r"><code># type1_all
+clean_data &lt;- clean_data %&gt;% 
+  mutate(type1_all = ifelse(type1_all==3, 2, type1_all)) 
+
+clean_data$type1_all[clean_data$type1_all == 1 ] &lt;- &quot;public&quot;
+clean_data$type1_all[clean_data$type1_all == 2 ] &lt;- &quot;private&quot;
+clean_data$type1_all &lt;- factor(clean_data$type1_all)
+
+clean_data %&gt;% ggplot(aes(x=factor(type1_all)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-6.png" width="672" /></p>
+<pre class="r"><code># size_qs
+size_levels &lt;- c(
+  &quot;S&quot;,
+  &quot;M&quot;,
+  &quot;L&quot;,
+  &quot;XL&quot;)
+
+clean_data$size_qs &lt;- factor(clean_data$size_qs, levels = size_levels)
+
+clean_data %&gt;% ggplot(aes(x=factor(size_qs)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-7.png" width="672" /></p>
+<pre class="r"><code># research_output_qs
+clean_data$research_output_qs[clean_data$research_output_qs == &quot;High&quot; |
+                                clean_data$research_output_qs == &quot;Medium&quot; ] &lt;- &quot;Medium High&quot;
+
+clean_data$research_output_qs &lt;- factor(clean_data$research_output_qs)
+
+clean_data %&gt;% ggplot(aes(x=factor(research_output_qs)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-8.png" width="672" /></p>
+<pre class="r"><code># world_rank_cat_arwu
+suppressWarnings({
+  clean_data$world_rank_cat_arwu[as.integer(clean_data$world_rank_cat_arwu) &gt; 0  &amp; 
+                                   as.integer(clean_data$world_rank_cat_arwu) &lt; 21] &lt;- &quot;1-20&quot;
+  clean_data$world_rank_cat_arwu[as.integer(clean_data$world_rank_cat_arwu) &gt; 20  &amp; 
+                                   as.integer(clean_data$world_rank_cat_arwu) &lt; 51] &lt;- &quot;21-50&quot;
+  clean_data$world_rank_cat_arwu[as.integer(clean_data$world_rank_cat_arwu) &gt; 50  &amp; 
+                                   as.integer(clean_data$world_rank_cat_arwu) &lt; 101] &lt;- &quot;51-100&quot;
+})
+
+
+arwu_levels &lt;- c(
+  &quot;1-20&quot;,
+  &quot;21-50&quot;,
+  &quot;51-100&quot;,
+  &quot;101-150&quot;,
+  &quot;151-200&quot;,
+  &quot;201-300&quot;,
+  &quot;301-400&quot;,
+  &quot;401-500&quot;)
+
+clean_data$world_rank_cat_arwu &lt;- factor(clean_data$world_rank_cat_arwu, levels = arwu_levels)
+  
+clean_data %&gt;% ggplot(aes(x=factor(world_rank_cat_arwu)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-9.png" width="672" /></p>
+<pre class="r"><code># world_rank_qs
+suppressWarnings({
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 0  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 21] &lt;- &quot;1-20&quot;
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 20  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 51] &lt;- &quot;21-50&quot;
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 50  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 101] &lt;- &quot;51-100&quot;
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 100  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 151] &lt;- &quot;101-150&quot;
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 150  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 201] &lt;- &quot;151-200&quot;
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 200  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 301] &lt;- &quot;201-300&quot;
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 300  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 401] &lt;- &quot;301-400&quot;
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) &gt; 400  &amp; 
+                             as.integer(clean_data$world_rank_qs) &lt; 501] &lt;- &quot;401-500&quot;
+  clean_data$world_rank_qs[clean_data$world_rank_qs == &quot;511-520&quot; |
+                             clean_data$world_rank_qs == &quot;541-550&quot; |
+                             clean_data$world_rank_qs == &quot;561-570&quot; |
+                             clean_data$world_rank_qs == &quot;571-580&quot; |
+                             clean_data$world_rank_qs == &quot;581-590&quot;] &lt;- &quot;501-600&quot;
+  clean_data$world_rank_qs[clean_data$world_rank_qs == &quot;601-650&quot; |
+                             clean_data$world_rank_qs == &quot;651-700&quot; |
+                             clean_data$world_rank_qs == &quot;701-750&quot; |
+                             clean_data$world_rank_qs == &quot;751-8000&quot;] &lt;- &quot;601-800&quot;
+  clean_data$world_rank_qs[clean_data$world_rank_qs == &quot;1201&quot;] &lt;- &quot;1001-1200&quot;
+})
+  
+
+qs_levels &lt;- c(
+  &quot;1-20&quot;,
+  &quot;21-50&quot;,
+  &quot;51-100&quot;,
+  &quot;101-150&quot;,
+  &quot;151-200&quot;,
+  &quot;201-300&quot;,
+  &quot;301-400&quot;,
+  &quot;401-500&quot;,
+  &quot;501-600&quot;,
+  &quot;601-800&quot;,
+  &quot;801-1000&quot;,
+  &quot;1001-1200&quot;)
+
+
+clean_data$world_rank_qs &lt;- factor(clean_data$world_rank_qs, levels = qs_levels)
+
+clean_data %&gt;% ggplot(aes(x=factor(world_rank_qs)))+geom_bar()</code></pre>
+<p><img src="/data_files/figure-html/unnamed-chunk-5-10.png" width="672" /></p>
+</div>
+<div id="save-the-clean-dataset" class="section level3">
+<h3>Save the clean dataset</h3>
+<pre class="r"><code>write_csv(clean_data, file = here::here(&quot;dataset/clean_data.csv&quot;))</code></pre>
+</div>
+</div>

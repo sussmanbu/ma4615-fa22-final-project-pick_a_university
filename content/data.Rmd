@@ -11,88 +11,643 @@ draft: false
 
 This comes from the file `content/data.Rmd`.
 
-Your first steps in this project will be to find data to work on.
-
-I recommend trying to find data that interests you and that you are knowledgeable about. A bad example would be if you have no interest in video games but your data set is about video games. I also recommend finding data that is related to current events, social justice, and other areas that have an impact.
-
-You are __not__ allowed to work on COVID data.
-
-Initially, you will study _one dataset_ but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable.
-Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.
 
 
-## Where to keep data?
+## Datasets
+1. Academic Ranking of World Universities (ARWU, from Opendatasoft) 
+2. US News College Rankings (from Kaggle) 
+3. US and Liberal College from (from US News) 
+4. International Student Leading Institutes (from Opendoors) 
+5. Carnegie Classification Data
+6. QS World and National Rankings (from Kaggle)
+7. Selectivity (from College Transitions)
+8. Enrollment of the 120 Largest Degree-granting College (from NCES)
+9. City Population and Density 
 
 
-Below 50mb: In `dataset` folder
 
-Above 50mb: In `dataset_ignore` folder. This folder will be ignored by `git` so you'll have to manually sync these files across your team.
-
-### Sharing your data
+### Academic Ranking of World Universities (ARWU, from Opendatasoft) 
+**Link:** [Opendatasoft](https://public.opendatasoft.com/explore/dataset/shanghai-world-university-ranking/table/?sort=world_rank&refine.country=United+States)
 
 
-For small datasets (<50mb), you can use the `dataset` folder that is tracked by github. Add the files just like you would any other file.
+Opendatasoft is a French company which develops tools for sharing and reusing the data of companies and public administrations. The ARWU data we were looking for is one of such datasets provided from Opendatasoft. For the sake of our project, we downloaded the ARWU ranking in 2018 (the most recent year available on Opendatasoft) in a .csv file, which contains 139 observations. The variables are University name, World rank, Work rank integer, National rank,and Total score with the Criteria indicators: Alumni, Award, HiCi, N&S, PUB, PCP. Note that we found this alternative data source because data is not directly downloadable from the official ARWU website.
 
-**Do not** use a folder named `data`.
-This folder is reserved by `hugo`.
-If you create a folder named `data` this will cause problems.
 
-For larger datasets, you'll need to create a new folder in the project root directory named `dataset-ignore`. This will be ignored by git (based off the `.gitignore` file in the project root directory) which will help you avoid issues with Github's size limits. Your team will have to manually make sure the data files in `dataset-ignore` are synced across team members.
 
-Your [load_and_clean_data.R](/load_and_clean_data.R) file is how you will load and clean your data. Here is a an example of a very simple one.
+### US News College Rankings (from Kaggle) 
+**Link:** [Kaggle](https://www.kaggle.com/datasets/neelgajare/2022-usa-college-rankings-more)
+
+
+This dataset is the US News rankings of the best American universities of undergraduate programs. US News is a recognized leader in college rankings. There are 392 American universities based on their undergraduate programs. We also downloaded it from kaggle. The variables contain College Name, Tuition, Enrollment Number. In this dataset, there are two universities with no tuition data when merging all datasets. Scholars created this dataset to study which colleges are best, and to compare tuitions and enrollment numbers in the US.
+
+
+
+### US and Liberal College from (from US News) 
+**Link:** [US News](https://www.usnews.com/best-colleges/rankings/national-universities/most-international)
+
+
+This dataset is from USNews that describes 145 American universities in 2022 with top proportions of international students, which was collected for publishing consumer advice, rankings, and relevant analysis. USNews is a very sourceful website commonly used by students for collecting and comparing universities’ information. We were able to do web scraping and generate the csv file for the dataset. Essentially, this data has 145 rows with 3 columns with School name, location, and percentage of international students, sorted by descending percentage.
+
+
+
+### International Student Leading Institutes (from Opendoors) 
+**Link:** [Opendoors](https://opendoorsdata.org/data/international-students/leading-institutions/)
+
+
+Opendoors has been regarded as the comprehensive information resource on international students and scholars in the United States and on US students studying abroad. The dataset shows the view of the leading institutions hosting international students in the United States with the institution name and the number of international students.
+
+
+
+### Carnegie Classification Data
+**Link:** [Carnegie Classification](https://carnegieclassifications.acenet.edu/classification_descriptions/basic.php)
+
+
+The Carnegie Classification® is been the prominent framework that captures the institutional diversity in U.S. post secondary insitutions for over the past 45 years.  The Carnegie dataset contained over 50 different features, but we selectively chose the 8 features: University Name, City, State, Carnegie Basic Classification, Size and Setting Classification, Control of institution, Enrollment Profile Classification, Degree of urbanization.
+
+
+
+### QS World and National Rankings (from Kaggle)
+**Link:** [Kaggle](https://www.kaggle.com/datasets/padhmam/qs-world-university-rankings-2017-2022)
+
+
+The source of this data set comes from the QS World University Rankings, which is the annual university rankings published by Quacquarelli Symonds, and is viewed as one of the three most-widely read university rankings in the world. We found it on kaggle and it can be downloaded through the website. Kaggle is a data modeling and data analysis platform. Companies and researchers can publish and analyze data on it. This dataset contains basic information of 1368 universities around the world and their rankings from 2017 to 2022. This dataset was created to study factors that affect university rankings, what makes a good university. For our project, we used data from the most recent year (i.e., 2022).
+
+
+
+### Selectivity (from College Transitions)
+**Link:** [College Transitions](https://www.collegetransitions.com/college-selectivity/)
+
+
+The data is not downloadable but instead we copied and pasted the table to excel sheets from the website. There are four categories for selectivity: most selective, extreme selective, very selective, moderately selective. College Transitions is a team of college planning experts committed to guiding students and families through the application process.From the source in College Transitions website, we found the college selectivity matters for members of non-dominant class(no white, wealthy, and well-educated) earned significantly more than similarly qualified students with same background who attended less exclusive schools.
+
+
+
+### Enrollment of the 120 Largest Degree-granting College (from NCES)
+**Link:** [NCES Dataset](https://nces.ed.gov/programs/digest/d21/tables/dt21_312.10.asp)
+
+
+The data is sourced from the National Center for Education Statistics (NCES), which is an essential component of the United States Department of Education's Institute of Education Sciences that publishes statistics on education and public school district finance information in the United States. This Enrollment Dataset has 120 college observations and 6 columns describing institution name, state, rank, control (public, private-nonprofit, private-profit), level (4 year, 2 year), and total enrollment size.
+
+
+
+### City Population and Density
+**Link:** [Governing Dataset](https://www.governing.com/archive/population-density-land-area-cities-map.html)
+
+
+The dataset is not downloadable but they have all the data from on the website. Instead, we just copy and paste the data from the website to form a dataset. The data of the Governing website is originally from [U.S. Census Bureau](https://www.census.gov/), which is an official website from US government that measure america’ s people, place and economy. It includes City, Population Density (Persons/Square Mile), 2016 Population and Land Area (Square Miles) important variables.
+
+
+
+
+
+## Data Cleaning
+
+
+As described above, we gathered data from nine different sources. In this section, we discussed and presented how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set.
+
+
+
+### Initial Cleaning
+
+
+Our initial data cleaning for each data subset included loading each data set, checking for problems, as well as selecting, arranging, and renaming relevant variables.
+
+
 
 ```{r}
-source(
-  here::here("static", "load_and_clean_data.R"),
-  echo = TRUE # Use echo=FALSE or omit it to avoid code output  
-)
+suppressMessages({
+library(tidyverse)
+library(readxl)
+library(here)
+})
+
+# The arwu dataset
+arwu2018 <- read_delim(here::here("dataset/arwu-usa-2018.csv"), 
+                       delim = ";", 
+                       escape_double = FALSE, 
+                       trim_ws = TRUE)
+
+problems(arwu2018)
+
+arwu2018 <- arwu2018 %>% 
+  select(University, `Total score`, `World rank`, `World rank integer`, `National rank`, `N&S`, `Hi Ci`, Alumni, Award, PUB, PCP) %>% 
+  rename(university = University,
+         total_score_arwu = `Total score`, 
+         world_rank_cat_arwu = `World rank`, 
+         world_rank_arwu = `World rank integer`, 
+         national_rank_arwu = `National rank`, 
+         n_s_arwu = `N&S`, 
+         hi_ci_arwu = `Hi Ci`, 
+         alumni_arwu = Alumni, 
+         award_arwu = Award, 
+         pub_arwu = PUB, 
+         pcp_arwu = PCP)
+
+
+# The qs dataset
+qs2022 <- read_csv(here::here("dataset/qs_world_university_ranking_2022.csv"))
+  
+problems(qs2022)
+
+qs2022 <- qs2022 %>% 
+  select(university, size, type, city, score, rank_display, research_output, faculty_count, student_faculty_ratio, international_students) %>% 
+  rename(size_qs = size, 
+         type1_qs = type, 
+         score_qs = score, 
+         world_rank_qs = rank_display, 
+         research_output_qs = research_output, 
+         faculty_count_qs = faculty_count, 
+         stu_facl_ratio_qs = student_faculty_ratio, 
+         international_students_qs = international_students)
+
+
+# The selectivity dataset
+selectivity <- read_excel(here::here("dataset/Selectivity rank.xlsx"))
+  
+problems(selectivity)
+
+selectivity <- selectivity %>% 
+  rename(university = `Institution Name`, 
+         state = State, 
+         selectivity = Selectivity)
+
+
+# The city_population_density dataset
+city_population_density2016 <- read_csv(here::here("dataset/US Population Density.csv"))
+
+problems(city_population_density2016)
+
+city_population_density2016 <- city_population_density2016 %>% 
+  rename(city = City, 
+         state = State, 
+         city_population_density = `Population Density (Persons/Square Mile)`, 
+         city_population = `2016 Population`, 
+         city_land_area = `Land Area (Square Miles)`)
+
+
+# The opendoors dataset
+opendoors_2021SY <- read_csv(here::here("dataset/OpendoorsPopulation.csv"),
+                             skip = 1)
+
+problems(opendoors_2021SY)
+
+opendoors_2021SY <- opendoors_2021SY %>% 
+  rename(university = Institutions, 
+         city = City, 
+         state_opendoors = State,
+         international_students_opendoors = `Int'l Students`)
+
+
+# The kaggle dataset
+kagglecolleges <- read_csv(here::here("dataset/Kagglecolleges.csv"))
+
+problems(kagglecolleges)
+
+kagglecolleges <- kagglecolleges %>% 
+  rename(national_rank_kaggle = ...1, 
+         university = `College Name`, 
+         tuition_kaggle = Tuition,
+         enrollment_kaggle = `Enrollment Numbers`) %>% 
+  mutate(national_rank_kaggle = national_rank_kaggle + 1) 
+
+
+# The P1_Carnegie dataset
+p1_carnegie <- read_csv(here::here("dataset/P1_Carnegie.csv"))
+
+problems(p1_carnegie)
+
+p1_carnegie <- p1_carnegie %>% 
+  rename(university = name, 
+         state_carnegie = state)
+
+
+# The top120enrollment2020fall dataset
+top120enrollment2020fall <- read_excel(here::here("dataset/total erollment size top120.xls"),
+                          skip = 1)
+
+problems(top120enrollment2020fall)
+
+top120enrollment2020fall <- top120enrollment2020fall %>% 
+  select(-Rank) %>% 
+  rename(university = Institution, 
+         state_top120enrollment = State, 
+         type1_top120enrollment = Control,
+         type2_top120enrollment = Level,
+         enrollment_top120enrollment = TotalEnrollment)
+
+
+# The nat_lib_uscolleges dataset
+nat_lib_uscolleges <- read_excel(here::here("dataset/Nat_Lib_USColleges.xlsx"))
+
+problems(nat_lib_uscolleges)
+
+nat_lib_uscolleges <- nat_lib_uscolleges %>% 
+  rename(university = SCHOOL, 
+         city = City,
+         state_natlib = State, 
+         international_students_natlib = INTERNATIONAL,
+         type3_natlib = Type)
 ```
 
-Note how I use the `here::here` function from the [`here` package](https://here.r-lib.org/articles/here.html) to avoid path problems.
-This function is used to specify directories within the project's root directory.
-You should never use absolute paths (eg. `/Users/danielsussman/path/to/project/` or `C:\\MA415\\Final_Project\\`) and using `here` ensures that it doesn't matter what the current working directory is as long as you have this RStudio Project open.
-
-----
 
 
 
-## Files in static
-
-### `load_and_clean_data.R`
-
-The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them.
-This file might create a derivative data set that you then use for your subsequent analysis.
-Note that you don't need to run this script from every post/page.
-Instead, you can load in the results of this script, which could be plain text files or `.RData` files. In your data page you'll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes.
-To link to this file, you can use `[cleaning script](/load_and_clean_data.R)`. 
+### Joining eight out of nine data subsets, followed by some cleaning
 
 
-When you are loading in data, I recommend using the `here::here` function to specify the file path. This function is used to specify a path relative to your project's root directory. Hence, you can read a file using eg, `read_csv(here::here("dataset/data_file.csv"))`.
-
-
-### Shiny Interactive
-
-If you are using a shiny interactive, you'll need to keep that in a separate folder (i.e. not in `static` or `content`). For the shiny interactive you'll need to publish the app on `shinyapps.io` where the app can be run. When you publish, make sure to include any data sets you are loading in among the files you publish since those datasets will need to be loaded by your app. 
+After some basic cleaning presented above, we first did a full join of the seven out of nine data sets (excluding the Carnegie Classification data and population density data), which was then left joined with the Carnegie Classification data. 
 
 
 
+```{r}
+full_data_leftjoinCarnegie <- arwu2018 %>% 
+  full_join(kagglecolleges, by = "university") %>% 
+  full_join(nat_lib_uscolleges, by = "university") %>% 
+  full_join(opendoors_2021SY, by = "university") %>% 
+  full_join(qs2022, by = "university") %>% 
+  full_join(selectivity, by = "university") %>% 
+  full_join(top120enrollment2020fall, by = "university") %>% 
+  left_join(p1_carnegie, by = "university") 
+
+write_csv(full_data_leftjoinCarnegie, file = here::here("dataset/full_data_leftjoinCarnegie.csv"))
+```
 
 
-----
 
-## Rubric: On this page
+For variables that had multiple columns due to coming from different data sources, such as city and state, we aggregated the information to one column. Initially, The left joined data set had 961 observations, with each row representing a university. Our outcome of interest, international student population, had three datapoints: the percentage in 2021 from US news, the actual number in 2021 from opendoors, and actual number from 2022 from QS but downloaded from Kaggle. We further filtered the dataset to universities which had at least one datapoint out of these three, which resulted in 499 observations. We saved the updated dataset.
 
-you will
 
-* Describe where/how to find data.
-  * You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.
-  * Why was the data collected/curated? Who put it together? (This is important, if you don't know why it was collected then that might not be a good dataset to look at.
-* Describe the different data files used and what each variable means. 
-  * If you have many variables then only describe the most relevant ones and summarize the rest.
-* Describe any cleaning you had to do for your data.
-  * You *must* include a link to your `load_and_clean_data.R` file.
-  * Also, describe any additional R packages you used outside of those covered in class.
-  * Describe and show code for how you combined multiple data files and any cleaning that was necessary for that.
-  * Some repetition of what you do in your `load_and_clean_data.R` file is fine and encouraged if it helps explain what you did.
-* Organization, clarity, cleanliness of the page
-  * Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.
+
+```{r}
+## Turn type1_top120enrollment and type1_qs into numeric variable
+full_data_leftjoinCarnegie <- full_data_leftjoinCarnegie %>% 
+  mutate(type1_top120enrollment = ifelse(type1_top120enrollment=="Public", 1, type1_top120enrollment)) %>%
+  mutate(type1_top120enrollment = ifelse(type1_top120enrollment=="PrivNp", 2, type1_top120enrollment)) %>%
+  mutate(type1_top120enrollment = ifelse(type1_top120enrollment=="PrivFp", 3, type1_top120enrollment)) %>%
+  mutate(type1_qs = ifelse(type1_qs=="Public", 1, type1_qs)) %>%
+  mutate(type1_qs = ifelse(type1_qs=="Private", 4, type1_qs))
+
+full_data_leftjoinCarnegie$type1_top120enrollment <- as.numeric(full_data_leftjoinCarnegie$type1_top120enrollment)
+full_data_leftjoinCarnegie$type1_qs <- as.numeric(full_data_leftjoinCarnegie$type1_qs)
+
+
+## Only keep one city column (there are four after joining) 
+full_data_leftjoinCarnegie1 <- full_data_leftjoinCarnegie %>% 
+  filter(!is.na(university)) %>% 
+  head(-4) %>% 
+  relocate(university, city.x, city.y, city.x.x, city.y.y) %>%
+  arrange(is.na(city.x)) %>% 
+  mutate(city.x = ifelse(is.na(city.x), city.y, city.x)) %>% 
+  mutate(city.x = ifelse(is.na(city.x), city.x.x, city.x)) %>% 
+  mutate(city.x = ifelse(is.na(city.x), city.y.y, city.x)) %>% 
+  arrange(is.na(city.x)) %>% 
+  select(-city.y, -city.x.x, -city.y.y) %>% 
+  rename(city = city.x) %>% 
+## Only keep one state column (there are five after joining)
+  relocate(university, city, state, state_natlib, state_opendoors, state_top120enrollment, state_carnegie) %>%
+  arrange(is.na(state)) %>% 
+  mutate(state = ifelse(is.na(state), state_natlib, state)) %>% 
+  mutate(state = ifelse(is.na(state), state_opendoors, state)) %>% 
+  mutate(state = ifelse(is.na(state), state_top120enrollment, state)) %>%
+  mutate(state = ifelse(is.na(state), state_carnegie, state)) %>%
+  arrange(is.na(state)) %>% 
+  select(-state_natlib, -state_opendoors, -state_top120enrollment, -state_carnegie) %>% 
+## Relocate international students population datapoints (there are three)
+  relocate(university, city, state, international_students_natlib, international_students_opendoors, international_students_qs) %>%
+## Filter out if data is misisng on international_students_natlib, international_students_qs, or international_students_opendoors
+  filter(!is.na(international_students_natlib) | !is.na(international_students_opendoors) | !is.na(international_students_qs)) 
+
+write_csv(full_data_leftjoinCarnegie1, file = here::here("dataset/full_data_leftjoinCarnegie1.csv"))
+```
+
+
+
+### Some manually cleaning directly in the .csv file
+
+Then, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations: “Purdue University”, “Purdue University–West Lafayette”, and “Purdue University - West Lafayette.” To solve this issue, we exported the dataset to a .csv file, sorted by university name, and manually de-duplicated the dataset. More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations (reducing from 499 observations), each of which represent a unique university. We then imported this file ("full_data_leftjoinCarnegie1_dedup.csv") back to R and proceeded to further data cleaning.
+
+
+
+```{r}
+full_data_leftjoinCarnegie1_dedup <- read_csv(here::here("dataset/full_data_leftjoinCarnegie1_dedup.csv"))
+
+problems(full_data_leftjoinCarnegie1_dedup)
+```
+
+
+
+### Deeper cleaning with the de-duplicated dataset
+
+
+This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering. We also presented a bar plot of these categorical variables after the re-leveling and re-ordering.
+
+Lastly, we created a [codebook](https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit#gid=260549592) for our dataset. 
+
+
+
+```{r}
+semi_clean_data <- 
+  full_data_leftjoinCarnegie1_dedup %>% 
+## Clean type1 variables (private or public) based on control_carnegie, type1_qs, and type1_top120enrollment
+  mutate(type1_all = ifelse(is.na(control_carnegie), type1_top120enrollment, control_carnegie)) %>% 
+  mutate(type1_all = ifelse(is.na(type1_all), type1_qs, type1_all)) %>% 
+  arrange(type1_all) %>% 
+## Update the three university with value 4 (private) to 2 (not for profit private)
+  mutate(type1_all = ifelse(type1_all==4, 2, type1_all)) %>% 
+## drop the 3 original type1 variables
+  select(-control_carnegie, -type1_qs, -type1_top120enrollment) %>% 
+## clean other control type variables
+  select(-type2_top120enrollment) %>% 
+  rename(type2_carnegie = sizeset2021_carnegie,
+         type4_carnegie = basic2021_carnegie) %>% 
+## Create a new variable for international student population so that it takes the maximum value 
+## from the international_students_qs and international_students_opendoors
+  mutate(international_students_max = pmax(international_students_qs, international_students_opendoors, na.rm = TRUE)) %>% 
+## left join with city_population_density2016
+  left_join(city_population_density2016, by = c("city","state")) %>% 
+## Relocate the variables
+  relocate(university, city, state,
+           city_population_density, city_population, city_land_area,
+           international_students_natlib, international_students_max, international_students_qs, international_students_opendoors, 
+           tuition_kaggle,
+           selectivity,
+           world_rank_cat_arwu, world_rank_arwu, world_rank_qs,
+           national_rank_arwu, national_rank_kaggle,
+           type1_all,
+           type2_carnegie,
+           type3_natlib,
+           type4_carnegie, enrprofile2021_carnegie,
+           locale_carnegie,
+           size_qs,
+           faculty_count_qs, stu_facl_ratio_qs,
+           research_output_qs, award_arwu, hi_ci_arwu, n_s_arwu, pub_arwu,
+           pcp_arwu, alumni_arwu,
+           enrollment_kaggle, enrollment_top120enrollment,
+           total_score_arwu, score_qs) 
+
+
+## Collapse, label, and reorder levels for categorical variables
+clean_data <- semi_clean_data
+
+# selectivity
+clean_data$selectivity[clean_data$selectivity == 1] <- "most competitive"
+clean_data$selectivity[clean_data$selectivity == 2] <- "highly competitive plus"
+clean_data$selectivity[clean_data$selectivity == 3] <- "highly competitive"
+clean_data$selectivity[clean_data$selectivity == 4] <- "very competitive plus"
+
+selectivity_levels <- c(
+  "most competitive",
+  "highly competitive plus",
+  "highly competitive",
+  "very competitive plus")
+
+clean_data$selectivity <- factor(clean_data$selectivity, levels = selectivity_levels)
+
+clean_data %>% ggplot(aes(x=factor(selectivity)))+geom_bar()
+
+
+# enrprofile2021_carnegie 
+clean_data$enrprofile2021_carnegie[clean_data$enrprofile2021_carnegie == 1 | 
+                                     clean_data$enrprofile2021_carnegie == 2 | 
+                                     clean_data$enrprofile2021_carnegie == 3] <- "Exclusive/Very high undergraduate"
+
+clean_data$enrprofile2021_carnegie[clean_data$enrprofile2021_carnegie == 4 | 
+                                     clean_data$enrprofile2021_carnegie == 5] <- "Majority undergraduate"
+
+
+clean_data$enrprofile2021_carnegie[clean_data$enrprofile2021_carnegie == 6 | 
+                                     clean_data$enrprofile2021_carnegie == 7] <- "Exclusive/Majority graduate"
+
+enrprofile2021_carnegie_levels <- c(
+  "Exclusive/Very high undergraduate",
+  "Majority undergraduate",
+  "Exclusive/Majority graduate")
+  
+clean_data$enrprofile2021_carnegie <- factor(clean_data$enrprofile2021_carnegie, levels = enrprofile2021_carnegie_levels)
+
+clean_data %>% ggplot(aes(x=factor(enrprofile2021_carnegie)))+geom_bar()
+
+
+# type4_carnegie
+clean_data$type4_carnegie[clean_data$type4_carnegie == 1 | 
+                            clean_data$type4_carnegie == 2 |
+                            clean_data$type4_carnegie == 3 |
+                            clean_data$type4_carnegie == 4 |
+                            clean_data$type4_carnegie == 5 | 
+                            clean_data$type4_carnegie == 6 |
+                            clean_data$type4_carnegie == 14 ] <- "Associate's Colleges"
+
+clean_data$type4_carnegie[clean_data$type4_carnegie == 15 | 
+                          clean_data$type4_carnegie == 16 |
+                          clean_data$type4_carnegie == 17 ] <- "Doctoral Universities"
+    
+clean_data$type4_carnegie[clean_data$type4_carnegie == 18 | 
+                          clean_data$type4_carnegie == 19 |
+                          clean_data$type4_carnegie == 20 ] <- "Master's Colleges & Universities"
+
+clean_data$type4_carnegie[clean_data$type4_carnegie == 21 | 
+                          clean_data$type4_carnegie == 22 |
+                          clean_data$type4_carnegie == 23 ] <- "Baccalaureate Colleges"
+
+clean_data$type4_carnegie[clean_data$type4_carnegie == 24 | 
+                          clean_data$type4_carnegie == 25 |
+                          clean_data$type4_carnegie == 26 |
+                          clean_data$type4_carnegie == 27 |
+                          clean_data$type4_carnegie == 28 | 
+                          clean_data$type4_carnegie == 29 |
+                          clean_data$type4_carnegie == 30 ] <- "Special Focus Four-Year"
+
+type4_carnegie_levels <- c(
+  "Doctoral Universities",
+  "Master's Colleges & Universities",
+  "Baccalaureate Colleges",
+  "Special Focus Four-Year",
+  "Associate's Colleges")
+
+clean_data$type4_carnegie <- factor(clean_data$type4_carnegie, levels = type4_carnegie_levels)
+
+clean_data %>% ggplot(aes(x=factor(type4_carnegie)))+geom_bar()+scale_x_discrete(guide = guide_axis(n.dodge=2))
+
+
+
+# type2_carnegie
+clean_data$type2_carnegie[clean_data$type2_carnegie == 3 | 
+                          clean_data$type2_carnegie == 4 |
+                          clean_data$type2_carnegie == 5 ] <- "Two-year"
+
+clean_data$type2_carnegie[clean_data$type2_carnegie == 6 | 
+                          clean_data$type2_carnegie == 7 |
+                          clean_data$type2_carnegie == 8 |
+                          clean_data$type2_carnegie == 9 |
+                          clean_data$type2_carnegie == 10 |
+                          clean_data$type2_carnegie == 11 ] <- "Four-year (small)"
+
+clean_data$type2_carnegie[clean_data$type2_carnegie == 12 | 
+                          clean_data$type2_carnegie == 13 |
+                          clean_data$type2_carnegie == 14 ] <- "Four-year (median)"
+
+clean_data$type2_carnegie[clean_data$type2_carnegie == 15 | 
+                          clean_data$type2_carnegie == 16 |
+                          clean_data$type2_carnegie == 17 ] <- "Four-year (large)"
+
+type2_carnegie_levels <- c(
+  "Four-year (large)",
+  "Four-year (median)",
+  "Four-year (small)",
+  "Two-year")
+
+clean_data$type2_carnegie <- factor(clean_data$type2_carnegie, levels = type2_carnegie_levels)
+
+clean_data %>% ggplot(aes(x=factor(type2_carnegie)))+geom_bar()
+
+
+# locale_carnegie
+clean_data$locale_carnegie[clean_data$locale_carnegie == 11 | 
+                             clean_data$locale_carnegie == 12 |
+                             clean_data$locale_carnegie == 13 ] <- "city"
+
+clean_data$locale_carnegie[clean_data$locale_carnegie == 21 | 
+                             clean_data$locale_carnegie == 22 |
+                                                    clean_data$locale_carnegie == 23 ] <- "suburb"
+
+clean_data$locale_carnegie[clean_data$locale_carnegie == 31 | 
+                             clean_data$locale_carnegie == 32 |
+                             clean_data$locale_carnegie == 33 |
+                             clean_data$locale_carnegie == 41 |
+                             clean_data$locale_carnegie == 42 ] <- "town or rural"
+
+locale_carnegie_levels <- c(
+  "city",
+  "suburb",
+  "town or rural")
+
+clean_data$locale_carnegie <- factor(clean_data$locale_carnegie, levels = locale_carnegie_levels)
+
+clean_data %>% ggplot(aes(x=factor(locale_carnegie)))+geom_bar()
+
+
+# type1_all
+clean_data <- clean_data %>% 
+  mutate(type1_all = ifelse(type1_all==3, 2, type1_all)) 
+
+clean_data$type1_all[clean_data$type1_all == 1 ] <- "public"
+clean_data$type1_all[clean_data$type1_all == 2 ] <- "private"
+clean_data$type1_all <- factor(clean_data$type1_all)
+
+clean_data %>% ggplot(aes(x=factor(type1_all)))+geom_bar()
+
+
+# size_qs
+size_levels <- c(
+  "S",
+  "M",
+  "L",
+  "XL")
+
+clean_data$size_qs <- factor(clean_data$size_qs, levels = size_levels)
+
+clean_data %>% ggplot(aes(x=factor(size_qs)))+geom_bar()
+
+
+# research_output_qs
+clean_data$research_output_qs[clean_data$research_output_qs == "High" |
+                                clean_data$research_output_qs == "Medium" ] <- "Medium High"
+
+clean_data$research_output_qs <- factor(clean_data$research_output_qs)
+
+clean_data %>% ggplot(aes(x=factor(research_output_qs)))+geom_bar()
+
+
+# world_rank_cat_arwu
+suppressWarnings({
+  clean_data$world_rank_cat_arwu[as.integer(clean_data$world_rank_cat_arwu) > 0  & 
+                                   as.integer(clean_data$world_rank_cat_arwu) < 21] <- "1-20"
+  clean_data$world_rank_cat_arwu[as.integer(clean_data$world_rank_cat_arwu) > 20  & 
+                                   as.integer(clean_data$world_rank_cat_arwu) < 51] <- "21-50"
+  clean_data$world_rank_cat_arwu[as.integer(clean_data$world_rank_cat_arwu) > 50  & 
+                                   as.integer(clean_data$world_rank_cat_arwu) < 101] <- "51-100"
+})
+
+
+arwu_levels <- c(
+  "1-20",
+  "21-50",
+  "51-100",
+  "101-150",
+  "151-200",
+  "201-300",
+  "301-400",
+  "401-500")
+
+clean_data$world_rank_cat_arwu <- factor(clean_data$world_rank_cat_arwu, levels = arwu_levels)
+  
+clean_data %>% ggplot(aes(x=factor(world_rank_cat_arwu)))+geom_bar()
+
+
+# world_rank_qs
+suppressWarnings({
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 0  & 
+                             as.integer(clean_data$world_rank_qs) < 21] <- "1-20"
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 20  & 
+                             as.integer(clean_data$world_rank_qs) < 51] <- "21-50"
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 50  & 
+                             as.integer(clean_data$world_rank_qs) < 101] <- "51-100"
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 100  & 
+                             as.integer(clean_data$world_rank_qs) < 151] <- "101-150"
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 150  & 
+                             as.integer(clean_data$world_rank_qs) < 201] <- "151-200"
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 200  & 
+                             as.integer(clean_data$world_rank_qs) < 301] <- "201-300"
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 300  & 
+                             as.integer(clean_data$world_rank_qs) < 401] <- "301-400"
+  clean_data$world_rank_qs[as.integer(clean_data$world_rank_qs) > 400  & 
+                             as.integer(clean_data$world_rank_qs) < 501] <- "401-500"
+  clean_data$world_rank_qs[clean_data$world_rank_qs == "511-520" |
+                             clean_data$world_rank_qs == "541-550" |
+                             clean_data$world_rank_qs == "561-570" |
+                             clean_data$world_rank_qs == "571-580" |
+                             clean_data$world_rank_qs == "581-590"] <- "501-600"
+  clean_data$world_rank_qs[clean_data$world_rank_qs == "601-650" |
+                             clean_data$world_rank_qs == "651-700" |
+                             clean_data$world_rank_qs == "701-750" |
+                             clean_data$world_rank_qs == "751-8000"] <- "601-800"
+  clean_data$world_rank_qs[clean_data$world_rank_qs == "1201"] <- "1001-1200"
+})
+  
+
+qs_levels <- c(
+  "1-20",
+  "21-50",
+  "51-100",
+  "101-150",
+  "151-200",
+  "201-300",
+  "301-400",
+  "401-500",
+  "501-600",
+  "601-800",
+  "801-1000",
+  "1001-1200")
+
+
+clean_data$world_rank_qs <- factor(clean_data$world_rank_qs, levels = qs_levels)
+
+clean_data %>% ggplot(aes(x=factor(world_rank_qs)))+geom_bar()
+```
+
+
+
+### Save the clean dataset
+
+
+```{r}
+write_csv(clean_data, file = here::here("dataset/clean_data.csv"))
+```
+
+
+
+
+
+
+
+
