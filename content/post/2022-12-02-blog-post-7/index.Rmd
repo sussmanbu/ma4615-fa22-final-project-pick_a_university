@@ -13,3 +13,128 @@ lastmod: '2022-12-02T23:18:12-05:00'
 featuredVideo: ~
 featuredImage: ~
 ---
+
+
+ For *blog post 7*, we address how we plan to the continuation of our exploratory data analysis. 
+ Our next blog (8) will address our tentative thesis, visualizations, and tables.
+
+ ## Feature Extraction
+ We are using the correlation matrix to find high positive or negative correlations between the population and our dependent variables, which indicates potential predictors of the high international student population. From this, we expected to get more of a sense of which variablesa are highly related to the population of international students. 
+
+ ```{r, echo=FALSE}
+ suppressWarnings({
+ library(tidyverse)
+ library(caTools)
+ library(ggplot2)
+ library(ggcorrplot)
+ library(reshape2)
+ })
+
+ get_upper_tri <- function(cormat){
+   cormat[lower.tri(cormat)]<- NA
+   return(cormat)
+ }
+
+ reorder_cormat <- function(cormat){
+   dd <- as.dist((1-cormat)/2)
+   hc <- hclust(dd)
+   cormat <-cormat[hc$order, hc$order]
+ }
+
+ suppressWarnings({
+ clean_data <- read.csv(here::here("dataset/clean_data.csv"))
+ num_data <- clean_data[,unlist(lapply(clean_data, is.numeric))]
+ cormat <- round(cor(num_data, use = "complete.obs"), 2)
+ cormat <- reorder_cormat(cormat)
+ })
+
+
+ suppressWarnings({
+ upper_tri <- get_upper_tri(cormat)
+ melted_cormat <- melt(upper_tri, na.rm = TRUE)
+ ggheatmap <- ggplot(melted_cormat, aes(Var2, Var1, fill = value))+
+   geom_tile(color = "white")+
+   scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+                        midpoint = 0, limit = c(-1,1), space = "Lab", 
+                        name="Pearson\nCorrelation") +
+   theme_minimal()+ # minimal theme
+   theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+                                    size = 6, hjust = 1))+
+   coord_fixed()
+ })
+
+ suppressWarnings({
+ ind_num <- melted_cormat[(melted_cormat$Var1 == "international_students_max" & melted_cormat$Var2 != "international_students_max" & abs(melted_cormat$value) >=0.4 ), ]$Var2
+ ind_prop <- melted_cormat[(melted_cormat$Var1 == "international_students_natlib" & melted_cormat$Var2 != "international_students_natlib" & abs(melted_cormat$value) >=0.4 ), ]$Var2
+ print(ind_num)
+ print(ind_prop)
+ ggheatmap
+ })
+ ```
+ Next, we select numerical features that have a large correlation coefficient (absolute value being greater than 0.4) in relation to **international_students_natlib(percentage of international students)** and **international_students_max(The maximun of international_students_qs and international_students_opendoors)**. 
+
+
+
+
+ For **international_students_natlib**, we have the relevant numerical features:
+ city_population_density, 
+ faculty_count_qs
+
+ For **international_students_max**, we have the relevant numerical features:
+ international_students_opendoors, 
+ enrollment_top120enrollment,  
+ city_population, 
+ international_students_qs, 
+ international_students_natlib,   
+ city_population_density
+
+
+
+
+ From this finding we made few graphs: 
+
+ ### City Population Density and International Student Percentage
+ ```{r, echo=FALSE}
+ ranking_score <- clean_data %>% summarise(international_students_natlib,  city_population_density, faculty_count_qs) %>% drop_na()
+
+ ranking_score %>% ggplot(aes(x=(international_students_natlib),y= (city_population_density), colour = faculty_count_qs)) + geom_jitter() + labs(x ="International Student Percentage", y = "City Population Density", colour = "Faculty Count")
+ ```
+
+ ### The number of International Students and City Population 
+ ```{r, echo=FALSE}
+ university <- clean_data %>% filter(!international_students_qs == "NA", !international_students_max == "NA")
+ university %>% 
+   ggplot(aes(x = log(international_students_max), y = log(international_students_qs))) + 
+   geom_jitter()+geom_smooth(formula = y ~ x, method = "loess", se = FALSE)+
+   labs(x="number of international students", y = "QS ranking")
+ ```
+
+ ### Estimate States' University International Student Population by mean
+ ```{r, echo=FALSE}
+ library(usmap) 
+ options(readr.show_col_types = FALSE)
+
+ state_qs_meansistudent <- clean_data %>% group_by(state) %>% summarize(mean_istudents_qs = mean(international_students_qs, na.rm = TRUE))
+
+ plot_usmap(data = state_qs_meansistudent, values = "mean_istudents_qs", color = "red") + 
+   scale_fill_continuous(low = "white", high = "4682B4", name = "Mean International Student Population", label = scales::comma) + 
+   theme(legend.position = "right")
+ ```
+
+ *Our next step* would be extracting the relevant non-numerical features. An idea for this is using scatter plots between variables or converting the variables to numerical ones. For example, we could convert campus size factors (S, M, L, XL) to integers. 
+
+
+ ## Modeling
+ Using the pruned features, for a baseline, we will create linear regression(lm) or generalized linear models(glm).
+
+ Then, we are interested in upscaling the performance using methods such as step-wise regression and lasso regression. 
+
+ Note: We have created lm and glms before, but only naively selected the independent variables.
+
+
+ ## Evaluation
+ Since we are solving a regression problem, we will be using Root Mean Square Error as an evaluation method. Additionally, we plan to use information criterion methods (AIC, BIC) to also measure model performance.
+
+
+ ## Acknowledgments
+ “GGPLOT2 : Quick Correlation Matrix Heatmap - R Software and Data Visualization.” STHDA, http://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization. 
