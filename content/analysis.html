@@ -7,45 +7,132 @@ featuredImage: https://upload.wikimedia.org/wikipedia/commons/7/77/Pebbleswithqu
 draft: false
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 <div id="TOC">
 
 </div>
 
-<p>This comes from the file <code>content/analysis.Rmd</code>.</p>
-<p>We describe here our detailed data analysis.</p>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-## ✓ tibble  3.1.6     ✓ dplyr   1.0.8
-## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-## ✓ readr   2.1.1     ✓ forcats 0.5.1</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>print(getwd())</code></pre>
-<pre><code>## [1] &quot;/Users/dsussman/Dropbox (Personal)/Teaching/MA_415/project_template/content&quot;</code></pre>
-<pre class="r"><code>data &lt;- read_csv(here::here(&quot;dataset/loan_refusal_clean.csv&quot;))</code></pre>
-<pre><code>## Rows: 20 Columns: 5</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (1): bank
-## dbl (4): min, white, himin, hiwhite
+<div id="motivation" class="section level2">
+<h2>Motivation</h2>
+<p>Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly decreased during 2019 to 2020. The widespread travel restrictions tend to lead to a sharp decline in enrollments of new students outside of the US. We wanted to check what would affect the international students to choose certain institutions in the US.
+One of our teammates, Yawei suggested that the top three considerations were: safety, ranking of the university in my field, and the “dynamics” of the campus. The percentage of the international student body would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student body is one of the criteria (probably not, but I believe there is correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc</p>
+<p>The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through “group_by”, “color”, “fill”, “facet” and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law).
+We also wanted to answer the questions below:
+How has the number of international students in the US changed over time? (x= school years, y= international students’ population)
+New enrollment percentage of international students (x= school years, y= international students’ population % change)
+How do new enrollment trends vary by academic level?
+Breakdown of international students by the US region they live (2021 vs 2016)</p>
+</div>
+<div id="breadth-and-depth-of-da" class="section level2">
+<h2>Breadth and Depth of DA</h2>
+<p>Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US colleges, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr.</p>
+</div>
+<div id="early-data-analysis" class="section level2">
+<h2>Early Data Analysis</h2>
+<p>In our earlier data analysis (Blog Post 4), we examined the relationship between the dependent variable ISPr and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We did this by making predictions with 7 regression models (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma) after shuffling and splitting the data with a 70-30 ratio for the train and test sets. By evaluating the AIC and fisher score, we selected the inverse gaussian glm as the best fit of all 7 models. Below we display our linear regression, logistic regression, and inverse gaussian regression.</p>
+<p>The main limitation is that we naively selected one predictor variable (Alumni and Publications) and did not assess the correlations.</p>
+</div>
+<div id="current-data-analysis" class="section level2">
+<h2>Current Data Analysis</h2>
+<p>In our following analysis, we address the limitation of the previous analysis through feature extraction. Since we are solving a regression problem, our output is a continuous variable. After more data cleaning, we have a total of 35 independent variables concerning every observed college. They are split into 22 continuous variables and 15 categorical variables. To explore continuous variables’ pairwise correlations with the target variables, we have used a correlation matrix.</p>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.4.0      ✔ purrr   0.3.4 
+## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+## ✔ readr   2.1.2      ✔ forcats 0.5.2 
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
 ## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>load(here::here(&quot;dataset/loan_refusal.RData&quot;))
-print(ls())</code></pre>
-<pre><code>## [1] &quot;data&quot;            &quot;loan_data_clean&quot;</code></pre>
-<div id="note-on-attribution" class="section level2">
-<h2>Note on Attribution</h2>
-<p>If you are directly quoting from a source, please make that clear. You can show quotes using <code>&gt;</code> like this</p>
-<pre><code>&gt; To be or not to be.</code></pre>
-<blockquote>
-<p>To be or not to be.</p>
-</blockquote>
-<p>Also, make sure to provide a link or citation to where you are quoting from.</p>
+## Attaching package: &#39;reshape2&#39;
+## 
+## 
+## The following object is masked from &#39;package:tidyr&#39;:
+## 
+##     smiths</code></pre>
+<pre><code>## [1] international_students_opendoors enrollment_top120enrollment     
+## [3] city_population                  international_students_qs       
+## [5] international_students_natlib    city_population_density         
+## 22 Levels: score_qs pub_arwu n_s_arwu alumni_arwu hi_ci_arwu ... faculty_count_qs
+## [1] city_population_density faculty_count_qs       
+## 22 Levels: score_qs pub_arwu n_s_arwu alumni_arwu hi_ci_arwu ... faculty_count_qs</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>The correlation matrix helps find high positive or negative correlations, and we select numerical features that have an absolute value of correlation coefficient greater than 0.4 with respect to ISPo and ISPr.
+For ISPo, the relevant numerical features are international_students_opendoors, enrollment_top120enrollment, city_population, international_students_qs, international_students_natlib, and city_population_density.
+For ISPr, the relevant numerical features are city_population_density and faculty_count_qs.</p>
+</div>
+<div id="feature-extraction-in-progress" class="section level2">
+<h2>Feature Extraction (In Progress)</h2>
+<p>We have found that computing the correlation between categorical and continuous variables is a bit tedious; since the categorical variables are not binary, we cannot apply point-biserial correlation. We have identified a few potential methods to work around such as numerical encoding from categorical to numerical, logistic regression, and the x2y metric. We are currently using logistic regression to compare the pairwise correlations. We understand this approach assumes a linear relationship between the predictor and the logit of the outcome.</p>
+<p>The 15 categorical variables are “university”, “city”, “state”, “selectivity”, “world_rank_cat_arwu”, “world_rank_qs”, “national_rank_arwu”, “type1_all”, “type2_carnegie”, “type3_natlib”, “type4_carnegie”, “enrprofile2021_carnegie”, “locale_carnegie”, “size_qs”, and “research_output_qs”.</p>
+<p>We remove the university variable because it is unique for all observations. Similarly, because we have limited data in general for cities and states, they are not reliable predictors and introduce unnecessary noise. Thus, we are in the process of numerically encoding the variables: selectivity, size_qs, research_output_qs, type1_all, type2_carnegie, and locale_carnegie.</p>
+<p><em>Tentatively</em>, we will use the following numerical features out of 35 dependent variables:
+enrollment_top120enrollment,<br />
+city_population,<br />
+City_population_density</p>
+<p>The following modeling section exclusively addresses our current data analysis.</p>
+</div>
+<div id="modeling" class="section level2">
+<h2>Modeling</h2>
+<p>Linear Regression has a mean absolute error of <em>0.02577159</em>
+and Logistic Regression has a mean absolute error of <em>0.02558677</em></p>
+<pre class="r"><code>suppressWarnings({
+  clean_data &lt;- read.csv(here::here(&quot;dataset/clean_data.csv&quot;))
+
+processed_data &lt;- na.omit(data.frame(y = clean_data$international_students_natlib,
+                   x1 = clean_data$faculty_count_qs,
+                   x2= clean_data$city_population,
+                   x3= clean_data$city_population_density
+                   ) )
+
+split &lt;- sample.split(processed_data, SplitRatio = 0.7)
+dt = sort(sample(nrow(processed_data), nrow(processed_data)*.7))
+train&lt;-processed_data[dt,]
+test&lt;-processed_data[-dt,]
+})
+
+suppressWarnings({
+linear_model &lt;- lm(y~x1+x2+x3, data=train)
+summary(linear_model)
+
+
+ggplot(test,aes(x1+x2+x3, y)) +
+  geom_point() +
+  geom_smooth(method=&#39;lm&#39;, se=TRUE, color=&#39;turquoise4&#39;) +
+  theme_minimal() +
+  labs(x=&#39;Faculty count, city population and density factor (additive)&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Linear Regression Plot&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=20, face=&#39;bold&#39;)) 
+
+})</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>suppressWarnings({
+logistic_model &lt;- glm(y~x1+x2+x3, data=train, family = binomial()) #Logistic 1
+summary(logistic_model)
+
+y_predict_logit &lt;- data.frame(x1 = test$x1,x2 = test$x2, x3 = test$x3, y =predict(logistic_model, test, type = &quot;response&quot;))
+
+logit_result&lt;- ggplot(test, aes(x1+x2+x3, y)) + geom_point() + geom_smooth(data = y_predict_logit,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
+  theme_minimal() +
+  labs(x=&#39;Faculty count, city population and density factor (additive)&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Logistic Regression&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=20, face=&#39;bold&#39;)) 
+logit_result
+})</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-2-2.png" width="672" />
+## Conclusion
+Our current analysis suggests that the overall enrollment of students, city population, and city population density are indicators for predicting ISPo and ISPr.</p>
+</div>
+<div id="flaws-and-limitations" class="section level1">
+<h1>Flaws and limitations</h1>
+<div id="limitation-1." class="section level3">
+<h3>Limitation 1.</h3>
+<p>One of the main limitations is that for our models we don’t introduce any categorical variables. We address this in the Feature Extraction (In Progress) section.
+Alternatively, we are interested in leveraging the regsubsets subroutine in the leaps library to compare modeling with different variables, which provides performance criteria such as Adjusted R2 score, Bayesian Information Criterion, Mallow’s Cp.</p>
+</div>
+<div id="limitation-2." class="section level3">
+<h3>Limitation 2.</h3>
+<p>On the other hand, due to the sparsity of the data, if we include certain predictors, the overall data for training and testing may shrink to 10 observations, which leads to not unreliable modeling and predictions.</p>
 <hr />
 </div>
 <div id="rubric-on-this-page" class="section level2">
@@ -94,4 +181,5 @@ print(ls())</code></pre>
 </ul></li>
 </ul>
 <p><strong>NOTE</strong>: Your Data Analysis can be broken up into multiple pages if that helps with your organization.</p>
+</div>
 </div>
