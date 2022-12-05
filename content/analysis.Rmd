@@ -3,7 +3,7 @@ title: Analysis
 description:
 toc: true
 featuredVideo:
-featuredImage: https://upload.wikimedia.org/wikipedia/commons/7/77/Pebbleswithquarzite.jpg
+featuredImage: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.suno.edu%2Fpage%2Finternational-students&psig=AOvVaw1PeJwhRXQk2wsmuekTGzoj&ust=1670302946159000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPiSg8DZ4fsCFQAAAAAdAAAAABAE
 draft: false
 ---
 
@@ -101,7 +101,7 @@ The following modeling section exclusively addresses our current data analysis.
 Linear Regression has a mean absolute error of *0.02577159*
 and Logistic Regression has a mean absolute error of  *0.02558677*
 
-```{r echo = False}
+```{r echo = FALSE}
 suppressWarnings({
   clean_data <- read.csv(here::here("dataset/clean_data.csv"))
 
