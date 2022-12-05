@@ -3,7 +3,7 @@ title: Analysis
 description:
 toc: true
 featuredVideo:
-featuredImage: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.suno.edu%2Fpage%2Finternational-students&psig=AOvVaw1PeJwhRXQk2wsmuekTGzoj&ust=1670302946159000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPiSg8DZ4fsCFQAAAAAdAAAAABAE
+featuredImage: https://www.suno.edu/assets/suno/images/Admissions/international-students.jpeg
 draft: false
 ---
 
@@ -101,7 +101,7 @@ The following modeling section exclusively addresses our current data analysis.
 Linear Regression has a mean absolute error of *0.02577159*
 and Logistic Regression has a mean absolute error of  *0.02558677*
 
-```{r echo = FALSE}
+```{r echo = FALSE, warning = FALSE}
 suppressWarnings({
   clean_data <- read.csv(here::here("dataset/clean_data.csv"))
 
@@ -124,7 +124,7 @@ summary(linear_model)
 
 ggplot(test,aes(x1+x2+x3, y)) +
   geom_point() +
-  geom_smooth(method='lm', se=TRUE, color='turquoise4') +
+  geom_smooth(method = 'loess', formula = 'y ~ x', se=TRUE, color='turquoise4') +
   theme_minimal() +
   labs(x='Faculty count, city population and density factor (additive)', y='International Student Proportions', title='Linear Regression Plot') +
   theme(plot.title = element_text(hjust=0.5, size=20, face='bold')) 
@@ -137,7 +137,7 @@ summary(logistic_model)
 
 y_predict_logit <- data.frame(x1 = test$x1,x2 = test$x2, x3 = test$x3, y =predict(logistic_model, test, type = "response"))
 
-logit_result<- ggplot(test, aes(x1+x2+x3, y)) + geom_point() + geom_smooth(data = y_predict_logit,  se=FALSE, color='red4', alpha = 0.1)+
+logit_result<- ggplot(test, aes(x1+x2+x3, y)) + geom_point() + geom_smooth(data = y_predict_logit, method = 'loess', formula = 'y ~ x', se=FALSE, color='red4', alpha = 0.1)+
   theme_minimal() +
   labs(x='Faculty count, city population and density factor (additive)', y='International Student Proportions', title='Logistic Regression') +
   theme(plot.title = element_text(hjust=0.5, size=20, face='bold')) 
