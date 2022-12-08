@@ -1,0 +1,48 @@
+---
+title: Blog Post 8
+author: ''
+date: '2022-12-08'
+slug: []
+categories: []
+tags: []
+description: ~
+toc: yes
+authors: []
+series: []
+lastmod: '2022-12-08T14:51:12-05:00'
+featuredVideo: ~
+featuredImage: ~
+---
+
+In this post, we'll discuss our tentative thesis and some initial evidence, based on our working analysis so far. We'll also talk about some initial ideas on polishing our visualizations and tables.
+
+
+## Tentative Thesis
+
+
+
+
+
+## Polishing visualizations and tables
+
+There are two parts of the visualizations - one on the main project webpage, and the other on the Interactives page.  
+
+<br/>
+
+We will likely have a table on the Data Page summarizing the number of missing values. For this table, we can consider using the datatable() function in the DT package or the kable() function in the knitr package, as we did in our homework assignment.   
+
+<br/>
+
+On the Analysis Page and the Big Picture Page, there will be several plots and likely a US map. The ggplot and tamp packages, which we are more familiar with, will be bases. We will think about adding titles, captions, annotations, and highlights. We might then use the ggpubr package, which was suggested to have some easy-to-use functions for creating and customizing ‘ggplot2'-based plots, to make our plots look prettier. Here are the two resources we might refer to later:  
+
+https://jtr13.github.io/cc20/brief-introduction-and-tutorial-of-ggpubr-package.html  
+
+https://rpkgs.datanovia.com/ggpubr/  
+
+<br/>
+
+Our ideas as well as some resources on creating the Interactives have been discussed in Blog post 6. We will have an interactive US map with tables of key information and also likely have a user-manipulable function to run regression models and display results and plots. 
+
+
+
+
