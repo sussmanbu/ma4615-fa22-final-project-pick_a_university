@@ -21,6 +21,8 @@ In this post, we'll discuss our tentative thesis and some initial evidence, base
 
 Our tentative thesis is that the higher the ranking of American universities, the greater the propotions of international students in universities. It can also be seen from our analysis that the number of international students in the United States is increasing year by year according to the data of the past few years. At the same time, the proportion of international students is also related to the population of the city where the university is located, and there is a positive correlation. The larger the population, the greater the proportion of international students.
 
+
+
 ## Polishing visualizations and tables
 
 There are two parts of the visualizations - one on the main project webpage, and the other on the Interactives page.  
