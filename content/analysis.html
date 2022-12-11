@@ -35,27 +35,6 @@ Breakdown of international students by the US region they live (2021 vs 2016)</p
 <div id="current-data-analysis" class="section level2">
 <h2>Current Data Analysis</h2>
 <p>In our following analysis, we address the limitation of the previous analysis through feature extraction. Since we are solving a regression problem, our output is a continuous variable. After more data cleaning, we have a total of 35 independent variables concerning every observed college. They are split into 22 continuous variables and 15 categorical variables. To explore continuous variables’ pairwise correlations with the target variables, we have used a correlation matrix.</p>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-## ✔ ggplot2 3.4.0      ✔ purrr   0.3.4 
-## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
-## ✔ readr   2.1.2      ✔ forcats 0.5.2 
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## 
-## Attaching package: &#39;reshape2&#39;
-## 
-## 
-## The following object is masked from &#39;package:tidyr&#39;:
-## 
-##     smiths</code></pre>
-<pre><code>## [1] international_students_opendoors enrollment_top120enrollment     
-## [3] city_population                  international_students_qs       
-## [5] international_students_natlib    city_population_density         
-## 22 Levels: score_qs pub_arwu n_s_arwu alumni_arwu hi_ci_arwu ... faculty_count_qs
-## [1] city_population_density faculty_count_qs       
-## 22 Levels: score_qs pub_arwu n_s_arwu alumni_arwu hi_ci_arwu ... faculty_count_qs</code></pre>
 <p><img src="/analysis_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>The correlation matrix helps find high positive or negative correlations, and we select numerical features that have an absolute value of correlation coefficient greater than 0.4 with respect to ISPo and ISPr.
 For ISPo, the relevant numerical features are international_students_opendoors, enrollment_top120enrollment, city_population, international_students_qs, international_students_natlib, and city_population_density.
