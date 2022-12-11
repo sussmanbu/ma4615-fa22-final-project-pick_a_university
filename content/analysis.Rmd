@@ -1,8 +1,8 @@
 ---
-title: Analysis
+title: Analysis 1
 description:
 toc: true
-featuredVideo:
+featuredVideo: 
 featuredImage: https://www.suno.edu/assets/suno/images/Admissions/international-students.jpeg
 draft: false
 ---
