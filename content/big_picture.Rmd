@@ -18,7 +18,6 @@ Think of this page as your 538/Upshot style article. This means that you should 
 You will
 
 
-
 * Title
   * Your big picture page should have a creative/click-baity title/headline that provides a hint about your thesis.
 * Clarity of Explanation
@@ -38,25 +37,26 @@ You will
 ### Interactive
 
 
-Our Interactive dashboard has two components. The [first](link) is an overview of the scope of our dataset. The [second](link) is a tool to explore the relationship between our outcome variables and each individual predictor variable. 
+Our Interactive dashboard has two components. The [first](link) is an overview of the scope of our dataset. The [second](link) is a tool to explore the relationship between our outcome variables and each individual predictor variable.
 
 <br>
 
-The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[link], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. We also present our cleaned dataset in a table with outcome filter to display universities with available data on number of international students, with available data on percentage of international students, or with available data on both. Users can also sort variables depending on interest.
+The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[link], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. We also present our cleaned dataset in a table with outcome filter to display universities with available data on number of international students, with available data on percentage of international students, or with available data on both. Users can also sort variables depending on interest. 
 
 <br>
 
-The second component is to encourage users to explore the relationship between our outcome variables and each individual predictor variable. Users will first choose between number of international students and percentage of international students as an outcome, and then choose among xx predictor variables one at a time. The “Plot” tab will display a box plot if choosing categorical variables or a scatter plot with fitted line if choosing continuous variables. The “Linear Regression Model Summary” tab will print the model summary, which will include information on variable coefficients, p-value, and number of observations.
+The second component is to encourage users to explore the relationship between our outcome variables and each individual predictor variable. Users will first choose between number of international students and percentage of international students as an outcome, and then choose among xx predictor variables one at a time. The “Plot” tab will display a box plot if choosing categorical variables or a scatter plot with fitted line if choosing continuous variables. The “Linear Regression Model Summary” tab will print the model summary, which will include information on variable coefficients, p-value, and number of observations. 
 
 
 
 ### Video Recording
 
+
 Make a video recording (probably using Zoom) demonstrating your interactive components.
 You should provide a quick explanation of your data and demonstrate some of the conclusions from your EDA.
 This video should be no longer than 4 minutes.
 Include a link to your video (and password if needed) in your README.md file on your Github repository. You are not required to provide a link on the website.
-This can be presented by any subset of the team members.
+This can be presented by any subset of the team members. 
 
 
 ### Rest of the Site
