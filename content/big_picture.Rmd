@@ -36,6 +36,7 @@ You will
 
 ### Interactive
 
+
 Our Interactive dashboard has two components. The [first](link) is an overview of the scope of our dataset. The [second](link) is a tool to explore the relationship between our outcome variables and each individual predictor variable. 
 
 <br>
