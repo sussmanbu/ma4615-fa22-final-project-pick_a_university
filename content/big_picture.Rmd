@@ -36,14 +36,16 @@ You will
 
 ### Interactive
 
-You will also be required to make an interactive dashboard like [this one](/flex/flex.html).
+Our Interactive dashboard has two components. The [first](link) is an overview of the scope of our dataset. The [second](link) is a tool to explore the relationship between our outcome variables and each individual predictor variable. 
 
-Your Big Data page should include a link to an interactive dashboard. The dashboard should be created either using Shiny or FlexDashboard (or another tool with professor's approval). This interactive component should in some way support your thesis from your big picture page. Good interactives often provide both high-level understanding of the data while allowing a user to investigate specific scenarios, observations, subgroups, etc.
+<br>
 
-* Quality and ease of use of the interactive components.
-Is it clear what can be explored using your interactive components?
-Does it enhance and reinforce your conclusions from the Big Picture?
-Plotly with default hover text will get no credit. Be creative!
+The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[link], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. We also present our cleaned dataset in a table with outcome filter to display universities with available data on number of international students, with available data on percentage of international students, or with available data on both. Users can also sort variables depending on interest.
+
+<br>
+
+The second component is to encourage users to explore the relationship between our outcome variables and each individual predictor variable. Users will first choose between number of international students and percentage of international students as an outcome, and then choose among xx predictor variables one at a time. The “Plot” tab will display a box plot if choosing categorical variables or a scatter plot with fitted line if choosing continuous variables. The “Linear Regression Model Summary” tab will print the model summary, which will include information on variable coefficients, p-value, and number of observations.
+
 
 
 ### Video Recording
