@@ -27,6 +27,7 @@ You will
 * Creativity
   * Do your best to make things interesting. Think of a story. Think of how each part of your analysis supports the previous part or provides a different perspective.
   
+  
 **Note**: This page should have no code visible, i.e. use `echo=FALSE`.  
 
 ---
