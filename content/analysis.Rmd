@@ -1,8 +1,8 @@
 ---
-title: Analysis
+title: Analysis 1
 description:
 toc: true
-featuredVideo:
+featuredVideo: 
 featuredImage: https://www.suno.edu/assets/suno/images/Admissions/international-students.jpeg
 draft: false
 ---
@@ -29,7 +29,7 @@ The main limitation is that we naively selected one predictor variable (Alumni a
 ## Current Data Analysis
 In our following analysis, we address the limitation of the previous analysis through feature extraction. Since we are solving a regression problem, our output is a continuous variable. After more data cleaning, we have a total of 35 independent variables concerning every observed college. They are split into 22 continuous variables and 15 categorical variables. To explore continuous variables’ pairwise correlations with the target variables, we have used a correlation matrix. 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message = FALSE}
  suppressWarnings({
  library(tidyverse)
  library(caTools)
@@ -72,8 +72,6 @@ In our following analysis, we address the limitation of the previous analysis th
  suppressWarnings({
  ind_num <- melted_cormat[(melted_cormat$Var1 == "international_students_max" & melted_cormat$Var2 != "international_students_max" & abs(melted_cormat$value) >=0.4 ), ]$Var2
  ind_prop <- melted_cormat[(melted_cormat$Var1 == "international_students_natlib" & melted_cormat$Var2 != "international_students_natlib" & abs(melted_cormat$value) >=0.4 ), ]$Var2
- print(ind_num)
- print(ind_prop)
  ggheatmap
  })
 ```
@@ -188,6 +186,6 @@ you will
   * Do you provide interpretations that suggest further analysis or explanations for observed phenomenon?
 * Organization and cleanliness.
   * Make sure to remove excessive warnings, use clean easy-to-read code, organize with sections or multiple pages, use bullets, etc.
-  
+
   
 **NOTE**: Your Data Analysis can be broken up into multiple pages if that helps with your organization.
