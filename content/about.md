@@ -1,61 +1,69 @@
 ---
-title: Pick A University
+title:
 lastmod: 2022-10-7T10:20:00-05:00
 featuredVideo:
 featuredImage:
 draft: false
 ---
-
+  
+# About
 <hr>
-
-<h1> <b> About </b></h1>
-
 This comes from the file `content/about.md`.
-
+<br><br>
 This is a website for the final project for MA[46]15 Data Science with R by Team Pick_A_University.
-
-Our Github page is: https://github.com/sussmanbu/ma4615-fa22-final-project-pick_a_university.git
-
 The members of this team are below (following an alphabetical order of last name).
 
 ## Linshen Cai
-<hr>
-Linshen is a senior majoring in economic mathematics
+
+Linshen is a senior majoring in economic mathematics.
 <br>
 Github: https://github.com/linshencai
 
+
 ## William Fang
-<hr>
+
 William is a senior, double majoring in mathematics and computer science, at BU CAS. 
 <br>
 Github: https://github.com/EB30
 
 ## Yawei Huang
-<hr>
-Yawei is a doctoral student in Applied Human Development in Wheelock College of Education & Human Development at Boston University.
+
+Yawei is a doctoral student in Applied Human Development at BU Wheelock College of Education & Human Development.
 <br>
 Github: https://github.com/YaweiHuang19
 
 ## Joey Eunyeong Park
-<hr>
-Joey is a senior, majoring Computer Science and Statistics in BU CAS
+
+Joey is a senior, majoring Computer Science and Statistics in BU CAS.
 <br>
 Github: https://github.com/jjoeypark
 
 ## Zeshi Wu
-<hr>
+
 Zeshi is a senior, majoring in stats and computer science, at BU CAS.
 <br>
 Github: https://github.com/ZeshiWu
 
+<br>
+<br>
+
 ## Contribution
 <hr>
-- Data Page: TBD
-- Big Picture Page: 
-- Analysis Page: 
-- Posts: 
-- Misc: 
+- Data Page: Yawei Huang, William Fang
+<br>
+- Big Picture Page: Linshen Cai
+<br>
+- Analysis Page: William Fang, Joey Eunyeong Park
+<br>
+- Interactive: Yawei Huang, Zeshi Wu
+<br>
+- Posts: All team members
+<br>
+- Main Coordination: Yawei Huang
+<br>
+- Misc: All team members contributed to finding data, brainstorming ideas, and reviewing each other's work.
 
+<br>
 
 <!-- Please leave in the information below -->
 
