@@ -1,11 +1,11 @@
 ---
-title: Data analysis 2 - Modeling Fitting
-author: Linshen Cai, William Fang, Yawei Huang, Zeshi Wu, Eunyeong Park
+title: Data Analysis - Modeling Fitting
+author: All team members
 date: '2022-11-04'
 slug: []
 categories: []
 tags: []
-description: We discuss both going deeper and broader into our EDA and our initial thoughts and results for modeling
+description: Blog post 4: We discuss both going deeper and broader into our EDA and our initial thoughts and results for modeling.
 toc: yes
 authors: []
 series: []
@@ -155,9 +155,6 @@ fulldata %>%
   
 ```
 
-
-Codes: 
-mod <- lm(international_students_max ~ tuition_kaggle + world_rank_arwu + size_qs + factor(type1_all), data = fulldata)
 
 For modeling, we are interested in what predicts number of international students in US universities. We picked six predictor variables initially: out-of-state tuition, arwu world ranking, campus size, public vs private, selectvity, and city population. We fittted bivariate linear models for each of the six potential predictors and found that four of them (out-of-state tuition, arwu world ranking, campus size, and public vs private) significantly predict our outcome. We then put the four predictors in a multivariate linear model and got the below results. After controlling for one another, arwu world ranking and campus size remain to be significant predictor for international population. More specifically, after controlling for out-of-state tuition, campus size, public vs private, selectvity, and city population, there is still a significant relationship between world ranking and number of international students in that the higher ranking the university is, the more international studnets it has. In addition, after controlling for out-of-state tuition, arwu world ranking, public vs private, selectvity, and city population, there is still a significant relationship between campus size (Small, Median, Large, and Extra Large) and number of international students. The larger the campus is, the more international students it has.
 

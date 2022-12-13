@@ -5,7 +5,7 @@ date: '2022-10-28'
 slug: []
 categories: []
 tags: []
-description: 'blog post 3'
+description: Blog post 3
 toc: yes
 authors: []
 series: []
@@ -88,17 +88,22 @@ In this graph, we can investigate the relationship between qs ranking score for 
 <div id="data-for-equity-discussion" class="section level2">
 <h2>Data for Equity Discussion</h2>
 <p>Three principles discussed in Principles for Advancing Equitable Data Practice are Beneficence, Respect for persons, Justice and are applicable to 4 stages of the data life cycle – <strong><em>Acquisition, Processing and Analysis, Dissemination, Dispositions</em></strong>.
-<br />
-  Our team is using secondary data. More specifically, we found and downloaded data from multiple sources and then joined them together by university name, city, and state. Since most of our data wasn’t collected by ourselves, <strong>it is important for us to understand why and how the original data was collected</strong>. In addition, get to understand the purpose of data is important as well. This will allow us to think about any potential bias embedded in the data production process. The way to do this is to read the original website, from which we downloaded the data, carefully and took notes. Also, it would be helpful to collect the information about certain websites and figure out whether the data from them is reliable or not. Relatively, our understanding of the data should be strictly based on the description on the website, that is, the data labels. For this end, we have created a codebook which contains the description and source link of each variable.</p>
+<br /></p>
+<p>Our team is using secondary data. More specifically, we found and downloaded data from multiple sources and then joined them together by university name, city, and state. Since most of our data wasn’t collected by ourselves, <strong>it is important for us to understand why and how the original data was collected</strong>. In addition, get to understand the purpose of data is important as well. This will allow us to think about any potential bias embedded in the data production process. The way to do this is to read the original website, from which we downloaded the data, carefully and took notes. Also, it would be helpful to collect the information about certain websites and figure out whether the data from them is reliable or not. Relatively, our understanding of the data should be strictly based on the description on the website, that is, the data labels. For this end, we have created a codebook which contains the description and source link of each variable.</p>
 <div id="part-of-codebook" class="section level4">
 <h4>part of codebook</h4>
 <p><img src="images/codebook.png" />
 <br />
-  For our team, the most relevant principle is <strong>transparency</strong>. We need to be transparent about not only the availability and limitation of the data (particularly, there were a lot of missing values), but also how we cleaned/used, analyze, and interpret it.</p>
-<p>  For example, after an initial attempt of joining the data from multiple sources, there were three data points on whether the university is private or public. We chose one column to anchor, and filled missing values based on data from other two columns, if not missing. We did similar things for city and state, which also have multiple columns due to multiple data sources. This is rather straightforward, because datapoints like this should have no conflicts in information.</p>
-<p>  What is more complicated, however, is our <strong>outcome variable</strong> – international student population at each university. More specifically, we have two columns on the reported number from two different years and sources. In an effort to aggregate them into one column, we decided that we would use the maximum of the two datapoints, which we should always keep in mind when we analyzed and interpret the data.</p>
-<p>  During analysis and interpretation phase, <em>carefulness</em> is equally important as transparency, because we don’t want to say things that the data could not answer our questions.</p>
-<p>  We are also interested in understanding <strong>the limits for data tabulation</strong>. By filtering out universities with no outcome measures (international student population), we have limited outcomes/observations with some missing data values. This leads to the gray states with missing data values and the mean estimate of QS score may be skewed to the higher end since we selected data of universities with top rankings and high international student population. Thus, the graph without explanation of the data may be misinterpreted.</p>
-<p>  In summary, at our current stage and future, we will consider in <strong><em>equity, transparency, carefulness,and limits for data tabulation and interpretation</em></strong>. Since there is no personally identifiable information (PII), there will not be any fundamental privacy issues. However, we will include informed consent whenever possible, even if not formally required for our data sources.</p>
+For our team, the most relevant principle is <strong>transparency</strong>. We need to be transparent about not only the availability and limitation of the data (particularly, there were a lot of missing values), but also how we cleaned/used, analyze, and interpret it.</p>
+<p><br></p>
+<p>For example, after an initial attempt of joining the data from multiple sources, there were three data points on whether the university is private or public. We chose one column to anchor, and filled missing values based on data from other two columns, if not missing. We did similar things for city and state, which also have multiple columns due to multiple data sources. This is rather straightforward, because datapoints like this should have no conflicts in information.</p>
+<p><br></p>
+<p>What is more complicated, however, is our <strong>outcome variable</strong> – international student population at each university. More specifically, we have two columns on the reported number from two different years and sources. In an effort to aggregate them into one column, we decided that we would use the maximum of the two datapoints, which we should always keep in mind when we analyzed and interpret the data.</p>
+<p><br></p>
+<p>During analysis and interpretation phase, <em>carefulness</em> is equally important as transparency, because we don’t want to say things that the data could not answer our questions.</p>
+<p><br></p>
+<p>We are also interested in understanding <strong>the limits for data tabulation</strong>. By filtering out universities with no outcome measures (international student population), we have limited outcomes/observations with some missing data values. This leads to the gray states with missing data values and the mean estimate of QS score may be skewed to the higher end since we selected data of universities with top rankings and high international student population. Thus, the graph without explanation of the data may be misinterpreted.</p>
+<p><br></p>
+<p>In summary, at our current stage and future, we will consider in <strong><em>equity, transparency, carefulness,and limits for data tabulation and interpretation</em></strong>. Since there is no personally identifiable information (PII), there will not be any fundamental privacy issues. However, we will include informed consent whenever possible, even if not formally required for our data sources.</p>
 </div>
 </div>
