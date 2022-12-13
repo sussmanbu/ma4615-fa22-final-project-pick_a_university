@@ -8,10 +8,12 @@ draft: false
 ---
 
 ## Motivation
-Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly decreased during 2019 to 2020. The widespread travel restrictions tend to lead to a sharp decline in enrollments of new students outside of the US. We wanted to check what would affect the international students to choose certain institutions in the US. 
+Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly still increased during 2019to 2021. Widespread travel restrictions do not appear to have had a large impact on freshmen applying to U.S. universities from outside the U.S. We wanted to see what influences international students to choose certain institutions in the United States.
+
 One of our teammates, Yawei suggested that the top three considerations were: safety, ranking of the university in my field, and the “dynamics” of the campus. The percentage of the international student body would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student body is one of the criteria (probably not, but I believe there is correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc
 
 The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through “group_by”, “color”, “fill”, “facet” and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law). 
+
 We also wanted to answer the questions below: 
 How has the number of international students in the US changed over time?  (x= school years, y= international students’ population)
 New enrollment percentage of international students (x= school years, y= international students’ population % change)
