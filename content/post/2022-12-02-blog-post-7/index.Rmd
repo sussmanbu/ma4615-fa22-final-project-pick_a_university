@@ -1,11 +1,11 @@
 ---
-title: Blog Post 7
-author: Pick_A_University
+title: Analysis Continued and Next Steps
+author: William Fang, Joey Eunyeong Park
 date: '2022-12-02'
 slug: []
 categories: []
 tags: []
-description: ~
+description: Blog Post 7
 toc: yes
 authors: []
 series: []

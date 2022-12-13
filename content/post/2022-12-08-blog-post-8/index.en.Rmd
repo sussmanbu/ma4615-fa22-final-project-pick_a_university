@@ -1,11 +1,11 @@
 ---
-title: Blog Post 8
-author: ''
+title: Tentative Thesis and Ideas for Polishing Visualizations
+author: Yawei Huang, Linshen Cai
 date: '2022-12-08'
 slug: []
 categories: []
 tags: []
-description: ~
+description: Blog post 8
 toc: yes
 authors: []
 series: []
