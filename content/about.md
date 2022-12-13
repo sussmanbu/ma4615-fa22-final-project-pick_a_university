@@ -7,9 +7,6 @@ draft: false
 ---
   
 # About
-<hr>
-This comes from the file `content/about.md`.
-<br><br>
 This is a website for the final project for MA[46]15 Data Science with R by Team Pick_A_University.
 The members of this team are below (following an alphabetical order of last name).
 
@@ -49,7 +46,6 @@ Github: https://github.com/ZeshiWu
 
 ## Contribution
 
-<hr>
 - Data Page: Yawei Huang, William Fang
 <br>
 - Big Picture Page: Linshen Cai
