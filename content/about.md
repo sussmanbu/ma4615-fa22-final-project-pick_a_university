@@ -1,5 +1,5 @@
 ---
-title:
+title: Pick_A_University
 lastmod: 2022-10-7T10:20:00-05:00
 featuredVideo:
 featuredImage:
