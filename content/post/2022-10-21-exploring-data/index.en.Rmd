@@ -1,6 +1,6 @@
 ---
 title: Exploring Data
-author: 
+author: Yawei
 date: '2022-10-21'
 slug: []
 categories: []
