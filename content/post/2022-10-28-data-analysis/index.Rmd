@@ -176,7 +176,8 @@ In this graph, we can investigate the relationship between qs ranking score for 
 ## Data for Equity Discussion
 
 Three principles discussed in Principles for Advancing Equitable Data Practice are Beneficence, Respect for persons, Justice and are applicable to 4 stages of the data life cycle – ***Acquisition, Processing and Analysis, Dissemination, Dispositions***. 
-<br />
+
+<br>
 
 Our team is using secondary data. More specifically, we found and downloaded data from multiple sources and then joined them together by university name, city, and state. Since most of our data wasn't collected by ourselves, **it is important for us to understand why and how the original data was collected**. In addition, get to understand the purpose of data is important as well. This will allow us to think about any potential bias embedded in the data production process. The way to do this is to read the original website, from which we downloaded the data, carefully and took notes. Also, it would be helpful to collect the information about certain websites and figure out whether the data from them is reliable or not. Relatively, our understanding of the data should be strictly based on the description on the website, that is, the data labels. For this end, we have created a codebook which contains the description and source link of each variable. 
 
