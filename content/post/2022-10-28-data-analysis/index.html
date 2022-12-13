@@ -1,11 +1,11 @@
 ---
-title: Data Analysis and Equity for Data
-author: Daniel Sussman
+title: EDA and Equity for Data Discussion
+author: All team members
 date: '2022-10-28'
 slug: []
 categories: []
-tags: ['blog post 3']
-description: ~
+tags: []
+description: 'blog post 3'
 toc: yes
 authors: []
 series: []
@@ -21,67 +21,73 @@ featuredImage: ~
 
 <div id="loading-and-cleaning-part-2" class="section level2">
 <h2>Loading and Cleaning Part 2</h2>
-<p> As described in our last blog post, we did a full join of the seven data sets (as shown in the screenshot, excluding the Carnegie Classification data and population density data) and then a left join with the Carnegie Classification data. You can check in this <a href="https://drive.google.com/file/d/1pURCQU5qnqj5dU3y994_SJryuu9tIk-R/view?usp=share_link">dataset</a>. We also created an inner join version, but after some thoughts, we decided to go with the left joined version, which means that we can live with missing values from the Carnegie Classification data for now. This week, we did some further cleaning.</p>
-<p>  The initial left joined data set had 961 observations, with each row representing a university. Our outcome of interest, international student population, had three datapoints: the percentage in 2021 from US news, the actual number in 2021 from opendoors, and actual number from 2022 from QS but downloaded from Kaggle. We filtered the dataset to universities which had at least one datapoint out of these three, which resulted in 499 observations. We also created a new variable reflecting the maximum of the two actual numbers for international student population.</p>
-<p>  Then, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations: “Purdue University”, “Purdue University–West Lafayette”, and “Purdue University - West Lafayette.” To solve this issue, we exported the dataset to a .csv file, sorted by university name, and manually de-duplicated the dataset. More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations, each of which represent a unique university. We then imported this file back to R and proceeded to further data cleaning.</p>
-<p>  For variables that had multiple columns due to coming from different data sources, such as city, state, university type (2-year vs 4-year; public vs private), we aggregated the information to one column.</p>
-<p>  We also merged in the city population dataset, which included variables on the city population, city land area, and city population density in 2016, using the left join function.
+<p>As described in our last blog post, we did a full join of the seven data sets (as shown in the screenshot, excluding the Carnegie Classification data and population density data) and then a left join with the Carnegie Classification data. We also created an inner join version, but after some thoughts, we decided to go with the left joined version, which means that we can live with missing values from the Carnegie Classification data for now. This week, we did some further cleaning.</p>
+<p><br></p>
+<p>The initial left joined data set had 961 observations, with each row representing a university. Our outcome of interest, international student population, had three datapoints: the percentage in 2021 from US news, the actual number in 2021 from opendoors, and actual number from 2022 from QS but downloaded from Kaggle. We filtered the dataset to universities which had at least one datapoint out of these three, which resulted in 499 observations. We also created a new variable reflecting the maximum of the two actual numbers for international student population.</p>
+<p><br></p>
+<p>Then, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations: “Purdue University”, “Purdue University–West Lafayette”, and “Purdue University - West Lafayette.” To solve this issue, we exported the dataset to a .csv file, sorted by university name, and manually de-duplicated the dataset. More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations, each of which represent a unique university. We then imported this file back to R and proceeded to further data cleaning.</p>
+<p><br></p>
+<p>For variables that had multiple columns due to coming from different data sources, such as city, state, university type (2-year vs 4-year; public vs private), we aggregated the information to one column.</p>
+<p><br></p>
+<p>We also merged in the city population dataset, which included variables on the city population, city land area, and city population density in 2016, using the left join function.
 After this round of cleaning, we created the <a href="https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit?usp=share_link&amp;ouid=115689699241821288383&amp;rtpof=true&amp;sd=true">codebook</a>. We anticipate need further cleaning as we explore the data more.</p>
+<p><br></p>
 </div>
-<div id="data-analysis" class="section level2">
-<h2>Data Analysis</h2>
+<div id="exploratory-data-analysis" class="section level2">
+<h2>Exploratory Data Analysis</h2>
 <div id="estimate-states-university-qs-score-by-average-and-maximum" class="section level3">
 <h3>Estimate States’ University QS score by average and maximum</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-<p> These 2 maps are simple visualizations that represent estimated rankings of universities categorized by state using the mean and maximum QS World Ranking Score, respectively. The score is a weighted proxy for Academic reputation, Employer reputation, Faculty/Student ratio, Citations per faculty, International student ratio, and International faculty ratio. The greater the qs score estimate is the more blue/less white the state is colored. Notice the gray states are the states without any university qs score data. Also, the states MA, CA, IL, RI, MI, PA have the highest QS scores. It makes sense that MA has the greatest qs score 100 because of MIT; however, it is surprising that it has a lot lower average QS score even with Harvard with a score of 97.6. And PA has the greatest qs score 75.6 compared to MA’s 51.5. We also observe that the states close to US’s border have greater QS score than those in the midwest, southwest, and southeast.</p>
+<p>These 2 maps are simple visualizations that represent estimated rankings of universities categorized by state using the mean and maximum QS World Ranking Score, respectively. The score is a weighted proxy for Academic reputation, Employer reputation, Faculty/Student ratio, Citations per faculty, International student ratio, and International faculty ratio. The greater the qs score estimate is the more blue/less white the state is colored. Notice the gray states are the states without any university qs score data. Also, the states MA, CA, IL, RI, MI, PA have the highest QS scores. It makes sense that MA has the greatest qs score 100 because of MIT; however, it is surprising that it has a lot lower average QS score even with Harvard with a score of 97.6. And PA has the greatest qs score 75.6 compared to MA’s 51.5. We also observe that the states close to US’s border have greater QS score than those in the midwest, southwest, and southeast.</p>
 <p><br></p>
 </div>
 <div id="estimate-states-university-international-student-population-by-average" class="section level3">
 <h3>Estimate States’ University International Student Population by average</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
- This graph captures the average Universities’ International Student Population categorized by state. The greater the mean population is, the more red/less white the states are colored. Similar to the prior 2 maps, the gray states are states with missing university international student data from the qs dataset. An observation is that California, Arizona, Minnesota, New York have the greatest populations. We also observe that the states close to US’s border have greater average international student body than those in the midwest, southwest, and southeast;</p>
-<p> A broad observation is from these maps the missing values are universities primarily in the middle west region of the US.</p>
+This graph captures the average Universities’ International Student Population categorized by state. The greater the mean population is, the more red/less white the states are colored. Similar to the prior 2 maps, the gray states are states with missing university international student data from the qs dataset. An observation is that California, Arizona, Minnesota, New York have the greatest populations. We also observe that the states close to US’s border have greater average international student body than those in the midwest, southwest, and southeast.</p>
+<p><br></p>
+<p>A broad observation is from these maps the missing values are universities primarily in the middle west region of the US.</p>
 <p><br></p>
 </div>
 <div id="mean-of-undergraduate-enrollment-per-university-in-states" class="section level3">
 <h3>Mean of Undergraduate Enrollment per University in states</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p> In this chart, the main discussion is the average number of undergraduates per university in each state. Colleges in Arizona have the most average undergraduates. The reason may be that Arizona has the largest university in the country, the Arizona State University. Oklahoma, Rhode Island and New Hampshire have fewer college undergraduates by average. This is in line with my experience, I haven’t heard of any large universities in these three states. Also, our dataset is based on kaggle miss data for 7 states which are HI,ID,ME,MN,NE,NM,and SD.</p>
+<p>In this chart, the main discussion is the average number of undergraduates per university in each state. Colleges in Arizona have the most average undergraduates. The reason may be that Arizona has the largest university in the country, the Arizona State University. Oklahoma, Rhode Island and New Hampshire have fewer college undergraduates by average. This is in line with my experience, I haven’t heard of any large universities in these three states. Also, our dataset is based on kaggle miss data for 7 states which are HI,ID,ME,MN,NE,NM,and SD.</p>
 <p><br></p>
 </div>
 <div id="tuition-fee-of-public-university" class="section level3">
 <h3>Tuition Fee of Public University</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-2.png" width="672" />
-  These two graphs discuss the relationship between tuition fees and university rankings. First, I divided the university rankings into two groups, one is private universities and the other is public universities, and made scatter plots respectively. As can be seen from the graph, the average tuition fee in private schools is higher than that in public schools. The maximum tuition fee for private schools can reach about 60,000 US dollars a year, while the maximum tuition for public schools is about 40,000 US dollars a year. At the same time, I used a linear regression model to analyze the two scatter plots, and the analysis results showed that with the increase of the ranking(National ranking number becomes smaller), the tuition fees of public and private universities will increase. There is a positive correlation between university ranking ( #1 being the highest) and tuition fees.</p>
+These two graphs discuss the relationship between tuition fees and university rankings. First, I divided the university rankings into two groups, one is private universities and the other is public universities, and made scatter plots respectively. As can be seen from the graph, the average tuition fee in private schools is higher than that in public schools. The maximum tuition fee for private schools can reach about 60,000 US dollars a year, while the maximum tuition for public schools is about 40,000 US dollars a year. At the same time, I used a linear regression model to analyze the two scatter plots, and the analysis results showed that with the increase of the ranking(National ranking number becomes smaller), the tuition fees of public and private universities will increase. There is a positive correlation between university ranking ( #1 being the highest) and tuition fees.</p>
 <p><br></p>
 </div>
 <div id="selectivity-and-mean-number-of-international-student" class="section level3">
 <h3>Selectivity and Mean Number of International Student</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-  The graph captures the relation between selectivity and the mean number of international student. As the explanation in <a href="https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit?usp=share_link&amp;ouid=115689699241821288383&amp;rtpof=true&amp;sd=true">codebook</a> shows, 1 in selectivity is the most competitive and 4 is the least competitive. It is interesting that institution with high selectivity has higher mean number international students. It would be helpful to look at whether the school size affects to selectivity of school.</p>
+The graph captures the relation between selectivity and the mean number of international student. As the explanation in <a href="https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit?usp=share_link&amp;ouid=115689699241821288383&amp;rtpof=true&amp;sd=true">codebook</a> shows, 1 in selectivity is the most competitive and 4 is the least competitive. It is interesting that institution with high selectivity has higher mean number international students. It would be helpful to look at whether the school size affects to selectivity of school.</p>
 <p><br></p>
 </div>
 <div id="selectivity-and-mean-number-of-international-student-1" class="section level3">
 <h3>Selectivity and Mean Number of International Student</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
-  The graph shows the relation between the number of international student and student-faculty ratio. Also, it shows the school size with the colored dots. It is interesting that school size matters to student-faculty ratio (the school with larger sizes has larger student-faculty ratio). Also, we normalized the number to eliminate redundant data, minimize data modification errors, and simplify the query process.</p>
+The graph shows the relation between the number of international student and student-faculty ratio. Also, it shows the school size with the colored dots. It is interesting that school size matters to student-faculty ratio (the school with larger sizes has larger student-faculty ratio). Also, we normalized the number to eliminate redundant data, minimize data modification errors, and simplify the query process.</p>
 </div>
 <div id="private-university-tuition-and-international-student-percentage" class="section level3">
 <h3>Private University Tuition and International Student Percentage</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>  In this graph, we can investigate the relationship between private university tuition and its pe number of international student population. We used the polar-coordinate graph so that we can have a better understanding of the relationship between each other. From the graph, we can see that the private university tuition is gradually decreasing with the increasing of international student percentage. This is astonishing because we used to hypothesize that universities with more diversity are usually more expensive. In addition, I also found that the large private universities tuition is almost the most expensive one among its size. Therefore, the size of university could also be a factor that influence private university tuition.</p>
-<p><br /></p>
+<p>In this graph, we can investigate the relationship between private university tuition and its pe number of international student population. We used the polar-coordinate graph so that we can have a better understanding of the relationship between each other. From the graph, we can see that the private university tuition is gradually decreasing with the increasing of international student percentage. This is astonishing because we used to hypothesize that universities with more diversity are usually more expensive. In addition, I also found that the large private universities tuition is almost the most expensive one among its size. Therefore, the size of university could also be a factor that influence private university tuition.</p>
+<p>&lt;br</p>
 </div>
 <div id="students-per-faculty-and-ranking-from-qs" class="section level3">
 <h3>Students per faculty and Ranking from QS</h3>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
-  In this graph, we can investigate the relationship between qs ranking score for each university and its student/faculty ratio. I wonder will the student faculty ratio influence the ranking score of universities. From the graph, we can see that there is a negative relationship between the two factors, which means the more students assigned to the faculty, the lower ranking score the university can have. Therefore, the student/faculty ratio could be a significant factor that influences the rank of a university, and we might increase its weight of importance within the dataset.</p>
+In this graph, we can investigate the relationship between qs ranking score for each university and its student/faculty ratio. I wonder will the student faculty ratio influence the ranking score of universities. From the graph, we can see that there is a negative relationship between the two factors, which means the more students assigned to the faculty, the lower ranking score the university can have. Therefore, the student/faculty ratio could be a significant factor that influences the rank of a university, and we might increase its weight of importance within the dataset.</p>
 <p><br /></p>
 </div>
 </div>
-<div id="data-for-equity" class="section level2">
-<h2>Data for Equity</h2>
-<p>  Three principles discussed in Principles for Advancing Equitable Data Practice are Beneficence, Respect for persons, Justice and are applicable to 4 stages of the data life cycle – <strong><em>Acquisition, Processing and Analysis, Dissemination, Dispositions</em></strong>.
+<div id="data-for-equity-discussion" class="section level2">
+<h2>Data for Equity Discussion</h2>
+<p>Three principles discussed in Principles for Advancing Equitable Data Practice are Beneficence, Respect for persons, Justice and are applicable to 4 stages of the data life cycle – <strong><em>Acquisition, Processing and Analysis, Dissemination, Dispositions</em></strong>.
 <br />
   Our team is using secondary data. More specifically, we found and downloaded data from multiple sources and then joined them together by university name, city, and state. Since most of our data wasn’t collected by ourselves, <strong>it is important for us to understand why and how the original data was collected</strong>. In addition, get to understand the purpose of data is important as well. This will allow us to think about any potential bias embedded in the data production process. The way to do this is to read the original website, from which we downloaded the data, carefully and took notes. Also, it would be helpful to collect the information about certain websites and figure out whether the data from them is reliable or not. Relatively, our understanding of the data should be strictly based on the description on the website, that is, the data labels. For this end, we have created a codebook which contains the description and source link of each variable.</p>
 <div id="part-of-codebook" class="section level4">
