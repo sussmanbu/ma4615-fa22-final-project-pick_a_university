@@ -11,7 +11,7 @@ authors: []
 series: [] 
 lastmod: '2022-10-19T09:25:34-04:00' 
 featuredVideo: ~ 
-featuredImage: ~ 
+featuredImage: images/exploring_data.png
 ---
 
 
@@ -124,9 +124,7 @@ We omit 2 features (Updated year, Country) because the selected year is 2022 and
 </div>
 <div id="loading-and-cleaning" class="section level2">
 <h2>Loading and Cleaning</h2>
-<p>First of all, we had l 9 datasets in the form of xlsx and directly pruned some variables (i.e. year and country in the QS dataset, etc) and converted them to csv. Then, we called the read.csv function on these datasets and have the following variables:</p>
-<p><img src="../../../static/images/initial-cleaning.jpeg" /><!-- --></p>
-<p>Next, we merged 8 datasets (excluding US population density) by computing the union (with some theta join conditions) of the datasets. This was done in two different ways using two different functions: left_join and inner_join. This yielded the two datasets: full_data_innerjoinCarnegie.csv, full_data_leftjoinCarnegie.csv</p>
+<p>First of all, we had 9 datasets in the form of xlsx and directly pruned some variables (i.e. year and country in the QS dataset, etc) and converted them to csv. Then, we called the read.csv function and did some basic cleaning. Next, we merged 8 datasets (excluding US population density) by computing the union (with some theta join conditions) of the datasets. This was done in two different ways using two different functions: left_join and inner_join. This yielded the two datasets: <code>full_data_innerjoinCarnegie.csv</code>, <code>full_data_leftjoinCarnegie.csv</code>.</p>
 <p><br></p>
 <p>The first dataset has the size 961 college observations of 43 variables and second dataset has 567 observations of 43 variables, where the college observations represent US universities. The 43 columns effectively represent all of the aforementioned features.</p>
 </div>
