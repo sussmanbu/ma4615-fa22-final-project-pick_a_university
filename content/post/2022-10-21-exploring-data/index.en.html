@@ -1,89 +1,136 @@
-
-
-
-<p>— title: Exploring Data
-author: William Fang
-date: ‘2022-10-21’
-slug: []
-categories: []
-tags: []
+--- 
+title: Exploring Data 
+author: William Fang 
+date: '2022-10-21' 
+slug: [] 
+categories: [] 
+tags: [] 
 description: Blog post 2
-toc: yes
-authors: []
-series: []
-lastmod: ‘2022-10-19T09:25:34-04:00’
-featuredVideo: ~
-featuredImage: ~
-—</p>
-<p><img src="01_exploring_data.png" alt="h"><a href="https://www.exploringdata.org/post/how-to-explore-data-dataexplorer-package/">Source </a></p>
+toc: yes 
+authors: [] 
+series: [] 
+lastmod: '2022-10-19T09:25:34-04:00' 
+featuredVideo: ~ 
+featuredImage: ~ 
+---
+
+
 <div id="TOC">
 
 </div>
-<h2>
-New Data
-</h2>
-<p>We gathered 9 datasets on US universities from distinct sources: <br><br> 1. Academic Ranking of World Universities (ARWU) <br> 2. Kaggle College Rankings (Kaggle)<br> 3. US and Liberal College from (US News) <br> 4. International Student population (Opendoors)
-<br> 5. Carnegie Classification Data <br> 6. QS World and National Rankings <br> 7. Selectivity <br> 8. Enrollment of the 120 largest degree-granting college <br> 9. Population Density per city<br> , where the <b>1, 5, 6, 7, 8, 9</b> are new data</p>
-<hr>
-<h3>
+
+<div id="new-data" class="section level2">
+<h2>New Data</h2>
+<p>We gathered 9 datasets on US universities from distinct sources:</p>
+<p><br></p>
 <ol style="list-style-type: decimal">
-<li>ARWU Data
-</h3>
-The AWRU dataset entails the following features:<br> University Name<br> World rank<br> Work rank integer<br> National rank<br> Total score<br> Criteria indicators: Alumni, Award, HiCi, N&amp;S, PUB, PCP<br></li>
+<li>Academic Ranking of World Universities (ARWU)</li>
+<li>Kaggle College Rankings (Kaggle)</li>
+<li>US and Liberal College from (US News)</li>
+<li>International Student population (Opendoors)</li>
+<li>Carnegie Classification Data</li>
+<li>QS World and National Rankings</li>
+<li>Selectivity</li>
+<li>Enrollment of the 120 largest degree-granting college</li>
+<li>Population Density per city</li>
 </ol>
-<hr>
-<h3>
-<ol start="5" style="list-style-type: decimal">
-<li>Carnegie Classification Data
-</h3>
-The Carnegie dataset contained over 50 different features, but we selectively chose 8 features that we thought were relevant:<br> 1. University Name <br> 2. City <br> 3. State <br> 4. Carnegie Basic Classification (<a href="https://carnegieclassifications.acenet.edu/classification_descriptions/basic.php">Carnegie) </a><br>5. Size and Setting Classification (2yr very small, … 4 year residential) <br> 6. Control of institution (Public, Private not-for-profit, Private for-profit) <br> 7. Enrollment Profile Classification (Exclusive Ugrad 4 yr, Very high Ugrad, High Ugrad)
-<br> 8. Degree of urbanization (City Large, City Midsize, City Small, Suburb Large, …, Town Distant, Town Remote, Rural Remote )<br></li>
+<p>, where the <strong>1, 5, 6, 7, 8, 9</strong> are new data</p>
+<p><br></p>
+<div id="arwu-data" class="section level3">
+<h3>1. ARWU Data</h3>
+<p>The AWRU dataset entails the following features:</p>
+<ol style="list-style-type: decimal">
+<li>University Name</li>
+<li>World rank</li>
+<li>Work rank integer</li>
+<li>National rank</li>
+<li>Total score</li>
+<li>Criteria indicators: Alumni, Award, HiCi, N&amp;S, PUB, PCP</li>
 </ol>
-<hr>
-<h3>
-<ol start="6" style="list-style-type: decimal">
-<li>QS World and National Rankings
-</h3>
-The QS Dataset includes the following features<br> 1. University Name <br> 2. Updated Year (Omitted) <br> 3. Rank_display <br> 4. Score <br> 5. Country (Omitted) <br> 6. City <br> 7. Type <br> 8. Research Output<br> 9. Student faculty Ratio<br> 10. International
-Students<br> 11. Size<br> 12. Faculty Count<br><br>
-<b>Note:</b>
-<br> We omit 2 features (Updated year, Country) because the selected year is 2022 and Country is USA, which are the same values for all observations. We don’t need to consider data that are the same and non-arbitary, which won’t help with data analysis.</li>
+<p><br></p>
+</div>
+<div id="carnegie-classification-data" class="section level3">
+<h3>5. Carnegie Classification Data</h3>
+<p>The Carnegie dataset contained over 50 different features, but we selectively chose 8 features that we thought were relevant:</p>
+<ol style="list-style-type: decimal">
+<li>University Name</li>
+<li>City</li>
+<li>State</li>
+<li>Carnegie Basic Classification</li>
+<li>Size and Setting Classification (2yr very small, … 4 year residential)</li>
+<li>Control of institution (Public, Private not-for-profit, Private for-profit)</li>
+<li>Enrollment Profile Classification (Exclusive Ugrad 4 yr, Very high Ugrad, High Ugrad)</li>
+<li>Degree of urbanization (City Large, City Midsize, City Small, Suburb Large, …, Town Distant, Town Remote, Rural Remote )</li>
 </ol>
-<hr>
-<h3>
-<ol start="7" style="list-style-type: decimal">
-<li>Selectivity
-</h3>
-The Selectivity Dataset has 236 college observations and 3 columns describing university name, state, selectivity (with integers where 1 is the most competitive and 4 is the least competitive)<br></li>
+<p><br></p>
+</div>
+<div id="qs-world-and-national-rankings" class="section level3">
+<h3>6. QS World and National Rankings</h3>
+<p>The QS Dataset includes the following features:</p>
+<ol style="list-style-type: decimal">
+<li>University Name</li>
+<li>Updated Year (Omitted)</li>
+<li>Rank_display</li>
+<li>Score</li>
+<li>Country (Omitted)</li>
+<li>City</li>
+<li>Type</li>
+<li>Research Output</li>
+<li>Student faculty Ratio</li>
+<li>International Students</li>
+<li>Size</li>
+<li>Faculty Count</li>
 </ol>
-<hr>
-<h3>
-<ol start="8" style="list-style-type: decimal">
-<li>Enrollment of the 120 largest degree-granting college
-</h3>
-The Selectivity Dataset has 120 college observations and 6 columns describing institution name, state, rank, control (public, private-nonprofit, private-profit), level(4 year, 2 year), and total enrollment size<br></li>
+<p><br></p>
+<p><strong>Note:</strong>
+We omit 2 features (Updated year, Country) because the selected year is 2022 and Country is USA, which are the same values for all observations. We don’t need to consider data that are the same and non-arbitary, which won’t help with data analysis.</p>
+<p><br></p>
+</div>
+<div id="selectivity" class="section level3">
+<h3>7. Selectivity</h3>
+<p>The Selectivity Dataset has 236 college observations and 3 columns describing:</p>
+<ol style="list-style-type: decimal">
+<li>university name</li>
+<li>state</li>
+<li>selectivity (with integers where 1 is the most competitive and 4 is the least competitive)</li>
 </ol>
-<hr>
-<h3>
-<ol start="9" style="list-style-type: decimal">
-<li>Population Density per city in the US
-</h3>
-The Population Density has 754 city observations and 5 columns describing city name, state, population density, population (updated 2016), and Land Area in Square Mile<br></li>
+<p><br></p>
+</div>
+<div id="enrollment-of-the-120-largest-degree-granting-college" class="section level3">
+<h3>8. Enrollment of the 120 largest degree-granting college</h3>
+<p>The Selectivity Dataset has 120 college observations and 6 columns describing:</p>
+<ol style="list-style-type: decimal">
+<li>institution name</li>
+<li>state</li>
+<li>rank</li>
+<li>control (public, private-nonprofit, private-profit)</li>
+<li>level(4 year, 2 year)</li>
+<li>total enrollment size</li>
 </ol>
-<h2>
-Loading and Cleaning
-</h2>
-<p>First of all, we had l 9 datasets in the form of xlsx and directly pruned some variables (i.e. year and country in the QS dataset, etc) and converted them to csv.
-<br> Then, we called the read.csv function on these datasets and have the following variables:
-<br>
-<br></p>
-<p><img src="Raw%20Dataset%20Size.jpeg" alt="h"> Next, we merged 8 datasets (excluding US population density) by computing the union (with some theta join conditions) of the datasets. This was done in two different ways using two different functions: left_join
-and inner_join. This yielded the two datasets: full_data_innerjoinCarnegie.csv, full_data_leftjoinCarnegie.csv
-<br>
-<br> The first dataset has the size 961 college observations of 43 variables and second dataset has 567 observations of 43 variables, where the college observations represent US universities. The 43 columns effectively represent all of the aforementioned
-features.</p>
-<hr>
-<h2>
-Basic Data Analysis
-</h2>
+<p><br></p>
+</div>
+<div id="population-density-per-city-in-the-us" class="section level3">
+<h3>9. Population Density per city in the US</h3>
+<p>The Population Density has 754 city observations and 5 columns describing:</p>
+<ol style="list-style-type: decimal">
+<li>city name</li>
+<li>state</li>
+<li>population density</li>
+<li>population (updated 2016)</li>
+<li>Land Area in Square Mile</li>
+</ol>
+<p><br></p>
+</div>
+</div>
+<div id="loading-and-cleaning" class="section level2">
+<h2>Loading and Cleaning</h2>
+<p>First of all, we had l 9 datasets in the form of xlsx and directly pruned some variables (i.e. year and country in the QS dataset, etc) and converted them to csv. Then, we called the read.csv function on these datasets and have the following variables:</p>
+<p><img src="../../../static/images/initial-cleaning.jpeg" /><!-- --></p>
+<p>Next, we merged 8 datasets (excluding US population density) by computing the union (with some theta join conditions) of the datasets. This was done in two different ways using two different functions: left_join and inner_join. This yielded the two datasets: full_data_innerjoinCarnegie.csv, full_data_leftjoinCarnegie.csv</p>
+<p><br></p>
+<p>The first dataset has the size 961 college observations of 43 variables and second dataset has 567 observations of 43 variables, where the college observations represent US universities. The 43 columns effectively represent all of the aforementioned features.</p>
+</div>
+<div id="basic-data-analysis" class="section level2">
+<h2>Basic Data Analysis</h2>
 <p>We present out data analysis code in a separate R file: EDA1.R</p>
+</div>
