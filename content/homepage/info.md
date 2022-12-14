@@ -1,8 +1,8 @@
 ---
 title: MA 415 Final Project
 draft: false
-role: Pick A University Team
-bio: This is my data science project. Check out the links at the top. You can update this in `content/homepage/info.md`. You can change the image above by changing `content/homepage/feature_image.md`.
+role: Pick_A_University Team
+bio: This is the data science project of our team. Check out the links at the top. 
 organization:
   name: Boston University
   url: https://www.bu.edu/

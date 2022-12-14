@@ -15,6 +15,7 @@ library(shiny)
 
 clean_data <- read_csv(here::here("shiny_app/FinalProjectApp/clean_data.csv"))
 
+
 # Define UI for application
 ui <- fluidPage(
 
