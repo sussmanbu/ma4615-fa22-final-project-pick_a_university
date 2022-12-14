@@ -1,6 +1,6 @@
 ---
 title: Data Analysis and Equity for Data
-author: Daniel Sussman
+author: Yawei Huang
 date: '2022-10-28'
 slug: []
 categories: []
