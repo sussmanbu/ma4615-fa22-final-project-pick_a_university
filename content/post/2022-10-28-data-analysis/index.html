@@ -4,8 +4,8 @@ author: Yawei Huang
 date: '2022-10-28'
 slug: []
 categories: []
-tags: ['blog post 3']
-description: ~
+tags:
+description: Blog post 3
 toc: yes
 authors: []
 series: []
@@ -21,12 +21,17 @@ featuredImage: ~
 
 <div id="loading-and-cleaning-part-2" class="section level2">
 <h2>Loading and Cleaning Part 2</h2>
-<p> As described in our last blog post, we did a full join of the seven data sets (as shown in the screenshot, excluding the Carnegie Classification data and population density data) and then a left join with the Carnegie Classification data. You can check in this <a href="https://drive.google.com/file/d/1pURCQU5qnqj5dU3y994_SJryuu9tIk-R/view?usp=share_link">dataset</a>. We also created an inner join version, but after some thoughts, we decided to go with the left joined version, which means that we can live with missing values from the Carnegie Classification data for now. This week, we did some further cleaning.</p>
+<p> As described in our last blog post, we did a full join of the seven data sets (as shown in the screenshot, excluding the Carnegie Classification data and population density data) and then a left join with the Carnegie Classification data. You can check in this dataset. We also created an inner join version, but after some thoughts, we decided to go with the left joined version, which means that we can live with missing values from the Carnegie Classification data for now. This week, we did some further cleaning.</p>
+<p><br></p>
 <p>  The initial left joined data set had 961 observations, with each row representing a university. Our outcome of interest, international student population, had three datapoints: the percentage in 2021 from US news, the actual number in 2021 from opendoors, and actual number from 2022 from QS but downloaded from Kaggle. We filtered the dataset to universities which had at least one datapoint out of these three, which resulted in 499 observations. We also created a new variable reflecting the maximum of the two actual numbers for international student population.</p>
+<p><br></p>
 <p>  Then, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations: “Purdue University”, “Purdue University–West Lafayette”, and “Purdue University - West Lafayette.” To solve this issue, we exported the dataset to a .csv file, sorted by university name, and manually de-duplicated the dataset. More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations, each of which represent a unique university. We then imported this file back to R and proceeded to further data cleaning.</p>
+<p><br></p>
 <p>  For variables that had multiple columns due to coming from different data sources, such as city, state, university type (2-year vs 4-year; public vs private), we aggregated the information to one column.</p>
+<p><br></p>
 <p>  We also merged in the city population dataset, which included variables on the city population, city land area, and city population density in 2016, using the left join function.
 After this round of cleaning, we created the <a href="https://docs.google.com/spreadsheets/d/1LrG_loCoEdJ-xUE09TQ-LT3ccRhfM8fb/edit?usp=share_link&amp;ouid=115689699241821288383&amp;rtpof=true&amp;sd=true">codebook</a>. We anticipate need further cleaning as we explore the data more.</p>
+<p><br></p>
 </div>
 <div id="data-analysis" class="section level2">
 <h2>Data Analysis</h2>
