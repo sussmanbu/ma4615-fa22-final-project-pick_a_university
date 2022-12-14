@@ -4,7 +4,7 @@ date: '2022-10-21'
 slug: [] 
 categories: [] 
 tags: [] 
-description: ~ 
+description: Blog post 2
 toc: yes 
 authors: [] 
 series: [] 

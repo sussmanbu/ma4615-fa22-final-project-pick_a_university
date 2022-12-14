@@ -209,7 +209,17 @@ write_csv(full_data_leftjoinCarnegie1, file = here::here("dataset/full_data_left
 
 ### Some manually cleaning directly in the .csv file
 
-# Then, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations: “Purdue University”, “Purdue University–West Lafayette”, and “Purdue University - West Lafayette.”  To solve this issue, we exported the dataset to a .csv file, sorted by university name, and manually de-duplicated the dataset.  More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations (reducing from 499 observations), each of which represent a unique university.  We then imported the de-duplicated csv file (`full_data_leftjoinCarnegie1_dedup.csv`) back to R and proceeded to further data cleaning.
+# There were two parts of manually cleaning directly in the csv file we exported at this point. Firstly, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations:
+#   
+# * “Purdue University” 
+# * “Purdue University–West Lafayette”
+# * “Purdue University - West Lafayette”
+# 
+#   
+#   To solve this issue, we sorted by university name and manually de-duplicated the dataset.  More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations (reducing from 499 observations), each of which represent a unique university. 
+# 
+#   
+#   Secondly, for the 27 universities which has data on university name and city but missing data on state, we manually entered their state information in preparation for later joining. After that, we imported the de-duplicated csv file (`full_data_leftjoinCarnegie1_dedup.csv`) back to R and proceeded to further data cleaning.
 
 
 full_data_leftjoinCarnegie1_dedup <- read_csv(here::here("dataset/full_data_leftjoinCarnegie1_dedup.csv"))
@@ -281,8 +291,6 @@ selectivity_levels <- c(
 
 clean_data$selectivity <- factor(clean_data$selectivity, levels = selectivity_levels)
 
-clean_data %>% ggplot(aes(x=factor(selectivity)))+geom_bar()
-
 
 # enrprofile2021_carnegie 
 clean_data$enrprofile2021_carnegie[clean_data$enrprofile2021_carnegie == 1 | 
@@ -302,8 +310,6 @@ enrprofile2021_carnegie_levels <- c(
   "Exclusive/Majority graduate")
 
 clean_data$enrprofile2021_carnegie <- factor(clean_data$enrprofile2021_carnegie, levels = enrprofile2021_carnegie_levels)
-
-clean_data %>% ggplot(aes(x=factor(enrprofile2021_carnegie)))+geom_bar()
 
 
 # type4_carnegie
@@ -344,9 +350,6 @@ type4_carnegie_levels <- c(
 
 clean_data$type4_carnegie <- factor(clean_data$type4_carnegie, levels = type4_carnegie_levels)
 
-clean_data %>% ggplot(aes(x=factor(type4_carnegie)))+geom_bar()+scale_x_discrete(guide = guide_axis(n.dodge=2))
-
-
 
 # type2_carnegie
 clean_data$type2_carnegie[clean_data$type2_carnegie == 3 | 
@@ -376,8 +379,6 @@ type2_carnegie_levels <- c(
 
 clean_data$type2_carnegie <- factor(clean_data$type2_carnegie, levels = type2_carnegie_levels)
 
-clean_data %>% ggplot(aes(x=factor(type2_carnegie)))+geom_bar()
-
 
 # locale_carnegie
 clean_data$locale_carnegie[clean_data$locale_carnegie == 11 | 
@@ -401,7 +402,6 @@ locale_carnegie_levels <- c(
 
 clean_data$locale_carnegie <- factor(clean_data$locale_carnegie, levels = locale_carnegie_levels)
 
-clean_data %>% ggplot(aes(x=factor(locale_carnegie)))+geom_bar()
 
 
 # type1_all
@@ -412,7 +412,6 @@ clean_data$type1_all[clean_data$type1_all == 1 ] <- "public"
 clean_data$type1_all[clean_data$type1_all == 2 ] <- "private"
 clean_data$type1_all <- factor(clean_data$type1_all)
 
-clean_data %>% ggplot(aes(x=factor(type1_all)))+geom_bar()
 
 
 # size_qs
@@ -424,7 +423,6 @@ size_levels <- c(
 
 clean_data$size_qs <- factor(clean_data$size_qs, levels = size_levels)
 
-clean_data %>% ggplot(aes(x=factor(size_qs)))+geom_bar()
 
 
 # research_output_qs
@@ -433,7 +431,6 @@ clean_data$research_output_qs[clean_data$research_output_qs == "High" |
 
 clean_data$research_output_qs <- factor(clean_data$research_output_qs)
 
-clean_data %>% ggplot(aes(x=factor(research_output_qs)))+geom_bar()
 
 
 # world_rank_cat_arwu
@@ -459,7 +456,6 @@ arwu_levels <- c(
 
 clean_data$world_rank_cat_arwu <- factor(clean_data$world_rank_cat_arwu, levels = arwu_levels)
 
-clean_data %>% ggplot(aes(x=factor(world_rank_cat_arwu)))+geom_bar()
 
 
 # world_rank_qs
@@ -510,23 +506,27 @@ qs_levels <- c(
 
 clean_data$world_rank_qs <- factor(clean_data$world_rank_qs, levels = qs_levels)
 
-clean_data %>% ggplot(aes(x=factor(world_rank_qs)))+geom_bar()
-
 
 
 ### Save the clean dataset
 
-# Lastly, we dropped unrelevant variables and created a codebook for our final dataset (`clean_data.RData`). 
+# Lastly, we dropped irrelevant or repetitive variables and created a codebook for our final dataset (`clean_data.RData`). 
+
+clean_data <- clean_data %>% 
+  select(-international_students_qs, 
+         -international_students_opendoors, 
+         -world_rank_arwu, 
+         -national_rank_arwu, 
+         -national_rank_kaggle,
+         -faculty_count_qs,
+         -total_score_arwu,
+         -score_qs)
 
 
 
 write_csv(clean_data, file = here::here("dataset/clean_data.csv"))
+save(clean_data, file = here::here("dataset/clean_data.RData"))
 
-
-
-write_csv(loan_data_clean, file = here::here("dataset", "loan_refusal_clean.csv"))
-
-save(loan_data_clean, file = here::here("dataset/loan_refusal.RData"))
 
 
 

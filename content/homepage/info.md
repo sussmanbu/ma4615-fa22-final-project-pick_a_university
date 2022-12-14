@@ -2,7 +2,7 @@
 title: MA 415 Final Project
 draft: false
 role: Pick_A_University Team
-bio: This is the data science project of our team. Check out the links at the top. 
+bio: This is the data science project of our team. Check out the links at the top. ([Picture source](https://timesinternational.net/most-expensive-colleges-in-the-us/))
 organization:
   name: Boston University
   url: https://www.bu.edu/

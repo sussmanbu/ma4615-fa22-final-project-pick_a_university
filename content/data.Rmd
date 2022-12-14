@@ -111,7 +111,7 @@ As described above, we gathered data from nine different sources. In this sectio
 
 Our initial data cleaning for each data subset included loading each data set, checking for problems, as well as selecting, arranging, and renaming relevant variables. Here we presented one example:
 
-
+<br>
 
 ```{r eval=FALSE}
 # The arwu dataset
@@ -145,7 +145,7 @@ arwu2018 <- arwu2018 %>%
 
 For joining, we first did a full join of the seven out of nine data sets (excluding the Carnegie Classification data and population density data), which was then left joined with the Carnegie Classification data. 
 
-
+<br>
 
 ```{r eval=FALSE}
 full_data_leftjoinCarnegie <- arwu2018 %>% 
@@ -161,6 +161,8 @@ full_data_leftjoinCarnegie <- arwu2018 %>%
 <br>
 
 For variables that had multiple columns due to coming from different data sources, such as city and state, we aggregated the information to one column. Below is an example.
+
+<br>
 
 ```{r eval=FALSE}
 ## Only keep one city column (there are four after joining) 
@@ -179,29 +181,35 @@ full_data_leftjoinCarnegie1 <- full_data_leftjoinCarnegie %>%
 
 <br>
 
-Initially, The left joined data set had 961 observations, with each row representing a university. Our outcome of interest, international student population, had three datapoints: 
-* the percentage in 2021 from US news, 
-* the actual number in 2021 from opendoors, and 
-* actual number from 2022 from QS but downloaded from Kaggle. 
-We further filtered the dataset to universities which had at least one datapoint out of these three, which resulted in 499 observations. We saved the updated dataset.
+Initially, The left joined data set had 961 observations, with each row representing a university. Our outcome of interest, international student population, had three datapoints: (1) the percentage in 2021 from US news, (2) the actual number in 2021 from opendoors, and (3) the actual number from 2022 from QS but downloaded from Kaggle. We further filtered the dataset to universities which had at least one datapoint out of these three, which resulted in 499 observations. We saved the updated dataset. 
 
 
 
 ### Some manually cleaning directly in the .csv file
 
 
-Then, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations:
--“Purdue University”,  
--“Purdue University–West Lafayette”, and 
--“Purdue University - West Lafayette”.  
-To solve this issue, we exported the dataset to a .csv file, sorted by university name, and manually de-duplicated the dataset.  More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations (reducing from 499 observations), each of which represent a unique university. We then imported the de-duplicated csv file (`full_data_leftjoinCarnegie1_dedup.csv`) back to R and proceeded to further data cleaning.
+There were two parts of manually cleaning directly in the csv file we exported at this point. Firstly, we realized that some universities had multiple observations due to inconsistency use from different sources. For example, Purdue University has three observations:
+
+* “Purdue University” 
+* “Purdue University–West Lafayette”
+* “Purdue University - West Lafayette”
+
+<br>
+
+To solve this issue, we sorted by university name and manually de-duplicated the dataset.  More specifically, we identified those universities with multiple observations, filled the information to all observations, and then deleted the duplicate observations to only keep one row. This procedure resulted in 441 observations (reducing from 499 observations), each of which represent a unique university. 
+
+<br>
+
+Secondly, for the 27 universities which has data on university name and city but missing data on state, we manually entered their state information in preparation for later joining. After that, we imported the de-duplicated csv file (`full_data_leftjoinCarnegie1_dedup.csv`) back to R and proceeded to further data cleaning.
 
 
 
 ### Deeper cleaning with the de-duplicated dataset
 
 
-This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering (see an example below). Lastly, we dropped unrelevant variables and created a codebook for our final dataset (`clean_data.RData`). 
+This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering (see an example below). 
+
+<br>
 
 
 ```{r eval=FALSE}
@@ -229,6 +237,15 @@ clean_data$locale_carnegie <- factor(clean_data$locale_carnegie, levels = locale
 ```
 
 
+### Finally, this is the codebook for our final dataset (`clean_data.RData`). 
+
+The first column has the final set of variables included in our dataset. The second column explains what each variable means. The third column presents possible values/levels for the variable.
+
+<br>
+
+```{r echo=FALSE}
+
+```
 
 
 
