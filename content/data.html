@@ -74,7 +74,7 @@ draft: false
 </div>
 <div id="data-cleaning" class="section level2">
 <h2>Data Cleaning</h2>
-<p>As described above, we gathered data from nine different sources. In this section, we outlined how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set. The complete codes for data cleaning can be found in this <a href="">load_and_clean_data.R file</a>.</p>
+<p>As described above, we gathered data from nine different sources. In this section, we outlined how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set. The complete codes for data cleaning can be found in this <a href="/load_and_clean_data.R">load_and_clean_data.R file</a>.</p>
 <div id="initial-cleaning" class="section level3">
 <h3>Initial Cleaning</h3>
 <p>Our initial data cleaning for each data subset included loading each data set, checking for problems, as well as selecting, arranging, and renaming relevant variables. Here we presented one example:</p>
@@ -174,5 +174,76 @@ clean_data$locale_carnegie &lt;- factor(clean_data$locale_carnegie, levels = loc
 <h3>Finally, this is the codebook for our final dataset (<code>clean_data.RData</code>).</h3>
 <p>The first column has the final set of variables included in our dataset. The second column explains what each variable means. The third column presents possible values/levels for the variable.</p>
 <p><br></p>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="53%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+<th>Values/Levels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>university</td>
+<td>name of the institution</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>city</td>
+<td>city</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>state</td>
+<td>state</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>international_students_natlib</td>
+<td>proportion of international students at the institution</td>
+<td>range from x to x</td>
+</tr>
+<tr class="odd">
+<td>international_students_max</td>
+<td>number of international students at the institution</td>
+<td>range from x to x</td>
+</tr>
+<tr class="even">
+<td>city_population_density</td>
+<td>city population density of 2016</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>city_population</td>
+<td>city population of 2016</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>city_land_area</td>
+<td>city land area (square miles) of 2016</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>locale_carnegie</td>
+<td>degree of urbanization (Urban-centric locale)</td>
+<td>three levels: city, suburb, town or rural</td>
+</tr>
+<tr class="even">
+<td>international_students_natlib</td>
+<td>percentage of international students at the institution</td>
+<td>$1600</td>
+</tr>
+<tr class="odd">
+<td>international_students_max</td>
+<td>number of international students at the institution</td>
+<td>$12</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>

@@ -102,7 +102,7 @@ The dataset is not downloadable but they have all the data from on the website. 
 ## Data Cleaning
 
 
-As described above, we gathered data from nine different sources. In this section, we outlined how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set. The complete codes for data cleaning can be found in this [load_and_clean_data.R file](). 
+As described above, we gathered data from nine different sources. In this section, we outlined how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set. The complete codes for data cleaning can be found in this [load_and_clean_data.R file](/load_and_clean_data.R). 
 
 
 
@@ -243,11 +243,25 @@ The first column has the final set of variables included in our dataset. The sec
 
 <br>
 
-```{r echo=FALSE}
+```{r codebook, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "
+| Variable Name                 | Description                                               | Values/Levels       |
+|-------------------------------|-----------------------------------------------------------|---------------------|
+| university                    | name of the institution                                   |                     |
+| city                          | city                                                      |                     |
+| state                         | state                                                     |                     |
+| international_students_natlib | proportion of international students at the institution   | range from x to x   |
+| international_students_max    | number of international students at the institution       | range from x to x   |
+| city_population_density       | city population density of 2016                           |                     |
+| city_population               | city population of 2016                                   |                     |
+| city_land_area                | city land area (square miles) of 2016                     |                     |
+| locale_carnegie               | degree of urbanization (Urban-centric locale)             | three levels: city, suburb, town or rural |
+| international_students_natlib | percentage of international students at the institution   | $1600               |
+| international_students_max    | number of international students at the institution       |   $12               |
 
+"
+cat(tabl) # output the table in a format good for HTML/PDF/docx conversion
 ```
-
-
 
 
 
