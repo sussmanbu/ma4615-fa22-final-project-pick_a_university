@@ -274,6 +274,23 @@ semi_clean_data <-
            total_score_arwu, score_qs) 
 
 
+## 
+
+
+semi_clean_data_dup <- semi_clean_data
+modified_city <- read.csv(file = 'dataset/Modified_Data.csv')
+
+semi_clean_data_dup = subset(semi_clean_data_dup, select = -c(city,state, city_population_density,city_population ) )
+
+semi_clean_data <- semi_clean_data_dup%>% mutate(city =modified_city$city, 
+                                            state =modified_city$state,
+                                            city_population_density =modified_city$city_population_density, 
+                                            city_population =modified_city$city_population)
+
+
+
+
+
 ## Collapse, label, and reorder levels for categorical variables
 clean_data <- semi_clean_data
 
