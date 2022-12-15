@@ -74,7 +74,7 @@ draft: false
 </div>
 <div id="data-cleaning" class="section level2">
 <h2>Data Cleaning</h2>
-<p>As described above, we gathered data from nine different sources. In this section, we outlined how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set. The complete codes for data cleaning can be found in this <a href="">load_and_clean_data.R file</a>.</p>
+<p>As described above, we gathered data from nine different sources. In this section, we outlined how we cleaned each data subset in preparation for joining, how we joined all data subsets together, and how we continued to tidy the joined full data set. The complete codes for data cleaning can be found in this <a href="/load_and_clean_data.R">load_and_clean_data.R file</a>.</p>
 <div id="initial-cleaning" class="section level3">
 <h3>Initial Cleaning</h3>
 <p>Our initial data cleaning for each data subset included loading each data set, checking for problems, as well as selecting, arranging, and renaming relevant variables. Here we presented one example:</p>
@@ -172,7 +172,168 @@ clean_data$locale_carnegie &lt;- factor(clean_data$locale_carnegie, levels = loc
 </div>
 <div id="finally-this-is-the-codebook-for-our-final-dataset-clean_data.rdata." class="section level3">
 <h3>Finally, this is the codebook for our final dataset (<code>clean_data.RData</code>).</h3>
-<p>The first column has the final set of variables included in our dataset. The second column explains what each variable means. The third column presents possible values/levels for the variable.</p>
+<p>The first column has the final set of 29 variables included in our dataset. The second column explains what each variable means. The third column presents possible levels for the variable.</p>
 <p><br></p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="41%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+<th>Levels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>university</td>
+<td>name of the institution</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>city</td>
+<td>city</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>state</td>
+<td>state</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>international_students_natlib</td>
+<td>proportion of international students at the institution</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>international_students_max</td>
+<td>number of international students at the institution</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>city_population_density</td>
+<td>city population density of 2016</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>city_population</td>
+<td>city population of 2016</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>city_land_area</td>
+<td>city land area (square miles) of 2016</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>locale_carnegie</td>
+<td>degree of urbanization (Urban-centric locale)</td>
+<td>three levels: city, suburb, town or rural</td>
+</tr>
+<tr class="even">
+<td>tuition_kaggle</td>
+<td>out of state tuition (in dollars)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>selectivity</td>
+<td>selectivity</td>
+<td>four levels: most competitive, highly competitive plus, highly competitive, very competitive plus</td>
+</tr>
+<tr class="even">
+<td>world_rank_cat_arwu</td>
+<td>intervals of world ranking from arwu</td>
+<td>eight levels: 1-20, 21-50, 51-100, 101-150, 151-200, 210-300, 301-400, 401-500</td>
+</tr>
+<tr class="odd">
+<td>world_rank_qs</td>
+<td>world ranking from qs</td>
+<td>twelve levels: 1-20, 21-50, 51-100, 101-150, 151-200, 210-300, 301-400, 401-500, 501-600, 601-800, 801-1000, 1001-1200</td>
+</tr>
+<tr class="even">
+<td>type1_all</td>
+<td>public vs. private</td>
+<td>two levels: public, private</td>
+</tr>
+<tr class="odd">
+<td>type2_carnegie</td>
+<td>year and size classification</td>
+<td>four levels: four-year (large), four-year (median), four-year (small), two-year</td>
+</tr>
+<tr class="even">
+<td>type3_natlib</td>
+<td>national or liberal Arts institution</td>
+<td>two levels: national, liberal Arts</td>
+</tr>
+<tr class="odd">
+<td>type4_carnegie</td>
+<td>2021 Carnegie Basic Classification</td>
+<td>five levels: Doctoral Universities, Master’s Colleges &amp; Universities, Baccalaureate Colleges, Special Focus Four-Year, Associate’s Colleges</td>
+</tr>
+<tr class="even">
+<td>enrprofile2021_carnegie</td>
+<td>enrollment profile classification</td>
+<td>three levels: exclusively or very high undergraduate, majority undergraduate, exclusively or majority graduate</td>
+</tr>
+<tr class="odd">
+<td>size_qs</td>
+<td>size of the university in terms of area</td>
+<td>four levels: S, M, L, XL</td>
+</tr>
+<tr class="even">
+<td>research_output_qs</td>
+<td>index of quality of research at the university</td>
+<td>two levels: median high, very high</td>
+</tr>
+<tr class="odd">
+<td>stu_facl_ratio_qs</td>
+<td>number of students assigned to per faculty</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>award_arwu</td>
+<td>score assigned by arwu on staff of an institution winning Nobel Prizes and Fields Medals</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>hi_ci_arwu</td>
+<td>score assigned by arwu on highly cited researchers at the institution</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>n_s_arwu</td>
+<td>score assigned by arwu on papers published in Nature and Science from the institution</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>pub_arwu</td>
+<td>score assigned by arwu on papers indexed in Science Citation Index-Expanded and Social Science Citation Index from the institution</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>alumni_arwu</td>
+<td>score assigned by arwu on alumni of an institution winning Nobel Prizes and Fields Medals</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>pcp_arwu</td>
+<td>score assigned by arwu on per capita academic performance of an institution</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>enrollment_kaggle</td>
+<td>undergraduate student enrollment number</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>enrollment_top120enrollment</td>
+<td>total student enrollment number</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>

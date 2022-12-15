@@ -274,6 +274,7 @@ semi_clean_data <-
            total_score_arwu, score_qs) 
 
 
+<<<<<<< HEAD
 ## 
 
 
@@ -288,6 +289,14 @@ semi_clean_data <- semi_clean_data_dup%>% mutate(city =modified_city$city,
                                             city_population =modified_city$city_population)
 
 
+=======
+
+################
+
+## William's part ###
+
+#################
+>>>>>>> 61b4703859333835a4898e2eb70ebe5d1861931d
 
 
 
@@ -543,6 +552,7 @@ clean_data <- clean_data %>%
 
 write_csv(clean_data, file = here::here("dataset/clean_data.csv"))
 save(clean_data, file = here::here("dataset/clean_data.RData"))
+
 
 
 

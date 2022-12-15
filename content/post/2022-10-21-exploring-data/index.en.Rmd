@@ -14,6 +14,7 @@ featuredVideo: ~
 featuredImage: images/exploring_data.png
 ---
 
+[Picture Source](https://www.exploringdata.org/post/how-to-explore-data-dataexplorer-package/)
 
 ## New Data
 We gathered 9 datasets on US universities from distinct sources:
