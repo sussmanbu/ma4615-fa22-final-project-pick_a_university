@@ -239,26 +239,43 @@ clean_data$locale_carnegie <- factor(clean_data$locale_carnegie, levels = locale
 
 ### Finally, this is the codebook for our final dataset (`clean_data.RData`). 
 
-The first column has the final set of variables included in our dataset. The second column explains what each variable means. The third column presents possible values/levels for the variable.
+The first column has the final set of 29 variables included in our dataset. The second column explains what each variable means. The third column presents possible levels for the variable.
 
 <br>
 
 ```{r codebook, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 tabl <- "
-| Variable Name                 | Description                                               | Values/Levels       |
-|-------------------------------|-----------------------------------------------------------|---------------------|
-| university                    | name of the institution                                   |                     |
-| city                          | city                                                      |                     |
-| state                         | state                                                     |                     |
-| international_students_natlib | proportion of international students at the institution   | range from x to x   |
-| international_students_max    | number of international students at the institution       | range from x to x   |
-| city_population_density       | city population density of 2016                           |                     |
-| city_population               | city population of 2016                                   |                     |
-| city_land_area                | city land area (square miles) of 2016                     |                     |
-| locale_carnegie               | degree of urbanization (Urban-centric locale)             | three levels: city, suburb, town or rural |
-| international_students_natlib | percentage of international students at the institution   | $1600               |
-| international_students_max    | number of international students at the institution       |   $12               |
-
+| Variable Name                 | Description                                            | Levels                                      |
+|-------------------------------|------------------------------------------------------  |---------------------------------------------|
+| university                    | name of the institution                                |                                             |
+| city                          | city                                                   |                                             |
+| state                         | state                                                  |                                             |
+| international_students_natlib | proportion of international students at the institution|                                             |
+| international_students_max    | number of international students at the institution    |                                             |
+| city_population_density       | city population density of 2016                        |                                             |
+| city_population               | city population of 2016                                |                                             |
+| city_land_area                | city land area (square miles) of 2016                  |                                             |
+| locale_carnegie               | degree of urbanization (Urban-centric locale)          | three levels: city, suburb, town or rural   |
+| tuition_kaggle                | out of state tuition (in dollars)                      |                                             |
+| selectivity                   | selectivity                                            | four levels: most competitive, highly competitive plus, highly competitive, very competitive plus  |
+| world_rank_cat_arwu           | intervals of world ranking from arwu                   | eight levels: 1-20, 21-50, 51-100, 101-150, 151-200, 210-300, 301-400, 401-500      |
+| world_rank_qs                 | world ranking from qs                                  | twelve levels: 1-20, 21-50, 51-100, 101-150, 151-200, 210-300, 301-400, 401-500, 501-600, 601-800, 801-1000, 1001-1200  |
+| type1_all                     | public vs. private                                     | two levels: public, private                  |
+| type2_carnegie                | year and size classification                           | four levels: four-year (large), four-year (median), four-year (small), two-year     |
+| type3_natlib                  | national or liberal Arts institution                   | two levels: national, liberal Arts           |
+| type4_carnegie                | 2021 Carnegie Basic Classification                     | five levels: Doctoral Universities, Master's Colleges & Universities, Baccalaureate Colleges, Special Focus Four-Year,  Associate's Colleges    |
+| enrprofile2021_carnegie       |  enrollment profile classification                     | three levels: exclusively or very high undergraduate, majority undergraduate, exclusively or majority graduate             |
+| size_qs                       | size of the university in terms of area                | four levels: S, M, L, XL                     |
+| research_output_qs            | index of quality of research at the university         | two levels: median high, very high           |
+| stu_facl_ratio_qs             | number of students assigned to per faculty             |                                              |
+| award_arwu                    | score assigned by arwu on staff of an institution winning Nobel Prizes and Fields Medals    |         |
+| hi_ci_arwu                    | score assigned by arwu on highly cited researchers at the institution                       |         |
+| n_s_arwu                      | score assigned by arwu on papers published in Nature and Science from the institution       |         |
+| pub_arwu               | score assigned by arwu on papers indexed in Science Citation Index-Expanded and Social Science Citation Index from the institution |     |
+| alumni_arwu                   | score assigned by arwu on alumni of an institution winning Nobel Prizes and Fields Medals   |         |
+| pcp_arwu                      | score assigned by arwu on  per capita academic performance of an institution                |         |
+| enrollment_kaggle             | undergraduate student enrollment number                |                                              |
+| enrollment_top120enrollment   | total student enrollment number                        |                                              |
 "
 cat(tabl) # output the table in a format good for HTML/PDF/docx conversion
 ```
