@@ -3,7 +3,7 @@ title: Analysis 1
 description:
 toc: true
 featuredVideo: 
-featuredImage: https://www.suno.edu/assets/suno/images/Admissions/international-students.jpeg
+featuredImage: https://learn.g2.com/hubfs/Imported%20sitepage%20images/1ZB5giUShe0gw9a6L69qAgsd7wKTQ60ZRoJC5Xq3BIXS517sL6i6mnkAN9khqnaIGzE6FASAusRr7w=w1439-h786.png
 draft: false
 ---
 
@@ -29,33 +29,252 @@ Breakdown of international students by the US region they live (2021 vs 2016)</p
 </div>
 <div id="early-data-analysis" class="section level2">
 <h2>Early Data Analysis</h2>
-<p>In our earlier data analysis (Blog Post 4), we examined the relationship between the dependent variable ISPr and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We did this by making predictions with 7 regression models (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma) after shuffling and splitting the data with a 70-30 ratio for the train and test sets. By evaluating the AIC and fisher score, we selected the inverse gaussian glm as the best fit of all 7 models. Below we display our linear regression, logistic regression, and inverse gaussian regression.</p>
-<p>The main limitation is that we naively selected one predictor variable (Alumni and Publications) and did not assess the correlations.</p>
+<p>In our earlier data analysis (Blog Post 4), we examined the relationship between the dependent variable ISPr and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We did this by making predictions with 7 regression models (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma) after shuffling and splitting the data with a 70-30 ratio for the train and test sets. By evaluating the AIC and fisher score, we selected the inverse gaussian glm as the best fit of all 7 models. Below we display our linear regression, logistic regression, and inverse gaussian regression.<br />
+<br>
+One main limitation is that we naively selected one feature, a linear combination of variables on notable alumni with high research and publications, for modelling. Below in the Feature Extraction section, we remedy this problem by experimenting on all predictor variables to select the most promising features to be learned.<br />
+<br>
+Another main limitation is that we have missing and incorrect data over 300 observations. In particular, we had issues with variables city, state, city_population, city_population_density. We resolved this by imputing the missing values and manually correcting by using US Census and universities’ published data as discussed in our Data Page.</p>
 </div>
-<div id="current-data-analysis" class="section level2">
-<h2>Current Data Analysis</h2>
-<p>In our following analysis, we address the limitation of the previous analysis through feature extraction. Since we are solving a regression problem, our output is a continuous variable. After more data cleaning, we have a total of 35 independent variables concerning every observed college. They are split into 22 continuous variables and 15 categorical variables. To explore continuous variables’ pairwise correlations with the target variables, we have used a correlation matrix.</p>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>The correlation matrix helps find high positive or negative correlations, and we select numerical features that have an absolute value of correlation coefficient greater than 0.4 with respect to ISPo and ISPr.
-For ISPo, the relevant numerical features are international_students_opendoors, enrollment_top120enrollment, city_population, international_students_qs, international_students_natlib, and city_population_density.
-For ISPr, the relevant numerical features are city_population_density and faculty_count_qs.</p>
+<div id="feature-extraction" class="section level2">
+<h2>Feature Extraction</h2>
+<p>We extract the most significant independent variables to improve model performance using two methods:
+correlation matrix for continuous predictors and logistic regression for categorical predictors.<br />
+<br>
+Since we are solving a regression problem, our output is a continuous variable. After data cleaning, we have 35 independent variables concerning every observed college. They are split into 20 continuous variables and 15 categorical variables.</p>
+<div id="continuous-predictors" class="section level3">
+<h3>Continuous Predictors</h3>
+<p>To explore continuous variables’ correlations with the target variables, we have used a correlation matrix.
+<img src="/analysis_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+We identified pairs of variables with high positive or negative correlations and selected numerical features that have an absolute value of correlation coefficient greater than 0.4 with respect to ISPo and ISPr.</p>
+<div id="for-ispo-the-relevant-numerical-features-are" class="section level4">
+<h4>For ISPo, the relevant numerical features are:</h4>
+<ol style="list-style-type: decimal">
+<li>international_students_opendoors,<br />
+</li>
+<li>enrollment_top120enrollment,<br />
+</li>
+<li>city_population,<br />
+</li>
+<li>international_students_qs,<br />
+</li>
+<li>international_students_natlib,<br />
+</li>
+<li>city_population_density</li>
+</ol>
 </div>
-<div id="feature-extraction-in-progress" class="section level2">
-<h2>Feature Extraction (In Progress)</h2>
-<p>We have found that computing the correlation between categorical and continuous variables is a bit tedious; since the categorical variables are not binary, we cannot apply point-biserial correlation. We have identified a few potential methods to work around such as numerical encoding from categorical to numerical, logistic regression, and the x2y metric. We are currently using logistic regression to compare the pairwise correlations. We understand this approach assumes a linear relationship between the predictor and the logit of the outcome.</p>
-<p>The 15 categorical variables are “university”, “city”, “state”, “selectivity”, “world_rank_cat_arwu”, “world_rank_qs”, “national_rank_arwu”, “type1_all”, “type2_carnegie”, “type3_natlib”, “type4_carnegie”, “enrprofile2021_carnegie”, “locale_carnegie”, “size_qs”, and “research_output_qs”.</p>
-<p>We remove the university variable because it is unique for all observations. Similarly, because we have limited data in general for cities and states, they are not reliable predictors and introduce unnecessary noise. Thus, we are in the process of numerically encoding the variables: selectivity, size_qs, research_output_qs, type1_all, type2_carnegie, and locale_carnegie.</p>
-<p><em>Tentatively</em>, we will use the following numerical features out of 35 dependent variables:
-enrollment_top120enrollment,<br />
-city_population,<br />
-City_population_density</p>
-<p>The following modeling section exclusively addresses our current data analysis.</p>
+<div id="for-ispr-the-relevant-numerical-features-are" class="section level4">
+<h4>For ISPr, the relevant numerical features are:</h4>
+<ol style="list-style-type: decimal">
+<li>city_population_density<br />
+</li>
+<li>faculty_count_qs</li>
+</ol>
+</div>
+</div>
+<div id="categorical-predictors" class="section level3">
+<h3>Categorical Predictors</h3>
+<p><b>Note</b>: Before using logistic regression, we omit variable “university” because it is unique for all observations.<br />
+<br>
+We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric.</p>
+<pre class="r"><code>suppressWarnings({
+prev_data &lt;- read.csv(here::here(&quot;dataset/prev_data.csv&quot;))
+
+glm_model_city &lt;- glm(international_students_natlib~city, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_city)
+#AIC: 425.04
+glm_model_state &lt;- glm(international_students_natlib~state, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_state)
+#AIC: 130.42
+#type3_natlib is not effective
+glm_model_selectivity &lt;- glm(international_students_natlib~selectivity, data=prev_data, family =binomial(), na.action=na.omit )
+summary(glm_model_selectivity)
+#AIC: 34.986
+# world_rank_qs, national_rank_arwu, type1_all,  is not effective
+glm_model_world_rank_cat_arwu &lt;- glm(international_students_natlib~world_rank_cat_arwu, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_world_rank_cat_arwu)
+#AIC: 29.971
+#No pairs perform better
+glm_model_world_rank_qs &lt;- glm(international_students_natlib~world_rank_qs, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_world_rank_qs)
+#AIC: 43.828
+#type2_carnegie, type4_carnegie, enrprofile2021_carnegie, locale_carnegie does well
+glm_model_national_rank_arwu &lt;- glm(international_students_natlib~national_rank_arwu, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_national_rank_arwu)
+#AIC: 84.028
+#type2_carnegie, enrprofile2021_carnegie, locale_carnegie does well
+glm_model_type1_all &lt;- glm(international_students_natlib~type1_all, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type1_all)
+#AIC: 49.552
+# enrprofile2021_carnegie, locale_carnegie,research_output_qs does well
+glm_model_type2_carnegie &lt;- glm(international_students_natlib~type2_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type2_carnegie)
+#AIC: 46.749
+#size_qs, research_output_qs does well
+glm_model_type3_natlib &lt;- glm(international_students_natlib~type3_natlib, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type3_natlib)
+#AIC:  52.316
+#type4_carnegie, enrprofile2021_carnegie, locale_carnegie, size_qs, research_output_qs does well
+glm_model_type4_carnegie&lt;- glm(international_students_natlib~type4_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type4_carnegie)
+# AIC: 48.755
+#size_qs, research_output_qs does well
+glm_model_enrprofile2021_carnegie&lt;- glm(international_students_natlib~enrprofile2021_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_enrprofile2021_carnegie)
+#AIC: 46.748
+#size_qs, research_output_qs does well
+glm_model_locale_carnegie&lt;- glm(international_students_natlib~locale_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_locale_carnegie)
+#AIC: 46.74
+#size_qs, research_output_qs improves
+glm_model_size_qs&lt;- glm(international_students_natlib~size_qs+research_output_qs, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_size_qs)
+#AIC: 28.158
+#research_output_qs does not improve
+glm_model_research_output_qs&lt;- glm(international_students_natlib~research_output_qs, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_research_output_qs)
+#AIC: 24.169
+glm_model_city_max &lt;- glm(as.factor(international_students_max)~city+type1_all, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_city_max)
+#AIC: 491.05
+#All pairs  are good
+glm_model_state_max &lt;- glm(as.factor(international_students_max)~state, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_state_max)
+#AIC: 100.9
+#world_rank_cat_arwu, national_rank_arwu, type1_all is not effective
+glm_model_selectivity_max &lt;- glm(as.factor(international_students_max)~selectivity, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_selectivity_max)
+#AIC: 17.844
+# type3_natlib, locale_carnegie, research_output_qs is effective
+glm_model_world_rank_cat_arwu_max &lt;- glm(as.factor(international_students_max)~world_rank_cat_arwu, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_world_rank_cat_arwu_max)
+#AIC:22.279
+#type4_carnegie perform better
+glm_model_world_rank_qs_max &lt;- glm(as.factor(international_students_max)~world_rank_qs, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_world_rank_qs_max)
+#AIC: 32.477
+#type3_natlib, enrprofile2021_carnegie,  does well
+glm_model_national_rank_arwu_max &lt;- glm(as.factor(international_students_max)~national_rank_arwu, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_national_rank_arwu_max)
+#AIC: 84.279
+#type2_carnegie, type4_carnegie, enrprofile2021_carnegie,  locale_carnegie,  does well
+glm_model_type1_all_max &lt;- glm(as.factor(international_students_max)~type1_all, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type1_all_max)
+#AIC: 17.922
+# type3_natlib, size_qs, research_output_qs does well
+glm_model_type2_carnegie_max &lt;- glm(as.factor(international_students_max)~type2_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type2_carnegie_max)
+#AIC: 17.922
+#type3_natlib, research_output_qs does well
+glm_model_type3_natlib_max &lt;- glm(as.factor(international_students_max)~type3_natlib, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type3_natlib_max)
+#AIC: 12.835
+# size_qs, research_output_qs does well
+glm_model_type4_carnegie_max&lt;- glm(as.factor(international_students_max)~type4_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_type4_carnegie_max)
+# AIC: 17.941
+# research_output_qs does well
+glm_model_enrprofile2021_carnegie_max&lt;- glm(as.factor(international_students_max)~enrprofile2021_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_enrprofile2021_carnegie_max)
+#AIC: 17.773
+#size_qs, research_output_qs does well
+glm_model_locale_carnegie_max&lt;- glm(as.factor(international_students_max)~locale_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_locale_carnegie_max)
+#AIC: 18.067
+glm_model_size_qs_max&lt;- glm(as.factor(international_students_max)~size_qs, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_size_qs_max)
+#AIC: 17.301
+#research_output_qs does not improve
+glm_model_research_output_qs_max&lt;- glm(as.factor(international_students_max)~research_output_qs, data=prev_data, family = binomial(), na.action=na.omit )
+summary(glm_model_research_output_qs_max)
+#AIC: 16.015
+#______
+ })
+## 
+## Call:
+## glm(formula = as.factor(international_students_max) ~ research_output_qs, 
+##     family = binomial(), data = prev_data, na.action = na.omit)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -3.1656   0.1157   0.1157   0.1157   0.1157  
+## 
+## Coefficients:
+##                             Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)                    20.57    3412.21   0.006    0.995
+## research_output_qsVery High   -15.56    3412.21  -0.005    0.996
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 12.347  on 176  degrees of freedom
+## Residual deviance: 12.015  on 175  degrees of freedom
+##   (264 observations deleted due to missingness)
+## AIC: 16.015
+## 
+## Number of Fisher Scoring iterations: 19</code></pre>
+<div id="for-ispr-the-relevant-categorical-features-are" class="section level4">
+<h4>For ISPr, the relevant categorical features are:</h4>
+<ol style="list-style-type: decimal">
+<li>research_output_qs<br />
+</li>
+<li>size_qs<br />
+</li>
+<li>locale_carnegie<br />
+</li>
+<li>enrprofile2021_carnegie<br />
+</li>
+<li>type2_carnegie<br />
+</li>
+<li>type4_carnegie</li>
+<li>world_rank_cat_arwu<br />
+</li>
+<li>selectivity<br />
+</li>
+<li>state</li>
+</ol>
+</div>
+<div id="for-ispo-the-relevant-categorical-features-are" class="section level4">
+<h4>For ISPo, the relevant categorical features are:</h4>
+<ol style="list-style-type: decimal">
+<li>research_output_qs<br />
+</li>
+<li>size_qs<br />
+</li>
+<li>type3_natlib<br />
+</li>
+<li>type4_carnegie<br />
+</li>
+<li>state<br />
+</li>
+<li>selectivity<br />
+</li>
+<li>world_rank_cat_arwu</li>
+</ol>
+</div>
+</div>
+<div id="finalized-features" class="section level3">
+<h3>Finalized Features</h3>
+<p>Since our data is sparse, if we select certain variables for our predictors, then many college observations are dropped. Thereby, for predicting both international student population and proportion, out of our initial 35 dependent variables, we select the features:<br />
+1. city_population<br />
+2. city_population_density<br />
+3. selectivity<br />
+4. size_qs<br />
+5. research_output_qs</p>
+<div id="the-following-modeling-section-exclusively-addresses-our-data-analysis." class="section level4">
+<h4>The following modeling section exclusively addresses our data analysis.</h4>
+</div>
+</div>
 </div>
 <div id="modeling" class="section level2">
 <h2>Modeling</h2>
-<p>Linear Regression has a mean absolute error of <em>0.02577159</em>
+<div id="initial-modeling" class="section level3">
+<h3>Initial Modeling</h3>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-3-2.png" width="672" />
+Linear Regression has a mean absolute error of <em>0.02577159</em>
 and Logistic Regression has a mean absolute error of <em>0.02558677</em></p>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+</div>
+<div id="finalized-modeling" class="section level3">
+<h3>Finalized Modeling</h3>
+</div>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
@@ -65,7 +284,7 @@ and Logistic Regression has a mean absolute error of <em>0.02558677</em></p>
 <h1>Flaws and limitations</h1>
 <div id="limitation-1." class="section level3">
 <h3>Limitation 1.</h3>
-<p>One of the main limitations is that for our models we don’t introduce any categorical variables. We address this in the Feature Extraction (In Progress) section.
+<p>One of the main limitations is that for our models we don’t introduce any categorical variables. We address this in the Feature Extraction section.
 Alternatively, we are interested in leveraging the regsubsets subroutine in the leaps library to compare modeling with different variables, which provides performance criteria such as Adjusted R2 score, Bayesian Information Criterion, Mallow’s Cp.</p>
 </div>
 <div id="limitation-2." class="section level3">
