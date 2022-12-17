@@ -268,12 +268,291 @@ summary(glm_model_research_output_qs_max)
 <h2>Modeling</h2>
 <div id="initial-modeling" class="section level3">
 <h3>Initial Modeling</h3>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-3-2.png" width="672" />
-Linear Regression has a mean absolute error of <em>0.02577159</em>
-and Logistic Regression has a mean absolute error of <em>0.02558677</em></p>
+<p>For our first iteration of modeling, we use the dataset with 35 independent variables and only consider models with numerically extracted features: faculty_count_qs, city_population, city_population_density.
+To obtain our train and test datasets, we have performed an <b>70-30 random shuffle-split</b>. We have 53 examples in the train set and 23 examples in test set. Then, we model ISPo with linear and logistic regression.</p>
+<pre class="r"><code>suppressWarnings({
+clean_data &lt;- read.csv(here::here(&quot;dataset/prev_data.csv&quot;))
+processed_data &lt;- na.omit(data.frame(y = clean_data$international_students_natlib,
+                   x1 = clean_data$faculty_count_qs,
+                   x2= clean_data$city_population,
+                   x3= clean_data$city_population_density
+                   ) )
+set.seed(2022)
+split &lt;- sample.split(processed_data, SplitRatio = 0.7)
+dt = sort(sample(nrow(processed_data), nrow(processed_data)*.7))
+train&lt;-processed_data[dt,]
+test&lt;-processed_data[-dt,]
+})
+
+suppressWarnings({
+linear_model &lt;- lm(y~x1+x2+x3, data=train)
+summary(linear_model)
+
+linear_result&lt;- ggplot(test,aes(x1+x2+x3, y)) +
+  geom_point() +
+  geom_smooth(method = &#39;loess&#39;, formula = &#39;y ~ x&#39;, se=TRUE, color=&#39;turquoise4&#39;) +
+  theme_minimal() +
+  labs(x=&#39;Faculty count, city population and density factor (additive)&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Linear Regression Plot&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=20, face=&#39;bold&#39;)) 
+
+y_pred_linear_model &lt;- predict(linear_model, test, type=&quot;response&quot;)
+errors_linear_model &lt;- test$y - y_pred_linear_model
+mae_linear_model &lt;- mean(abs(na.omit(errors_linear_model)))
+#Only considers 23 observations
+})
+
+suppressWarnings({
+logistic_model &lt;- glm(y~x1+x2+x3, data=train, family = binomial()) #Logistic 1
+summary(logistic_model)
+
+y_predict_logit &lt;- data.frame(x1 = test$x1,x2 = test$x2, x3 = test$x3, y =predict(logistic_model, test, type = &quot;response&quot;))
+
+logit_result&lt;- ggplot(test, aes(x1+x2+x3, y)) + geom_point() + geom_smooth(data = y_predict_logit, method = &#39;loess&#39;, formula = &#39;y ~ x&#39;, se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
+  theme_minimal() +
+  labs(x=&#39;Faculty count, city population and density factor (additive)&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Logistic Regression&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=20, face=&#39;bold&#39;)) 
+logit_result
+
+y_pred_logistic_model &lt;- predict(logistic_model, test, type=&quot;response&quot;)
+errors_logistic_model &lt;- test$y - y_pred_logistic_model
+mae_logistic_model &lt;- mean(abs(na.omit(errors_logistic_model)))
+})
+#Only uses 23 observations to test
+linear_result</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>logit_result</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<pre class="r"><code>print(&quot;Mean Absolute Error of Linear Regression for ISPr:&quot;)
+## [1] &quot;Mean Absolute Error of Linear Regression for ISPr:&quot;
+mae_linear_model
+## [1] 0.03342281
+print(&quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;)
+## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;
+mae_logistic_model
+## [1] 0.03372792</code></pre>
+<p>While linear regression has a mean absolute error of <em>0.03342281</em> and logistic regression has a mean absolute error of <em>0.03372792</em> suggests the models have ‘low’ error, the modelling is not robust since the train and test set are small, only contains 53 and 23 observations, respectively. We are interested in experimenting with more test data and using a combination of continuous and categorical predictors for the final modeling.</p>
 </div>
 <div id="finalized-modeling" class="section level3">
 <h3>Finalized Modeling</h3>
+<p>To improve upon our last iteration of modeling, we have imputed city population and density data for all university observations, which enables more available training and test data. We also have selected highly-correlated predictors for this regression problem to improve model performance.<br />
+<br>
+To obtain our train and test datasets, we have performed an <b>80-20 random shuffle-split</b>. We have 352 examples in the train set and 89 examples in test set.<br />
+<br>
+Then using our pruned features, we model ISPo and ISPr with <b>logistic regression, stepwise linear regression with forward and backward selection, and inverse gaussian regression</b>.<br />
+<br>
+Below, we present the logistic regression and inverse gaussian regression models and model evaluations.</p>
+<pre class="r"><code>suppressWarnings({
+library(tidyverse)
+library(caTools)
+library(ggplot2)
+library(ggcorrplot)
+library(reshape2)
+  
+clean_data &lt;- read.csv(here::here(&quot;dataset/clean_data.csv&quot;))
+clean_data$city_population_density &lt;- as.integer(clean_data$city_population_density)
+
+set.seed(2022)
+split &lt;- sample.split(clean_data, SplitRatio = 0.8)
+dt = sort(sample(nrow(clean_data), nrow(clean_data)*.8))
+train&lt;-clean_data[dt,]
+test&lt;-clean_data[-dt,]
+
+logistic_ispr&lt;- glm(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=binomial(), na.action=na.omit)
+#summary(logistic_ispr)
+logistic_ispo&lt;- glm(as.factor(international_students_max)~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=binomial(), na.action=na.omit)
+#summary(logistic_ispo)
+igauss_ispr&lt;- glm(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=inverse.gaussian(), na.action=na.omit)
+#summary(igauss_ispr)
+igauss_ispo&lt;- glm(international_students_max~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=inverse.gaussian(), na.action=na.omit)
+#summary(igauss_ispo)
+
+extracted_test_ispr&lt;- select(test, city_population, city_population_density,selectivity,  size_qs, research_output_qs, international_students_natlib)
+extracted_test_ispo&lt;- select(test, city_population, city_population_density,selectivity,  size_qs, research_output_qs, international_students_max)
+
+y_pred_logit_ispr &lt;- data.frame(city_population= extracted_test_ispr$city_population,city_population_density = extracted_test_ispr$city_population_density,selectivity = extracted_test_ispr$selectivity,size_qs=extracted_test_ispr$size_qs,research_output_qs=extracted_test_ispr$research_output_qs, y =predict(logistic_ispr, extracted_test_ispr, type = &quot;response&quot;))
+y_pred_logit_ispo &lt;- data.frame(city_population= extracted_test_ispo$city_population,city_population_density = extracted_test_ispo$city_population_density,selectivity = extracted_test_ispo$selectivity,size_qs=extracted_test_ispo$size_qs,research_output_qs=extracted_test_ispo$research_output_qs, y =predict(logistic_ispo, extracted_test_ispo, type = &quot;response&quot;))
+y_pred_igauss_ispr &lt;- data.frame(city_population= extracted_test_ispr$city_population,city_population_density = extracted_test_ispr$city_population_density,selectivity = extracted_test_ispr$selectivity,size_qs=extracted_test_ispr$size_qs,research_output_qs=extracted_test_ispr$research_output_qs, y =predict(igauss_ispr, extracted_test_ispr, type = &quot;response&quot;))
+y_pred_igauss_ispo &lt;- data.frame(city_population= extracted_test_ispo$city_population,city_population_density = extracted_test_ispo$city_population_density,selectivity = extracted_test_ispo$selectivity,size_qs=extracted_test_ispo$size_qs,research_output_qs=extracted_test_ispo$research_output_qs, y =predict(igauss_ispo, extracted_test_ispo, type = &quot;response&quot;))
+
+#International Student Proportion; Logistic Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+logit_result_ispr&lt;- ggplot(extracted_test_ispr, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispr$international_students_natlib)) + geom_point() + geom_smooth(data = y_pred_logit_ispr,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
+  theme_minimal() +
+  labs(x=&#39;Predictors&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Logistic Regression for International Student Proportion&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
+#logit_result_ispr
+
+errors_logit_ispr &lt;- extracted_test_ispr$international_students_natlib - y_pred_logit_ispr$y
+mae_logit_ispr &lt;- mean(abs(na.omit(errors_logit_ispr)))
+
+#International Student Population; Logistic Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+logit_result_ispo&lt;- ggplot(extracted_test_ispo, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispo$international_students_max)) + geom_point() + geom_smooth(data = y_pred_logit_ispo,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
+  theme_minimal() +
+  labs(x=&#39;Predictors&#39;, y=&#39;Population&#39;, title=&#39;Logistic Regression for International Student Population&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
+#logit_result_ispo
+
+errors_logit_ispo &lt;- extracted_test_ispo$international_students_max - y_pred_logit_ispo$y
+mae_logit_ispo &lt;- mean(abs(na.omit(errors_logit_ispo)))
+
+#International Student Proportion; Inverse Gaussian Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+igauss_result_ispr&lt;- ggplot(extracted_test_ispr, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispr$international_students_natlib)) + geom_point() + geom_smooth(data = y_pred_igauss_ispr,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
+  theme_minimal() +
+  labs(x=&#39;Predictors&#39;, y=&#39;Population&#39;, title=&#39;Inverse Gaussian Regression for International Student Proportion&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
+#logit_result_ispo
+
+errors_igauss_ispr &lt;- extracted_test_ispr$international_students_natlib - y_pred_igauss_ispr$y
+mae_igauss_ispr &lt;- mean(abs(na.omit(errors_igauss_ispr)))
+
+#International Student Population; Inverse Gaussian Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+igauss_result_ispo&lt;- ggplot(extracted_test_ispo, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispo$international_students_max)) + geom_point() + geom_smooth(data = y_pred_igauss_ispo,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
+  theme_minimal() +
+  labs(x=&#39;Predictors&#39;, y=&#39;Population&#39;, title=&#39;Logistic Regression for International Student Population&#39;) +
+  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
+#logit_result_ispo
+
+errors_igauss_ispo &lt;- extracted_test_ispo$international_students_max - y_pred_igauss_ispo$y
+mae_igauss_ispo &lt;- mean(abs(na.omit(errors_igauss_ispo)))
+})
+logit_result_ispr
+## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>igauss_result_ispo
+## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<pre class="r"><code>
+print(&quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;)
+## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;
+print(mae_logit_ispr)
+## [1] 0.05272577
+print(&quot;Mean Absolute Error of Logistic Regression for ISPo:&quot;)
+## [1] &quot;Mean Absolute Error of Logistic Regression for ISPo:&quot;
+print(mae_logit_ispo)
+## [1] 4755.231
+print(&quot;Mean Absolute Error of Inverse Gaussian Regression for ISPr:&quot;)
+## [1] &quot;Mean Absolute Error of Inverse Gaussian Regression for ISPr:&quot;
+print(mae_igauss_ispr)
+## [1] 0.06059221
+print(&quot;Mean Absolute Error of Inverse Gaussian Regression for ISPo:&quot;)
+## [1] &quot;Mean Absolute Error of Inverse Gaussian Regression for ISPo:&quot;
+print(mae_igauss_ispo)
+## [1] 1898.074</code></pre>
+<div id="stepwise-linear-regression-models" class="section level4">
+<h4>Stepwise linear regression models:</h4>
+<pre><code>## 
+## Call:
+## lm(formula = international_students_natlib ~ city_population + 
+##     city_population_density + selectivity + size_qs + research_output_qs, 
+##     data = train)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.081879 -0.012494 -0.002227  0.018781  0.094264 
+## 
+## Coefficients:
+##                                      Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)                         1.511e-02  3.140e-02   0.481   0.6334  
+## city_population                     7.923e-09  4.820e-09   1.644   0.1095  
+## city_population_density             1.906e-06  1.543e-06   1.235   0.2253  
+## selectivityhighly competitive plus  4.676e-02  2.510e-02   1.863   0.0711 .
+## selectivitymost competitive         1.156e-02  2.029e-02   0.570   0.5725  
+## selectivityvery competitive plus    9.396e-03  2.894e-02   0.325   0.7474  
+## size_qsM                            6.111e-04  1.394e-02   0.044   0.9653  
+## size_qsS                           -2.111e-02  2.577e-02  -0.819   0.4183  
+## size_qsXL                          -4.456e-02  2.192e-02  -2.033   0.0499 *
+## research_output_qsVery High         6.852e-02  2.512e-02   2.727   0.0100 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.03753 on 34 degrees of freedom
+##   (308 observations deleted due to missingness)
+## Multiple R-squared:  0.5279, Adjusted R-squared:  0.403 
+## F-statistic: 4.225 on 9 and 34 DF,  p-value: 0.000983</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = international_students_natlib ~ city_population + 
+##     city_population_density + selectivity + size_qs + research_output_qs, 
+##     data = train)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.081879 -0.012494 -0.002227  0.018781  0.094264 
+## 
+## Coefficients:
+##                                      Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)                         1.511e-02  3.140e-02   0.481   0.6334  
+## city_population                     7.923e-09  4.820e-09   1.644   0.1095  
+## city_population_density             1.906e-06  1.543e-06   1.235   0.2253  
+## selectivityhighly competitive plus  4.676e-02  2.510e-02   1.863   0.0711 .
+## selectivitymost competitive         1.156e-02  2.029e-02   0.570   0.5725  
+## selectivityvery competitive plus    9.396e-03  2.894e-02   0.325   0.7474  
+## size_qsM                            6.111e-04  1.394e-02   0.044   0.9653  
+## size_qsS                           -2.111e-02  2.577e-02  -0.819   0.4183  
+## size_qsXL                          -4.456e-02  2.192e-02  -2.033   0.0499 *
+## research_output_qsVery High         6.852e-02  2.512e-02   2.727   0.0100 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.03753 on 34 degrees of freedom
+##   (308 observations deleted due to missingness)
+## Multiple R-squared:  0.5279, Adjusted R-squared:  0.403 
+## F-statistic: 4.225 on 9 and 34 DF,  p-value: 0.000983</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = international_students_max ~ city_population_density + 
+##     size_qs + research_output_qs, data = train)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4958.8 -1368.3  -166.5   865.5  9032.6 
+## 
+## Coefficients:
+##                               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                  3.963e+02  5.842e+02   0.678  0.49871    
+## city_population_density      1.345e-01  2.909e-02   4.625 8.63e-06 ***
+## size_qsM                    -1.539e+03  5.110e+02  -3.013  0.00309 ** 
+## size_qsS                    -2.842e+03  1.093e+03  -2.600  0.01037 *  
+## size_qsXL                    2.544e+03  4.874e+02   5.220 6.54e-07 ***
+## research_output_qsVery High  1.878e+03  5.628e+02   3.337  0.00109 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2350 on 136 degrees of freedom
+##   (210 observations deleted due to missingness)
+## Multiple R-squared:  0.3907, Adjusted R-squared:  0.3683 
+## F-statistic: 17.44 on 5 and 136 DF,  p-value: 2.557e-13</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = international_students_max ~ city_population_density + 
+##     size_qs + research_output_qs, data = train)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4958.8 -1368.3  -166.5   865.5  9032.6 
+## 
+## Coefficients:
+##                               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                  3.963e+02  5.842e+02   0.678  0.49871    
+## city_population_density      1.345e-01  2.909e-02   4.625 8.63e-06 ***
+## size_qsM                    -1.539e+03  5.110e+02  -3.013  0.00309 ** 
+## size_qsS                    -2.842e+03  1.093e+03  -2.600  0.01037 *  
+## size_qsXL                    2.544e+03  4.874e+02   5.220 6.54e-07 ***
+## research_output_qsVery High  1.878e+03  5.628e+02   3.337  0.00109 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2350 on 136 degrees of freedom
+##   (210 observations deleted due to missingness)
+## Multiple R-squared:  0.3907, Adjusted R-squared:  0.3683 
+## F-statistic: 17.44 on 5 and 136 DF,  p-value: 2.557e-13</code></pre>
+<p>For evaluating stepwise linear regression, we are interested in finding models with the high adjusted R2 Score, low Bayesian Information Criterion, and low Mallow’s Cp.<br />
+<br>
+Notice that for ISPr, the best models from forward and backward are identical and the best predictors are city_population,city_population_density,selectivity,size_qs, and research_output_qs.<br />
+<br>
+Similarly, for ISPo, the best models from forward and backward are identical and the predictors are city_population_density, size_qs, and research_output_qs.<br />
+<br>
+We also see that the p-value scores are low for all models, which implies the predictors are statistically significant and are good indicators of prediction. Thus, we reject the null hypothesis and claim that we have identified good indicators of prediction of international student proportion and population.</p>
+</div>
 </div>
 </div>
 <div id="conclusion" class="section level2">

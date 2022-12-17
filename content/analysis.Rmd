@@ -255,16 +255,18 @@ Since our data is sparse, if we select certain variables for our predictors, the
 
 ### Initial Modeling
 
-```{r echo = FALSE, warning = FALSE}
-suppressWarnings({
-  clean_data <- read.csv(here::here("dataset/prev_data.csv"))
+For our first iteration of modeling, we use the dataset with 35 independent variables and only consider models with numerically extracted features: faculty_count_qs, city_population, city_population_density.
+To obtain our train and test datasets, we have performed an <b>70-30 random shuffle-split</b>. We have 53 examples in the train set and 23 examples in test set. Then, we model ISPo with linear and logistic regression. 
 
+```{r echo = TRUE, collapse= TRUE, warning = FALSE}
+suppressWarnings({
+clean_data <- read.csv(here::here("dataset/prev_data.csv"))
 processed_data <- na.omit(data.frame(y = clean_data$international_students_natlib,
                    x1 = clean_data$faculty_count_qs,
                    x2= clean_data$city_population,
                    x3= clean_data$city_population_density
                    ) )
-
+set.seed(2022)
 split <- sample.split(processed_data, SplitRatio = 0.7)
 dt = sort(sample(nrow(processed_data), nrow(processed_data)*.7))
 train<-processed_data[dt,]
@@ -275,14 +277,17 @@ suppressWarnings({
 linear_model <- lm(y~x1+x2+x3, data=train)
 summary(linear_model)
 
-
-ggplot(test,aes(x1+x2+x3, y)) +
+linear_result<- ggplot(test,aes(x1+x2+x3, y)) +
   geom_point() +
   geom_smooth(method = 'loess', formula = 'y ~ x', se=TRUE, color='turquoise4') +
   theme_minimal() +
   labs(x='Faculty count, city population and density factor (additive)', y='International Student Proportions', title='Linear Regression Plot') +
   theme(plot.title = element_text(hjust=0.5, size=20, face='bold')) 
 
+y_pred_linear_model <- predict(linear_model, test, type="response")
+errors_linear_model <- test$y - y_pred_linear_model
+mae_linear_model <- mean(abs(na.omit(errors_linear_model)))
+#Only considers 23 observations
 })
 
 suppressWarnings({
@@ -296,15 +301,221 @@ logit_result<- ggplot(test, aes(x1+x2+x3, y)) + geom_point() + geom_smooth(data 
   labs(x='Faculty count, city population and density factor (additive)', y='International Student Proportions', title='Logistic Regression') +
   theme(plot.title = element_text(hjust=0.5, size=20, face='bold')) 
 logit_result
+
+y_pred_logistic_model <- predict(logistic_model, test, type="response")
+errors_logistic_model <- test$y - y_pred_logistic_model
+mae_logistic_model <- mean(abs(na.omit(errors_logistic_model)))
 })
+#Only uses 23 observations to test
+linear_result
+logit_result
+print("Mean Absolute Error of Linear Regression for ISPr:")
+mae_linear_model
+print("Mean Absolute Error of Logistic Regression for ISPr:")
+mae_logistic_model
 ```
-Linear Regression has a mean absolute error of *0.02577159*
-and Logistic Regression has a mean absolute error of  *0.02558677*
+While linear regression has a mean absolute error of *0.03342281* and logistic regression has a mean absolute error of  *0.03372792* suggests the models have 'low' error, the modelling is not robust since the train and test set are small, only contains 53 and 23 observations, respectively. We are interested in experimenting with more test data and using a combination of continuous and categorical predictors for the final modeling. 
 
 ### Finalized Modeling
-```{r echo = FALSE, warning = FALSE}
 
+To improve upon our last iteration of modeling, we have imputed city population and density data for all university observations, which enables more available training and test data. We also have selected highly-correlated predictors for this regression problem to improve model performance.    
+<br>
+To obtain our train and test datasets, we have performed an <b>80-20 random shuffle-split</b>. We have 352 examples in the train set and 89 examples in test set.    
+<br>
+Then using our pruned features, we model ISPo and ISPr with <b>logistic regression, stepwise linear regression with forward and backward selection, and inverse gaussian regression</b>.   
+<br>
+Below, we present the logistic regression and inverse gaussian regression models and model evaluations.   
+```{r echo = TRUE, collapse= TRUE, warning = FALSE}
+suppressWarnings({
+library(tidyverse)
+library(caTools)
+library(ggplot2)
+library(ggcorrplot)
+library(reshape2)
+  
+clean_data <- read.csv(here::here("dataset/clean_data.csv"))
+clean_data$city_population_density <- as.integer(clean_data$city_population_density)
+
+set.seed(2022)
+split <- sample.split(clean_data, SplitRatio = 0.8)
+dt = sort(sample(nrow(clean_data), nrow(clean_data)*.8))
+train<-clean_data[dt,]
+test<-clean_data[-dt,]
+
+logistic_ispr<- glm(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=binomial(), na.action=na.omit)
+#summary(logistic_ispr)
+logistic_ispo<- glm(as.factor(international_students_max)~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=binomial(), na.action=na.omit)
+#summary(logistic_ispo)
+igauss_ispr<- glm(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=inverse.gaussian(), na.action=na.omit)
+#summary(igauss_ispr)
+igauss_ispo<- glm(international_students_max~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=inverse.gaussian(), na.action=na.omit)
+#summary(igauss_ispo)
+
+extracted_test_ispr<- select(test, city_population, city_population_density,selectivity,  size_qs, research_output_qs, international_students_natlib)
+extracted_test_ispo<- select(test, city_population, city_population_density,selectivity,  size_qs, research_output_qs, international_students_max)
+
+y_pred_logit_ispr <- data.frame(city_population= extracted_test_ispr$city_population,city_population_density = extracted_test_ispr$city_population_density,selectivity = extracted_test_ispr$selectivity,size_qs=extracted_test_ispr$size_qs,research_output_qs=extracted_test_ispr$research_output_qs, y =predict(logistic_ispr, extracted_test_ispr, type = "response"))
+y_pred_logit_ispo <- data.frame(city_population= extracted_test_ispo$city_population,city_population_density = extracted_test_ispo$city_population_density,selectivity = extracted_test_ispo$selectivity,size_qs=extracted_test_ispo$size_qs,research_output_qs=extracted_test_ispo$research_output_qs, y =predict(logistic_ispo, extracted_test_ispo, type = "response"))
+y_pred_igauss_ispr <- data.frame(city_population= extracted_test_ispr$city_population,city_population_density = extracted_test_ispr$city_population_density,selectivity = extracted_test_ispr$selectivity,size_qs=extracted_test_ispr$size_qs,research_output_qs=extracted_test_ispr$research_output_qs, y =predict(igauss_ispr, extracted_test_ispr, type = "response"))
+y_pred_igauss_ispo <- data.frame(city_population= extracted_test_ispo$city_population,city_population_density = extracted_test_ispo$city_population_density,selectivity = extracted_test_ispo$selectivity,size_qs=extracted_test_ispo$size_qs,research_output_qs=extracted_test_ispo$research_output_qs, y =predict(igauss_ispo, extracted_test_ispo, type = "response"))
+
+#International Student Proportion; Logistic Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+logit_result_ispr<- ggplot(extracted_test_ispr, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispr$international_students_natlib)) + geom_point() + geom_smooth(data = y_pred_logit_ispr,  se=FALSE, color='red4', alpha = 0.1)+
+  theme_minimal() +
+  labs(x='Predictors', y='International Student Proportions', title='Logistic Regression for International Student Proportion') +
+  theme(plot.title = element_text(hjust=0.5, size=10, face='bold')) 
+#logit_result_ispr
+
+errors_logit_ispr <- extracted_test_ispr$international_students_natlib - y_pred_logit_ispr$y
+mae_logit_ispr <- mean(abs(na.omit(errors_logit_ispr)))
+
+#International Student Population; Logistic Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+logit_result_ispo<- ggplot(extracted_test_ispo, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispo$international_students_max)) + geom_point() + geom_smooth(data = y_pred_logit_ispo,  se=FALSE, color='red4', alpha = 0.1)+
+  theme_minimal() +
+  labs(x='Predictors', y='Population', title='Logistic Regression for International Student Population') +
+  theme(plot.title = element_text(hjust=0.5, size=10, face='bold')) 
+#logit_result_ispo
+
+errors_logit_ispo <- extracted_test_ispo$international_students_max - y_pred_logit_ispo$y
+mae_logit_ispo <- mean(abs(na.omit(errors_logit_ispo)))
+
+#International Student Proportion; Inverse Gaussian Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+igauss_result_ispr<- ggplot(extracted_test_ispr, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispr$international_students_natlib)) + geom_point() + geom_smooth(data = y_pred_igauss_ispr,  se=FALSE, color='red4', alpha = 0.1)+
+  theme_minimal() +
+  labs(x='Predictors', y='Population', title='Inverse Gaussian Regression for International Student Proportion') +
+  theme(plot.title = element_text(hjust=0.5, size=10, face='bold')) 
+#logit_result_ispo
+
+errors_igauss_ispr <- extracted_test_ispr$international_students_natlib - y_pred_igauss_ispr$y
+mae_igauss_ispr <- mean(abs(na.omit(errors_igauss_ispr)))
+
+#International Student Population; Inverse Gaussian Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
+igauss_result_ispo<- ggplot(extracted_test_ispo, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispo$international_students_max)) + geom_point() + geom_smooth(data = y_pred_igauss_ispo,  se=FALSE, color='red4', alpha = 0.1)+
+  theme_minimal() +
+  labs(x='Predictors', y='Population', title='Logistic Regression for International Student Population') +
+  theme(plot.title = element_text(hjust=0.5, size=10, face='bold')) 
+#logit_result_ispo
+
+errors_igauss_ispo <- extracted_test_ispo$international_students_max - y_pred_igauss_ispo$y
+mae_igauss_ispo <- mean(abs(na.omit(errors_igauss_ispo)))
+})
+logit_result_ispr
+igauss_result_ispo
+
+print("Mean Absolute Error of Logistic Regression for ISPr:")
+print(mae_logit_ispr)
+print("Mean Absolute Error of Logistic Regression for ISPo:")
+print(mae_logit_ispo)
+print("Mean Absolute Error of Inverse Gaussian Regression for ISPr:")
+print(mae_igauss_ispr)
+print("Mean Absolute Error of Inverse Gaussian Regression for ISPo:")
+print(mae_igauss_ispo)
 ```
+
+#### Stepwise linear regression models:   
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+#Stepwise regressions
+#install.packages("leaps")
+suppressWarnings({ 
+library("leaps")
+max_vars_ispr_forward <- 5
+max_vars_ispr_backward <- 5
+max_vars_ispo_forward <- 5
+max_vars_ispo_backward <- 5
+#Populating stepwise regression models for international student population and 
+#proportion using forward and backward selection, respectively. 
+
+#Notice that for the sake of minimizing loss of data from NA values, 
+#we only include the variables that we believe are the best predictors
+#city_population,city_population_density,selectivity+size_qs,research_output_qs.
+stepwise_lms_ispr_forward <- regsubsets(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, data=train, nvmax=max_vars_ispr_forward,method=c("forward"))
+stepwise_lms_ispr_backward <- regsubsets(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, data=train, nvmax=max_vars_ispr_backward,method=c("backward"))
+stepwise_lms_ispo_forward <- regsubsets(international_students_max~city_population+city_population_density+selectivity+size_qs+research_output_qs, data=train, nvmax=max_vars_ispo_forward,method=c("forward"))
+stepwise_lms_ispo_backward <- regsubsets(international_students_max~city_population+city_population_density+selectivity+size_qs+research_output_qs, data=train, nvmax=max_vars_ispo_backward,method=c("backward"))
+
+#Stepwise regression, international student proportion, with forward selection
+sum_lms_ispr_forward <- summary(stepwise_lms_ispr_forward)
+data.frame(
+  Adj.R2 = sum_lms_ispr_forward$adjr2,
+  CP = sum_lms_ispr_forward$cp,
+  BIC = sum_lms_ispr_forward$bic
+)
+a_ispr_forward <- which.max(sum_lms_ispr_forward$adjr2)
+colnames(sum_lms_ispr_forward$which)[sum_lms_ispr_forward$which[a_ispr_forward,]]
+b_ispr_forward <- which.min(sum_lms_ispr_forward$cp)
+colnames(sum_lms_ispr_forward$which)[sum_lms_ispr_forward$which[b_ispr_forward,]]
+c_ispr_forward <- which.min(sum_lms_ispr_forward$cp)
+colnames(sum_lms_ispr_forward$which)[sum_lms_ispr_forward$which[c_ispr_forward,]]
+#Best model according to adjusted R2, BIC, Mallow's CP
+ispr_forward_best_lm<- lm(international_students_natlib ~ city_population+city_population_density+selectivity+size_qs+research_output_qs, train)
+
+#Stepwise regression, international student proportion, with backward selection
+sum_lms_ispr_backward <- summary(stepwise_lms_ispr_backward)
+data.frame(
+  Adj.R2 = sum_lms_ispr_backward$adjr2,
+  CP = sum_lms_ispr_backward$cp,
+  BIC = sum_lms_ispr_backward$bic
+)
+a_ispr_backward <- which.max(sum_lms_ispr_backward$adjr2)
+colnames(sum_lms_ispr_backward$which)[sum_lms_ispr_backward$which[a_ispr_backward,]]
+b_ispr_backward <- which.min(sum_lms_ispr_backward$cp)
+colnames(sum_lms_ispr_backward$which)[sum_lms_ispr_backward$which[b_ispr_backward,]]
+c_ispr_backward <- which.min(sum_lms_ispr_backward$cp)
+colnames(sum_lms_ispr_backward$which)[sum_lms_ispr_backward$which[c_ispr_backward,]]
+#Best model according to adjusted R2, BIC, Mallow's CP
+ispr_backward_best_lm<-lm(international_students_natlib ~ city_population+city_population_density+selectivity+size_qs+research_output_qs, train)
+
+#Stepwise regression, international student population, with forward selection
+sum_lms_ispo_forward <- summary(stepwise_lms_ispo_forward)
+data.frame(
+  Adj.R2 = sum_lms_ispo_forward$adjr2,
+  CP = sum_lms_ispo_forward$cp,
+  BIC = sum_lms_ispo_forward$bic
+)
+a_ispo_forward <- which.max(sum_lms_ispo_forward$adjr2)
+colnames(sum_lms_ispo_forward$which)[sum_lms_ispo_forward$which[a_ispo_forward,]]
+b_ispo_forward <- which.min(sum_lms_ispo_forward$cp)
+colnames(sum_lms_ispo_forward$which)[sum_lms_ispo_forward$which[b_ispo_forward,]]
+c_ispo_forward <- which.min(sum_lms_ispr_forward$cp)
+colnames(sum_lms_ispo_forward$which)[sum_lms_ispo_forward$which[c_ispo_forward,]]
+#Best model according to adjusted R2, BIC, Mallow's CP
+ispo_forward_best_lm<- lm(international_students_max ~ city_population_density+size_qs+research_output_qs, train)
+
+#Stepwise regression, international student population, with backward selection
+sum_lms_ispo_backward <- summary(stepwise_lms_ispo_backward)
+data.frame(
+  Adj.R2 = sum_lms_ispo_backward$adjr2,
+  CP = sum_lms_ispo_backward$cp,
+  BIC = sum_lms_ispo_backward$bic
+)
+a_ispo_backward <- which.max(sum_lms_ispo_backward$adjr2)
+colnames(sum_lms_ispo_backward$which)[sum_lms_ispo_backward$which[a_ispo_backward,]]
+b_ispo_backward <- which.min(sum_lms_ispo_backward$cp)
+colnames(sum_lms_ispo_backward$which)[sum_lms_ispo_backward$which[b_ispo_backward,]]
+c_ispo_backward <- which.min(sum_lms_ispo_backward$cp)
+colnames(sum_lms_ispo_backward$which)[sum_lms_ispo_backward$which[c_ispo_backward,]]
+#Best model according to adjusted R2, BIC, Mallow's CP
+ispo_backward_best_lm<- lm(international_students_max ~ city_population_density+size_qs+research_output_qs, train)
+})
+#Notice that for international student proportion, 
+#the best models from forward and backward are identical
+#and the predictors are city_population,city_population_density,selectivity,size_qs,research_output_qs.
+
+#Notice that for international student population, 
+#the best models from forward and backward are identical 
+#and the predictors are city_population_density, size_qs,research_output_qs.
+summary(ispr_forward_best_lm)
+summary(ispr_backward_best_lm)
+summary(ispo_forward_best_lm)
+summary(ispo_backward_best_lm)
+```
+For evaluating stepwise linear regression, we are interested in finding models with the high adjusted R2 Score, low Bayesian Information Criterion, and low Mallow's Cp.  
+<br>
+Notice that for ISPr, the best models from forward and backward are identical and the best predictors are city_population,city_population_density,selectivity,size_qs, and research_output_qs.  
+<br>
+Similarly, for ISPo, the best models from forward and backward are identical and the predictors are city_population_density, size_qs, and research_output_qs.  
+<br>
+We also see that the p-value scores are low for all models, which implies the predictors are statistically significant and are good indicators of prediction. Thus, we reject the null hypothesis and claim that we have identified good indicators of prediction of international student proportion and population.
 
 ## Conclusion
 Our current analysis suggests that the overall enrollment of students, city population, and city population density are indicators for predicting ISPo and ISPr.
