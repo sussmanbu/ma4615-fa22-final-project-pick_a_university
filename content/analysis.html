@@ -1,5 +1,5 @@
 ---
-title: Analysis Part 1
+title: Analysis
 description:
 toc: true
 featuredVideo: 
@@ -276,23 +276,23 @@ For international student population, the inverse Gaussian regression has lower 
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4958.8 -1368.3  -166.5   865.5  9032.6 
+## -4958.9 -1352.5  -157.2   864.5  9032.3 
 ## 
 ## Coefficients:
 ##                               Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)                  3.963e+02  5.842e+02   0.678  0.49871    
-## city_population_density      1.345e-01  2.909e-02   4.625 8.63e-06 ***
-## size_qsM                    -1.539e+03  5.110e+02  -3.013  0.00309 ** 
-## size_qsS                    -2.842e+03  1.093e+03  -2.600  0.01037 *  
-## size_qsXL                    2.544e+03  4.874e+02   5.220 6.54e-07 ***
-## research_output_qsVery High  1.878e+03  5.628e+02   3.337  0.00109 ** 
+## (Intercept)                  3.962e+02  5.819e+02   0.681  0.49710    
+## city_population_density      1.345e-01  2.898e-02   4.642 7.99e-06 ***
+## size_qsM                    -1.539e+03  5.091e+02  -3.024  0.00298 ** 
+## size_qsS                    -2.843e+03  1.089e+03  -2.609  0.01009 *  
+## size_qsXL                    2.544e+03  4.812e+02   5.288 4.77e-07 ***
+## research_output_qsVery High  1.878e+03  5.606e+02   3.350  0.00104 ** 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 2350 on 136 degrees of freedom
-##   (210 observations deleted due to missingness)
-## Multiple R-squared:  0.3907, Adjusted R-squared:  0.3683 
-## F-statistic: 17.44 on 5 and 136 DF,  p-value: 2.557e-13</code></pre>
+## Residual standard error: 2342 on 137 degrees of freedom
+##   (209 observations deleted due to missingness)
+## Multiple R-squared:  0.394,  Adjusted R-squared:  0.3719 
+## F-statistic: 17.82 on 5 and 137 DF,  p-value: 1.406e-13</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = international_students_max ~ city_population_density + 
@@ -300,23 +300,23 @@ For international student population, the inverse Gaussian regression has lower 
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4958.8 -1368.3  -166.5   865.5  9032.6 
+## -4958.9 -1352.5  -157.2   864.5  9032.3 
 ## 
 ## Coefficients:
 ##                               Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)                  3.963e+02  5.842e+02   0.678  0.49871    
-## city_population_density      1.345e-01  2.909e-02   4.625 8.63e-06 ***
-## size_qsM                    -1.539e+03  5.110e+02  -3.013  0.00309 ** 
-## size_qsS                    -2.842e+03  1.093e+03  -2.600  0.01037 *  
-## size_qsXL                    2.544e+03  4.874e+02   5.220 6.54e-07 ***
-## research_output_qsVery High  1.878e+03  5.628e+02   3.337  0.00109 ** 
+## (Intercept)                  3.962e+02  5.819e+02   0.681  0.49710    
+## city_population_density      1.345e-01  2.898e-02   4.642 7.99e-06 ***
+## size_qsM                    -1.539e+03  5.091e+02  -3.024  0.00298 ** 
+## size_qsS                    -2.843e+03  1.089e+03  -2.609  0.01009 *  
+## size_qsXL                    2.544e+03  4.812e+02   5.288 4.77e-07 ***
+## research_output_qsVery High  1.878e+03  5.606e+02   3.350  0.00104 ** 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 2350 on 136 degrees of freedom
-##   (210 observations deleted due to missingness)
-## Multiple R-squared:  0.3907, Adjusted R-squared:  0.3683 
-## F-statistic: 17.44 on 5 and 136 DF,  p-value: 2.557e-13</code></pre>
+## Residual standard error: 2342 on 137 degrees of freedom
+##   (209 observations deleted due to missingness)
+## Multiple R-squared:  0.394,  Adjusted R-squared:  0.3719 
+## F-statistic: 17.82 on 5 and 137 DF,  p-value: 1.406e-13</code></pre>
 <p>For evaluating stepwise linear regression, we are interested in finding models with the high adjusted R2 Score, low Bayesian Information Criterion, and low Mallow’s Cp.<br />
 <br>
 Notice that for ISPr, the best models from forward and backward are identical and the best predictors are city_population,city_population_density,selectivity,size_qs, and research_output_qs.<br />

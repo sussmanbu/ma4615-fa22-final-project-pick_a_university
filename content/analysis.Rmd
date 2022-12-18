@@ -1,5 +1,5 @@
 ---
-title: Analysis Part 1
+title: Analysis
 description:
 toc: true
 featuredVideo: 
