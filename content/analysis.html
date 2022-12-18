@@ -26,6 +26,10 @@ Breakdown of international students by the US region they live (2021 vs 2016)</p
 <div id="breadth-and-depth-of-da" class="section level2">
 <h2>Breadth and Depth of DA</h2>
 <p>Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US colleges, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr.</p>
+<p><br>
+In the dataset, the features indicate ISPo and ISPr are following:
+ISPo: international_students_max
+ISPr: international_students_natlib</p>
 </div>
 <div id="early-data-analysis" class="section level2">
 <h2>Early Data Analysis</h2>
@@ -61,6 +65,9 @@ We identified pairs of variables with high positive or negative correlations and
 </li>
 <li>city_population_density</li>
 </ol>
+<p><br></p>
+<p>Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. <br>
+<img src="/analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="for-ispr-the-relevant-numerical-features-are" class="section level4">
 <h4>For ISPr, the relevant numerical features are:</h4>
@@ -69,6 +76,9 @@ We identified pairs of variables with high positive or negative correlations and
 </li>
 <li>faculty_count_qs</li>
 </ol>
+<p><br>
+Below is the scatter plot and correlation matrix of ISPr related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. <br>
+<img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 </div>
 <div id="categorical-predictors" class="section level3">
@@ -98,6 +108,20 @@ We build logistic regression models with single categorical variable predictors 
 ## AIC: 16.015
 ## 
 ## Number of Fisher Scoring iterations: 19</code></pre>
+<p><br>
+#### For ISPo, the relevant categorical features are:<br />
+1. research_output_qs<br />
+2. size_qs<br />
+3. type3_natlib<br />
+4. type4_carnegie<br />
+5. state<br />
+6. selectivity<br />
+7. world_rank_cat_arwu</p>
+<p><br>
+####Boxplots of ISPo and Categorical Variables
+<img src="/analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-2.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-3.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
+<p>To make the state variable viewable we created the feature “region” using “state” by grouping states into four regions(Midwest, West, South, and Northeast)</p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <div id="for-ispr-the-relevant-categorical-features-are" class="section level4">
 <h4>For ISPr, the relevant categorical features are:</h4>
 <ol style="list-style-type: decimal">
@@ -118,24 +142,27 @@ We build logistic regression models with single categorical variable predictors 
 </li>
 <li>state</li>
 </ol>
+<div id="ispr-plot1-boxplot-of-ispr-and-research-output" class="section level5">
+<h5>IsPr Plot1: Boxplot of ISPr and Research Output</h5>
+<pre class="r"><code>data1 &lt;- clean_data[c(&quot;international_students_natlib&quot;, &quot;research_output_qs&quot;)] %&gt;% drop_na()
+data1_melt &lt;- melt(data1, id = &quot;research_output_qs&quot;)
+p1 &lt;- ggplot(data1_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() +
+      theme(axis.text.x=element_blank()) + labs(x = &quot;&quot;, y = &quot;ISPr&quot;)
+p1</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
-<div id="for-ispo-the-relevant-categorical-features-are" class="section level4">
-<h4>For ISPo, the relevant categorical features are:</h4>
-<ol style="list-style-type: decimal">
-<li>research_output_qs<br />
-</li>
-<li>size_qs<br />
-</li>
-<li>type3_natlib<br />
-</li>
-<li>type4_carnegie<br />
-</li>
-<li>state<br />
-</li>
-<li>selectivity<br />
-</li>
-<li>world_rank_cat_arwu</li>
-</ol>
+<div id="plot2-boxplot-of-ispr-and-research-output" class="section level5">
+<h5>Plot2: Boxplot of ISPr and Research Output</h5>
+<pre class="r"><code>ISPr_Cat &lt;- clean_data[c(&quot;international_students_natlib&quot;, &quot;research_output_qs&quot;,&quot;size_qs&quot;, &quot;locale_carnegie&quot;, &quot;enrprofile2021_carnegie&quot;, &quot;type2_carnegie&quot;, &quot;type4_carnegie&quot;, &quot;world_rank_cat_arwu&quot;, &quot;selectivity&quot;, &quot;state&quot;)] 
+
+data2 &lt;- prev_data[c(&quot;international_students_natlib&quot;, &quot;size_qs&quot;)] %&gt;% drop_na()
+data2_melt &lt;- melt(data2, id = &quot;size_qs&quot;)
+p2 &lt;- ggplot(data1_melt, aes(x = variable, y = value)) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = &quot;&quot;, y = &quot;ISPr&quot;)
+p2 &lt;- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() +
+      theme(axis.text.x=element_blank()) + labs(x = &quot;&quot;, y = &quot;ISPr&quot;)
+p2</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
 </div>
 </div>
 <div id="finalized-features" class="section level3">
@@ -157,7 +184,7 @@ We build logistic regression models with single categorical variable predictors 
 <h3>Initial Modeling</h3>
 <p>For our first iteration of modeling, we use the dataset with 35 independent variables and only consider models with numerically extracted features: faculty_count_qs, city_population, city_population_density.
 To obtain our train and test datasets, we have performed an <b>70-30 random shuffle-split</b>. We have 53 examples in the train set and 23 examples in test set. Then, we model ISPo with linear and logistic regression.</p>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
 <pre><code>## [1] &quot;Mean Absolute Error of Linear Regression for ISPr:&quot;</code></pre>
 <pre><code>## [1] 0.03342281</code></pre>
 <pre><code>## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;</code></pre>

@@ -23,6 +23,11 @@ Breakdown of international students by the US region they live (2021 vs 2016)
 ## Breadth and Depth of DA
 Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US colleges, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr. 
 
+<br>
+In the dataset, the features indicate ISPo and ISPr are following:
+ISPo: international_students_max
+ISPr: international_students_natlib
+
 ## Early Data Analysis
 In our earlier data analysis (Blog Post 4), we examined the relationship between the dependent variable ISPr and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We did this by making predictions with 7 regression models (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma) after shuffling and splitting the data with a 70-30 ratio for the train and test sets. By evaluating the AIC and fisher score, we selected the inverse gaussian glm as the best fit of all 7 models. Below we display our linear regression, logistic regression, and inverse gaussian regression.   
 <br>
@@ -44,7 +49,8 @@ To explore continuous variables’ correlations with the target variables, we ha
  library(caTools)
  library(ggplot2)
  library(ggcorrplot)
- library(reshape2)
+ library(reshape2) 
+ library(GGally)
  })
 
  get_upper_tri <- function(cormat){
@@ -94,11 +100,29 @@ We identified pairs of variables with high positive or negative correlations and
 5. international_students_natlib,  
 6. city_population_density    
 
+<br>
+
+Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. <br>
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+ISPo_data = num_data[c("international_students_max", "international_students_opendoors", "enrollment_top120enrollment", "city_population", "international_students_qs", "international_students_natlib", "city_population_density")]
+
+ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 0.3)),
+        lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))
+```
+
+
 #### For ISPr, the relevant numerical features are:  
 1. city_population_density  
 2. faculty_count_qs  
 
+<br> 
+Below is the scatter plot and correlation matrix of ISPr related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. <br>
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+ISPo_data = num_data[c("international_students_natlib", "city_population_density", "faculty_count_qs")]
 
+ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 0.3)),
+        lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))
+```
 
 ### Categorical Predictors
 <b>Note</b>: Before using logistic regression, we omit variable "university" because it is unique for all observations.    
@@ -220,6 +244,81 @@ summary(glm_model_research_output_qs_max)
  })
 
 ```
+<br>
+#### For ISPo, the relevant categorical features are:  
+1. research_output_qs   
+2. size_qs   
+3. type3_natlib   
+4. type4_carnegie   
+5. state   
+6. selectivity   
+7. world_rank_cat_arwu  
+
+<br>
+####Boxplots of ISPo and Categorical Variables
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+library(patchwork)
+ISPo_Cat <- prev_data[c("international_students_max", "research_output_qs","size_qs", "type3_natlib", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
+
+data10 <- prev_data[c("international_students_max", "research_output_qs")] %>% drop_na()
+data10_melt <- melt(data10, id = "research_output_qs")
+bp1<- ggplot(data10_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("Research Outputs")
+
+data11 <- prev_data[c("international_students_max", "size_qs")] %>% drop_na()
+data11_melt <- melt(data11, id = "size_qs")
+bp2<- ggplot(data11_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Sizes")
+
+data12 <- prev_data[c("international_students_max", "type3_natlib")] %>% drop_na()
+data12_melt <- melt(data12, id = "type3_natlib")
+bp3<-ggplot(data12_melt, aes(x = variable, y = value, color = factor(type3_natlib))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Types")
+
+data13 <- prev_data[c("international_students_max", "type4_carnegie")] %>% drop_na()
+data13_melt <- melt(data13, id = "type4_carnegie")
+bp4<-ggplot(data13_melt, aes(x = variable, y = value, color = factor(type4_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo")  + scale_color_discrete("School Types")
+
+data14 <- prev_data[c("international_students_max", "state")] %>% drop_na()
+data14_melt <- melt(data14, id = "state")
+bp5<-ggplot(data14_melt, aes(x = variable, y = value, color = factor(state))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo")  + scale_color_discrete("States")
+
+data15 <- prev_data[c("international_students_max", "selectivity")] %>% drop_na()
+data15_melt <- melt(data15, id = "selectivity")
+bp6<-ggplot(data15_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Selectivities")
+
+data16 <- prev_data[c("international_students_max", "world_rank_cat_arwu")] %>% drop_na()
+data16_melt <- melt(data16, id = "world_rank_cat_arwu")
+bp7<-ggplot(data16_melt, aes(x = variable, y = value, color = factor(world_rank_cat_arwu))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School World Rank")
+
+bp1 + bp2 
+bp3 + bp4
+bp6 + bp7
+bp5
+```
+
+To make the state variable viewable we created the feature "region" using "state" by grouping states into four regions(Midwest, West, South, and Northeast)
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+region <- initialize(.Object = "ANY")
+
+#IL, IN, IA, KS, MI, MN, MO, NE, ND, OH, SD, WI
+region[prev_data$state=="IL" | prev_data$state=="IN" | prev_data$state=="IA" | prev_data$state=="KS" | prev_data$state=="MI" | prev_data$state=="MN" | prev_data$state=="MO" | prev_data$state=="NE" | prev_data$state=="ND" | prev_data$state=="OH" | prev_data$state=="SD" | prev_data$state=="WI"] <- "Midwest"
+
+#CO, ID, MT, NV, UT, WY, AK, CA, HI, OR, WA
+region[prev_data$state=="CO" | prev_data$state=="ID" | prev_data$state=="MT" | prev_data$state=="NV" | prev_data$state=="UT" | prev_data$state=="WY" | prev_data$state=="AK" | prev_data$state=="CA" | prev_data$state=="HI" | prev_data$state=="OR" | prev_data$state=="WA"] <- "West"
+
+#MD, DE,VA, WV, KY, TN, NC, SC, FL, GA, AL, MS, LA, AK, TX, OK
+region[prev_data$state=="MD" | prev_data$state=="DE" | prev_data$state=="VA" | prev_data$state=="WV" | prev_data$state=="KY" | prev_data$state=="TN" | prev_data$state=="NC" | prev_data$state=="SC" | prev_data$state=="FL" | prev_data$state=="GA" | prev_data$state=="AL" | prev_data$state=="MS" | prev_data$state=="LA" | prev_data$state=="AK" | prev_data$state=="TX" | prev_data$state=="OK"] <- "South"
+
+#CT, NH, PA, ME, MA, NJ, NY, RI, VT
+region[prev_data$state=="CT" | prev_data$state=="NH" | prev_data$state=="PA" | prev_data$state=="ME" | prev_data$state=="MA" | prev_data$state=="NJ" | prev_data$state=="NY" | prev_data$state=="RI" | prev_data$state=="VT"] <- "Northeast"
+prev_data$region <- region
+
+data17 <- prev_data[c("international_students_max", "region")] %>% drop_na()
+data17_melt <- melt(data17, id = "region")
+ggplot(data17_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo")
+
+
+```
+
 
 #### For ISPr, the relevant categorical features are:  
 1. research_output_qs  
@@ -232,14 +331,29 @@ summary(glm_model_research_output_qs_max)
 8. selectivity    
 9. state    
 
-#### For ISPo, the relevant categorical features are:  
-1. research_output_qs   
-2. size_qs   
-3. type3_natlib   
-4. type4_carnegie   
-5. state   
-6. selectivity   
-7. world_rank_cat_arwu  
+
+##### IsPr Plot1: Boxplot of ISPr and Research Output
+```{r warning = FALSE}
+data1 <- clean_data[c("international_students_natlib", "research_output_qs")] %>% drop_na()
+data1_melt <- melt(data1, id = "research_output_qs")
+p1 <- ggplot(data1_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() +
+      theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
+p1
+```
+
+
+##### Plot2: Boxplot of ISPr and Research Output
+```{r warning = FALSE}
+ISPr_Cat <- clean_data[c("international_students_natlib", "research_output_qs","size_qs", "locale_carnegie", "enrprofile2021_carnegie", "type2_carnegie", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
+
+data2 <- prev_data[c("international_students_natlib", "size_qs")] %>% drop_na()
+data2_melt <- melt(data2, id = "size_qs")
+p2 <- ggplot(data1_melt, aes(x = variable, y = value)) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
+p2 <- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() +
+      theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
+p2
+```
+
 
 ### Finalized Features
 Since our data is sparse, if we select certain variables for our predictors, then many college observations are dropped. Thereby, for predicting both international student population and proportion, out of our initial 35 dependent variables, we select the features:   
