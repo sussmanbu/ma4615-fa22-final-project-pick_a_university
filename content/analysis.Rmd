@@ -1,5 +1,5 @@
 ---
-title: Analysis 1
+title: Analysis Part 1
 description:
 toc: true
 featuredVideo: 
@@ -12,20 +12,21 @@ Most of our teammates are international students from China and Korea. We found 
 
 One of our teammates, Yawei suggested that the top three considerations were: safety, ranking of the university in my field, and the “dynamics” of the campus. The percentage of the international student body would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student body is one of the criteria (probably not, but I believe there is correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc
 
-The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through “group_by”, “color”, “fill”, “facet” and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law). 
+The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through *“group_by”, “color”, “fill”, “facet”* and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law). 
 
 We also wanted to answer the questions below: 
-How has the number of international students in the US changed over time?  (x= school years, y= international students’ population)
-New enrollment percentage of international students (x= school years, y= international students’ population % change)
-How do new enrollment trends vary by academic level? 
-Breakdown of international students by the US region they live (2021 vs 2016)
+*First:* How has the number of international students in the US changed over time?  (x= school years, y= international students’ population)
+*Second:* New enrollment percentage of international students (x= school years, y= international students’ population % change)
+*Third:* How do new enrollment trends vary by academic level? 
+*Fourth:* Breakdown of international students by the US region they live (2021 vs 2016)
 
 ## Breadth and Depth of DA
 Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US colleges, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr. 
 
 <br>
 In the dataset, the features indicate ISPo and ISPr are following:
-ISPo: international_students_max
+<br>
+ISPo: international_students_max <br/>
 ISPr: international_students_natlib
 
 ## Early Data Analysis
@@ -90,19 +91,22 @@ To explore continuous variables’ correlations with the target variables, we ha
  ggheatmap
  })
 ```
+<br>
+
 We identified pairs of variables with high positive or negative correlations and selected numerical features that have an absolute value of correlation coefficient greater than 0.4 with respect to ISPo and ISPr. 
 
 #### For ISPo, the relevant numerical features are:  
-1. international_students_opendoors,  
-2. enrollment_top120enrollment,  
-3. city_population,  
-4. international_students_qs,  
-5. international_students_natlib,  
-6. city_population_density    
+1. ~~The number of international students in Opendoors (international_students_opendoors)~~
+2. Total student enrollment number (enrollment_top120enrollment)
+3. City population (city_population)
+4. ~~ The number of international students in QS (international_students_qs)~~
+5. ~~Percentage of international students (international_students_natlib)~~
+6. City population density (city_population_density)    
 
 <br>
 
-Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. <br>
+Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. 
+<br>
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 ISPo_data = num_data[c("international_students_max", "international_students_opendoors", "enrollment_top120enrollment", "city_population", "international_students_qs", "international_students_natlib", "city_population_density")]
 
@@ -112,11 +116,14 @@ ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 
 
 
 #### For ISPr, the relevant numerical features are:  
-1. city_population_density  
-2. faculty_count_qs  
+1. City population density (city_population_density)  
+2. The number of faculty or academic staff at the university (faculty_count_qs)  
 
 <br> 
-Below is the scatter plot and correlation matrix of ISPr related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. <br>
+
+Below is the scatter plot and correlation matrix of ISPr related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. 
+<br>
+
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 ISPo_data = num_data[c("international_students_natlib", "city_population_density", "faculty_count_qs")]
 
@@ -245,17 +252,19 @@ summary(glm_model_research_output_qs_max)
 
 ```
 <br>
+
 #### For ISPo, the relevant categorical features are:  
-1. research_output_qs   
-2. size_qs   
-3. type3_natlib   
-4. type4_carnegie   
-5. state   
-6. selectivity   
-7. world_rank_cat_arwu  
+1. Quality of research (research_output_qs)   
+2. Size of the university (size_qs)   
+3. National or Liberal Arts (type3_natlib)   
+4. Carnegie Basic Classification (type4_carnegie)   
+5. Located State in the US (state)   
+6. Selectivity (selectivity)   
+7. World ranking from ARWU (world_rank_cat_arwu)  
 
 <br>
-####Boxplots of ISPo and Categorical Variables
+
+#### Boxplots of ISPo and Relevant Categorical Variables
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 library(patchwork)
 ISPo_Cat <- prev_data[c("international_students_max", "research_output_qs","size_qs", "type3_natlib", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
@@ -293,9 +302,9 @@ bp3 + bp4
 bp6 + bp7
 bp5
 ```
-
-To make the state variable viewable we created the feature "region" using "state" by grouping states into four regions(Midwest, West, South, and Northeast)
-
+<br>
+To make the state variable viewable we created the feature "region" using "state" by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
+<br>
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 region <- initialize(.Object = "ANY")
 
@@ -314,44 +323,80 @@ prev_data$region <- region
 
 data17 <- prev_data[c("international_students_max", "region")] %>% drop_na()
 data17_melt <- melt(data17, id = "region")
-ggplot(data17_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo")
-
+ggplot(data17_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("Regions")
 
 ```
 
 
 #### For ISPr, the relevant categorical features are:  
-1. research_output_qs  
-2. size_qs  
-3. locale_carnegie  
-4. enrprofile2021_carnegie  
-5. type2_carnegie  
-6. type4_carnegie
-7. world_rank_cat_arwu    
-8. selectivity    
-9. state    
+1. Quality of research (research_output_qs)   
+2. Size of the university (size_qs)   
+3. Urban-centric locale (locale_carnegie)
+4. Enrollment profile classification (enrprofile2021_carnegie)  
+5. Year and size classification (type2_carnegie)  
+6. Carnegie Basic Classification (type4_carnegie)
+7. World ranking from ARWU (world_rank_cat_arwu)    
+8. Selectivity (selectivity)    
+9. Located State in the US (state)   
 
 
-##### IsPr Plot1: Boxplot of ISPr and Research Output
-```{r warning = FALSE}
-data1 <- clean_data[c("international_students_natlib", "research_output_qs")] %>% drop_na()
+
+
+#### Boxplots of ISPr and Relevant Categorical Variables
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+data1 <- prev_data[c("international_students_natlib", "research_output_qs")] %>% drop_na()
 data1_melt <- melt(data1, id = "research_output_qs")
-p1 <- ggplot(data1_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() +
-      theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
-p1
-```
-
-
-##### Plot2: Boxplot of ISPr and Research Output
-```{r warning = FALSE}
-ISPr_Cat <- clean_data[c("international_students_natlib", "research_output_qs","size_qs", "locale_carnegie", "enrprofile2021_carnegie", "type2_carnegie", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
+bp11<- ggplot(data1_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("Research Outputs")
 
 data2 <- prev_data[c("international_students_natlib", "size_qs")] %>% drop_na()
 data2_melt <- melt(data2, id = "size_qs")
-p2 <- ggplot(data1_melt, aes(x = variable, y = value)) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
-p2 <- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() +
-      theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
-p2
+bp12<- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Sizes")
+
+data3 <- prev_data[c("international_students_natlib", "locale_carnegie")] %>% drop_na()
+data3_melt <- melt(data3, id = "locale_carnegie")
+bp13<-ggplot(data3_melt, aes(x = variable, y = value, color = factor(locale_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")  + scale_color_discrete("School Location")
+
+data4 <- prev_data[c("international_students_natlib", "enrprofile2021_carnegie")] %>% drop_na()
+data4_melt <- melt(data4, id = "enrprofile2021_carnegie")
+bp14<-ggplot(data4_melt, aes(x = variable, y = value, color = factor(enrprofile2021_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")  + scale_color_discrete("Enrollment Profiles")
+
+data5 <- prev_data[c("international_students_natlib", "type2_carnegie")] %>% drop_na()
+data5_melt <- melt(data5, id = "type2_carnegie")
+bp15<-ggplot(data5_melt, aes(x = variable, y = value, color = factor(type2_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Types")
+
+data6 <- prev_data[c("international_students_natlib", "type4_carnegie")] %>% drop_na()
+data6_melt <- melt(data6, id = "type4_carnegie")
+bp16<-ggplot(data6_melt, aes(x = variable, y = value, color = factor(type4_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Types")
+
+data7 <- prev_data[c("international_students_natlib", "world_rank_cat_arwu")] %>% drop_na()
+data7_melt <- melt(data7, id = "world_rank_cat_arwu")
+bp17<-ggplot(data7_melt, aes(x = variable, y = value, color = factor(world_rank_cat_arwu))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School World Rank")
+
+data8 <- prev_data[c("international_students_natlib", "selectivity")] %>% drop_na()
+data8_melt <- melt(data8, id = "selectivity")
+bp18<-ggplot(data8_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Selectivities")
+
+data9 <- prev_data[c("international_students_natlib", "state")] %>% drop_na()
+data9_melt <- melt(data9, id = "state")
+bp19<-ggplot(data9_melt, aes(x = variable, y = value, color = factor(state))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("States")
+
+
+bp11 + bp12 
+bp13 + bp14
+bp15 + bp16 
+bp18
+bp17 
+bp19
+```
+
+<br>
+Same as ISPo, we made boxplots with "region" variable, which is a feature made with "state"
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+
+data18 <- prev_data[c("international_students_natlib", "region")] %>% drop_na()
+data18_melt <- melt(data18, id = "region")
+ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
+
 ```
 
 
@@ -362,6 +407,7 @@ Since our data is sparse, if we select certain variables for our predictors, the
 3. selectivity  
 4. size_qs  
 5. research_output_qs  
+
 
 #### The following modeling section exclusively addresses our data analysis.
 
@@ -662,39 +708,3 @@ Again due to data sparsity, we still were only able to explore a few simple feat
 
 ### Proposed Solution:  
 For the next investigation, data on longitude and latitude of the universities could be explored to see whether distance (Euclidean, Manhattan, Harvesine, Cosine) to any international hubs or attractions. In general, the investigator could see try to see if there are any more non-linear relations between ISPr/ISPo and some combination or transformation of independent variables. The investigator would also need to apply some regularization penalties if there is overfitting from the feature engineering.
-
--------
-
-
-## Rubric: On this page
-
-you will
-
-
-* Introduce what motivates your Data Analysis (DA)
-  * Which variables and relationships are you most interested in?
-  * What questions are you interested in answering?
-* Breadth of the DA
-  * Make sure that you ask enough initial questions to explore the different variables in your data.
-  * i.e. Do you explore more than just one or two variables? Do you explore a few different relationships or many?
-* Depth of the DA
-  * When you answer one question, usually more questions arise as well. 
-  * The depth of the DA is about coming up with and exploring the answers to these questions, often iterating the process a few times.
-* Modeling and Inference 
-  * You should also include some kind of formal statistical model and/or inference. This could be a linear regression, logistic regression, hypothesis testing etc.
-  * Explain the techniques you used for validating your results.
-  * Describe the results of your modelling and make sure to give a sense of the uncertainty in your estimates and conclusions.
-* Explain the flaws and limitations of your analysis
-  * Are there some assumptions that you needed to make that might not hold? Is there other data that would help to answer your questions? ...
-* Clarity Figures
-  * Are your figures/tables/results easy to read, informative, without problems like overplotting, hard-to-read labels, etc?
-  * Each figure should provide a key insight. Too many figures or other data summaries can detract from this.
-* Clarity of Explanations
-  * Do you introduce why you are doing each analysis?
-  * How well do you explain each figure/result?
-  * Do you provide interpretations that suggest further analysis or explanations for observed phenomenon?
-* Organization and cleanliness.
-  * Make sure to remove excessive warnings, use clean easy-to-read code, organize with sections or multiple pages, use bullets, etc.
-
-  
-**NOTE**: Your Data Analysis can be broken up into multiple pages if that helps with your organization.
