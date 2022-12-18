@@ -129,7 +129,7 @@ We build logistic regression models with single categorical variable predictors 
 </div>
 <div id="boxplots-of-ispo-and-relevant-categorical-variables" class="section level4">
 <h4>Boxplots of ISPo and Relevant Categorical Variables</h4>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-2.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-3.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-4.png" width="672" />
+<p><img src="/analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-2.png" width="672" />
 <br>
 To make the state variable viewable we created the feature “region” using “state” by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
 <br>
@@ -157,10 +157,9 @@ To make the state variable viewable we created the feature “region” using �
 </div>
 <div id="boxplots-of-ispr-and-relevant-categorical-variables" class="section level4">
 <h4>Boxplots of ISPr and Relevant Categorical Variables</h4>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-2.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-3.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-4.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-5.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-6.png" width="672" /></p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
 <p><br>
-Same as ISPo, we made boxplots with “region” variable, which is a feature made with “state”
-<img src="/analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+Same as ISPo, we made boxplots with “region” variable, which is a feature made with “state”</p>
 </div>
 </div>
 <div id="finalized-features" class="section level3">
@@ -182,7 +181,7 @@ Same as ISPo, we made boxplots with “region” variable, which is a feature ma
 <h3>Initial Modeling</h3>
 <p>For our first iteration of modeling, we use the dataset with 35 independent variables and only consider models with numerically extracted features: faculty_count_qs, city_population, city_population_density.
 To obtain our train and test datasets, we have performed an <b>70-30 random shuffle-split</b>. We have 53 examples in the train set and 23 examples in test set. Then, we model ISPo with linear and logistic regression.</p>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
 <pre><code>## [1] &quot;Mean Absolute Error of Linear Regression for ISPr:&quot;</code></pre>
 <pre><code>## [1] 0.03342281</code></pre>
 <pre><code>## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;</code></pre>

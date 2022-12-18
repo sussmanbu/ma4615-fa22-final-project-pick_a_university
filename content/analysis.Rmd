@@ -276,30 +276,11 @@ data11 <- prev_data[c("international_students_max", "size_qs")] %>% drop_na()
 data11_melt <- melt(data11, id = "size_qs")
 bp2<- ggplot(data11_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Sizes")
 
-data12 <- prev_data[c("international_students_max", "type3_natlib")] %>% drop_na()
-data12_melt <- melt(data12, id = "type3_natlib")
-bp3<-ggplot(data12_melt, aes(x = variable, y = value, color = factor(type3_natlib))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Types")
-
-data13 <- prev_data[c("international_students_max", "type4_carnegie")] %>% drop_na()
-data13_melt <- melt(data13, id = "type4_carnegie")
-bp4<-ggplot(data13_melt, aes(x = variable, y = value, color = factor(type4_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo")  + scale_color_discrete("School Types")
-
-data14 <- prev_data[c("international_students_max", "state")] %>% drop_na()
-data14_melt <- melt(data14, id = "state")
-bp5<-ggplot(data14_melt, aes(x = variable, y = value, color = factor(state))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo")  + scale_color_discrete("States")
-
 data15 <- prev_data[c("international_students_max", "selectivity")] %>% drop_na()
 data15_melt <- melt(data15, id = "selectivity")
 bp6<-ggplot(data15_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Selectivities")
-
-data16 <- prev_data[c("international_students_max", "world_rank_cat_arwu")] %>% drop_na()
-data16_melt <- melt(data16, id = "world_rank_cat_arwu")
-bp7<-ggplot(data16_melt, aes(x = variable, y = value, color = factor(world_rank_cat_arwu))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School World Rank")
-
 bp1 + bp2 
-bp3 + bp4
-bp6 + bp7
-bp5
+bp6 
 ```
 <br>
 To make the state variable viewable we created the feature "region" using "state" by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
@@ -351,52 +332,20 @@ data2 <- prev_data[c("international_students_natlib", "size_qs")] %>% drop_na()
 data2_melt <- melt(data2, id = "size_qs")
 bp12<- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Sizes")
 
-data3 <- prev_data[c("international_students_natlib", "locale_carnegie")] %>% drop_na()
-data3_melt <- melt(data3, id = "locale_carnegie")
-bp13<-ggplot(data3_melt, aes(x = variable, y = value, color = factor(locale_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")  + scale_color_discrete("School Location")
-
-data4 <- prev_data[c("international_students_natlib", "enrprofile2021_carnegie")] %>% drop_na()
-data4_melt <- melt(data4, id = "enrprofile2021_carnegie")
-bp14<-ggplot(data4_melt, aes(x = variable, y = value, color = factor(enrprofile2021_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")  + scale_color_discrete("Enrollment Profiles")
-
-data5 <- prev_data[c("international_students_natlib", "type2_carnegie")] %>% drop_na()
-data5_melt <- melt(data5, id = "type2_carnegie")
-bp15<-ggplot(data5_melt, aes(x = variable, y = value, color = factor(type2_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Types")
-
-data6 <- prev_data[c("international_students_natlib", "type4_carnegie")] %>% drop_na()
-data6_melt <- melt(data6, id = "type4_carnegie")
-bp16<-ggplot(data6_melt, aes(x = variable, y = value, color = factor(type4_carnegie))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Types")
-
-data7 <- prev_data[c("international_students_natlib", "world_rank_cat_arwu")] %>% drop_na()
-data7_melt <- melt(data7, id = "world_rank_cat_arwu")
-bp17<-ggplot(data7_melt, aes(x = variable, y = value, color = factor(world_rank_cat_arwu))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School World Rank")
-
 data8 <- prev_data[c("international_students_natlib", "selectivity")] %>% drop_na()
 data8_melt <- melt(data8, id = "selectivity")
 bp18<-ggplot(data8_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Selectivities")
 
-data9 <- prev_data[c("international_students_natlib", "state")] %>% drop_na()
-data9_melt <- melt(data9, id = "state")
-bp19<-ggplot(data9_melt, aes(x = variable, y = value, color = factor(state))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("States")
-
+data18 <- prev_data[c("international_students_natlib", "region")] %>% drop_na()
+data18_melt <- melt(data18, id = "region")
+bp19 <- ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") 
 
 bp11 + bp12 
-bp13 + bp14
-bp15 + bp16 
-bp18
-bp17 
-bp19
+bp18 + bp19
 ```
 
 <br>
 Same as ISPo, we made boxplots with "region" variable, which is a feature made with "state"
-```{r message = FALSE, echo = FALSE, warning = FALSE}
-
-data18 <- prev_data[c("international_students_natlib", "region")] %>% drop_na()
-data18_melt <- melt(data18, id = "region")
-ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr")
-
-```
 
 
 ### Finalized Features
