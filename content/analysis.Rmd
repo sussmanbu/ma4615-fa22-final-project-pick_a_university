@@ -99,7 +99,7 @@ We identified pairs of variables with high positive or negative correlations and
 1. ~~The number of international students in Opendoors (international_students_opendoors)~~
 2. Total student enrollment number (enrollment_top120enrollment)
 3. City population (city_population)
-4. ~~ The number of international students in QS (international_students_qs)~~
+4. ~~The number of international students in QS (international_students_qs)~~
 5. ~~Percentage of international students (international_students_natlib)~~
 6. City population density (city_population_density)    
 
@@ -113,7 +113,8 @@ ISPo_data = num_data[c("international_students_max", "international_students_ope
 ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 0.3)),
         lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))
 ```
-
+![](Scatterplot.png) 
+<br />
 
 #### For ISPr, the relevant numerical features are:  
 1. City population density (city_population_density)  
