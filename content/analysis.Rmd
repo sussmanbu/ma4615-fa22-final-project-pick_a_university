@@ -266,17 +266,19 @@ summary(glm_model_research_output_qs_max)
 #### Boxplots of ISPo and Relevant Categorical Variables
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 library(patchwork)
-ISPo_Cat <- prev_data[c("international_students_max", "research_output_qs","size_qs", "type3_natlib", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
+load(here::here("dataset", "clean_data.RData"))
 
-data10 <- prev_data[c("international_students_max", "research_output_qs")] %>% drop_na()
+ISPo_Cat <- clean_data[c("international_students_max", "research_output_qs","size_qs", "type3_natlib", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
+
+data10 <- clean_data[c("international_students_max", "research_output_qs")] %>% drop_na()
 data10_melt <- melt(data10, id = "research_output_qs")
 bp1<- ggplot(data10_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("Research Outputs")
 
-data11 <- prev_data[c("international_students_max", "size_qs")] %>% drop_na()
+data11 <- clean_data[c("international_students_max", "size_qs")] %>% drop_na()
 data11_melt <- melt(data11, id = "size_qs")
 bp2<- ggplot(data11_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Sizes")
 
-data15 <- prev_data[c("international_students_max", "selectivity")] %>% drop_na()
+data15 <- clean_data[c("international_students_max", "selectivity")] %>% drop_na()
 data15_melt <- melt(data15, id = "selectivity")
 bp6<-ggplot(data15_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Selectivities")
 bp1 + bp2 
@@ -289,19 +291,19 @@ To make the state variable viewable we created the feature "region" using "state
 region <- initialize(.Object = "ANY")
 
 #IL, IN, IA, KS, MI, MN, MO, NE, ND, OH, SD, WI
-region[prev_data$state=="IL" | prev_data$state=="IN" | prev_data$state=="IA" | prev_data$state=="KS" | prev_data$state=="MI" | prev_data$state=="MN" | prev_data$state=="MO" | prev_data$state=="NE" | prev_data$state=="ND" | prev_data$state=="OH" | prev_data$state=="SD" | prev_data$state=="WI"] <- "Midwest"
+region[clean_data$state=="IL" | clean_data$state=="IN" | clean_data$state=="IA" | clean_data$state=="KS" | clean_data$state=="MI" | clean_data$state=="MN" | clean_data$state=="MO" | clean_data$state=="NE" | clean_data$state=="ND" | clean_data$state=="OH" | clean_data$state=="SD" | clean_data$state=="WI"] <- "Midwest"
 
 #CO, ID, MT, NV, UT, WY, AK, CA, HI, OR, WA
-region[prev_data$state=="CO" | prev_data$state=="ID" | prev_data$state=="MT" | prev_data$state=="NV" | prev_data$state=="UT" | prev_data$state=="WY" | prev_data$state=="AK" | prev_data$state=="CA" | prev_data$state=="HI" | prev_data$state=="OR" | prev_data$state=="WA"] <- "West"
+region[clean_data$state=="CO" | clean_data$state=="ID" | clean_data$state=="MT" | clean_data$state=="NV" | clean_data$state=="UT" | clean_data$state=="WY" | clean_data$state=="AK" | clean_data$state=="CA" | clean_data$state=="HI" | clean_data$state=="OR" | clean_data$state=="WA"] <- "West"
 
 #MD, DE,VA, WV, KY, TN, NC, SC, FL, GA, AL, MS, LA, AK, TX, OK
-region[prev_data$state=="MD" | prev_data$state=="DE" | prev_data$state=="VA" | prev_data$state=="WV" | prev_data$state=="KY" | prev_data$state=="TN" | prev_data$state=="NC" | prev_data$state=="SC" | prev_data$state=="FL" | prev_data$state=="GA" | prev_data$state=="AL" | prev_data$state=="MS" | prev_data$state=="LA" | prev_data$state=="AK" | prev_data$state=="TX" | prev_data$state=="OK"] <- "South"
+region[clean_data$state=="MD" | clean_data$state=="DE" | clean_data$state=="VA" | clean_data$state=="WV" | clean_data$state=="KY" | clean_data$state=="TN" | clean_data$state=="NC" | clean_data$state=="SC" | clean_data$state=="FL" | clean_data$state=="GA" | clean_data$state=="AL" | clean_data$state=="MS" | clean_data$state=="LA" | clean_data$state=="AK" | clean_data$state=="TX" | clean_data$state=="OK"] <- "South"
 
 #CT, NH, PA, ME, MA, NJ, NY, RI, VT
-region[prev_data$state=="CT" | prev_data$state=="NH" | prev_data$state=="PA" | prev_data$state=="ME" | prev_data$state=="MA" | prev_data$state=="NJ" | prev_data$state=="NY" | prev_data$state=="RI" | prev_data$state=="VT"] <- "Northeast"
-prev_data$region <- region
+region[clean_data$state=="CT" | clean_data$state=="NH" | clean_data$state=="PA" | clean_data$state=="ME" | clean_data$state=="MA" | clean_data$state=="NJ" | clean_data$state=="NY" | clean_data$state=="RI" | clean_data$state=="VT"] <- "Northeast"
+clean_data$region <- region
 
-data17 <- prev_data[c("international_students_max", "region")] %>% drop_na()
+data17 <- clean_data[c("international_students_max", "region")] %>% drop_na()
 data17_melt <- melt(data17, id = "region")
 ggplot(data17_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("Regions")
 
@@ -324,19 +326,19 @@ ggplot(data17_melt, aes(x = variable, y = value, color = factor(region))) + geom
 
 #### Boxplots of ISPr and Relevant Categorical Variables
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
-data1 <- prev_data[c("international_students_natlib", "research_output_qs")] %>% drop_na()
+data1 <- clean_data[c("international_students_natlib", "research_output_qs")] %>% drop_na()
 data1_melt <- melt(data1, id = "research_output_qs")
 bp11<- ggplot(data1_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("Research Outputs")
 
-data2 <- prev_data[c("international_students_natlib", "size_qs")] %>% drop_na()
+data2 <- clean_data[c("international_students_natlib", "size_qs")] %>% drop_na()
 data2_melt <- melt(data2, id = "size_qs")
 bp12<- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Sizes")
 
-data8 <- prev_data[c("international_students_natlib", "selectivity")] %>% drop_na()
+data8 <- clean_data[c("international_students_natlib", "selectivity")] %>% drop_na()
 data8_melt <- melt(data8, id = "selectivity")
 bp18<-ggplot(data8_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Selectivities")
 
-data18 <- prev_data[c("international_students_natlib", "region")] %>% drop_na()
+data18 <- clean_data[c("international_students_natlib", "region")] %>% drop_na()
 data18_melt <- melt(data18, id = "region")
 bp19 <- ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") 
 
