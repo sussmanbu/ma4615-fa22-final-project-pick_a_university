@@ -104,7 +104,7 @@ We identified pairs of variables with high positive or negative correlations and
 <b>Note</b>: Before using logistic regression, we omit variable "university" because it is unique for all observations.    
 <br>
 We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric.
-```{r, echo=TRUE, message = TRUE, collapse=TRUE}
+```{r, echo=FALSE, message = FALSE}
 suppressWarnings({
 prev_data <- read.csv(here::here("dataset/prev_data.csv"))
 
@@ -258,7 +258,7 @@ Since our data is sparse, if we select certain variables for our predictors, the
 For our first iteration of modeling, we use the dataset with 35 independent variables and only consider models with numerically extracted features: faculty_count_qs, city_population, city_population_density.
 To obtain our train and test datasets, we have performed an <b>70-30 random shuffle-split</b>. We have 53 examples in the train set and 23 examples in test set. Then, we model ISPo with linear and logistic regression. 
 
-```{r echo = TRUE, collapse= TRUE, warning = FALSE}
+```{r, echo=FALSE, message = FALSE}
 suppressWarnings({
 clean_data <- read.csv(here::here("dataset/prev_data.csv"))
 processed_data <- na.omit(data.frame(y = clean_data$international_students_natlib,
@@ -325,7 +325,7 @@ To obtain our train and test datasets, we have performed an <b>80-20 random shuf
 Then using our pruned features, we model ISPo and ISPr with <b>logistic regression, stepwise linear regression with forward and backward selection, and inverse gaussian regression</b>.   
 <br>
 Below, we present the logistic regression and inverse gaussian regression models and model evaluations.   
-```{r echo = TRUE, collapse= TRUE, warning = FALSE}
+```{r, echo=FALSE, message = FALSE, warning= FALSE}
 suppressWarnings({
 library(tidyverse)
 library(caTools)
@@ -398,7 +398,7 @@ igauss_result_ispo<- ggplot(extracted_test_ispo, aes(city_population,city_popula
 
 errors_igauss_ispo <- extracted_test_ispo$international_students_max - y_pred_igauss_ispo$y
 mae_igauss_ispo <- mean(abs(na.omit(errors_igauss_ispo)))
-})
+
 logit_result_ispr
 igauss_result_ispo
 
@@ -410,10 +410,11 @@ print("Mean Absolute Error of Inverse Gaussian Regression for ISPr:")
 print(mae_igauss_ispr)
 print("Mean Absolute Error of Inverse Gaussian Regression for ISPo:")
 print(mae_igauss_ispo)
+})
 ```
 
 #### Stepwise linear regression models:   
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r, echo=FALSE, message = FALSE,  warning= FALSE}
 #Stepwise regressions
 #install.packages("leaps")
 suppressWarnings({ 
