@@ -52,14 +52,14 @@ We were extremely startled to see that there are a lot of unanticipated indicati
 
 <br>
 
-Our argument is that the percentage of overseas students at a US institution increases with the university's rating. From our analysis, it is also clear that the number of international students studying in the United States is rising steadily in line with recent data. At the same time, there is a correlation between the quantity of papers the institution publishes and the percentage of overseas students. It is clear that one of the key factors for international schools is academic standing
+Our argument is that the percentage of overseas students at a US institution increases with the university's rating. From our analysis, it is also clear that the number of international students studying in the United States is rising steadily in line with recent data. At the same time, there is a correlation between the quantity of papers the institution publishes and the percentage of overseas students. It is clear that one of the key factors for international schools is academic standing.
 
 <br>
 
 ## Interactive
 
 
-Our Interactive dashboard has two components. The [first](link) is an overview of the scope of our dataset. The [second](link) is a tool to explore the relationship between our outcome variables and each individual predictor variable.
+Our Interactive dashboard has two components. The [first](link) is an overview of the scope of our dataset. The [second](https://b6vqbw-yawei-huang.shinyapps.io/FinalProjectApp/) is a tool to explore the relationship between our outcome variables and each individual predictor variable. 
 
 <br>
 

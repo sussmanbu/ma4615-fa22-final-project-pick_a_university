@@ -99,7 +99,7 @@ Michigan State University,NA,0.06,5795,39766,NA,101-150,151-200,public,Four-year
 Texas A&M University,49,NA,6621,40087,NA,151-200,151-200,public,NA,NA,NA,NA,NA,XL,21,Very High,0,21.4,16.6,55.1,18.7,0,55568,NA,College Station,TX,2268,112141
 University of California - Davis,10,0.16,8414,NA,NA,51-100,101-150,public,NA,National,NA,NA,NA,XL,10,Very High,0,25.3,30.5,59.3,23.6,0,NA,39074,Davis,CA,6887,68111
 University of California - Berkeley,10,0.13,9428,NA,NA,1-20,21-50,public,NA,National,NA,NA,NA,XL,11,Very High,78.4,61.3,67.8,65.1,58.2,65.6,NA,42327,Berkeley,CA,11580,121240
-University of Maryland - College Park,NA,NA,5662,NA,NA,51-100,151-200,public,NA,NA,NA,NA,NA,XL,10,Very High,19.7,25.3,33.5,55.3,29.3,19,NA,40709,College Park,MD,"6,191",35110
+University of Maryland - College Park,NA,NA,5662,NA,NA,51-100,151-200,public,NA,NA,NA,NA,NA,XL,10,Very High,19.7,25.3,33.5,55.3,29.3,19,NA,40709,College Park,MD,6191,35110
 Indiana University - Bloomington,23,0.05,5175,38354,very competitive plus,101-150,301-400,public,NA,National,NA,NA,NA,XL,11,Very High,21.3,13.5,18.6,40.3,19.4,10.2,32986,NA,Bloomington,IN,3647,84465
 Pennsylvania State University - University Park,NA,NA,8267,NA,NA,51-100,51-100,public,NA,NA,NA,NA,NA,XL,11,Very High,0,34.5,28.7,55.1,24.6,10.2,NA,NA,University Park,PA,15306,12764
 University of California - Los Angeles,469,0.1,10273,NA,NA,1-20,21-50,public,NA,National,NA,NA,NA,XL,10,Very High,46.4,55.9,44.9,73.1,32.1,29.2,NA,44589,Los Angeles,CA,8484,3976322
@@ -157,7 +157,7 @@ South Dakota School of Mines and Technology,55,NA,178,NA,NA,NA,NA,public,Four-ye
 Southeast Missouri State University,NA,NA,602,NA,NA,NA,NA,public,Four-year (median),NA,Master's Colleges & Universities,Exclusive/Very high undergraduate,city,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Cape Girardeau,MO,1352,39820
 Southern Utah University,NA,NA,548,NA,NA,NA,NA,public,Four-year (median),NA,Master's Colleges & Universities,Exclusive/Very high undergraduate,town or rural,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Cedar City,UT,1018,37206
 The Pennsylvania State University,NA,0.1,NA,NA,NA,NA,NA,public,Four-year (large),National,Doctoral Universities,Majority undergraduate,city,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,89816,University Park,PA,15306,12764
-Troy University,NA,NA,617,NA,NA,NA,NA,public,Four-year (large),NA,Master's Colleges & Universities,Majority undergraduate,town or rural,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,AL,623,17609
+Troy University,NA,NA,617,NA,NA,NA,NA,public,Four-year (large),NA,Master's Colleges & Universities,Majority undergraduate,town or rural,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,AL,623,17609
 University of Central Missouri,NA,NA,1341,NA,NA,NA,NA,public,Four-year (median),NA,Master's Colleges & Universities,Majority undergraduate,town or rural,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Warrensburg,MO,2066,19638
 University of Central Oklahoma,85,NA,635,NA,NA,NA,NA,public,Four-year (large),NA,Master's Colleges & Universities,Exclusive/Very high undergraduate,suburb,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Edmond,OK,1077,91191
 University of Nebraska Omaha,127,0.05,292,NA,NA,NA,NA,public,Four-year (median),National,Special Focus Four-Year,Exclusive/Majority graduate,city,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Omaha,NE,3517,446970

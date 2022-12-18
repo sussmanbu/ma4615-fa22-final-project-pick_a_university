@@ -146,7 +146,25 @@ full_data_leftjoinCarnegie1 &lt;- full_data_leftjoinCarnegie %&gt;%
 </div>
 <div id="deeper-cleaning-with-the-de-duplicated-dataset" class="section level3">
 <h3>Deeper cleaning with the de-duplicated dataset</h3>
-<p>This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering (see an example below).</p>
+<p>This round of deeper cleaning focused on three main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016.</p>
+<p><br></p>
+</div>
+<div id="semi-manual-cleaning-again" class="section level3">
+<h3>Semi-manual cleaning again</h3>
+<p>Due to the sparse dataset, if we modeled using city related predictors, the combination of test and train dataset may shrink to 10 observations, which is not a meaningful experiment and robust result. For this reason, we further cleaned data by correcting the values of city, state, city population, and city population density, from sources such as the US Census Bureau, University pages, <a href="https://worldpopulationreview.com/">World Population Review</a>, and <a href="http://www.city-data.com/">City Data</a>. We filled the missing city-related data in a newly created csv file (<code>Modified_Data.csv</code>) and then merged it with the existing dataset.</p>
+<p><br></p>
+<pre class="r"><code>modified_city &lt;- read_csv(here::here(&#39;dataset/Modified_Data.csv&#39;))
+
+semi_clean_data_dup = subset(semi_clean_data_dup, select = -c(city,state, city_population_density,city_population ) )
+
+semi_clean_data &lt;- semi_clean_data_dup%&gt;% mutate(city =modified_city$city, 
+                                            state =modified_city$state,
+                                            city_population_density =modified_city$city_population_density, 
+                                            city_population =modified_city$city_population)</code></pre>
+</div>
+<div id="making-categorical-variables-factors" class="section level3">
+<h3>Making categorical variables factors</h3>
+<p>Finally, we dealt with the categorical variables, including re-leveling and re-ordering. Below is an example.</p>
 <p><br></p>
 <pre class="r"><code># locale_carnegie
 clean_data$locale_carnegie[clean_data$locale_carnegie == 11 | 
@@ -170,8 +188,8 @@ locale_carnegie_levels &lt;- c(
 
 clean_data$locale_carnegie &lt;- factor(clean_data$locale_carnegie, levels = locale_carnegie_levels)</code></pre>
 </div>
-<div id="finally-this-is-the-codebook-for-our-final-dataset-clean_data.rdata." class="section level3">
-<h3>Finally, this is the codebook for our final dataset (<code>clean_data.RData</code>).</h3>
+<div id="this-is-a-codebook-for-our-final-dataset-clean_data.rdata." class="section level3">
+<h3>This is a codebook for our final dataset (<code>clean_data.RData</code>).</h3>
 <p>The first column has the final set of 29 variables included in our dataset. The second column explains what each variable means. The third column presents possible levels for the variable.</p>
 <p><br></p>
 <table>

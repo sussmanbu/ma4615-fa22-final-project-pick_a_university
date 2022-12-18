@@ -8,12 +8,12 @@
 #
 
 
-
 library(tidyverse)
 library(modelr)
 library(shiny)
 
-clean_data <- read_csv(here::here("shiny_app/FinalProjectApp/clean_data.csv"))
+
+load("clean_data.RData")
 
 
 # Define UI for application
@@ -25,11 +25,11 @@ ui <- fluidPage(
     # Sidebar with a select input for variables 
     sidebarLayout(
         sidebarPanel(
-          selectInput("outcome", label = h3("Outcome"),
+          selectInput("outcome", label = h3("Select an Outcome"),
                       choices = list("International.Student.Number" = "international_students_max",
                                      "International.Student.Percentage" = "international_students_natlib"), selected = 1),
           
-          selectInput("indepvar", label = h3("Predictor"),
+          selectInput("indepvar", label = h3("Select a Predictor"),
                       choices = list("ARWU.World.Rank" = "world_rank_cat_arwu",
                                      "QS.World.Rank" = "world_rank_qs",
                                      "Selectivity" = "selectivity",
@@ -56,7 +56,7 @@ ui <- fluidPage(
           
           tabsetPanel(type = "tabs",
                       
-                      tabPanel("Plot", plotOutput("plot")), # Boxplot or scatterplot
+                      tabPanel("Plot", plotOutput("plot")), 
                       tabPanel("Linear Regression Model Summary", verbatimTextOutput("summary")), # Regression output
                       
           )
@@ -66,18 +66,7 @@ ui <- fluidPage(
 # Define server logic 
 server <- function(input, output) {
   
-  # Regression output
-  output$summary <- renderPrint({
-    varclass <- class(unlist(clean_data[,input$indepvar]))
-    ifelse(varclass == "numeric",
-           fit <- lm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar])),
-           fit <- lm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]) - 1)
-           ) 
-    summary(fit)
-  })
-  
-  
-  # Boxplot output
+  # Plot output
   output$plot <- renderPlot({
     varclass <- class(unlist(clean_data[,input$indepvar]))
     ifelse(varclass == "numeric",
@@ -87,15 +76,67 @@ server <- function(input, output) {
       ggplot(aes(x = unlist(clean_data[,input$indepvar]))) +
       geom_point(aes(y = unlist(clean_data[,input$outcome])),
                  alpha = .3,
-                 pch=19)+
+                 position = "jitter")+
+      geom_smooth(aes(y = unlist(clean_data[,input$outcome])), se=FALSE)+
       geom_line(aes(y = pred),
-                color="red")
+                color="red")+
+        labs(title="Note: \n x-axis is the values of selected predictor; \n y-axis is the value of selected outcome; \n blue line represents the smoothened line of raw data; \n red line represents the fitted line of linear regression model between the two variables.",
+             x=NULL,
+             y=NULL)+
+        theme_minimal()
       ),
-    boxplot(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]),
-            ann = FALSE,
-            pch=19)
+    plot(
+      clean_data %>% 
+      # group_by(unlist(clean_data[,input$indepvar])) %>%
+      # mutate(n=n()) %>% 
+      ggplot(aes(x = unlist(clean_data[,input$indepvar]), 
+                 y=unlist(clean_data[,input$outcome]))
+      ) +
+        stat_summary(
+          fun = mean,
+          fun.min = min,
+          fun.max = max,
+          geom = "crossbar",
+          color = "blue"
+        )+
+      # geom_boxplot(aes(color = n),
+      #             outlier.alpha = .1) +
+        geom_point(
+          position = "jitter"
+        )+
+      # scale_fill_viridis_c()+
+      labs(title="Note: \n x-axis is the levels of selected predictor; \n y-axis is the value of selected outcome; \n NA refers to missing values of the selected predictor; \n middle line of the crossbar represents the mean outcome value of the given predictor level.",
+           x=NULL,
+           y=NULL)+
+           # color="count of universities")+
+      theme_minimal()
+    )
     )
   }, height=600)
+  
+  # Regression output
+  output$summary <- renderPrint({
+    varclass <- class(unlist(clean_data[,input$indepvar]))
+    #outtype <- max(unlist(clean_data[,input$outcome]), na.rm = TRUE)
+    #ifelse(outtype > 1,
+    ifelse(varclass == "numeric",
+           fit <- lm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar])),
+           fit <- lm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]) - 1)
+           #),
+           #ifelse(varclass == "numeric",
+           #fit <- glm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]), family=binomial(), na.action=na.omit),
+           #fit <- glm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]) - 1), family=binomial(), na.action=na.omit)
+    )
+    summary(fit)
+    
+    # broom::tidy(fit) %>%
+    #   select(term, estimate, p.value) %>%
+    #   mutate(across(where(is.numeric), ~round(., 2))) %>%
+    #   mutate(term=str_sub(term, 23)) %>% 
+    #   DT::datatable()
+  })
+  
+  
 }
 
 

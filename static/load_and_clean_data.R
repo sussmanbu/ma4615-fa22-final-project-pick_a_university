@@ -231,8 +231,7 @@ problems(full_data_leftjoinCarnegie1_dedup)
 ### Deeper cleaning with the de-duplicated dataset
 
 
-# This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. Fourth, we dealt with the categorical variables, including re-leveling and re-ordering.  
-                                
+# This round of deeper cleaning focused on four main areas. First, we combined predictor variables that had multiple data points (such as private or public, 2-year vs 4-year). Second, given that we had two columns (from two sources) on number of international students (which is one of our outcome variables), we combined them by creating a new variable that takes the maximum value of the two original columns. Third, we left joined the dataset with the remaining US city population data, which included variables on the city population, city land area, and city population density in 2016. 
                                 
 semi_clean_data <- 
   full_data_leftjoinCarnegie1_dedup %>% 
@@ -274,11 +273,11 @@ semi_clean_data <-
            total_score_arwu, score_qs) 
 
 
-## 
+## Due to the sparse dataset, if we modeled using city related predictors, the combination of test and train dataset may shrink to 10 observations, which is not a meaningful experiment and robust result. For this reason, we further cleaned data by manually correcting the values of city, state, city population, and city population density, from sources such as the US Census Bureau, University pages, World Population Review, and City Data.
 
 
 semi_clean_data_dup <- semi_clean_data
-modified_city <- read.csv(file = 'dataset/Modified_Data.csv')
+modified_city <- read_csv(here::here('dataset/Modified_Data.csv'))
 
 semi_clean_data_dup = subset(semi_clean_data_dup, select = -c(city,state, city_population_density,city_population ) )
 
@@ -288,6 +287,9 @@ semi_clean_data <- semi_clean_data_dup%>% mutate(city =modified_city$city,
                                             city_population =modified_city$city_population)
 
 
+
+
+## Finally, we dealt with the categorical variables, including re-leveling and re-ordering.  
 
 
 
