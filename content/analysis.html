@@ -75,7 +75,7 @@ We identified pairs of variables with high positive or negative correlations and
 <h3>Categorical Predictors</h3>
 <p><b>Note</b>: Before using logistic regression, we omit variable “university” because it is unique for all observations.<br />
 <br>
-We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric.</p>
+We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric. Below, we provide the summary of the logistic regression model with response variable international student population and independent variable research output.</p>
 <pre><code>## 
 ## Call:
 ## glm(formula = as.factor(international_students_max) ~ research_output_qs, 
@@ -181,6 +181,9 @@ Below, we present the logistic regression and inverse gaussian regression models
 ## [1] 0.06059221
 ## [1] &quot;Mean Absolute Error of Inverse Gaussian Regression for ISPo:&quot;
 ## [1] 1898.074</code></pre>
+<p>For evaluating performance on these two generalized linear models, we compute for mean absolute error (MAE) on the new test set with 89 examples.<br />
+<br>
+For international student population, the inverse Gaussian regression has lower MAE and performs better than the logistic regression. Conversely, for international student proportion, the logistic regression has lower MAE and performs better.</p>
 <div id="stepwise-linear-regression-models" class="section level4">
 <h4>Stepwise linear regression models:</h4>
 <pre><code>## 

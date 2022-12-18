@@ -103,7 +103,7 @@ We identified pairs of variables with high positive or negative correlations and
 ### Categorical Predictors
 <b>Note</b>: Before using logistic regression, we omit variable "university" because it is unique for all observations.    
 <br>
-We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric.
+We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric. Below, we provide the summary of the logistic regression model with response variable international student population and independent variable research output.
 ```{r, echo=FALSE, message = FALSE}
 suppressWarnings({
 prev_data <- read.csv(here::here("dataset/prev_data.csv"))
@@ -399,9 +399,6 @@ igauss_result_ispo<- ggplot(extracted_test_ispo, aes(city_population,city_popula
 errors_igauss_ispo <- extracted_test_ispo$international_students_max - y_pred_igauss_ispo$y
 mae_igauss_ispo <- mean(abs(na.omit(errors_igauss_ispo)))
 
-logit_result_ispr
-igauss_result_ispo
-
 print("Mean Absolute Error of Logistic Regression for ISPr:")
 print(mae_logit_ispr)
 print("Mean Absolute Error of Logistic Regression for ISPo:")
@@ -412,6 +409,10 @@ print("Mean Absolute Error of Inverse Gaussian Regression for ISPo:")
 print(mae_igauss_ispo)
 })
 ```
+For evaluating performance on these two generalized linear models, we compute for mean absolute error (MAE) on the new test set with 89 examples.  
+<br>
+For international student population, the inverse Gaussian regression has lower MAE and performs better than the logistic regression. Conversely, for international student proportion, the logistic regression has lower MAE and performs better. 
+
 
 #### Stepwise linear regression models:   
 ```{r, echo=FALSE, message = FALSE,  warning= FALSE}
