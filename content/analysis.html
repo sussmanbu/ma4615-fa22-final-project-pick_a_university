@@ -1,5 +1,5 @@
 ---
-title: Analysis 1
+title: Analysis Part 1
 description:
 toc: true
 featuredVideo: 
@@ -16,16 +16,21 @@ draft: false
 <h2>Motivation</h2>
 <p>Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly still increased during 2019to 2021. Widespread travel restrictions do not appear to have had a large impact on freshmen applying to U.S. universities from outside the U.S. We wanted to see what influences international students to choose certain institutions in the United States.</p>
 <p>One of our teammates, Yawei suggested that the top three considerations were: safety, ranking of the university in my field, and the “dynamics” of the campus. The percentage of the international student body would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student body is one of the criteria (probably not, but I believe there is correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc</p>
-<p>The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through “group_by”, “color”, “fill”, “facet” and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law).</p>
+<p>The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through <em>“group_by”, “color”, “fill”, “facet”</em> and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law).</p>
 <p>We also wanted to answer the questions below:
-How has the number of international students in the US changed over time? (x= school years, y= international students’ population)
-New enrollment percentage of international students (x= school years, y= international students’ population % change)
-How do new enrollment trends vary by academic level?
-Breakdown of international students by the US region they live (2021 vs 2016)</p>
+<em>First:</em> How has the number of international students in the US changed over time? (x= school years, y= international students’ population)
+<em>Second:</em> New enrollment percentage of international students (x= school years, y= international students’ population % change)
+<em>Third:</em> How do new enrollment trends vary by academic level?
+<em>Fourth:</em> Breakdown of international students by the US region they live (2021 vs 2016)</p>
 </div>
 <div id="breadth-and-depth-of-da" class="section level2">
 <h2>Breadth and Depth of DA</h2>
 <p>Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US colleges, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr.</p>
+<p><br>
+In the dataset, the features indicate ISPo and ISPr are following:
+<br>
+ISPo: international_students_max <br/>
+ISPr: international_students_natlib</p>
 </div>
 <div id="early-data-analysis" class="section level2">
 <h2>Early Data Analysis</h2>
@@ -45,151 +50,42 @@ Since we are solving a regression problem, our output is a continuous variable. 
 <h3>Continuous Predictors</h3>
 <p>To explore continuous variables’ correlations with the target variables, we have used a correlation matrix.
 <img src="/analysis_files/figure-html/unnamed-chunk-1-1.png" width="672" />
-We identified pairs of variables with high positive or negative correlations and selected numerical features that have an absolute value of correlation coefficient greater than 0.4 with respect to ISPo and ISPr.</p>
+<br></p>
+<p>We identified pairs of variables with high positive or negative correlations and selected numerical features that have an absolute value of correlation coefficient greater than 0.4 with respect to ISPo and ISPr.</p>
 <div id="for-ispo-the-relevant-numerical-features-are" class="section level4">
 <h4>For ISPo, the relevant numerical features are:</h4>
 <ol style="list-style-type: decimal">
-<li>international_students_opendoors,<br />
-</li>
-<li>enrollment_top120enrollment,<br />
-</li>
-<li>city_population,<br />
-</li>
-<li>international_students_qs,<br />
-</li>
-<li>international_students_natlib,<br />
-</li>
-<li>city_population_density</li>
+<li><del>The number of international students in Opendoors (international_students_opendoors)</del></li>
+<li>Total student enrollment number (enrollment_top120enrollment)</li>
+<li>City population (city_population)</li>
+<li><del>The number of international students in QS (international_students_qs)</del></li>
+<li><del>Percentage of international students (international_students_natlib)</del></li>
+<li>City population density (city_population_density)</li>
 </ol>
+<p><br></p>
+<p>Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations.
+<br>
+<img src="/analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="for-ispr-the-relevant-numerical-features-are" class="section level4">
 <h4>For ISPr, the relevant numerical features are:</h4>
 <ol style="list-style-type: decimal">
-<li>city_population_density<br />
+<li>City population density (city_population_density)<br />
 </li>
-<li>faculty_count_qs</li>
+<li>The number of faculty or academic staff at the university (faculty_count_qs)</li>
 </ol>
+<p><br></p>
+<p>Below is the scatter plot and correlation matrix of ISPr related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations.
+<br></p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 </div>
 <div id="categorical-predictors" class="section level3">
 <h3>Categorical Predictors</h3>
 <p><b>Note</b>: Before using logistic regression, we omit variable “university” because it is unique for all observations.<br />
 <br>
-We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric.</p>
-<pre class="r"><code>suppressWarnings({
-prev_data &lt;- read.csv(here::here(&quot;dataset/prev_data.csv&quot;))
-
-glm_model_city &lt;- glm(international_students_natlib~city, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_city)
-#AIC: 425.04
-glm_model_state &lt;- glm(international_students_natlib~state, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_state)
-#AIC: 130.42
-#type3_natlib is not effective
-glm_model_selectivity &lt;- glm(international_students_natlib~selectivity, data=prev_data, family =binomial(), na.action=na.omit )
-summary(glm_model_selectivity)
-#AIC: 34.986
-# world_rank_qs, national_rank_arwu, type1_all,  is not effective
-glm_model_world_rank_cat_arwu &lt;- glm(international_students_natlib~world_rank_cat_arwu, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_world_rank_cat_arwu)
-#AIC: 29.971
-#No pairs perform better
-glm_model_world_rank_qs &lt;- glm(international_students_natlib~world_rank_qs, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_world_rank_qs)
-#AIC: 43.828
-#type2_carnegie, type4_carnegie, enrprofile2021_carnegie, locale_carnegie does well
-glm_model_national_rank_arwu &lt;- glm(international_students_natlib~national_rank_arwu, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_national_rank_arwu)
-#AIC: 84.028
-#type2_carnegie, enrprofile2021_carnegie, locale_carnegie does well
-glm_model_type1_all &lt;- glm(international_students_natlib~type1_all, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type1_all)
-#AIC: 49.552
-# enrprofile2021_carnegie, locale_carnegie,research_output_qs does well
-glm_model_type2_carnegie &lt;- glm(international_students_natlib~type2_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type2_carnegie)
-#AIC: 46.749
-#size_qs, research_output_qs does well
-glm_model_type3_natlib &lt;- glm(international_students_natlib~type3_natlib, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type3_natlib)
-#AIC:  52.316
-#type4_carnegie, enrprofile2021_carnegie, locale_carnegie, size_qs, research_output_qs does well
-glm_model_type4_carnegie&lt;- glm(international_students_natlib~type4_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type4_carnegie)
-# AIC: 48.755
-#size_qs, research_output_qs does well
-glm_model_enrprofile2021_carnegie&lt;- glm(international_students_natlib~enrprofile2021_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_enrprofile2021_carnegie)
-#AIC: 46.748
-#size_qs, research_output_qs does well
-glm_model_locale_carnegie&lt;- glm(international_students_natlib~locale_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_locale_carnegie)
-#AIC: 46.74
-#size_qs, research_output_qs improves
-glm_model_size_qs&lt;- glm(international_students_natlib~size_qs+research_output_qs, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_size_qs)
-#AIC: 28.158
-#research_output_qs does not improve
-glm_model_research_output_qs&lt;- glm(international_students_natlib~research_output_qs, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_research_output_qs)
-#AIC: 24.169
-glm_model_city_max &lt;- glm(as.factor(international_students_max)~city+type1_all, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_city_max)
-#AIC: 491.05
-#All pairs  are good
-glm_model_state_max &lt;- glm(as.factor(international_students_max)~state, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_state_max)
-#AIC: 100.9
-#world_rank_cat_arwu, national_rank_arwu, type1_all is not effective
-glm_model_selectivity_max &lt;- glm(as.factor(international_students_max)~selectivity, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_selectivity_max)
-#AIC: 17.844
-# type3_natlib, locale_carnegie, research_output_qs is effective
-glm_model_world_rank_cat_arwu_max &lt;- glm(as.factor(international_students_max)~world_rank_cat_arwu, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_world_rank_cat_arwu_max)
-#AIC:22.279
-#type4_carnegie perform better
-glm_model_world_rank_qs_max &lt;- glm(as.factor(international_students_max)~world_rank_qs, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_world_rank_qs_max)
-#AIC: 32.477
-#type3_natlib, enrprofile2021_carnegie,  does well
-glm_model_national_rank_arwu_max &lt;- glm(as.factor(international_students_max)~national_rank_arwu, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_national_rank_arwu_max)
-#AIC: 84.279
-#type2_carnegie, type4_carnegie, enrprofile2021_carnegie,  locale_carnegie,  does well
-glm_model_type1_all_max &lt;- glm(as.factor(international_students_max)~type1_all, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type1_all_max)
-#AIC: 17.922
-# type3_natlib, size_qs, research_output_qs does well
-glm_model_type2_carnegie_max &lt;- glm(as.factor(international_students_max)~type2_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type2_carnegie_max)
-#AIC: 17.922
-#type3_natlib, research_output_qs does well
-glm_model_type3_natlib_max &lt;- glm(as.factor(international_students_max)~type3_natlib, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type3_natlib_max)
-#AIC: 12.835
-# size_qs, research_output_qs does well
-glm_model_type4_carnegie_max&lt;- glm(as.factor(international_students_max)~type4_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_type4_carnegie_max)
-# AIC: 17.941
-# research_output_qs does well
-glm_model_enrprofile2021_carnegie_max&lt;- glm(as.factor(international_students_max)~enrprofile2021_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_enrprofile2021_carnegie_max)
-#AIC: 17.773
-#size_qs, research_output_qs does well
-glm_model_locale_carnegie_max&lt;- glm(as.factor(international_students_max)~locale_carnegie, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_locale_carnegie_max)
-#AIC: 18.067
-glm_model_size_qs_max&lt;- glm(as.factor(international_students_max)~size_qs, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_size_qs_max)
-#AIC: 17.301
-#research_output_qs does not improve
-glm_model_research_output_qs_max&lt;- glm(as.factor(international_students_max)~research_output_qs, data=prev_data, family = binomial(), na.action=na.omit )
-summary(glm_model_research_output_qs_max)
-#AIC: 16.015
-#______
- })
-## 
+We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric. Below, we provide the summary of the logistic regression model with response variable international student population and independent variable research output.</p>
+<pre><code>## 
 ## Call:
 ## glm(formula = as.factor(international_students_max) ~ research_output_qs, 
 ##     family = binomial(), data = prev_data, na.action = na.omit)
@@ -211,44 +107,60 @@ summary(glm_model_research_output_qs_max)
 ## AIC: 16.015
 ## 
 ## Number of Fisher Scoring iterations: 19</code></pre>
-<div id="for-ispr-the-relevant-categorical-features-are" class="section level4">
-<h4>For ISPr, the relevant categorical features are:</h4>
-<ol style="list-style-type: decimal">
-<li>research_output_qs<br />
-</li>
-<li>size_qs<br />
-</li>
-<li>locale_carnegie<br />
-</li>
-<li>enrprofile2021_carnegie<br />
-</li>
-<li>type2_carnegie<br />
-</li>
-<li>type4_carnegie</li>
-<li>world_rank_cat_arwu<br />
-</li>
-<li>selectivity<br />
-</li>
-<li>state</li>
-</ol>
-</div>
+<p><br></p>
 <div id="for-ispo-the-relevant-categorical-features-are" class="section level4">
 <h4>For ISPo, the relevant categorical features are:</h4>
 <ol style="list-style-type: decimal">
-<li>research_output_qs<br />
+<li>Quality of research (research_output_qs)<br />
 </li>
-<li>size_qs<br />
+<li>Size of the university (size_qs)<br />
 </li>
-<li>type3_natlib<br />
+<li>National or Liberal Arts (type3_natlib)<br />
 </li>
-<li>type4_carnegie<br />
+<li>Carnegie Basic Classification (type4_carnegie)<br />
 </li>
-<li>state<br />
+<li>Located State in the US (state)<br />
 </li>
-<li>selectivity<br />
+<li>Selectivity (selectivity)<br />
 </li>
-<li>world_rank_cat_arwu</li>
+<li>World ranking from ARWU (world_rank_cat_arwu)</li>
 </ol>
+<p><br></p>
+</div>
+<div id="boxplots-of-ispo-and-relevant-categorical-variables" class="section level4">
+<h4>Boxplots of ISPo and Relevant Categorical Variables</h4>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-2.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-3.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-4.png" width="672" />
+<br>
+To make the state variable viewable we created the feature “region” using “state” by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
+<br>
+<img src="/analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="for-ispr-the-relevant-categorical-features-are" class="section level4">
+<h4>For ISPr, the relevant categorical features are:</h4>
+<ol style="list-style-type: decimal">
+<li>Quality of research (research_output_qs)<br />
+</li>
+<li>Size of the university (size_qs)<br />
+</li>
+<li>Urban-centric locale (locale_carnegie)</li>
+<li>Enrollment profile classification (enrprofile2021_carnegie)<br />
+</li>
+<li>Year and size classification (type2_carnegie)<br />
+</li>
+<li>Carnegie Basic Classification (type4_carnegie)</li>
+<li>World ranking from ARWU (world_rank_cat_arwu)<br />
+</li>
+<li>Selectivity (selectivity)<br />
+</li>
+<li>Located State in the US (state)</li>
+</ol>
+</div>
+<div id="boxplots-of-ispr-and-relevant-categorical-variables" class="section level4">
+<h4>Boxplots of ISPr and Relevant Categorical Variables</h4>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-2.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-3.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-4.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-5.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-6.png" width="672" /></p>
+<p><br>
+Same as ISPo, we made boxplots with “region” variable, which is a feature made with “state”
+<img src="/analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 </div>
 <div id="finalized-features" class="section level3">
@@ -270,66 +182,11 @@ summary(glm_model_research_output_qs_max)
 <h3>Initial Modeling</h3>
 <p>For our first iteration of modeling, we use the dataset with 35 independent variables and only consider models with numerically extracted features: faculty_count_qs, city_population, city_population_density.
 To obtain our train and test datasets, we have performed an <b>70-30 random shuffle-split</b>. We have 53 examples in the train set and 23 examples in test set. Then, we model ISPo with linear and logistic regression.</p>
-<pre class="r"><code>suppressWarnings({
-clean_data &lt;- read.csv(here::here(&quot;dataset/prev_data.csv&quot;))
-processed_data &lt;- na.omit(data.frame(y = clean_data$international_students_natlib,
-                   x1 = clean_data$faculty_count_qs,
-                   x2= clean_data$city_population,
-                   x3= clean_data$city_population_density
-                   ) )
-set.seed(2022)
-split &lt;- sample.split(processed_data, SplitRatio = 0.7)
-dt = sort(sample(nrow(processed_data), nrow(processed_data)*.7))
-train&lt;-processed_data[dt,]
-test&lt;-processed_data[-dt,]
-})
-
-suppressWarnings({
-linear_model &lt;- lm(y~x1+x2+x3, data=train)
-summary(linear_model)
-
-linear_result&lt;- ggplot(test,aes(x1+x2+x3, y)) +
-  geom_point() +
-  geom_smooth(method = &#39;loess&#39;, formula = &#39;y ~ x&#39;, se=TRUE, color=&#39;turquoise4&#39;) +
-  theme_minimal() +
-  labs(x=&#39;Faculty count, city population and density factor (additive)&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Linear Regression Plot&#39;) +
-  theme(plot.title = element_text(hjust=0.5, size=20, face=&#39;bold&#39;)) 
-
-y_pred_linear_model &lt;- predict(linear_model, test, type=&quot;response&quot;)
-errors_linear_model &lt;- test$y - y_pred_linear_model
-mae_linear_model &lt;- mean(abs(na.omit(errors_linear_model)))
-#Only considers 23 observations
-})
-
-suppressWarnings({
-logistic_model &lt;- glm(y~x1+x2+x3, data=train, family = binomial()) #Logistic 1
-summary(logistic_model)
-
-y_predict_logit &lt;- data.frame(x1 = test$x1,x2 = test$x2, x3 = test$x3, y =predict(logistic_model, test, type = &quot;response&quot;))
-
-logit_result&lt;- ggplot(test, aes(x1+x2+x3, y)) + geom_point() + geom_smooth(data = y_predict_logit, method = &#39;loess&#39;, formula = &#39;y ~ x&#39;, se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
-  theme_minimal() +
-  labs(x=&#39;Faculty count, city population and density factor (additive)&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Logistic Regression&#39;) +
-  theme(plot.title = element_text(hjust=0.5, size=20, face=&#39;bold&#39;)) 
-logit_result
-
-y_pred_logistic_model &lt;- predict(logistic_model, test, type=&quot;response&quot;)
-errors_logistic_model &lt;- test$y - y_pred_logistic_model
-mae_logistic_model &lt;- mean(abs(na.omit(errors_logistic_model)))
-})
-#Only uses 23 observations to test
-linear_result</code></pre>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<pre class="r"><code>logit_result</code></pre>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
-<pre class="r"><code>print(&quot;Mean Absolute Error of Linear Regression for ISPr:&quot;)
-## [1] &quot;Mean Absolute Error of Linear Regression for ISPr:&quot;
-mae_linear_model
-## [1] 0.03342281
-print(&quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;)
-## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;
-mae_logistic_model
-## [1] 0.03372792</code></pre>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Mean Absolute Error of Linear Regression for ISPr:&quot;</code></pre>
+<pre><code>## [1] 0.03342281</code></pre>
+<pre><code>## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;</code></pre>
+<pre><code>## [1] 0.03372792</code></pre>
 <p>While linear regression has a mean absolute error of <em>0.03342281</em> and logistic regression has a mean absolute error of <em>0.03372792</em> suggests the models have ‘low’ error, the modelling is not robust since the train and test set are small, only contains 53 and 23 observations, respectively. We are interested in experimenting with more test data and using a combination of continuous and categorical predictors for the final modeling.</p>
 </div>
 <div id="finalized-modeling" class="section level3">
@@ -341,102 +198,17 @@ To obtain our train and test datasets, we have performed an <b>80-20 random shuf
 Then using our pruned features, we model ISPo and ISPr with <b>logistic regression, stepwise linear regression with forward and backward selection, and inverse gaussian regression</b>.<br />
 <br>
 Below, we present the logistic regression and inverse gaussian regression models and model evaluations.</p>
-<pre class="r"><code>suppressWarnings({
-library(tidyverse)
-library(caTools)
-library(ggplot2)
-library(ggcorrplot)
-library(reshape2)
-  
-clean_data &lt;- read.csv(here::here(&quot;dataset/clean_data.csv&quot;))
-clean_data$city_population_density &lt;- as.integer(clean_data$city_population_density)
-
-set.seed(2022)
-split &lt;- sample.split(clean_data, SplitRatio = 0.8)
-dt = sort(sample(nrow(clean_data), nrow(clean_data)*.8))
-train&lt;-clean_data[dt,]
-test&lt;-clean_data[-dt,]
-
-logistic_ispr&lt;- glm(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=binomial(), na.action=na.omit)
-#summary(logistic_ispr)
-logistic_ispo&lt;- glm(as.factor(international_students_max)~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=binomial(), na.action=na.omit)
-#summary(logistic_ispo)
-igauss_ispr&lt;- glm(international_students_natlib~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=inverse.gaussian(), na.action=na.omit)
-#summary(igauss_ispr)
-igauss_ispo&lt;- glm(international_students_max~city_population+city_population_density+selectivity+size_qs+research_output_qs, train, family=inverse.gaussian(), na.action=na.omit)
-#summary(igauss_ispo)
-
-extracted_test_ispr&lt;- select(test, city_population, city_population_density,selectivity,  size_qs, research_output_qs, international_students_natlib)
-extracted_test_ispo&lt;- select(test, city_population, city_population_density,selectivity,  size_qs, research_output_qs, international_students_max)
-
-y_pred_logit_ispr &lt;- data.frame(city_population= extracted_test_ispr$city_population,city_population_density = extracted_test_ispr$city_population_density,selectivity = extracted_test_ispr$selectivity,size_qs=extracted_test_ispr$size_qs,research_output_qs=extracted_test_ispr$research_output_qs, y =predict(logistic_ispr, extracted_test_ispr, type = &quot;response&quot;))
-y_pred_logit_ispo &lt;- data.frame(city_population= extracted_test_ispo$city_population,city_population_density = extracted_test_ispo$city_population_density,selectivity = extracted_test_ispo$selectivity,size_qs=extracted_test_ispo$size_qs,research_output_qs=extracted_test_ispo$research_output_qs, y =predict(logistic_ispo, extracted_test_ispo, type = &quot;response&quot;))
-y_pred_igauss_ispr &lt;- data.frame(city_population= extracted_test_ispr$city_population,city_population_density = extracted_test_ispr$city_population_density,selectivity = extracted_test_ispr$selectivity,size_qs=extracted_test_ispr$size_qs,research_output_qs=extracted_test_ispr$research_output_qs, y =predict(igauss_ispr, extracted_test_ispr, type = &quot;response&quot;))
-y_pred_igauss_ispo &lt;- data.frame(city_population= extracted_test_ispo$city_population,city_population_density = extracted_test_ispo$city_population_density,selectivity = extracted_test_ispo$selectivity,size_qs=extracted_test_ispo$size_qs,research_output_qs=extracted_test_ispo$research_output_qs, y =predict(igauss_ispo, extracted_test_ispo, type = &quot;response&quot;))
-
-#International Student Proportion; Logistic Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
-logit_result_ispr&lt;- ggplot(extracted_test_ispr, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispr$international_students_natlib)) + geom_point() + geom_smooth(data = y_pred_logit_ispr,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
-  theme_minimal() +
-  labs(x=&#39;Predictors&#39;, y=&#39;International Student Proportions&#39;, title=&#39;Logistic Regression for International Student Proportion&#39;) +
-  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
-#logit_result_ispr
-
-errors_logit_ispr &lt;- extracted_test_ispr$international_students_natlib - y_pred_logit_ispr$y
-mae_logit_ispr &lt;- mean(abs(na.omit(errors_logit_ispr)))
-
-#International Student Population; Logistic Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
-logit_result_ispo&lt;- ggplot(extracted_test_ispo, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispo$international_students_max)) + geom_point() + geom_smooth(data = y_pred_logit_ispo,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
-  theme_minimal() +
-  labs(x=&#39;Predictors&#39;, y=&#39;Population&#39;, title=&#39;Logistic Regression for International Student Population&#39;) +
-  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
-#logit_result_ispo
-
-errors_logit_ispo &lt;- extracted_test_ispo$international_students_max - y_pred_logit_ispo$y
-mae_logit_ispo &lt;- mean(abs(na.omit(errors_logit_ispo)))
-
-#International Student Proportion; Inverse Gaussian Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
-igauss_result_ispr&lt;- ggplot(extracted_test_ispr, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispr$international_students_natlib)) + geom_point() + geom_smooth(data = y_pred_igauss_ispr,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
-  theme_minimal() +
-  labs(x=&#39;Predictors&#39;, y=&#39;Population&#39;, title=&#39;Inverse Gaussian Regression for International Student Proportion&#39;) +
-  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
-#logit_result_ispo
-
-errors_igauss_ispr &lt;- extracted_test_ispr$international_students_natlib - y_pred_igauss_ispr$y
-mae_igauss_ispr &lt;- mean(abs(na.omit(errors_igauss_ispr)))
-
-#International Student Population; Inverse Gaussian Regression with predictors: (city_population,city_population_density,selectivity,size_qs,research_output_qs)
-igauss_result_ispo&lt;- ggplot(extracted_test_ispo, aes(city_population,city_population_density,selectivity,size_qs,research_output_qs, y = extracted_test_ispo$international_students_max)) + geom_point() + geom_smooth(data = y_pred_igauss_ispo,  se=FALSE, color=&#39;red4&#39;, alpha = 0.1)+
-  theme_minimal() +
-  labs(x=&#39;Predictors&#39;, y=&#39;Population&#39;, title=&#39;Logistic Regression for International Student Population&#39;) +
-  theme(plot.title = element_text(hjust=0.5, size=10, face=&#39;bold&#39;)) 
-#logit_result_ispo
-
-errors_igauss_ispo &lt;- extracted_test_ispo$international_students_max - y_pred_igauss_ispo$y
-mae_igauss_ispo &lt;- mean(abs(na.omit(errors_igauss_ispo)))
-})
-logit_result_ispr
-## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<pre class="r"><code>igauss_result_ispo
-## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
-<pre class="r"><code>
-print(&quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;)
-## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;
-print(mae_logit_ispr)
+<pre><code>## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;
 ## [1] 0.05272577
-print(&quot;Mean Absolute Error of Logistic Regression for ISPo:&quot;)
 ## [1] &quot;Mean Absolute Error of Logistic Regression for ISPo:&quot;
-print(mae_logit_ispo)
 ## [1] 4755.231
-print(&quot;Mean Absolute Error of Inverse Gaussian Regression for ISPr:&quot;)
 ## [1] &quot;Mean Absolute Error of Inverse Gaussian Regression for ISPr:&quot;
-print(mae_igauss_ispr)
 ## [1] 0.06059221
-print(&quot;Mean Absolute Error of Inverse Gaussian Regression for ISPo:&quot;)
 ## [1] &quot;Mean Absolute Error of Inverse Gaussian Regression for ISPo:&quot;
-print(mae_igauss_ispo)
 ## [1] 1898.074</code></pre>
+<p>For evaluating performance on these two generalized linear models, we compute for mean absolute error (MAE) on the new test set with 89 examples.<br />
+<br>
+For international student population, the inverse Gaussian regression has lower MAE and performs better than the logistic regression. Conversely, for international student proportion, the logistic regression has lower MAE and performs better.</p>
 <div id="stepwise-linear-regression-models" class="section level4">
 <h4>Stepwise linear regression models:</h4>
 <pre><code>## 
@@ -561,86 +333,38 @@ We also see that the p-value scores are low for all models, which implies the pr
 </div>
 <div id="flaws-and-limitations" class="section level1">
 <h1>Flaws and limitations</h1>
-<div id="initial-limitation-1-resolved." class="section level3">
-<h3>Initial Limitation 1 (Resolved).</h3>
+<div id="initial-limitation-1-resolved." class="section level2">
+<h2>Initial Limitation 1 (Resolved).</h2>
 <p>One of the main limitations is that for our models we don’t introduce any categorical variables. We address this in the Feature Extraction section. Alternatively, we are interested in leveraging the regsubsets subroutine in the leaps library to compare modeling with different variables, which provides performance criteria such as Adjusted R2 score, Bayesian Information Criterion, Mallow’s Cp.</p>
-</div>
 <div id="solution" class="section level3">
 <h3>Solution:</h3>
 <p>We have done feature extraction using correlation matrix and logistic regression. We have also used regsubsets and the above metrics to find the most promising categorical and continuous predictors.
 <br></p>
 </div>
-<div id="initial-limitation-2-resolved." class="section level3">
-<h3>Initial Limitation 2 (Resolved).</h3>
-<p>On the other hand, due to the sparsity of the data, if we include certain predictors, the overall data for training and testing may shrink to 10 observations, which leads to not unreliable modeling and predictions.</p>
 </div>
+<div id="initial-limitation-2-resolved." class="section level2">
+<h2>Initial Limitation 2 (Resolved).</h2>
+<p>On the other hand, due to the sparsity of the data, if we include certain predictors, the overall data for training and testing may shrink to 10 observations, which leads to not unreliable modeling and predictions.</p>
 <div id="solution-1" class="section level3">
 <h3>Solution:</h3>
 <p>We have imputed and corrected values for variables such as city, state, city_population, and city_population_density. In doing so, we are now able to work with up to at most 441 observations depending on selected predictors and also .
 <br></p>
 </div>
-<div id="current-limitations-1-for-future-work" class="section level3">
-<h3>Current Limitations 1 (For Future Work)</h3>
-<p>While we have successfully revised the data using sources such as the US Census Bureau and the Univeristy page, we also have took it from sources such as <a href ="https://worldpopulationreview.com/"> World Population Review</a> and <a href ="http://www.city-data.com/"> City Data</a>. We are uncertain how reliable these sources are.</p>
 </div>
+<div id="current-limitations-1-for-future-work" class="section level2">
+<h2>Current Limitations 1 (For Future Work)</h2>
+<p>While we have successfully revised the data using sources such as the US Census Bureau and the Univeristy page, we also have took it from sources such as <a href ="https://worldpopulationreview.com/"> World Population Review</a> and <a href ="http://www.city-data.com/"> City Data</a>. We are uncertain how reliable these sources are.</p>
 <div id="proposed-solution" class="section level3">
 <h3>Proposed Solution:</h3>
 <p>To workaround this, the investigator could webscrape from more reputable sources and limit the number of dataset merges to lessen the missing values.</p>
 </div>
-<div id="current-limitations-2-for-future-work" class="section level3">
-<h3>Current Limitations 2 (For Future Work)</h3>
-<p>Again due to data sparsity, we still were only able to explore a few simple features. All of the predictors that we used were not “feature engineered”.</p>
 </div>
+<div id="current-limitations-2-for-future-work" class="section level2">
+<h2>Current Limitations 2 (For Future Work)</h2>
+<p>Again due to data sparsity, we still were only able to explore a few simple features. All of the predictors that we used were not “feature engineered”.</p>
 <div id="proposed-solution-1" class="section level3">
 <h3>Proposed Solution:</h3>
 <p>For the next investigation, data on longitude and latitude of the universities could be explored to see whether distance (Euclidean, Manhattan, Harvesine, Cosine) to any international hubs or attractions. In general, the investigator could see try to see if there are any more non-linear relations between ISPr/ISPo and some combination or transformation of independent variables. The investigator would also need to apply some regularization penalties if there is overfitting from the feature engineering.</p>
-<hr />
 </div>
-<div id="rubric-on-this-page" class="section level2">
-<h2>Rubric: On this page</h2>
-<p>you will</p>
-<ul>
-<li>Introduce what motivates your Data Analysis (DA)
-<ul>
-<li>Which variables and relationships are you most interested in?</li>
-<li>What questions are you interested in answering?</li>
-</ul></li>
-<li>Breadth of the DA
-<ul>
-<li>Make sure that you ask enough initial questions to explore the different variables in your data.</li>
-<li>i.e. Do you explore more than just one or two variables? Do you explore a few different relationships or many?</li>
-</ul></li>
-<li>Depth of the DA
-<ul>
-<li>When you answer one question, usually more questions arise as well.</li>
-<li>The depth of the DA is about coming up with and exploring the answers to these questions, often iterating the process a few times.</li>
-</ul></li>
-<li>Modeling and Inference
-<ul>
-<li>You should also include some kind of formal statistical model and/or inference. This could be a linear regression, logistic regression, hypothesis testing etc.</li>
-<li>Explain the techniques you used for validating your results.</li>
-<li>Describe the results of your modelling and make sure to give a sense of the uncertainty in your estimates and conclusions.</li>
-</ul></li>
-<li>Explain the flaws and limitations of your analysis
-<ul>
-<li>Are there some assumptions that you needed to make that might not hold? Is there other data that would help to answer your questions? …</li>
-</ul></li>
-<li>Clarity Figures
-<ul>
-<li>Are your figures/tables/results easy to read, informative, without problems like overplotting, hard-to-read labels, etc?</li>
-<li>Each figure should provide a key insight. Too many figures or other data summaries can detract from this.</li>
-</ul></li>
-<li>Clarity of Explanations
-<ul>
-<li>Do you introduce why you are doing each analysis?</li>
-<li>How well do you explain each figure/result?</li>
-<li>Do you provide interpretations that suggest further analysis or explanations for observed phenomenon?</li>
-</ul></li>
-<li>Organization and cleanliness.
-<ul>
-<li>Make sure to remove excessive warnings, use clean easy-to-read code, organize with sections or multiple pages, use bullets, etc.</li>
-</ul></li>
-</ul>
-<p><strong>NOTE</strong>: Your Data Analysis can be broken up into multiple pages if that helps with your organization.</p>
 </div>
 </div>
