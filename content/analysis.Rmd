@@ -441,7 +441,7 @@ linear_result<- ggplot(test,aes(x1+x2+x3, y)) +
   geom_smooth(method = 'loess', formula = 'y ~ x', se=TRUE, color='turquoise4') +
   theme_minimal() +
   labs(x='Faculty count, city population and density factor (additive)', y='International Student Proportions', title='Linear Regression Plot') +
-  theme(plot.title = element_text(hjust=0.5, size=20, face='bold')) 
+  theme(plot.title = element_text(hjust=0.5, size=15, face='bold')) 
 
 y_pred_linear_model <- predict(linear_model, test, type="response")
 errors_linear_model <- test$y - y_pred_linear_model
@@ -458,7 +458,7 @@ y_predict_logit <- data.frame(x1 = test$x1,x2 = test$x2, x3 = test$x3, y =predic
 logit_result<- ggplot(test, aes(x1+x2+x3, y)) + geom_point() + geom_smooth(data = y_predict_logit, method = 'loess', formula = 'y ~ x', se=FALSE, color='red4', alpha = 0.1)+
   theme_minimal() +
   labs(x='Faculty count, city population and density factor (additive)', y='International Student Proportions', title='Logistic Regression') +
-  theme(plot.title = element_text(hjust=0.5, size=20, face='bold')) 
+  theme(plot.title = element_text(hjust=0.5, size=15, face='bold')) 
 logit_result
 
 y_pred_logistic_model <- predict(logistic_model, test, type="response")
@@ -682,27 +682,27 @@ We also see that the p-value scores are low for all models, which implies the pr
 Our project concerns international student population and proportion of US colleges from 441 observations. Our analysis suggests that the city population, city population density, college selectivity, campus size, and faculty research output are good indicators for predicting international student population and international student proportion.
 
 # Flaws and limitations
-### Initial Limitation 1 (Resolved). 
+## Initial Limitation 1 (Resolved). 
 One of the main limitations is that for our models we don’t introduce any categorical variables. We address this in the Feature Extraction section. Alternatively, we are interested in leveraging the regsubsets subroutine in the leaps library to compare modeling with different variables, which provides performance criteria such as Adjusted R2 score, Bayesian Information Criterion, Mallow’s Cp. 
 
 ### Solution:   
 We have done feature extraction using correlation matrix and logistic regression. We have also used regsubsets and the above metrics to find the most promising categorical and continuous predictors.
 <br>
 
-### Initial Limitation 2 (Resolved). 
+## Initial Limitation 2 (Resolved). 
 On the other hand, due to the sparsity of the data, if we include certain predictors, the overall data for training and testing may shrink to 10 observations, which leads to not unreliable modeling and predictions.
 
 ### Solution:  
 We have imputed and corrected values for variables such as city, state, city_population, and city_population_density. In doing so, we are now able to work with up to at most 441 observations depending on selected predictors and also . 
 <br>
 
-### Current Limitations 1 (For Future Work)
+## Current Limitations 1 (For Future Work)
 While we have successfully revised the data using sources such as the US Census Bureau and the Univeristy page, we also have took it from sources such as <a href ="https://worldpopulationreview.com/"> World Population Review</a> and <a href ="http://www.city-data.com/"> City Data</a>. We are uncertain how reliable these sources are. 
 
 ### Proposed Solution:  
 To workaround this, the investigator could webscrape from more reputable sources and limit the number of dataset merges to lessen the missing values. 
 
-### Current Limitations 2 (For Future Work)
+## Current Limitations 2 (For Future Work)
 Again due to data sparsity, we still were only able to explore a few simple features. All of the predictors that we used were not "feature engineered".   
 
 ### Proposed Solution:  
