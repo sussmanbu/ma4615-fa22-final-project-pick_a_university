@@ -111,10 +111,8 @@ Below is the scatter plot and correlation matrix of ISPo related data to check h
 ISPo_data = num_data[c("international_students_max", "international_students_opendoors", "enrollment_top120enrollment", "city_population", "international_students_qs", "international_students_natlib", "city_population_density")]
 
 ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 0.3)),
-        lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))
+        lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))+ theme_grey(base_size = 6.5)
 ```
-![](Scatterplot.png) 
-<br />
 
 #### For ISPr, the relevant numerical features are:  
 1. City population density (city_population_density)  
