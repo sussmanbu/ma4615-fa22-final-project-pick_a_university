@@ -118,7 +118,7 @@ ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 
 1. City population density (city_population_density)  
 2. The number of faculty or academic staff at the university (faculty_count_qs)  
 
-<br> 
+<br>   
 
 Below is the scatter plot and correlation matrix of ISPr related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. 
 <br>
@@ -340,7 +340,7 @@ bp18<-ggplot(data8_melt, aes(x = variable, y = value, color = factor(selectivity
 
 data18 <- clean_data[c("international_students_natlib", "region")] %>% drop_na()
 data18_melt <- melt(data18, id = "region")
-bp19 <- ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") 
+bp19 <- ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("Regions")
 
 bp11 + bp12 
 bp18 + bp19
@@ -348,7 +348,7 @@ bp18 + bp19
 
 <br>
 Same as ISPo, we made boxplots with "region" variable, which is a feature made with "state"
-
+      
 
 ### Finalized Features
 Since our data is sparse, if we select certain variables for our predictors, then many college observations are dropped. Thereby, for predicting both international student population and proportion, out of our initial 35 dependent variables, we select the features:   
@@ -383,7 +383,7 @@ train<-processed_data[dt,]
 test<-processed_data[-dt,]
 })
 
-suppressWarnings({
+suppressWarnings({ 
 linear_model <- lm(y~x1+x2+x3, data=train)
 summary(linear_model)
 
