@@ -1,5 +1,5 @@
 ---
-title: Analysis
+title: Analysis 
 description:
 toc: true
 featuredVideo: 
@@ -8,17 +8,22 @@ draft: false
 ---
 
 ## Motivation
-Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly still increased during 2019to 2021. Widespread travel restrictions do not appear to have had a large impact on freshmen applying to U.S. universities from outside the U.S. We wanted to see what influences international students to choose certain institutions in the United States.
+Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly still increased during 2019 to 2021. Widespread travel restrictions do not appear to have had a large impact on freshmen applying to U.S. universities from outside the U.S. We wanted to see what influences international students to choose certain institutions in the United States.
 
 One of our teammates, Yawei suggested that the top three considerations were: safety, ranking of the university in my field, and the “dynamics” of the campus. The percentage of the international student body would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student body is one of the criteria (probably not, but I believe there is correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc
 
-The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through *“group_by”, “color”, “fill”, “facet”* and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law). 
+The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through **“group_by”, “color”, “fill”, “facet”** and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law). 
 
+<br>
 We also wanted to answer the questions below: 
-*First:* How has the number of international students in the US changed over time?  (x= school years, y= international students’ population)
-*Second:* New enrollment percentage of international students (x= school years, y= international students’ population % change)
-*Third:* How do new enrollment trends vary by academic level? 
-*Fourth:* Breakdown of international students by the US region they live (2021 vs 2016)
+<br/>
+**1.** How has the number of international students in the US changed over time?  (x= school years, y= international students’ population)
+<br/>
+**2.** New enrollment percentage of international students (x= school years, y= international students’ population % change)
+<br/>
+**3.** How do new enrollment trends vary by academic level? 
+<br/>
+**4.** Breakdown of international students by the US region they live (2021 vs 2016)
 
 ## Breadth and Depth of DA
 Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US colleges, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr. 
@@ -26,8 +31,8 @@ Our group’s target variables are the international student population (ISPo) a
 <br>
 In the dataset, the features indicate ISPo and ISPr are following:
 <br>
-ISPo: international_students_max <br/>
-ISPr: international_students_natlib
+**ISPo**: international_students_max <br/>
+**ISPr**: international_students_natlib
 
 ## Early Data Analysis
 In our earlier data analysis (Blog Post 4), we examined the relationship between the dependent variable ISPr and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We did this by making predictions with 7 regression models (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma) after shuffling and splitting the data with a 70-30 ratio for the train and test sets. By evaluating the AIC and fisher score, we selected the inverse gaussian glm as the best fit of all 7 models. Below we display our linear regression, logistic regression, and inverse gaussian regression.   
@@ -104,15 +109,21 @@ We identified pairs of variables with high positive or negative correlations and
 6. City population density (city_population_density)    
 
 <br>
+From the relevant features, we crossed out features: "international_students_opendoors", "international_students_qs", since we used opendoors and qs feature to create ISPo (international_students_max) column. Also, "international_students_natlib" is the feature showing ISPr and we already have feature extraction down below, we removed that as well
 
-Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations. 
 <br>
+Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have strong/moderate/weak positive/negative relations. 
+<br>
+
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
-ISPo_data = num_data[c("international_students_max", "international_students_opendoors", "enrollment_top120enrollment", "city_population", "international_students_qs", "international_students_natlib", "city_population_density")]
+ISPo_data = num_data[c("international_students_max", "enrollment_top120enrollment", "city_population", "city_population_density")]
 
 ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 0.3)),
         lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))+ theme_grey(base_size = 6.5)
 ```
+<br>
+Overall, the points in the scatterplots are very scattered and clustered and shows a weak positive relation with ISPo(international_student_max). Here, the total student enrollment number(enrollment_top120enrollment) shows the highest correlation with USPo, however, the data has a lot of nulls which lead to consider removing the feature. 
+
 
 #### For ISPr, the relevant numerical features are:  
 1. City population density (city_population_density)  
@@ -129,7 +140,10 @@ ISPo_data = num_data[c("international_students_natlib", "city_population_density
 ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 0.3)),
         lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))
 ```
+<br>
+Here, city population density (city_population_density) feature shows the highest correlation with ISPr(international_students_natlib). Both of the feature shows the low positive relation with ISPr.
 
+<br>
 ### Categorical Predictors
 <b>Note</b>: Before using logistic regression, we omit variable "university" because it is unique for all observations.    
 <br>
@@ -263,7 +277,7 @@ summary(glm_model_research_output_qs_max)
 
 <br>
 
-#### Boxplots of ISPo and Relevant Categorical Variables
+#### Boxplots of ISPo and Selected Relevant Categorical Variables
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 library(patchwork)
 load(here::here("dataset", "clean_data.RData"))
@@ -272,20 +286,24 @@ ISPo_Cat <- clean_data[c("international_students_max", "research_output_qs","siz
 
 data10 <- clean_data[c("international_students_max", "research_output_qs")] %>% drop_na()
 data10_melt <- melt(data10, id = "research_output_qs")
-bp1<- ggplot(data10_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("Research Outputs")
+bp1<- ggplot(data10_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo", title = "research_output_qs feature") + scale_color_discrete("Research Outputs")
 
 data11 <- clean_data[c("international_students_max", "size_qs")] %>% drop_na()
 data11_melt <- melt(data11, id = "size_qs")
-bp2<- ggplot(data11_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Sizes")
+bp2<- ggplot(data11_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo", title ="size_qs feature") + scale_color_discrete("School Sizes")
 
 data15 <- clean_data[c("international_students_max", "selectivity")] %>% drop_na()
 data15_melt <- melt(data15, id = "selectivity")
-bp6<-ggplot(data15_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("School Selectivities")
+bp6<-ggplot(data15_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo", title = "selectivity feature") + scale_color_discrete("School Selectivities")
+
 bp1 + bp2 
 bp6 
 ```
+
+These are the boxplots that shows the most relevant relation with ISPo. Here, the boxplots of the "research_output_qs" and "size_qs" features show the obvious positive relations with ISPo follows by the the feature. "selectivity" feature seems to show weak relation with ISPo, however, the mean of the boxplot seems increasing - we can say "weak positive relation"
+
 <br>
-To make the state variable viewable we created the feature "region" using "state" by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
+To make the state variable viewable we tried to create the feature "region" using "state" by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
 <br>
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 region <- initialize(.Object = "ANY")
@@ -323,32 +341,36 @@ ggplot(data17_melt, aes(x = variable, y = value, color = factor(region))) + geom
 
 
 
-
 #### Boxplots of ISPr and Relevant Categorical Variables
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 data1 <- clean_data[c("international_students_natlib", "research_output_qs")] %>% drop_na()
 data1_melt <- melt(data1, id = "research_output_qs")
-bp11<- ggplot(data1_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("Research Outputs")
+bp11<- ggplot(data1_melt, aes(x = variable, y = value, color = factor(research_output_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr", title="research_output_qs") + scale_color_discrete("Research Outputs")
 
 data2 <- clean_data[c("international_students_natlib", "size_qs")] %>% drop_na()
 data2_melt <- melt(data2, id = "size_qs")
-bp12<- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Sizes")
+bp12<- ggplot(data2_melt, aes(x = variable, y = value, color = factor(size_qs))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr", title = "size_qs") + scale_color_discrete("School Sizes")
 
 data8 <- clean_data[c("international_students_natlib", "selectivity")] %>% drop_na()
 data8_melt <- melt(data8, id = "selectivity")
-bp18<-ggplot(data8_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("School Selectivities")
-
-data18 <- clean_data[c("international_students_natlib", "region")] %>% drop_na()
-data18_melt <- melt(data18, id = "region")
-bp19 <- ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("Regions")
+bp18<-ggplot(data8_melt, aes(x = variable, y = value, color = factor(selectivity))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr", title = "selectivity") + scale_color_discrete("School Selectivities")
 
 bp11 + bp12 
-bp18 + bp19
+bp18 
 ```
+Here, you can see the "research_output_qs" shows the obvious positive relation with ISPr. Not like ISPo, "size_qs" and ISPr doesn't show the obvious increasing pattern, but the boxplots are getting larger from small to large, meaning that the internation student rate varies in institution with larger campus. The selectivity also shows the same pattern. 
+
 
 <br>
 Same as ISPo, we made boxplots with "region" variable, which is a feature made with "state"
-      
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+data18 <- clean_data[c("international_students_natlib", "region")] %>% drop_na()
+data18_melt <- melt(data18, id = "region")
+ggplot(data18_melt, aes(x = variable, y = value, color = factor(region))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPr") + scale_color_discrete("Regions")
+
+
+```
 
 ### Finalized Features
 Since our data is sparse, if we select certain variables for our predictors, then many college observations are dropped. Thereby, for predicting both international student population and proportion, out of our initial 35 dependent variables, we select the features:   

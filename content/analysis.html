@@ -1,5 +1,5 @@
 ---
-title: Analysis
+title: Analysis 
 description:
 toc: true
 featuredVideo: 
@@ -14,14 +14,19 @@ draft: false
 
 <div id="motivation" class="section level2">
 <h2>Motivation</h2>
-<p>Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly still increased during 2019to 2021. Widespread travel restrictions do not appear to have had a large impact on freshmen applying to U.S. universities from outside the U.S. We wanted to see what influences international students to choose certain institutions in the United States.</p>
+<p>Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly still increased during 2019 to 2021. Widespread travel restrictions do not appear to have had a large impact on freshmen applying to U.S. universities from outside the U.S. We wanted to see what influences international students to choose certain institutions in the United States.</p>
 <p>One of our teammates, Yawei suggested that the top three considerations were: safety, ranking of the university in my field, and the “dynamics” of the campus. The percentage of the international student body would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student body is one of the criteria (probably not, but I believe there is correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc</p>
-<p>The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through <em>“group_by”, “color”, “fill”, “facet”</em> and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law).</p>
-<p>We also wanted to answer the questions below:
-<em>First:</em> How has the number of international students in the US changed over time? (x= school years, y= international students’ population)
-<em>Second:</em> New enrollment percentage of international students (x= school years, y= international students’ population % change)
-<em>Third:</em> How do new enrollment trends vary by academic level?
-<em>Fourth:</em> Breakdown of international students by the US region they live (2021 vs 2016)</p>
+<p>The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through <strong>“group_by”, “color”, “fill”, “facet”</strong> and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law).</p>
+<p><br>
+We also wanted to answer the questions below:
+<br/>
+<strong>1.</strong> How has the number of international students in the US changed over time? (x= school years, y= international students’ population)
+<br/>
+<strong>2.</strong> New enrollment percentage of international students (x= school years, y= international students’ population % change)
+<br/>
+<strong>3.</strong> How do new enrollment trends vary by academic level?
+<br/>
+<strong>4.</strong> Breakdown of international students by the US region they live (2021 vs 2016)</p>
 </div>
 <div id="breadth-and-depth-of-da" class="section level2">
 <h2>Breadth and Depth of DA</h2>
@@ -29,8 +34,8 @@ draft: false
 <p><br>
 In the dataset, the features indicate ISPo and ISPr are following:
 <br>
-ISPo: international_students_max <br/>
-ISPr: international_students_natlib</p>
+<strong>ISPo</strong>: international_students_max <br/>
+<strong>ISPr</strong>: international_students_natlib</p>
 </div>
 <div id="early-data-analysis" class="section level2">
 <h2>Early Data Analysis</h2>
@@ -62,10 +67,14 @@ Since we are solving a regression problem, our output is a continuous variable. 
 <li><del>Percentage of international students (international_students_natlib)</del></li>
 <li>City population density (city_population_density)</li>
 </ol>
-<p><br></p>
-<p>Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations.
+<p><br>
+From the relevant features, we crossed out features: “international_students_opendoors”, “international_students_qs”, since we used opendoors and qs feature to create ISPo (international_students_max) column. Also, “international_students_natlib” is the feature showing ISPr and we already have feature extraction down below, we removed that as well</p>
+<p><br>
+Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have strong/moderate/weak positive/negative relations.
+<br></p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 <br>
-<img src="/analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+Overall, the points in the scatterplots are very scattered and clustered and shows a weak positive relation with ISPo(international_student_max). Here, the total student enrollment number(enrollment_top120enrollment) shows the highest correlation with USPo, however, the data has a lot of nulls which lead to consider removing the feature.</p>
 </div>
 <div id="for-ispr-the-relevant-numerical-features-are" class="section level4">
 <h4>For ISPr, the relevant numerical features are:</h4>
@@ -77,12 +86,12 @@ Since we are solving a regression problem, our output is a continuous variable. 
 <p><br></p>
 <p>Below is the scatter plot and correlation matrix of ISPr related data to check how the dots are scattered and whether two variables have weak/moderate positive/negative relations.
 <br></p>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-</div>
-</div>
-<div id="categorical-predictors" class="section level3">
-<h3>Categorical Predictors</h3>
-<p><b>Note</b>: Before using logistic regression, we omit variable “university” because it is unique for all observations.<br />
+<p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<br>
+Here, city population density (city_population_density) feature shows the highest correlation with ISPr(international_students_natlib). Both of the feature shows the low positive relation with ISPr.</p>
+<p><br>
+### Categorical Predictors
+<b>Note</b>: Before using logistic regression, we omit variable “university” because it is unique for all observations.<br />
 <br>
 We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric. Below, we provide the summary of the logistic regression model with response variable international student population and independent variable research output.</p>
 <pre><code>## 
@@ -108,6 +117,7 @@ We build logistic regression models with single categorical variable predictors 
 ## 
 ## Number of Fisher Scoring iterations: 19</code></pre>
 <p><br></p>
+</div>
 <div id="for-ispo-the-relevant-categorical-features-are" class="section level4">
 <h4>For ISPo, the relevant categorical features are:</h4>
 <ol style="list-style-type: decimal">
@@ -127,11 +137,12 @@ We build logistic regression models with single categorical variable predictors 
 </ol>
 <p><br></p>
 </div>
-<div id="boxplots-of-ispo-and-relevant-categorical-variables" class="section level4">
-<h4>Boxplots of ISPo and Relevant Categorical Variables</h4>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-2.png" width="672" />
-<br>
-To make the state variable viewable we created the feature “region” using “state” by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
+<div id="boxplots-of-ispo-and-selected-relevant-categorical-variables" class="section level4">
+<h4>Boxplots of ISPo and Selected Relevant Categorical Variables</h4>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<p>These are the boxplots that shows the most relevant relation with ISPo. Here, the boxplots of the “research_output_qs” and “size_qs” features show the obvious positive relations with ISPo follows by the the feature. “selectivity” feature seems to show weak relation with ISPo, however, the mean of the boxplot seems increasing - we can say “weak positive relation”</p>
+<p><br>
+To make the state variable viewable we tried to create the feature “region” using “state” by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
 <br>
 <img src="/analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
@@ -157,9 +168,11 @@ To make the state variable viewable we created the feature “region” using �
 </div>
 <div id="boxplots-of-ispr-and-relevant-categorical-variables" class="section level4">
 <h4>Boxplots of ISPr and Relevant Categorical Variables</h4>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-7-2.png" width="672" />
+Here, you can see the “research_output_qs” shows the obvious positive relation with ISPr. Not like ISPo, “size_qs” and ISPr doesn’t show the obvious increasing pattern, but the boxplots are getting larger from small to large, meaning that the internation student rate varies in institution with larger campus. The selectivity also shows the same pattern.</p>
 <p><br>
 Same as ISPo, we made boxplots with “region” variable, which is a feature made with “state”</p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 </div>
 <div id="finalized-features" class="section level3">
@@ -181,7 +194,7 @@ Same as ISPo, we made boxplots with “region” variable, which is a feature ma
 <h3>Initial Modeling</h3>
 <p>For our first iteration of modeling, we use the dataset with 35 independent variables and only consider models with numerically extracted features: faculty_count_qs, city_population, city_population_density.
 To obtain our train and test datasets, we have performed an <b>70-30 random shuffle-split</b>. We have 53 examples in the train set and 23 examples in test set. Then, we model ISPo with linear and logistic regression.</p>
-<p><img src="/analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<p><img src="/analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="/analysis_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
 <pre><code>## [1] &quot;Mean Absolute Error of Linear Regression for ISPr:&quot;</code></pre>
 <pre><code>## [1] 0.03342281</code></pre>
 <pre><code>## [1] &quot;Mean Absolute Error of Logistic Regression for ISPr:&quot;</code></pre>
