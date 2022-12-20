@@ -11,7 +11,7 @@
 library(tidyverse)
 library(modelr)
 library(shiny)
-
+library(htmlwidgets)
 
 load("clean_data.RData")
 
@@ -57,7 +57,7 @@ ui <- fluidPage(
           tabsetPanel(type = "tabs",
                       
                       tabPanel("Plot", plotOutput("plot")), 
-                      tabPanel("Linear Regression Model Summary", verbatimTextOutput("summary")), # Regression output
+                      tabPanel("Linear Regression Model Summary", tableOutput("summary")), # Regression output
                       
           )
         )
@@ -115,7 +115,7 @@ server <- function(input, output) {
   }, height=600)
   
   # Regression output
-  output$summary <- renderPrint({
+  output$summary <- renderTable({
     varclass <- class(unlist(clean_data[,input$indepvar]))
     #outtype <- max(unlist(clean_data[,input$outcome]), na.rm = TRUE)
     #ifelse(outtype > 1,
@@ -127,13 +127,40 @@ server <- function(input, output) {
            #fit <- glm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]), family=binomial(), na.action=na.omit),
            #fit <- glm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]) - 1), family=binomial(), na.action=na.omit)
     )
-    summary(fit)
+    # summary(fit)
     
-    # broom::tidy(fit) %>%
-    #   select(term, estimate, p.value) %>%
-    #   mutate(across(where(is.numeric), ~round(., 2))) %>%
-    #   mutate(term=str_sub(term, 23)) %>% 
-    #   DT::datatable()
+     # 
+     # fit <- lm(clean_data$international_students_max~clean_data$city_population)
+    # #  # 
+    object <- summary(fit)[4][[1]]
+    #  # 
+    # # 
+    # rownames(object)
+    # object[,"Estimate"]
+    # object[,"Pr(>|t|]"]
+    
+    if(varclass == "numeric"){
+      df <- data.frame(
+        term = c("intercepts", str_sub(rownames(object)[2], 10)),
+        estimate = object[,"Estimate"],
+        p.value = object[,"Pr(>|t|)"]
+      )}
+    
+    else{
+     df <- data.frame(
+       term = str_sub(rownames(object), 37),
+       estimate = object[,"Estimate"],
+       p.value = object[,"Pr(>|t|)"]
+     )}
+
+  
+     
+
+      # broom::tidy(fit) %>%
+      # select(term, estimate, p.value) %>%
+      # mutate(across(where(is.numeric), ~round(., 2))) %>%
+      # mutate(term=str_sub(term, 23)) %>%
+      # DT::datatable()
   })
   
   

@@ -3,18 +3,22 @@ title: Analysis
 description:
 toc: true
 featuredVideo: 
-featuredImage: https://learn.g2.com/hubfs/Imported%20sitepage%20images/1ZB5giUShe0gw9a6L69qAgsd7wKTQ60ZRoJC5Xq3BIXS517sL6i6mnkAN9khqnaIGzE6FASAusRr7w=w1439-h786.png
+featuredImage: images/analysis-pic.png
 draft: false
 ---
+
+[Picture source](https://learn.g2.com/hubfs/Imported%20sitepage%20images/1ZB5giUShe0gw9a6L69qAgsd7wKTQ60ZRoJC5Xq3BIXS517sL6i6mnkAN9khqnaIGzE6FASAusRr7w=w1439-h786.png)
+
 
 ## Motivation
 Most of our teammates are international students from China and Korea. We found an article that the number of international students in the US unprecedentedly still increased during 2019 to 2021. Widespread travel restrictions do not appear to have had a large impact on freshmen applying to U.S. universities from outside the U.S. We wanted to see what influences international students to choose certain institutions in the United States.
 
-One of our teammates, Yawei suggested that the top three considerations were: safety, ranking of the university in my field, and the “dynamics” of the campus. The percentage of the international student body would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student body is one of the criteria (probably not, but I believe there is correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc
+<br>
 
-The “main” research question is to explore the relationship between percentage of international student population (x-axis) and the ranking of US universities (y-axis). We can then add more interesting complexities/layers to the basic graph through **“group_by”, “color”, “fill”, “facet”** and different “geoms_plots” using variables such as nationalities, number of (top xx) universities in the city, crime rates of the city, location of the university (on a US map), and ranking type (e.g., undergraduate, graduate cs, graduate education, graduate business, graduate law). 
+One of our teammates, Yawei suggested that the top three considerations for her were: safety, ranking of the university in her field, and the “dynamics” of the campus. The population of international student would fall under the third category. However, while there has been quite convenient data on the first two categories, the judgment of the third was more based on gut or anecdotes. The rankings on US News, for example, are a weighted composite score of many aspects, but we were not sure whether the international student population is one of the criteria (probably not, there may be some correlation there). Therefore, we considered that we could explore more about this potential correlation (x=% of international students, y=rankings) while trying to add in other interesting and relevant information, such as the nationalities of international students, crime rate of the city, etc.
 
 <br>
+
 We also wanted to answer the questions below: 
 <br/>
 **1.** How has the number of international students in the US changed over time?  (x= school years, y= international students’ population)
@@ -25,8 +29,12 @@ We also wanted to answer the questions below:
 <br/>
 **4.** Breakdown of international students by the US region they live (2021 vs 2016)
 
+<br>
+
+After trying to gather datasets from multiple sources and some data cleaning work, we decided to make the focus of this project to be: Finding relevant predictors for international student population in U.S. universities and model it to make predictions.
+
 ## Breadth and Depth of DA
-Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US colleges, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr. 
+Our group’s target variables are the international student population (ISPo) and proportion (ISPr) in US universities, and we aim to identify the potential factors that correlate to and predict ISPo and ISPr. 
 
 <br>
 In the dataset, the features indicate ISPo and ISPr are following:
@@ -35,17 +43,23 @@ In the dataset, the features indicate ISPo and ISPr are following:
 **ISPr**: international_students_natlib
 
 ## Early Data Analysis
-In our earlier data analysis (Blog Post 4), we examined the relationship between the dependent variable ISPr and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We did this by making predictions with 7 regression models (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma) after shuffling and splitting the data with a 70-30 ratio for the train and test sets. By evaluating the AIC and fisher score, we selected the inverse gaussian glm as the best fit of all 7 models. Below we display our linear regression, logistic regression, and inverse gaussian regression.   
+In our earlier data analysis (see [Blog Post 4](https://clever-unicorn-d34bd5.netlify.app/post/2022-11-04-data-analysis-2-modeling-fitting/)), we examined the relationship between the dependent variable ISPr and the independent variable, an additive indicator reflecting the number of “Alumni of an institution winning Nobel Prizes and Fields Medals” and “Papers indexed in Science Citation Index-Expanded and Social Science Citation Index”. We did this by making predictions with 7 regression models (logistic, quasipolynomial, Gaussian, Poisson, Inverse Gaussian, Gamma) after shuffling and splitting the data with a 70-30 ratio for the train and test sets. By evaluating the AIC and fisher score, we selected the inverse gaussian glm as the best fit of all 7 models. 
+
 <br>
-One main limitation is that we naively selected one feature, a linear combination of variables on notable alumni with high research and publications, for modelling. Below in the Feature Extraction section, we remedy this problem by experimenting on all predictor variables to select the most promising features to be learned.    
+
+One main limitation is that we naively selected one feature, a linear combination of variables on notable alumni with high research and publications, for modelling. Below in the Feature Extraction section, we remedy this problem by experimenting on all predictor variables to select the most promising features to be learned. 
+
 <br>
-Another main limitation is that we have missing and incorrect data over 300 observations. In particular, we had issues with variables city, state, city_population, city_population_density. We resolved this by imputing the missing values and manually correcting by using US Census and universities' published data as discussed in our Data Page.  
+
+Another main limitation is that we have missing and incorrect data over 300 observations. In particular, we had issues with variables city, state, city_population, city_population_density. We resolved this by imputing the missing values and manually correcting by using US Census and universities' published data as discussed in our [Data Page](https://clever-unicorn-d34bd5.netlify.app/data/).  
+
 
 ## Feature Extraction
 We extract the most significant independent variables to improve model performance using two methods: 
 correlation matrix for continuous predictors and logistic regression for categorical predictors.   
 <br>
-Since we are solving a regression problem, our output is a continuous variable. After data cleaning, we have 35 independent variables concerning every observed college. They are split into 20 continuous variables and 15 categorical variables.    
+Since we are solving a regression problem, our output is a continuous variable. During this phase of data cleaning, we had 35 independent variables concerning every observed college. They are split into 20 continuous variables and 15 categorical variables.    
+
 
 ### Continuous Predictors  
 To explore continuous variables’ correlations with the target variables, we have used a correlation matrix.
@@ -109,7 +123,7 @@ We identified pairs of variables with high positive or negative correlations and
 6. City population density (city_population_density)    
 
 <br>
-From the relevant features, we crossed out features: "international_students_opendoors", "international_students_qs", since we used opendoors and qs feature to create ISPo (international_students_max) column. Also, "international_students_natlib" is the feature showing ISPr and we already have feature extraction down below, we removed that as well
+From the relevant features, we crossed out features: "international_students_opendoors", "international_students_qs", since we used opendoors and qs feature to create ISPo (international_students_max) column. Also, "international_students_natlib" is the feature showing ISPr and we already have feature extraction down below, we removed that as well.
 
 <br>
 Below is the scatter plot and correlation matrix of ISPo related data to check how the dots are scattered and whether two variables have strong/moderate/weak positive/negative relations. 
@@ -122,7 +136,7 @@ ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 
         lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))+ theme_grey(base_size = 6.5)
 ```
 <br>
-Overall, the points in the scatterplots are very scattered and clustered and shows a weak positive relation with ISPo(international_student_max). Here, the total student enrollment number(enrollment_top120enrollment) shows the highest correlation with USPo, however, the data has a lot of nulls which lead to consider removing the feature. 
+Overall, the points in the scatterplots are very scattered and clustered and shows a weak positive relation with ISPo (international_student_max). Here, the total student enrollment number (enrollment_top120enrollment) shows the highest correlation with USPo; however, the data has a lot of nulls which lead to consider removing the feature. 
 
 
 #### For ISPr, the relevant numerical features are:  
@@ -141,14 +155,15 @@ ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 
         lower = list(continuous = wrap('cor', size = 4))) + theme(axis.text = element_text(size = 4))
 ```
 <br>
-Here, city population density (city_population_density) feature shows the highest correlation with ISPr(international_students_natlib). Both of the feature shows the low positive relation with ISPr.
+Here, city population density (city_population_density) feature shows the highest correlation with ISPr (international_students_natlib). Both of the feature shows the low positive relation with ISPr.
 
 <br>
  
 ### Categorical Predictors
 <b>Note</b>: Before using logistic regression, we omit variable "university" because it is unique for all observations.    
 <br>
-We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric. Below, we provide the summary of the logistic regression model with response variable international student population and independent variable research output.
+We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric. Below, we provide the summary of the logistic regression model with response variable international student population and independent variable research output as an example.
+
 ```{r, echo=FALSE, message = FALSE}
 suppressWarnings({
 prev_data <- read.csv(here::here("dataset/prev_data.csv"))
@@ -301,10 +316,10 @@ bp1 + bp2
 bp6 
 ```
 
-These are the boxplots that shows the most relevant relation with ISPo. Here, the boxplots of the "research_output_qs" and "size_qs" features show the obvious positive relations with ISPo follows by the the feature. "selectivity" feature seems to show weak relation with ISPo, however, the mean of the boxplot seems increasing - we can say "weak positive relation"
+These are the boxplots that shows the most relevant relation with ISPo. Here, the boxplots of the "research_output_qs" and "size_qs" features show the obvious positive relations with ISPo follows by the the feature. "selectivity" feature seems to show weak relation with ISPo, however, the mean of the boxplot seems increasing - we can say "weak positive relation".
 
 <br>
-To make the state variable viewable we tried to create the feature "region" using "state" by grouping states into four regions(Midwest, West, South, and Northeast) and then we made boxplots with region variable
+To make the state variable viewable we tried to create the feature "region" using "state" by grouping states into four regions (Midwest, West, South, and Northeast) and then we made boxplots with region variable.
 <br>
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 region <- initialize(.Object = "ANY")
@@ -363,7 +378,7 @@ Here, you can see the "research_output_qs" shows the obvious positive relation w
 
 
 <br>
-Same as ISPo, we made boxplots with "region" variable, which is a feature made with "state"
+Same as ISPo, we made boxplots with "region" variable, which is a feature made with "state".
 
 ```{r message = FALSE, echo = FALSE, warning = FALSE}
 data18 <- clean_data[c("international_students_natlib", "region")] %>% drop_na()
@@ -653,7 +668,7 @@ Similarly, for ISPo, the best models from forward and backward are identical and
 We also see that the p-value scores are low for all models, which implies the predictors are statistically significant and are good indicators of prediction. Thus, we reject the null hypothesis and claim that we have identified good indicators of prediction of international student proportion and population.
 
 ## Conclusion
-Our project concerns international student population and proportion of US colleges from 441 observations. Our analysis suggests that the city population, city population density, college selectivity, campus size, and faculty research output are good indicators for predicting international student population and international student proportion.
+Our project concerns international student population and proportion of US universities from 441 observations. Our analysis suggests that the city population, city population density, college selectivity, campus size, and faculty research output are good indicators for predicting international student population and international student proportion.
 
 # Flaws and limitations
 ## Initial Limitation 1 (Resolved). 
@@ -671,13 +686,16 @@ We have imputed and corrected values for variables such as city, state, city_pop
 <br>
 
 ## Current Limitations 1 (For Future Work)
-While we have successfully revised the data using sources such as the US Census Bureau and the Univeristy page, we also have took it from sources such as <a href ="https://worldpopulationreview.com/"> World Population Review</a> and <a href ="http://www.city-data.com/"> City Data</a>. We are uncertain how reliable these sources are. 
+While we have successfully revised the data using sources such as the US Census Bureau and the Univeristy page, we also have took it from sources such as <a href ="https://worldpopulationreview.com/"> World Population Review</a> and <a href ="http://www.city-data.com/"> City Data</a>. We are uncertain how reliable these sources are. In addition, as shown in this [interactive map](https://d63xhp-zeshi-wu.shinyapps.io/SchoolData/), the location of the 441 universities included in our dataset are not nationally representative to a geographic sense. Instead, our data concentrated in the Northeastern region, Florida, Texas, California, and Washington, which are indeed popular states to live and study in for international students.
 
 ### Proposed Solution:  
-To workaround this, the investigator could webscrape from more reputable sources and limit the number of dataset merges to lessen the missing values. 
+To workaround this, the investigator could webscrape from more reputable sources and limit the number of dataset merges to lessen the missing values and increase the number of observations in other regions.
+
 
 ## Current Limitations 2 (For Future Work)
 Again due to data sparsity, we still were only able to explore a few simple features. All of the predictors that we used were not "feature engineered".   
 
 ### Proposed Solution:  
 For the next investigation, data on longitude and latitude of the universities could be explored to see whether distance (Euclidean, Manhattan, Harvesine, Cosine) to any international hubs or attractions. In general, the investigator could see try to see if there are any more non-linear relations between ISPr/ISPo and some combination or transformation of independent variables. The investigator would also need to apply some regularization penalties if there is overfitting from the feature engineering.
+
+
