@@ -144,6 +144,7 @@ ggpairs(ISPo_data, upper = list(continuous = wrap("points", alpha = 0.5, size = 
 Here, city population density (city_population_density) feature shows the highest correlation with ISPr(international_students_natlib). Both of the feature shows the low positive relation with ISPr.
 
 <br>
+ 
 ### Categorical Predictors
 <b>Note</b>: Before using logistic regression, we omit variable "university" because it is unique for all observations.    
 <br>

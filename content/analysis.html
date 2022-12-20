@@ -89,9 +89,12 @@ Overall, the points in the scatterplots are very scattered and clustered and sho
 <p><img src="/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 <br>
 Here, city population density (city_population_density) feature shows the highest correlation with ISPr(international_students_natlib). Both of the feature shows the low positive relation with ISPr.</p>
-<p><br>
-### Categorical Predictors
-<b>Note</b>: Before using logistic regression, we omit variable “university” because it is unique for all observations.<br />
+<p><br></p>
+</div>
+</div>
+<div id="categorical-predictors" class="section level3">
+<h3>Categorical Predictors</h3>
+<p><b>Note</b>: Before using logistic regression, we omit variable “university” because it is unique for all observations.<br />
 <br>
 We build logistic regression models with single categorical variable predictors and pairs of categorical variable predictors. For readability, we omit the models with paired predictors. However, we document all performances in the R code block. We select variables from models using the Akaike information criterion (AIC) metric. Below, we provide the summary of the logistic regression model with response variable international student population and independent variable research output.</p>
 <pre><code>## 
@@ -117,7 +120,6 @@ We build logistic regression models with single categorical variable predictors 
 ## 
 ## Number of Fisher Scoring iterations: 19</code></pre>
 <p><br></p>
-</div>
 <div id="for-ispo-the-relevant-categorical-features-are" class="section level4">
 <h4>For ISPo, the relevant categorical features are:</h4>
 <ol style="list-style-type: decimal">
