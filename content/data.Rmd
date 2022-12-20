@@ -287,7 +287,7 @@ tabl <- "
 | locale_carnegie               | degree of urbanization (Urban-centric locale)          | three levels: city, suburb, town or rural   |
 | tuition_kaggle                | out of state tuition (in dollars)                      |                                             |
 | selectivity                   | selectivity                                            | four levels: most competitive, highly competitive plus, highly competitive, very competitive plus  |
-| world_rank_cat_arwu           | intervals of world ranking from arwu                   | eight levels: 1-20, 21-50, 51-100, 101-150, 151-200, 210-300, 301-400, 401-500      |
+| world_rank_cat_arwu           | intervals of world ranking from ARWU                   | eight levels: 1-20, 21-50, 51-100, 101-150, 151-200, 210-300, 301-400, 401-500      |
 | world_rank_qs                 | world ranking from qs                                  | twelve levels: 1-20, 21-50, 51-100, 101-150, 151-200, 210-300, 301-400, 401-500, 501-600, 601-800, 801-1000, 1001-1200  |
 | type1_all                     | public vs. private                                     | two levels: public, private                  |
 | type2_carnegie                | year and size classification                           | four levels: four-year (large), four-year (median), four-year (small), two-year     |
@@ -297,12 +297,12 @@ tabl <- "
 | size_qs                       | size of the university in terms of area                | four levels: S, M, L, XL                     |
 | research_output_qs            | index of quality of research at the university         | two levels: median high, very high           |
 | stu_facl_ratio_qs             | number of students assigned to per faculty             |                                              |
-| award_arwu                    | score assigned by arwu on staff of an institution winning Nobel Prizes and Fields Medals    |         |
-| hi_ci_arwu                    | score assigned by arwu on highly cited researchers at the institution                       |         |
-| n_s_arwu                      | score assigned by arwu on papers published in Nature and Science from the institution       |         |
-| pub_arwu               | score assigned by arwu on papers indexed in Science Citation Index-Expanded and Social Science Citation Index from the institution |     |
-| alumni_arwu                   | score assigned by arwu on alumni of an institution winning Nobel Prizes and Fields Medals   |         |
-| pcp_arwu                      | score assigned by arwu on  per capita academic performance of an institution                |         |
+| award_arwu                    | score assigned by ARWU on staff of an institution winning Nobel Prizes and Fields Medals    |         |
+| hi_ci_arwu                    | score assigned by ARWU on highly cited researchers at the institution                       |         |
+| n_s_arwu                      | score assigned by ARWU on papers published in Nature and Science from the institution       |         |
+| pub_arwu               | score assigned by ARWU on papers indexed in Science Citation Index-Expanded and Social Science Citation Index from the institution |     |
+| alumni_arwu                   | score assigned by ARWU on alumni of an institution winning Nobel Prizes and Fields Medals   |         |
+| pcp_arwu                      | score assigned by ARWU on  per capita academic performance of an institution                |         |
 | enrollment_kaggle             | undergraduate student enrollment number                |                                              |
 | enrollment_top120enrollment   | total student enrollment number                        |                                              |
 "

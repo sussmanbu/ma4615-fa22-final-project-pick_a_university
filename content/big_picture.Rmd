@@ -59,16 +59,19 @@ Our argument is that the percentage of overseas students at a US institution inc
 ## Interactive
 
 
-Our Interactive dashboard has two components. The [first](link) is an overview of the scope of our dataset. The [second](https://b6vqbw-yawei-huang.shinyapps.io/FinalProjectApp/) is a tool to explore the relationship between our outcome variables and each individual predictor variable. 
-
-
-<br>
-
-The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[link], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. We also present our cleaned dataset in a table with outcome filter to display universities with available data on number of international students, with available data on percentage of international students, or with available data on both. Users can also sort variables depending on interest. 
+Our Interactive dashboard has two components. The [first](https://d63xhp-zeshi-wu.shinyapps.io/SchoolData/) is an overview of the scope of our dataset. On the "SchoolMap" tab, users can see the number of universities included in our dataset in each state by hovering the mouse on the states. It is clear that the majority of our dataset are universities in the Northeastern region and four other states: Florida, Texas, California, and Washington. On the "Datatable" tab, users can actually see our dataset. Our codebook, which is located at the bottom of our [Data Page](https://clever-unicorn-d34bd5.netlify.app/data/), will assist with understanding the meaning of each variable. The Search function on the top right corner will enable users to locate specific universities in our dataset (for example, typing "boston" will display 14 universities which either contains "Boston" in its name or is located in Boston, MA).  
 
 <br>
 
-The second component is to encourage users to explore the relationship between our outcome variables and each individual predictor variable. Users will first choose between number of international students and percentage of international students as an outcome, and then choose among xx predictor variables one at a time. The “Plot” tab will display a box plot if choosing categorical variables or a scatter plot with fitted line if choosing continuous variables. The “Linear Regression Model Summary” tab will print the model summary, which will include information on variable coefficients, p-value, and number of observations. 
+The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[https://clever-unicorn-d34bd5.netlify.app/data/], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. We also present our cleaned dataset in a table with outcome filter to display universities with available data on number of international students, with available data on percentage of international students, or with available data on both. Users can also sort variables depending on interest. 
+
+<br>
+
+The [second](https://b6vqbw-yawei-huang.shinyapps.io/FinalProjectApp/) is a tool to explore the relationship between our outcome variables and each individual predictor variable.  Users will first choose between number of international students and percentage of international students as an outcome, and then choose one predictor variable included in our dataset. The “Plot” tab will display a scatter plot with crossbar if a categorical predictor is selected or display a a scatter plot with fitted line if a continuous predictor is selected. On the “Linear Regression Model Summary” tab, users will see the coefficient estimates and associated p-value from the bivariate linear regression model. For categorical predictors, the terms are each category (or level); for continuous predictors, the terms are intercept and the predictor selected. In terms of interpretation of coefficient estimate, for categorical predictors it refers to the predicted value of the outcome given the specific category/level; for continuous predictors it refers to the predicted change in value of the outcome given a one unit increase in the selected predictor. Check out our codebook (located at the bottom of our [Data Page](https://clever-unicorn-d34bd5.netlify.app/data/)) to understand the meaning and units of each variable.
+
+
+
+
 
 
 

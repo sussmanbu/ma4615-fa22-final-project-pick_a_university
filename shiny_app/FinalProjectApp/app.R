@@ -47,7 +47,13 @@ ui <- fluidPage(
                                      "Out-of-state.Tuition" = "tuition_kaggle",
                                      "Student.Faculty.Ratio" = "stu_facl_ratio_qs",
                                      "Undergraduate.Enrollment " = "enrollment_kaggle",
-                                     "Total.Enrollment" = "enrollment_top120enrollment"), selected = 1)
+                                     "Total.Enrollment" = "enrollment_top120enrollment",
+                                    "Award.Winning.Score"  = "award_arwu",
+                                    "Research.Citation.Score"  = "hi_ci_arwu",
+                                    "Top.Publication.Score" = "n_s_arwu",
+                                    "Publication.Score" = "pub_arwu",
+                                    "Alumni.Score" = "alumni_arwu",
+                                    "Academic.Performance.Score" = "pcp_arwu"), selected = 1)
           
         ),
 
@@ -122,26 +128,14 @@ server <- function(input, output) {
     ifelse(varclass == "numeric",
            fit <- lm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar])),
            fit <- lm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]) - 1)
-           #),
-           #ifelse(varclass == "numeric",
-           #fit <- glm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]), family=binomial(), na.action=na.omit),
-           #fit <- glm(unlist(clean_data[,input$outcome]) ~ unlist(clean_data[,input$indepvar]) - 1), family=binomial(), na.action=na.omit)
     )
     # summary(fit)
     
-     # 
-     # fit <- lm(clean_data$international_students_max~clean_data$city_population)
-    # #  # 
     object <- summary(fit)[4][[1]]
-    #  # 
-    # # 
-    # rownames(object)
-    # object[,"Estimate"]
-    # object[,"Pr(>|t|]"]
     
     if(varclass == "numeric"){
       df <- data.frame(
-        term = c("intercepts", str_sub(rownames(object)[2], 10)),
+        term = c("intercepts", "predictor selected"),
         estimate = object[,"Estimate"],
         p.value = object[,"Pr(>|t|)"]
       )}
@@ -152,9 +146,6 @@ server <- function(input, output) {
        estimate = object[,"Estimate"],
        p.value = object[,"Pr(>|t|)"]
      )}
-
-  
-     
 
       # broom::tidy(fit) %>%
       # select(term, estimate, p.value) %>%
