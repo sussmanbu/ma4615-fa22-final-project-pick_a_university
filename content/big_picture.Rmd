@@ -115,7 +115,7 @@ Our Interactive dashboard has two components. **The [first](https://d63xhp-zeshi
 
 <br>
 
-The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[https://clever-unicorn-d34bd5.netlify.app/data/], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. 
+The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the [Data Page](https://clever-unicorn-d34bd5.netlify.app/data/), our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. 
 
 <br>
 
