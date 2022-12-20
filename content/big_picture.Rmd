@@ -31,7 +31,7 @@ Due to Boston University's superior achievement in this ongoing epidemic as comp
 
 The United States is recognized as the country with the highest quality of education in the world. This has attracted many students from other countries to study in the United States. During the epidemic, many students have temporarily adjusted their study abroad plans. But the epidemic did not stop the attractiveness of prestigious schools in the slightest.
 
-```{r message = FALSE, echo = FALSE, warning = FALSE}
+```{r message = FALSE, echo = FALSE, warning = FALSE, eval=FALSE}
 library(tidyverse)
 library(ggplot2)
 library(readr)
@@ -68,7 +68,7 @@ Our argument is that the percentage of overseas students at a US institution inc
 
 
 <br>
-```{r message = FALSE, echo = FALSE, warning = FALSE}
+```{r message = FALSE, echo = FALSE, warning = FALSE, eval=FALSE}
 library(tidyverse)
 library(caTools)
 library(ggplot2)
@@ -84,7 +84,7 @@ ggplot(clean_data)+geom_point(aes(x=city_population_density ,y= international_st
 As we can see from graph above,there is a lower positive relation between city population density where university located with the proportion of the international students. It means the proportion of overseas students increases with urban density around the university.
 
 
-```{r message = FALSE, echo = FALSE, warning = FALSE}
+```{r message = FALSE, echo = FALSE, warning = FALSE, eval=FALSE}
 library(tidyverse)
 library(caTools)
 library(ggplot2)
@@ -103,16 +103,19 @@ ggplot(data10_melt, aes(reorder(variable,value), y = value, color = factor(world
 
 ```
 
+
 From the figure above, the lower the ranking of the university (the larger the number), the lower the average international student population. International students prefer schools with high world rankings. The schools ranked between 51-100 in the world have the largest number of international students on average. Then, as the university's world ranking decreases, the average number of international students in the school also decreases. It is worth noting, however, that schools ranked 21 to 50 in the world have fewer international students on average than schools ranked 51 to 100, due to the lack of data in the category.
+
+
 
 ## Interactive
 
 
-Our Interactive dashboard has two components. **The [first](https://d63xhp-zeshi-wu.shinyapps.io/SchoolData/) interactive** is an overview of the scope of our dataset. On the "SchoolMap" tab, users can see the number of universities included in our dataset in each state by hovering the mouse on the states. It is clear that the majority of our dataset are universities in the Northeastern region and four other states: Florida, Texas, California, and Washington. On the "Datatable" tab, users can actually see our dataset. Our codebook, which is located at the bottom of our [Data Page](https://clever-unicorn-d34bd5.netlify.app/data/), will assist with understanding the meaning of each variable. The Search function on the top right corner will enable users to locate specific universities in our dataset (for example, typing "boston" will display 14 universities which either contains "Boston" in its name or is located in Boston, MA).  
+Our Interactive dashboard has two components. **The [first](https://d63xhp-zeshi-wu.shinyapps.io/SchoolData/) interactive** is an overview of the scope of our dataset. On the "SchoolMap" tab, users can see the number of universities included in our dataset in each state by hovering the mouse on the states. It is clear that the majority of our dataset are universities in the Northeastern region and four other states: Florida, Texas, California, and Washington. On the "Datatable" tab, users can actually see our dataset. Users can select which variables they want to be displayed and sort them. Our codebook, which is located at the bottom of our [Data Page](https://clever-unicorn-d34bd5.netlify.app/data/), will assist with understanding the meaning of each variable. The Search function on the top right corner will enable users to locate specific universities in our dataset (for example, typing "boston" will display 14 universities which either contains "Boston" in its name or is located in Boston, MA).  
 
 <br>
 
-The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[https://clever-unicorn-d34bd5.netlify.app/data/], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. We also present our cleaned dataset in a table with outcome filter to display universities with available data on number of international students, with available data on percentage of international students, or with available data on both. Users can also sort variables depending on interest. 
+The creation of the first interactive component is to make it more transparent about the scope and limitation of our dataset to users. According to a post on [BestColleges](https://www.bestcolleges.com/blog/how-many-colleges-in-us/), there are nearly 6,000 colleges and universities in the U.S.. However, our dataset was only able to cover 441 of them. As introduced in the Data Page[https://clever-unicorn-d34bd5.netlify.app/data/], our final dataset came from nine different sources and only universities which had data on international student population (either number of percentage, or both) were retained. 
 
 <br>
 
