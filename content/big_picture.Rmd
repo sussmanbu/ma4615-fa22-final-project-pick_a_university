@@ -19,9 +19,6 @@ I had two distinct objectives when I first started making my list of universitie
 
 The school planned a four-day college excursion for the 11th graders. Even if I didn't find any favorites after visiting seven or eight institutions, I can tell that each one has an own flair. The journey's conclusion is that picking a university involves choose a way of life for the following four years. Lifestyle, in my opinion, is intimately tied to a school's ethos, my own expectations of myself, and my own flaws.
 
-<br>
-
-The school planned a four-day college excursion for the 11th graders. Even if I didn't find any favorites after visiting seven or eight institutions, I can tell that each one has an own flair. The journey's conclusion is that picking a university involves choose a way of life for the following four years. Lifestyle, in my opinion, is intimately tied to a school's ethos, my own expectations of myself, and my own flaws.
 
 <br>
 
@@ -30,10 +27,25 @@ Due to Boston University's superior achievement in this ongoing epidemic as comp
 <br>
 
 
-## Background -- The epidemic has not affected the status of American universities in the hearts of international students
+## Background -- Has the epidemic affected the status of American universities in the hearts of international students?
 
-The most recent revision of The Common App, a mechanism for applying to undergraduate programs at American colleges, was made available for the application year of 2021–2022. A total of 1,106,800 applicants had submitted their applications to American institutions as of January 17, 2022. There were an additional 977,900 persons in the quarter, up 13.2%.
-The COVID-19 pandemic, which has been going on for two years, hasn't had an impact on how overseas students see the United States, based on the volume of applications from them. According to data, 109,300 foreign students applied during this application season, compared to 833,000 during the 2019/2020 application period. Compared to before the outbreak, there are more than 30% more applications from overseas students.
+The United States is recognized as the country with the highest quality of education in the world. This has attracted many students from other countries to study in the United States. During the epidemic, many students have temporarily adjusted their study abroad plans. But the epidemic did not stop the attractiveness of prestigious schools in the slightest.
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(readr)
+
+data_cleaned <-read_csv("C:/Users/lione/OneDrive/Desktop/ma4615-fa22-final-project-pick_a_university/dataset/Census_Overall-Enrollment-1949-2021_OD22.CSV")
+data_cleaned
+ggplot(data_cleaned,aes(x=Year,y=Total_International_Students))+
+  geom_smooth()+
+  geom_point(color='steelblue')+
+  scale_x_discrete(guide = guide_axis(angle=90))+
+  scale_y_continuous(name="Total_International_Students", labels = scales::comma)
+```
+
+As we can see from both table based on open door report and graph , from the 2019-2020 academic year to the 2020-2021 academic year, the number of international students in American universities has experienced a large decline as much as 15% compared to last academic year. As for the reason, the person in charge of the Open Door Report analyzed that it was mainly because the epidemic affected going abroad, but American colleges and universities believed that it was a policy restriction issue such as General Order No. 10043, that is, a series of visa restrictions on students studying in sensitive majors in the United States. In the academic year of 2021-2022, there are 958,000 international students studying in the U.S. This is an increase of 3.8% compared to last academic year.The trend shows that after the epidemic, the number of international students studying in the United States has rebounded significantly. The person in charge of international admissions at a university in the United States said: Because of the epidemic, it will take some time to truly return to the previous situation. But the increase in numbers is a good sign.
 
 <br>
 
@@ -41,20 +53,57 @@ The majority of international candidates are from China, which is their country 
 
 <br>
 
-What then determines the quantity of overseas students? What criteria do foreign students use to select a university?
+So, What then determines the quantity of overseas students? What criteria do foreign students use to select a university?
 
 <br>
 
 
 ## What does our website provide? What's our thesis?
 
-We were extremely startled to see that there are a lot of unanticipated indications that are associated to foreign students' decision to attend a certain institution, such as safety, the university's standing in my area, and the campus's "dynamics." It also depends on a number of other factors, such as tuition, the student-to-teacher ratio, alumni, and the publishing factor. By offering some information on universities, this website should be useful to individuals, especially those who plan to study abroad in the future.
+We were extremely startled to see that there are a lot of unanticipated indications that are associated to foreign students' decision to attend a certain institution, such as safety, the university's standing in the area, and the campus's "dynamics." It also depends on a number of other factors, such as tuition, the student-to-teacher ratio, city population, and the research output factor. By offering some information on universities, this website should be useful to individuals, especially those who plan to study abroad in the future.
 
 <br>
 
-Our argument is that the percentage of overseas students at a US institution increases with the university's rating. From our analysis, it is also clear that the number of international students studying in the United States is rising steadily in line with recent data. At the same time, there is a correlation between the quantity of papers the institution publishes and the percentage of overseas students. It is clear that one of the key factors for international schools is academic standing.
+Our argument is that the percentage of overseas students at a US institution increases with the university's rating. From our analysis, it is also clear that the number of international students studying in the United States is rising steadily in line with recent data excluding the decline in the 2019-2022 school year due to the epidemic and other reasons. At the same time,for relevant numerical factor, there is a correlation between the city population where the university is located and the percentage of international students. For relevant categorical factor, The Proportion of international students in the university correlates with world rank of the university.
+
 
 <br>
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+library(tidyverse)
+library(caTools)
+library(ggplot2)
+library(ggcorrplot)
+library(reshape2)
+clean_data <- read.csv("C:/Users/lione/OneDrive/Desktop/ma4615-fa22-final-project-pick_a_university/dataset/prev_data.csv")
+ggplot(clean_data)+geom_point(aes(x=city_population_density ,y= international_students_natlib,color='steelblue'))
+
+
+```
+
+
+As we can see from graph above,there is a lower positive relation between city population density where university located with the proportion of the international students. It means the proportion of overseas students increases with urban density around the university.
+
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+library(tidyverse)
+library(caTools)
+library(ggplot2)
+library(ggcorrplot)
+library(reshape2)
+read.csv("C:/Users/lione/OneDrive/Desktop/ma4615-fa22-final-project-pick_a_university/dataset/clean_data.csv")
+ 
+
+ISPo_Cat <- clean_data[c("international_students_max", "research_output_qs","size_qs", "type3_natlib", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
+
+data10 <- clean_data[c("international_students_max", "world_rank_cat_arwu")] %>% drop_na()
+data10_melt <- melt(data10, id = "world_rank_cat_arwu")
+
+
+ggplot(data10_melt, aes(reorder(variable,value), y = value, color = factor(world_rank_cat_arwu))) + geom_boxplot() + theme_bw() + theme(axis.text.x=element_blank()) + labs(x = "", y = "ISPo") + scale_color_discrete("world_rank_cat_arwu")
+
+```
+
+From the figure above, the lower the ranking of the university (the larger the number), the lower the average international student population. International students prefer schools with high world rankings. The schools ranked between 51-100 in the world have the largest number of international students on average. Then, as the university's world ranking decreases, the average number of international students in the school also decreases. It is worth noting, however, that schools ranked 21 to 50 in the world have fewer international students on average than schools ranked 51 to 100, due to the lack of data in the category.
 
 ## Interactive
 
