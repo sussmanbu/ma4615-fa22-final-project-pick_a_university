@@ -31,12 +31,12 @@ Due to Boston University's superior achievement in this ongoing epidemic as comp
 
 The United States is recognized as the country with the highest quality of education in the world. This has attracted many students from other countries to study in the United States. During the epidemic, many students have temporarily adjusted their study abroad plans. But the epidemic did not stop the attractiveness of prestigious schools in the slightest.
 
-```{r message = FALSE, echo = FALSE, warning = FALSE, eval=FALSE}
+```{r message = FALSE, echo = FALSE, warning = FALSE}
 library(tidyverse)
 library(ggplot2)
 library(readr)
 
-data_cleaned <-read_csv("C:/Users/lione/OneDrive/Desktop/ma4615-fa22-final-project-pick_a_university/dataset/Census_Overall-Enrollment-1949-2021_OD22.CSV")
+data_cleaned <-read_csv(here::here("dataset/Census_Overall-Enrollment-1949-2021_OD22.CSV"))
 data_cleaned
 ggplot(data_cleaned,aes(x=Year,y=Total_International_Students))+
   geom_smooth()+
@@ -68,13 +68,14 @@ Our argument is that the percentage of overseas students at a US institution inc
 
 
 <br>
-```{r message = FALSE, echo = FALSE, warning = FALSE, eval=FALSE}
+```{r message = FALSE, echo = FALSE, warning = FALSE}
 library(tidyverse)
 library(caTools)
 library(ggplot2)
 library(ggcorrplot)
 library(reshape2)
-clean_data <- read.csv("C:/Users/lione/OneDrive/Desktop/ma4615-fa22-final-project-pick_a_university/dataset/prev_data.csv")
+library(here)
+clean_data <- read.csv(here::here("dataset/prev_data.csv"))
 ggplot(clean_data)+geom_point(aes(x=city_population_density ,y= international_students_natlib,color='steelblue'))
 
 
@@ -84,14 +85,13 @@ ggplot(clean_data)+geom_point(aes(x=city_population_density ,y= international_st
 As we can see from graph above,there is a lower positive relation between city population density where university located with the proportion of the international students. It means the proportion of overseas students increases with urban density around the university.
 
 
-```{r message = FALSE, echo = FALSE, warning = FALSE, eval=FALSE}
+```{r message = FALSE, echo = FALSE, warning = FALSE}
 library(tidyverse)
 library(caTools)
 library(ggplot2)
 library(ggcorrplot)
 library(reshape2)
-read.csv("C:/Users/lione/OneDrive/Desktop/ma4615-fa22-final-project-pick_a_university/dataset/clean_data.csv")
- 
+
 
 ISPo_Cat <- clean_data[c("international_students_max", "research_output_qs","size_qs", "type3_natlib", "type4_carnegie", "world_rank_cat_arwu", "selectivity", "state")] 
 
@@ -120,6 +120,7 @@ The creation of the first interactive component is to make it more transparent a
 <br>
 
 **The [second](https://b6vqbw-yawei-huang.shinyapps.io/FinalProjectApp/) interactive** is a tool to explore the relationship between our outcome variables and each individual predictor variable.  Users will first choose between number of international students and percentage of international students as an outcome, and then choose one predictor variable included in our dataset. The “Plot” tab will display a scatter plot with crossbar if a categorical predictor is selected or display a a scatter plot with fitted line if a continuous predictor is selected. On the “Linear Regression Model Summary” tab, users will see the coefficient estimates and associated p-value from the bivariate linear regression model. For categorical predictors, the terms are each category (or level); for continuous predictors, the terms are intercept and the predictor selected. In terms of interpretation of coefficient estimate, for categorical predictors it refers to the predicted value of the outcome given the specific category/level; for continuous predictors it refers to the predicted change in value of the outcome given a one unit increase in the selected predictor. Check out our codebook (located at the bottom of our [Data Page](https://clever-unicorn-d34bd5.netlify.app/data/) to understand the meaning and units of each variable.
+
 
 
 
